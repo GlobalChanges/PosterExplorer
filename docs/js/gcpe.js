@@ -117,7 +117,7 @@ var vueGCPE = new Vue({
   },
   methods: {
      resetPosters: function() { this.allPosterData = {}; }, 
-     addPoster: function(json) { this.allPosterData[json.id] = json; },
+     addPoster: function(json) { Vue.set(this.allPosterData, json.id, json); },
      inqIds: function() {
        var volumesUrl = "https://globalchanges.github.io/MetaData/volumes.json";
        axios
