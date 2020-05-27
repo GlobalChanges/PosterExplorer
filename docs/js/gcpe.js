@@ -21,7 +21,8 @@ var corsProxies = [
  // "https://yacdn.org/proxy/"  // <uri>?maxAge=10  bad gateway
 ];
 
-// geo:  https://stackoverflow.com/questions/391979/how-to-get-clients-ip-address-using-javascript
+// geo&ip:  https://stackoverflow.com/questions/391979/how-to-get-clients-ip-address-using-javascript
+// ip:      https://ourcodeworld.com/articles/read/257/how-to-get-the-client-ip-address-with-javascript-only
 
 function getRandomProxy() {
   var randomFloat = Math.random();
@@ -110,9 +111,29 @@ var vueGCPE = new Vue({
   data: {
         uid: '0',
         uidOld: '0',
+        //posterIds: [],
+        allPosterData: {},
+        selPosterData: {}, 
   },
   methods: { 
-
+     inqIds: function() {
+       var volumesUrl = "https://globalchanges.github.io/MetaData/volumes.json";
+       axios
+         .get(volumesUrl)
+         .then(response => { 
+            var ids = response.data;
+            this.allPosterData = {};
+            for(var j=0; j<ids.size; j++) {
+              var id = ids[j]; 
+              var posterUrl = "https://globalchanges.github.io/MetaData/"+id+"/meta.json";
+              axios
+                .get(posterUrl)
+                .then(response => { 
+                   this.allPosterData[response.data.id] = response.data;
+              });              
+            }
+       });
+     },
   },
   computed: {
 
@@ -126,5 +147,6 @@ var vueGCPE = new Vue({
      this.initTs = Date.now();
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
+     this.inqIds();
   }
 }) 
