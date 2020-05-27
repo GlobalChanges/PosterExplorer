@@ -123,7 +123,7 @@ var vueGCPE = new Vue({
          .then(response => { 
             var ids = response.data;
             this.allPosterData = {};
-            for(var j=0; j<ids.size; j++) {
+            for(var j=0; j<ids.length; j++) {
               var id = ids[j]; 
               var posterUrl = "https://globalchanges.github.io/MetaData/"+id+"/meta.json";
               axios
