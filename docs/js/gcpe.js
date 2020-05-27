@@ -131,7 +131,7 @@ var vueGCPE = new Vue({
               axios
                 .get(posterUrl)
                 .then(response => { 
-                   this.addPoster(resetPosters);
+                   this.addPoster(response.data);
               });              
             }
        });
