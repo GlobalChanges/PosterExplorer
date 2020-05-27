@@ -268,6 +268,7 @@ $(document).ready(function () {
     });
 
     //CounterUp
+/*
     $('.counter').counterUp({
         delay: 10,
         time: 1000,
@@ -287,7 +288,7 @@ $(document).ready(function () {
             + '<span>%M</span> min '
             + '<span>%S</span> sec'));
     });
-
+*/
     //Parallax
     $('.jarallax').jarallax({
         speed: 0.2
