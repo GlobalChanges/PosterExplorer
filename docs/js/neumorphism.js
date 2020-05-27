@@ -293,14 +293,14 @@ $(document).ready(function () {
     $('.jarallax').jarallax({
         speed: 0.2
     });
-*/
+
 
     //Smooth scroll
     var scroll = new SmoothScroll('a[href*="#"]', {
         speed: 500,
         speedAsDuration: true
     });
-
+*/
     // Equalize height to the max of the elements
     if ($(document).width() >= breakpoints.lg) {
 
