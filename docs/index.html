@@ -21,7 +21,38 @@
 
 <body>
 
-<div id="gcpe">Hi!</div>
+<div id="gcpe">
+Hi!
+{{allPosterData}}
+
+<div class="container">
+ <div class="row mb-5">
+
+  <div v-for="poster in allPosterData" :key="poster.id" class="col-12 col-md-6 col-lg-4 mb-5">
+   <div class="card bg-primary border-light shadow-soft">
+    <div class="card-header p-3">
+     <img src="./img/blog-article-2.jpg" class="card-img-top rounded" alt="Designer desk">
+    </div>
+    <div class="card-body pt-2">
+     <div class="media d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center"><span class="small"><span class="far fa-calendar-alt mr-2"></span>15 March 2020</span></div>
+     </div>
+     <h3 class="h5 card-title mt-4">{{poster.title}}</h3>
+     <p class="card-text">{{poster.abstract}}</p>
+     <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+    </div>
+   </div>
+  </div>
+
+ </div>
+</div>
+
+
+</div>
+
+
+
+
  
  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
