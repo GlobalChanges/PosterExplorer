@@ -115,21 +115,23 @@ var vueGCPE = new Vue({
         allPosterData: {},
         selPosterData: {}, 
   },
-  methods: { 
+  methods: {
+     resetPosters: function() { this.allPosterData = {}; }, 
+     addPoster: function(json) { this.allPosterData[json.id] = json; },
      inqIds: function() {
        var volumesUrl = "https://globalchanges.github.io/MetaData/volumes.json";
        axios
          .get(volumesUrl)
          .then(response => { 
             var ids = response.data;
-            this.allPosterData = {};
+            this.resetPosters();
             for(var j=0; j<ids.length; j++) {
               var id = ids[j]; 
               var posterUrl = "https://globalchanges.github.io/MetaData/"+id+"/meta.json";
               axios
                 .get(posterUrl)
                 .then(response => { 
-                   this.allPosterData[response.data.id] = response.data;
+                   this.addPoster(resetPosters);
               });              
             }
        });
