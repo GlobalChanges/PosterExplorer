@@ -288,11 +288,12 @@ $(document).ready(function () {
             + '<span>%M</span> min '
             + '<span>%S</span> sec'));
     });
-*/
+
     //Parallax
     $('.jarallax').jarallax({
         speed: 0.2
     });
+*/
 
     //Smooth scroll
     var scroll = new SmoothScroll('a[href*="#"]', {
