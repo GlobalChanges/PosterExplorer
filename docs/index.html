@@ -33,8 +33,8 @@
     </div>
     <div class="card-body pt-2">
      <div class="media d-flex align-items-center justify-content-between">
-      <div class="d-flex align-items-center"><span class="small"><i class="mg map-us mg-3x"></i>{{poster.location.country}}</span></div>
-     </div>
+      <div class="d-flex align-items-center"><span class="small"><i class="'mg mg-3x map-' + mapicon(poster.location.country)"></i>{{poster.location.country}}</span></div>
+     </div> 
      <h4 class="h4 card-title mt-4">{{poster.title}}</h4>
      <p class="card-text">{{poster.abstract}}</p>
      <a href="#" class="btn btn-primary btn-sm">Learn More</a>

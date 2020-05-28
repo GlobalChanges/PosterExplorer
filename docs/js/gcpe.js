@@ -112,12 +112,22 @@ var vueGCPE = new Vue({
         uid: '0',
         uidOld: '0',
         //posterIds: [],
+        allCountries: {},
         allPosterData: {},
         selPosterData: {}, 
   },
   methods: {
      resetPosters: function() { this.allPosterData = {}; }, 
      addPoster: function(json) { Vue.set(this.allPosterData, json.id, json); },
+     inqCountries: function () {
+       var volumesUrl = "https://globalchanges.github.io/MetaData/countries.json";
+       axios
+         .get(volumesUrl)
+         .then(response => { 
+            this.setCountries(response.data);
+       });
+     },
+     setCountries: function(data) { this.allCountries = data; },
      inqIds: function() {
        var volumesUrl = "https://globalchanges.github.io/MetaData/volumes.json";
        axios
@@ -143,7 +153,10 @@ var vueGCPE = new Vue({
   filters: {
     lowercase: function (str) {
       return isoStr(str);
-    }
+    },
+    mapicon: function (str) {
+      return this.allCountries[str].map;
+    } 
   },
   mounted () { 
      this.initTs = Date.now();
