@@ -9346,16 +9346,6 @@ a.close.disabled {
     vertical-align: text-top !important;
 }
 
-.bg-primary {
-    background-color: #e6e7ee !important;
-}
-
-a.bg-primary:hover, a.bg-primary:focus,
-button.bg-primary:hover,
-button.bg-primary:focus {
-    background-color: #c8cad9 !important;
-}
-
 .bg-secondary {
     background-color: #2D4CC8 !important;
 }
@@ -9708,17 +9698,8 @@ button.bg-slack:focus {
     border-color: #A91E2C !important;
 }
 
-.border-light {
-    border-color: #D1D9E6 !important;
-}
 
-.border-dark {
-    border-color: #31344b !important;
-}
 
-.border-default {
-    border-color: #262833 !important;
-}
 
 .border-white {
     border-color: #ECF0F3 !important;

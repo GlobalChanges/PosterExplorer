@@ -40,4 +40,12 @@ button.bg-primary:focus {
 .shadow-soft {
     box-shadow: 6px 6px 12px #6183a6, -6px -6px 12px #83b1e0 !important; 
 }
-
+.border-light {
+    border-color: #72aab3 !important;
+}
+.border-dark {
+    border-color: #528ad3 !important;
+}
+.border-default {
+    border-color: #629ac3 !important;
+}
