@@ -11,6 +11,16 @@ body {
     background-color: #729ac3;
 }
 
+.bg-primary {
+    background-color: #729ac3 !important;
+}
+
+
+a.bg-primary:hover, a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+    background-color: #83b1e0 !important;
+}
 
 /*
  orientation: landscape|portrait -> add class ?
@@ -33,6 +43,5 @@ body {
 
 
 .shadow-soft {
-  background: #729ac3;
   box-shadow:  20px 20px 60px #6183a6, -20px -20px 60px #83b1e0 !important;
 }
