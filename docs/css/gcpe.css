@@ -12,6 +12,7 @@ body {
 }
 
 .bg-primary {
+    color: #000000  !important;
     background-color: #729ac3 !important;
 }
 
