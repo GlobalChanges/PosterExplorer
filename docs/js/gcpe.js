@@ -129,7 +129,8 @@ var vueGCPE = new Vue({
      },
      setCountries: function(data) { this.allCountries = data; },
      mapicon: function (str) {
-       return this.allCountries[str].map;
+       var c = this.allCountries[str]
+       return c ? c.map : 'wrld' ;
      }, 
      inqIds: function() {
        var volumesUrl = "https://globalchanges.github.io/MetaData/volumes.json";
