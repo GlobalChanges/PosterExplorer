@@ -1,3 +1,17 @@
+/* @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans&subset=latin,latin-ext); */
+
+body {
+    margin: 0;
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #24274A;
+    text-align: left;
+    background-color: #729ac3;
+}
+
+
 /*
  orientation: landscape|portrait -> add class ?
    -> adapt max-height
