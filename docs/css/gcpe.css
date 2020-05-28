@@ -32,6 +32,11 @@ button.bg-primary:focus {
     background-color: #729ac3;
 }
 
+.navbar-brand img {
+    height: 100px;
+    width: 100px;
+}
+
 /*
  orientation: landscape|portrait -> add class ?
    -> adapt max-height

@@ -22716,10 +22716,6 @@ button.section-slack:focus {
     text-transform: uppercase;
 }
 
-.navbar-brand img {
-    height: 20px;
-}
-
 .navbar-dark .navbar-brand-light {
     display: none;
 }
