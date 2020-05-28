@@ -23,6 +23,15 @@ button.bg-primary:focus {
     background-color: #83b1e0 !important;
 }
 
+
+.navbar-theme-primary:not(.headroom) {
+    background-color: #729ac3;
+}
+
+.navbar-theme-primary:not(.navbar-transparent) {
+    background-color: #729ac3;
+}
+
 /*
  orientation: landscape|portrait -> add class ?
    -> adapt max-height

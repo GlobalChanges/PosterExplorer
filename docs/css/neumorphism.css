@@ -22736,13 +22736,7 @@ button.section-slack:focus {
     color: #44476A;
 }
 
-.navbar-theme-primary:not(.headroom) {
-    background-color: #e6e7ee;
-}
 
-.navbar-theme-primary:not(.navbar-transparent) {
-    background-color: #e6e7ee;
-}
 
 .navbar-theme-primary.navbar-light:not(.headroom) .navbar-nav .dropdown-item.active, .navbar-theme-primary.navbar-light:not(.headroom) .navbar-nav .dropdown-item:hover, .navbar-theme-primary.navbar-light:not(.headroom) .navbar-nav .dropdown-item:focus,
 .navbar-theme-primary.navbar-light:not(.headroom) .navbar-nav .list-group-item.active,
