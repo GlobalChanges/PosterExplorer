@@ -37,11 +37,7 @@ button.bg-primary:focus {
 }
 
 
-.shadow-soft-orig {
-    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff !important; 
-}
-
-
 .shadow-soft {
-  box-shadow:  20px 20px 60px #6183a6, -20px -20px 60px #83b1e0 !important;
+    box-shadow: 6px 6px 12px #6183a6, -6px -6px 12px #83b1e0 !important; 
 }
+
