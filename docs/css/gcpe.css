@@ -8,12 +8,12 @@ body {
     line-height: 1.5;
     color: #24274A;
     text-align: left;
-    background-color: #729ac3;
+    background-color: #3180be;
 }
 
 .bg-primary {
     color: #000000  !important;
-    background-color: #729ac3 !important;
+    background-color: #3180be !important;
 }
 
 
@@ -25,11 +25,11 @@ button.bg-primary:focus {
 
 
 .navbar-theme-primary:not(.headroom) {
-    background-color: #729ac3;
+    background-color: #3180be;
 }
 
 .navbar-theme-primary:not(.navbar-transparent) {
-    background-color: #729ac3;
+    background-color: #3180be;
 }
 
 .navbar-brand img {
@@ -53,19 +53,19 @@ button.bg-primary:focus {
 
 
 .shadow-soft {
-    box-shadow: 6px 6px 12px #6183a6, -6px -6px 12px #83b1e0 !important; 
+    box-shadow: 6px 6px 12px #2a6da2, -6px -6px 12px #3893db !important; 
 }
 
 .shadow-inset {
-    box-shadow: inset 2px 2px 5px #6183a6, inset -3px -3px 7px #83b1e0 !important;
+    box-shadow: inset 2px 2px 5px #2a6da2, inset -3px -3px 7px #3893db !important;
 }
 
 .border-light {
-    border-color: #72aab3 !important;
+    border-color: #3170ce !important;
 }
 .border-dark {
-    border-color: #528ad3 !important;
+    border-color: #4180be !important;
 }
 .border-default {
-    border-color: #629ac3 !important;
+    border-color: #2180be !important;
 }
