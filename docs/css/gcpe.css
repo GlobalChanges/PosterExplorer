@@ -31,11 +31,11 @@ button.bg-primary:focus {
 
 
 .navbar-theme-primary:not(.headroom) {
-    background-color: #3180be;
+    background-color: var(--morph-bg);
 }
 
 .navbar-theme-primary:not(.navbar-transparent) {
-    background-color: #3180be;
+    background-color: var(--morph-bg);
 }
 
 .navbar-brand img {
@@ -67,11 +67,11 @@ button.bg-primary:focus {
 }
 
 .border-light {
-    border-color: #3170ce !important;
+    border-color: #74a7df !important;
 }
 .border-dark {
-    border-color: #4180be !important;
+    border-color: #74a7bf !important;
 }
 .border-default {
-    border-color: #2180be !important;
+    border-color: #74a7cf !important;
 }
