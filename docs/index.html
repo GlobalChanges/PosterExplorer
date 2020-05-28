@@ -13,7 +13,7 @@
   <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Merriweather+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" type="text/css" rel="stylesheet"/>
-  
+  <link href="./css/mapglyphs" rel="stylesheet" type="text/css">
   <link href="./css/star-rating-svg.css" rel="stylesheet" type="text/css">
   <link href='./css/neumorphism.css' rel='stylesheet' type='text/css'>
   <link href='./css/gcpe.css' rel='stylesheet' type='text/css'>
@@ -23,17 +23,19 @@
 
 <div id="gcpe">
 
-<div class="container">
+<i class="mg map-us"></i>
+
+<div class="container-fluid">
  <div class="row mb-5">
 
   <div v-for="poster in allPosterData" :key="poster.id" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-5">
    <div class="card bg-primary border-light shadow-soft">
     <div class="card-header p-3">
-     <img src="./img/blog-article-2.jpg" class="card-img-top rounded" alt="Designer desk">
+     <img :src="poster.thumbnail" class="card-img-top rounded" :alt="poster.title">
     </div>
     <div class="card-body pt-2">
      <div class="media d-flex align-items-center justify-content-between">
-      <div class="d-flex align-items-center"><span class="small"><span class="far fa-calendar-alt mr-2"></span>15 March 2020</span></div>
+      <div class="d-flex align-items-center"><span class="small"><i class="mg map-us"></i>{{poster.country}}</span></div>
      </div>
      <h3 class="h5 card-title mt-4">{{poster.title}}</h3>
      <p class="card-text">{{poster.abstract}}</p>
