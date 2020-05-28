@@ -21847,13 +21847,7 @@ button.section-slack:focus {
     transition: all 0.2s ease;
 }
 
-.shadow-soft {
-    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff !important;
-}
 
-.shadow-inset {
-    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #FFFFFF !important;
-}
 
 /**
  * = Text utility classes

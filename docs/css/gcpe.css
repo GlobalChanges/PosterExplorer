@@ -55,6 +55,11 @@ button.bg-primary:focus {
 .shadow-soft {
     box-shadow: 6px 6px 12px #6183a6, -6px -6px 12px #83b1e0 !important; 
 }
+
+.shadow-inset {
+    box-shadow: inset 2px 2px 5px #6183a6, inset -3px -3px 7px #83b1e0 !important;
+}
+
 .border-light {
     border-color: #72aab3 !important;
 }
