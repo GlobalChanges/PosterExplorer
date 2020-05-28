@@ -1,5 +1,11 @@
 /* @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans&subset=latin,latin-ext); */
 
+:root {
+    --morph-bg: #3180be;
+    --morph-light: #3893db;
+    --morph-dark: #2a6da2;
+}
+
 body {
     margin: 0;
     font-family: "Merriweather Sans", sans-serif;
@@ -8,19 +14,19 @@ body {
     line-height: 1.5;
     color: #24274A;
     text-align: left;
-    background-color: #3180be;
+    background-color: var(--morph-bg);
 }
 
 .bg-primary {
     color: #000000  !important;
-    background-color: #3180be !important;
+    background-color: var(--morph-bg) !important;
 }
 
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-    background-color: #83b1e0 !important;
+    background-color: var(--morph-bg) !important;
 }
 
 
@@ -53,11 +59,11 @@ button.bg-primary:focus {
 
 
 .shadow-soft {
-    box-shadow: 6px 6px 12px #2a6da2, -6px -6px 12px #3893db !important; 
+    box-shadow: 6px 6px 12px var(--morph-dark), -6px -6px 12px var(--morph-light) !important; 
 }
 
 .shadow-inset {
-    box-shadow: inset 2px 2px 5px #2a6da2, inset -3px -3px 7px #3893db !important;
+    box-shadow: inset 2px 2px 5px var(--morph-dark), inset -3px -3px 7px var(--morph-light) !important;
 }
 
 .border-light {
