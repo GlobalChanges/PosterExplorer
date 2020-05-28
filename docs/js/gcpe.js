@@ -128,6 +128,7 @@ var vueGCPE = new Vue({
        });
      },
      setCountries: function(data) { this.allCountries = data; },
+     getCountry: function(str) { return this.allCountries[str]; },
      inqIds: function() {
        var volumesUrl = "https://globalchanges.github.io/MetaData/volumes.json";
        axios
@@ -155,7 +156,8 @@ var vueGCPE = new Vue({
       return isoStr(str);
     },
     mapicon: function (str) {
-      return this.allCountries[str].map;
+      var c = this.getCountry(str);
+      return c.map;
     } 
   },
   mounted () { 
