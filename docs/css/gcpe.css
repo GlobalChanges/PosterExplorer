@@ -1,0 +1,24 @@
+/*
+ orientation: landscape|portrait -> add class ?
+   -> adapt max-height
+*/
+.card-img-top {
+    max-width: 100%;
+    max-height: 160px;
+    border-top-left-radius: calc(0.55rem - 0.0625rem);
+    border-top-right-radius: calc(0.55rem - 0.0625rem);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.shadow-soft-orig {
+    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff !important; 
+}
+
+
+.shadow-soft {
+  background: #729ac3;
+  box-shadow:  20px 20px 60px #6183a6, -20px -20px 60px #83b1e0 !important;
+}

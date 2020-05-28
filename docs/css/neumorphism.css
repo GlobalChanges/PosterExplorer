@@ -6616,11 +6616,7 @@ input[type="button"].btn-block {
     border-radius: calc(0.55rem - 0.0625rem);
 }
 
-.card-img-top {
-    width: 100%;
-    border-top-left-radius: calc(0.55rem - 0.0625rem);
-    border-top-right-radius: calc(0.55rem - 0.0625rem);
-}
+
 
 .card-img-bottom {
     width: 100%;
