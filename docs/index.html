@@ -108,7 +108,7 @@
           <span class="small forest pull-right">{{poster.topic}}/{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i>&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></span>
          </div>
         </div> 
-        <h4 class="h4 card-title mt-4 clouds">{{poster.title}}</h4>
+        <h5 class="card-title mt-4 clouds">{{poster.title}}</h5>
        </div>
       </div>
       <div class="flip-card-back">
@@ -118,7 +118,7 @@
       </div>
      </div>
     </div>
-    <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+    <a :href="poster.pdf" class="btn btn-primary btn-sm" target="_gcpe">View Poster</a>
 
    </div> 
   </div>
