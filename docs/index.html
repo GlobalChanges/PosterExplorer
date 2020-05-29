@@ -109,9 +109,9 @@
          </div>
         </div> 
         <h5 class="card-title mt-4 clouds">{{poster.title}}</h5>
-        <span class="text-muted"><i class="mg mg-2x fas fa-user-graduate"></i>
+        <span class="text-black-50">
          <span v-for="author in poster.authors" :key="author.email">
-           &nbsp;{{author.name}},&nbsp;{{author.firstname}}
+           <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.name}},&nbsp;{{author.firstname}}<br/>
          </span>
         </span>
        </div>
