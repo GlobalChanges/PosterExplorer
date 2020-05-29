@@ -23,7 +23,6 @@ body {
 }
 
 .bg-primary {
-    color: #000000;
     background-color: var(--morph-bg) !important;
 }
 
