@@ -87,7 +87,7 @@ div.card a.btn {
   width: 50%;
   background: linear-gradient(145deg, #84b7df, #6497bf);
 }
-div.card a.btn:hover, div.card a.btn:focus {
+div.card a.btn:hover, div.card a.btn:active {
   background: linear-gradient(145deg, #6497bf, #84b7df);
 }
 
