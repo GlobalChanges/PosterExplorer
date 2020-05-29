@@ -91,6 +91,11 @@
  <div class="row mb-5">
   <div v-for="poster in allPosterData" :key="poster.id" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-5">
    <div class="card bg-primary border-light shadow-soft">
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+
     <div class="card-header p-3">
      <img :src="poster.thumbnail" class="card-img-top rounded" :alt="poster.title">
     </div>
@@ -104,7 +109,14 @@
       </div>
      </div> 
      <h4 class="h4 card-title mt-4 clouds">{{poster.title}}</h4>
+    </div>
+    <div class="flip-card-back">
+
      <p class="card-text">{{poster.abstract}}</p>
+    </div>
+  </div>
+</div>
+
      <a href="#" class="btn btn-primary btn-sm">Learn More</a>
     </div>
    </div> 
@@ -115,6 +127,9 @@
 
 
 <!-- https://www.w3schools.com/howto/howto_css_flip_card.asp -->
+
+
+
 
 </div>
 
