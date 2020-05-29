@@ -87,7 +87,11 @@ button.bg-primary:focus {
 }
 
 div.card {
-  min-height: 380px;
+  min-height: 385px;
+}
+
+div.card a.btn {
+  width: 50%;
 }
 
 
