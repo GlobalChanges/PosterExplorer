@@ -165,7 +165,6 @@ var vueGCPE = new Vue({
      },
   },
   computed: {
-
   },
   filters: {
     lowercase: function (str) {
