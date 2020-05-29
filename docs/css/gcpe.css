@@ -26,10 +26,10 @@ body {
     background-color: var(--morph-bg) !important;
 }
 
-.card-body span.earth: { 
+.earth { 
     color: var(--earth) !important; 
 } 
-.card-body h4.clouds: { 
+.clouds { 
     color: var(--clouds) !important; 
 } 
 
