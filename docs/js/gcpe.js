@@ -171,7 +171,11 @@ var vueGCPE = new Vue({
     lowercase: function (str) {
       return isoStr(str);
     },
-
+    shorting: function (str) {
+      if(str.length > 705) {
+      str = str.substr(0, 700)+' ...';
+      return str;
+    },
   },
   mounted () { 
      this.inqCountries();
