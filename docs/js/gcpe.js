@@ -143,7 +143,7 @@ var vueGCPE = new Vue({
      setTopics: function(data) { this.allTopics = data; },
      awesome: function (str) {
        var c = this.allTopics[str]
-       return c ? c.awesome : 'question' ;
+       return c ? c.awesome : 'question';
      },
      inqIds: function() {
        var volumesUrl = "https://globalchanges.github.io/MetaData/volumes.json";
