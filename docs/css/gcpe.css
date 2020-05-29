@@ -70,10 +70,10 @@ body {
 }
 
 .border-light {
-    border-color: #74a7df !important;
+    border-color: #84b7df !important;
 }
 .border-dark {
-    border-color: #74a7bf !important;
+    border-color: #6497bf !important;
 }
 .border-default {
     border-color: #74a7cf !important;
@@ -85,10 +85,10 @@ div.card {
 
 div.card a.btn {
   width: 50%;
-  background: linear-gradient(145deg, var(--morph-light), var(--morph-dark));
+  background: linear-gradient(145deg, #84b7df, #6497bf);
 }
 div.card a.btn:hover, div.card a.btn:focus {
-  background: linear-gradient(145deg, var(--morph-dark), var(--morph-light));
+  background: linear-gradient(145deg, #6497bf, #84b7df);
 }
 
 @media (min-width: 1400px) {
