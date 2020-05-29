@@ -95,19 +95,15 @@
      <img :src="poster.thumbnail" class="card-img-top rounded" :alt="poster.title">
     </div>
     <div class="card-body pt-2">
-     <div class="m2edia d2-flex align-items-center justify-content-between">
+     <div class="media d2-flex align-items-center justify-content-between">
       <div class="d2-flex align-items-center">
+        <span class="small ocean pull-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></span>
         <span v-if="poster.location.country" class="small earth"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&nbsp;{{poster.location.country}}</span>
         <span v-else class="small earth"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&nbsp;{{poster.location.continent}}</span>
-        <span class="small ocean pull-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></span>
-      </div>
-      <div class="d2-flex align-items-center">
-
         <span class="small forest pull-right">{{poster.topic}}/{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i>&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></span>
-
       </div>
      </div> 
-     <br/><h4 class="h4 card-title mt-4 clouds">{{poster.title}}</h4>
+     <h4 class="h4 card-title mt-4 clouds">{{poster.title}}</h4>
      <p class="card-text">{{poster.abstract}}</p>
      <a href="#" class="btn btn-primary btn-sm">Learn More</a>
     </div>
