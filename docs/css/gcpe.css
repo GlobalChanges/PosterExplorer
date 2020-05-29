@@ -85,12 +85,14 @@ button.bg-primary:focus {
     border-color: #74a7cf !important;
 }
 
-
+div.card {
+  min-height: 380px;
+}
 
 /* Flip Cards */
 .flip-card {
   /* width: 300px; */
-  height: 200px;
+  height: 350px;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
