@@ -83,6 +83,10 @@ div.card {
   min-height: 385px;
 }
 
+div.card p.card-text {
+  color: black;
+}
+
 div.card a.btn {
   width: 50%;
   background: linear-gradient(145deg, #84b7df, #6497bf);
