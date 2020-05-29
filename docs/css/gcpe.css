@@ -26,12 +26,11 @@ body {
     background-color: var(--morph-bg) !important;
 }
 
-.earth { 
-    color: var(--earth) !important; 
-} 
-.clouds { 
-    color: var(--clouds) !important; 
-} 
+.earth { color: var(--earth) !important; } 
+.clouds { color: var(--clouds) !important; } 
+.ocean { color: var(--ocean) !important; } 
+.forest { color: var(--forest) !important; } 
+.fire { color: var(--fire) !important; } 
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
