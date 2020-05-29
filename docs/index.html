@@ -25,8 +25,8 @@
 
 <div class="container-fluid">
  <div class="row mb-5"></div>
-<nav class="navbar navbar-expand-lg navbar-transparent navbar-light shadow-soft navbar-theme-primary mb-4">
-        <a class="navbar-brand mr-lg-5" href="../../index.html">
+  <nav class="navbar navbar-expand-lg navbar-transparent navbar-light shadow-soft navbar-theme-primary mb-4">
+        <a class="navbar-brand mr-lg-5" href="/PosterExplorer/index.html">
             <div class="profile-image shadow-inset border border-light bg-primary rounded-circle mt-n5 mx-auto">
                 <img src="./img/globe.gif" class="c2ard-img-top shadow-soft p-2 border border-light rounded-circle" alt="Home">
             </div>
@@ -35,10 +35,11 @@
             <div class="navbar-collapse-header">
                 <div class="row">
                     <div class="col-6 collapse-brand">
-                       <a class="navbar-brand mr-lg-5" href="../../index.html">
-                            <img class="navbar-brand-dark" src="../../assets/img/brand/light.svg" alt="pixel logo">
-                            <img class="navbar-brand-light" src="../../assets/img/brand/dark.svg" alt="pixel logo">
-                        </a>
+                      <a class="navbar-brand mr-lg-5" href="/PosterExplorer/index.html">
+                        <div class="profile-image shadow-inset border border-light bg-primary rounded-circle mt-n5 mx-auto">
+                          <img src="./img/globe.gif" class="c2ard-img-top shadow-soft p-2 border border-light rounded-circle" alt="Home">
+                        </div>
+                      </a>
                     </div>
                     <div class="col-6 collapse-close">
                         <i class="fas fa-times" data-toggle="collapse" role="button"
@@ -83,7 +84,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-</nav>
+  </nav>
 
 
  <div class="row mb-5">
@@ -95,11 +96,11 @@
     <div class="card-body pt-2">
      <div class="media d-flex align-items-center justify-content-between">
       <div class="d-flex align-items-center">
-        <span v-if="poster.location.country" class="small"><i :class="'mg mg-3x map-' + mapicon(poster.location.country)"></i>{{poster.location.country}}</span>
-        <span v-else class="small"><i :class="'mg mg-3x map-' + mapicon(poster.location.continent)"></i>{{poster.location.continent}}</span>
+        <span v-if="poster.location.country" class="small earth"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>{{poster.location.country}}</span>
+        <span v-else class="small"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>{{poster.location.continent}}</span>
       </div>
      </div> 
-     <h4 class="h4 card-title mt-4">{{poster.title}}</h4>
+     <h4 class="h4 card-title mt-4 clouds">{{poster.title}}</h4>
      <p class="card-text">{{poster.abstract}}</p>
      <a href="#" class="btn btn-primary btn-sm">Learn More</a>
     </div>

@@ -1,10 +1,18 @@
 /* @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans&subset=latin,latin-ext); */
 
 :root {
-    --morph-bg: #84b7df;
+    --morph-bg:    #84b7df;
     --morph-light: #98d2ff;
-    --morph-dark: #709cbe;
+    --morph-dark:  #709cbe;
+    --earth:       #834d05;
+    --clouds:      #FFFFFF;
+    --ocean:       #062379;
+    --forest:      #076002;
+    --fire:        #e04b0f;
 }
+
+.earth: { color: var(--earth) !important; } 
+.clouds: { color: var(--clouds) !important; } 
 
 body {
     margin: 0;
