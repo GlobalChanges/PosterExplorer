@@ -458,12 +458,6 @@ hr {
     border-top: 0.0625rem solid rgba(38, 40, 51, 0.05);
 }
 
-small,
-.small {
-    font-size: 80%;
-    font-weight: 400;
-}
-
 mark,
 .mark {
     padding: 0.2em;
@@ -31659,18 +31653,7 @@ textarea[resize="horizontal"] {
 /**
  * = Typography
  */
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 400;
-}
 
-p, ol li, ul li {
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 1.6;
-}
 
 a, .text-action {
     color: #31344b;
