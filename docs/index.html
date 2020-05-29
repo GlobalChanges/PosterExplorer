@@ -94,7 +94,7 @@
 
     <div class="flip-card">
      <div class="flip-card-inner">
-      <div class="flip-card-front">
+      <div class="flip-card-front morph">
 
        <div class="card-header p-3">
         <img :src="poster.thumbnail" class="card-img-top rounded" :alt="poster.title">
@@ -111,12 +111,12 @@
         <h5 class="card-title mt-4 clouds">{{poster.title}}</h5>
         <span class="text-black-50">
          <span v-for="author in poster.authors" :key="author.email">
-           <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.name}},&nbsp;{{author.firstname}}<br/>
+           <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}<br/>
          </span>
         </span>
        </div>
       </div>
-      <div class="flip-card-back">
+      <div class="flip-card-back morph">
        <div class="card-body pt-2">
         <p class="card-text">{{poster.abstract|shorting}}</p>
        </div>
@@ -131,7 +131,7 @@
 </div>
 
 
-<!-- https://www.w3schools.com/howto/howto_css_flip_card.asp -->
+
 
 
 
