@@ -132,6 +132,19 @@ var vueGCPE = new Vue({
        var c = this.allCountries[str]
        return c ? c.map : 'wrld' ;
      }, 
+     inqTopics: function () {
+       var volumesUrl = "https://globalchanges.github.io/MetaData/topics.json";
+       axios
+         .get(volumesUrl)
+         .then(response => { 
+            this.setTopics(response.data);
+       });
+     },
+     setTopics: function(data) { this.allTopics = data; },
+     awesome: function (str) {
+       var c = this.allTopics[str]
+       return c ? c.awesome : 'question' ;
+     },
      inqIds: function() {
        var volumesUrl = "https://globalchanges.github.io/MetaData/volumes.json";
        axios
@@ -162,6 +175,7 @@ var vueGCPE = new Vue({
   },
   mounted () { 
      this.inqCountries();
+     this.inqTopics();
      this.initTs = Date.now();
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
