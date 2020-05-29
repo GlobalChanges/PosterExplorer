@@ -11,9 +11,6 @@
     --fire:        #e04b0f;
 }
 
-.earth: { color: var(--earth) !important; } 
-.clouds: { color: var(--clouds) !important; } 
-
 body {
     margin: 0;
     font-family: "Merriweather Sans", sans-serif;
@@ -30,6 +27,12 @@ body {
     background-color: var(--morph-bg) !important;
 }
 
+.earth: { 
+    color: var(--earth) !important; 
+} 
+.clouds: { 
+    color: var(--clouds) !important; 
+} 
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
