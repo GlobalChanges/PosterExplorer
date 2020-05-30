@@ -116,21 +116,20 @@ var vueGCPE = new Vue({
         uidOld: '0',
         //posterIds: [],
         allMapCountries: {},
-        allPosterData2: {},
-        allPosterData: [],
+        allPosterData: [],    
+        selectedPosterData: [], 
         allPosterContinents: [],
         allPosterCountries: [],
         filterLocation: "Alle",
   },
   methods: {
      resetPosters: function() { 
-       this.allPosterData2 = {}; 
        this.allPosterData = [];
        this.allPosterContinents = [];
        this.allPosterCountries = [];
      }, 
      addPoster: function(json) { 
-        Vue.set(this.allPosterData2, json.id, json); 
+        // Vue.set(this.allPosterData2, json.id, json); 
         this.allPosterData.push(json);
         if(json.location.continent && !this.allPosterContinents.includes(json.location.continent)) {
           this.allPosterContinents.push(json.location.continent);
@@ -187,13 +186,9 @@ var vueGCPE = new Vue({
      },
      setLocationFilter: function(location) {
        this.filterLocation = location;
+       this.filterPosterData();
      },
-     updateFilters: function () {
-        console.log("filter update");
-     },
-  },
-  computed: {
-    selectedPosterData: function() {
+    filterPosterData: function() {
        var result = [];
        for(var j=0; j<this.allPosterData.length; j++) {
           var poster = this.allPosterData[j]; 
@@ -204,8 +199,11 @@ var vueGCPE = new Vue({
             result.push(poster);
           }
        }
-       return shuffle(result);
+       this.selectedPosterData = shuffle(result);
     },
+  },
+  computed: {
+
 
   },
   filters: {
@@ -226,5 +224,6 @@ var vueGCPE = new Vue({
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
      this.inqIds();
+     this.filterPosterData();
   }
 }) 
