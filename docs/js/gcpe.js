@@ -132,6 +132,7 @@ var vueGCPE = new Vue({
      addPoster: function(json) { 
         // Vue.set(this.allPosterData2, json.id, json); 
         this.allPosterData.push(json);
+        this.selectedPosterData.push(json);
         if(json.location.continent && !this.allPosterContinents.includes(json.location.continent)) {
           this.allPosterContinents.push(json.location.continent);
           this.allPosterContinents.sort();
@@ -226,6 +227,6 @@ var vueGCPE = new Vue({
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
      this.inqIds();
-     this.filterPosterData();
+     //this.filterPosterData();
   }
 }) 
