@@ -130,7 +130,7 @@ var vueGCPE = new Vue({
      addPoster: function(json) { 
         Vue.set(this.allPosterData, json.id, json); 
         this.allPosterContinents.push(json.location.continent);
-        if(json.location.country) {
+        if(json.location.country && !this.allPosterCountries.includes(json.location.country)) {
           this.allPosterCountries.push(json.location.country);
         }
      },
