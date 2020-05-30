@@ -129,9 +129,13 @@ var vueGCPE = new Vue({
      }, 
      addPoster: function(json) { 
         Vue.set(this.allPosterData, json.id, json); 
-        this.allPosterContinents.push(json.location.continent);
+        if(json.location.continent && !this.allPosterContinents.includes(json.location.continent)) {
+          this.allPosterContinents.push(json.location.continent);
+          this.allPosterContinents.sort();
+        }
         if(json.location.country && !this.allPosterCountries.includes(json.location.country)) {
           this.allPosterCountries.push(json.location.country);
+          this.allPosterCountries.sort();
         }
      },
      inqCountries: function () {
