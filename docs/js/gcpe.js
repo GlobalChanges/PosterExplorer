@@ -116,19 +116,22 @@ var vueGCPE = new Vue({
         uidOld: '0',
         //posterIds: [],
         allMapCountries: {},
-        allPosterData: {},
+        allPosterData2: {},
+        allPosterData: [],
         allPosterContinents: [],
         allPosterCountries: [],
         filterLocation: "Alle",
   },
   methods: {
      resetPosters: function() { 
-       this.allPosterData = {}; 
+       this.allPosterData2 = {}; 
+       this.allPosterData = [];
        this.allPosterContinents = [];
        this.allPosterCountries = [];
      }, 
      addPoster: function(json) { 
-        Vue.set(this.allPosterData, json.id, json); 
+        Vue.set(this.allPosterData2, json.id, json); 
+        this.allPosterData.push(json);
         if(json.location.continent && !this.allPosterContinents.includes(json.location.continent)) {
           this.allPosterContinents.push(json.location.continent);
           this.allPosterContinents.sort();
@@ -191,7 +194,7 @@ var vueGCPE = new Vue({
   },
   computed: {
     selectedPosterData: function() {
-       // shuffle(this.allPosterData);  // not working for keys
+       shuffle(this.allPosterData);  // not working for keys
        return this.allPosterData;
     },
 
