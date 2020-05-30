@@ -119,7 +119,7 @@ var vueGCPE = new Vue({
         allPosterData: {},
         allPosterContinents: [],
         allPosterCountries: [],
-        filterLocation: null,
+        filterLocation: "",
   },
   methods: {
      resetPosters: function() { 
@@ -179,18 +179,10 @@ var vueGCPE = new Vue({
      updateFilters: function () {
         console.log("filter update");
      },
-    allCountries: function() {
-       var result = [];
-       for(var j=0; j<this.allPosterData.length; j++) {
-          var poster = this.allPosterData[j]; 
-          result.push(poster.location.country);
-       }
-       return result;
-    },
   },
   computed: {
     selectedPosterData: function() {
-       // shuffle(this.allPosterData);  // not woring for keys
+       // shuffle(this.allPosterData);  // not working for keys
        return this.allPosterData;
     },
 
