@@ -126,7 +126,7 @@
      </a> 
      <div class="dropdown-divider"></div>
      <a v-for="topic in allPosterTopics" class="dropdown-item forest" href="#" @click="setTopicFilter(topic)">
-      <i :class="'mg fas fa-' + awesome(topic)"></i>&nbsp;{{continent}}
+      <i :class="'mg fas fa-' + awesome(topic)"></i>&nbsp;{{topic}}
      </a> 
     </div>
    </div>
@@ -144,7 +144,7 @@
      </a> 
      <div class="dropdown-divider"></div>
      <a v-for="method in allPosterMethods" class="dropdown-item ocean" href="#" @click="setMethodFilter(method)">
-      <i :class="'mg fas fa-' + awesome(method)"></i>&nbsp;{{continent}}
+      <i :class="'mg fas fa-' + awesome(method)"></i>&nbsp;{{method}}
      </a> 
     </div>
    </div>
