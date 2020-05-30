@@ -115,8 +115,9 @@ var vueGCPE = new Vue({
         uid: '0',
         uidOld: '0',
         //posterIds: [],
-        allCountries: {},
+        allMapCountries: {},
         allPosterData: {},
+        filterLocation: null;
   },
   methods: {
      resetPosters: function() { this.allPosterData = {}; }, 
@@ -129,9 +130,9 @@ var vueGCPE = new Vue({
             this.setCountries(response.data);
        });
      },
-     setCountries: function(data) { this.allCountries = data; },
+     setCountries: function(data) { this.allMapCountries = data; },
      mapicon: function (str) {
-       var c = this.allCountries[str]
+       var c = this.allMapCountries[str]
        return c ? c.map : 'wrld' ;
      }, 
      inqTopics: function () {
@@ -165,11 +166,22 @@ var vueGCPE = new Vue({
             }
        });
      },
+     updateFilters: function () {
+        console.log("filter update");
+     },
   },
   computed: {
     selectedPosterData: function() {
        // shuffle(this.allPosterData);  // not woring for keys
        return this.allPosterData;
+    },
+    allCountries: function() {
+       var result = [];
+       for(var j=0; j<allPosterData.length; j++) {
+          var poster = allPosterData[j]; 
+          result.push(poster.location.country);
+       }
+       return result;
     },
   },
   filters: {
