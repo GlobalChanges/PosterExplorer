@@ -168,7 +168,7 @@ var vueGCPE = new Vue({
   },
   computed: {
     selectedPosterData: function() {
-       shuffle(this.allPosterData);
+       // shuffle(this.allPosterData);  // not woring for keys
        return this.allPosterData;
     },
   },
