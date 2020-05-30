@@ -89,6 +89,20 @@
 
 
  <div class="row mb-5">
+            <select id="mySelect" data-show-content="true" class="form-control">
+                <option>Select..</option>
+                <option data-content="<i class='fa fa-cutlery'></i> Cutlery"></option>
+                <option data-content="<i class='fa fa-eye'></i> Eye"></option>
+                <option data-content="<i class='fa fa-heart-o'></i> Heart"></option>
+                <option data-content="<i class='fa fa-leaf'></i> Leaf"></option>
+                <option data-content="<i class='fa fa-music'></i> Music"></option>
+                <option data-content="<i class='fa fa-star'></i> Star"></option>
+                <option data-content="<span class='badge badge-warning mt-1 ml-2 float-right'>3</span> More"></option>
+            </select>
+</div>
+
+
+ <div class="row mb-5">
   <div v-for="poster in selectedPosterData" :key="poster.id" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="card bg-primary border-light shadow-soft">
 
@@ -103,8 +117,8 @@
         <div class="media d2-flex align-items-center justify-content-between">
          <div class="d2-flex align-items-center">
           <span class="small ocean pull-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></span>
-          <span v-if="poster.location.country" class="small earth"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&nbsp;{{poster.location.country}}</span>
-          <span v-else class="small earth"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&nbsp;{{poster.location.continent}}</span>
+          <span v-if="poster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&nbsp;{{poster.location.country}}</span>
+          <span v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&nbsp;{{poster.location.continent}}</span>
           <span class="small forest pull-right">{{poster.topic}}/{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i>&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></span>
          </div>
         </div> 
