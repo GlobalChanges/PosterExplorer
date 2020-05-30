@@ -119,7 +119,7 @@ var vueGCPE = new Vue({
         allPosterData: {},
         allPosterContinents: [],
         allPosterCountries: [],
-        filterLocation: "",
+        filterLocation: "Alle",
   },
   methods: {
      resetPosters: function() { 
