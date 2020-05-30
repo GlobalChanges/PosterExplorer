@@ -194,8 +194,17 @@ var vueGCPE = new Vue({
   },
   computed: {
     selectedPosterData: function() {
-       shuffle(this.allPosterData);  // not working for keys
-       return this.allPosterData;
+       var result = [];
+       for(var j=0; j<this.allPosterData.length; j++) {
+          var poster = this.allPosterData[j]; 
+          var locationFound =  ((this.filterLocation == 'Alle') || 
+                                (this.filterLocation == poster.continent) ||
+                                (this.filterLocation == poster.country));
+          if(locationFound) {
+            result.push(poster);
+          }
+       }
+       return shuffle(result);
     },
 
   },
