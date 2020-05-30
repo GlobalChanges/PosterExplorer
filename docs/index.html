@@ -118,19 +118,19 @@
 
 <div class="dropdown">
   <label class="my-1 mr-2">Location</label>
-  <button class="btn btn-block dropdown-toggle shadow-soft" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i :class="'mg mg-4x map-' + mapicon(filterLocation)"></i>&nbsp;{{filterLocation}}
-  </button> 
+  <button class="btn btn-block dropdown-toggle earth shadow-soft" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{filterLocation}}</span>
+  </button>  
   <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
     <h6 class="dropdown-header">Continents</h6>
-    <a v-for="continent in allPosterContinents" class="dropdown-item" href="#" @click="setLocationFilter(continent)">
-     <i :class="'mg mg-4x map-' + mapicon(continent)"></i>&nbsp;{{continent}}
+    <a v-for="continent in allPosterContinents" class="dropdown-item earth" href="#" @click="setLocationFilter(continent)">
+     <i :class="'mg map-' + mapicon(continent)"></i>&nbsp;{{continent}}
     </a> 
   
     <div class="dropdown-divider"></div>
     <h6 class="dropdown-header">Countries</h6>
-    <a v-for="country in allPosterCountries" class="dropdown-item" href="#" @click="setLocationFilter(country)">
-     <i :class="'mg mg-4x map-' + mapicon(country)"></i>&nbsp;{{country}}
+    <a v-for="country in allPosterCountries" class="dropdown-item earth" href="#" @click="setLocationFilter(country)">
+     <i :class="'mg map-' + mapicon(country)"></i>&nbsp;{{country}}
     </a> 
   </div>
 </div>
