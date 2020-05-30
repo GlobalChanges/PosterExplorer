@@ -93,33 +93,12 @@
  	  <div class="col-md-4">
 
 
-<div class="form-group">
-    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location</label>
-    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-        <option selected>Choose...</option>
-        <option value="1">United States</option>
-        <option value="2">Germany</option>
-        <option value="3">Canada</option>
-    </select>
-</div>
-
-
-<div class="form-group">
-    <label class="my-1 mr-2" for="inlineFormCustomSelectPref2">Location</label>
-    <select v-model="filterLocation" v-on:change="updateFilters" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref2">
-        <option value="" selected>All</option>
-        <option value="" disabled>---</option>
-        <option v-for="continent in allPosterContinents" :value="continent">{{continent}}</option>
-        <option value="" disabled>---</option>
-        <option v-for="country in allPosterCountries" :value="country">{{country}}</option>
-    </select>
-</div>
-
 
 <div class="dropdown">
   <label class="my-1 mr-2">Location</label>
   <button class="btn btn-block dropdown-toggle earth shadow-soft" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{filterLocation}}</span>
+     <i class="fas fa-angle-down pull-right ocean"></i> 
   </button>  
   <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
     <h6 class="dropdown-header">Continents</h6>
@@ -135,26 +114,8 @@
   </div>
 </div>
 
-	  </div>	
- 	  <!--div class="col-md-4">
-	    <span class='languageTranslate' data-category='hazard' data-message='Zeithorizont'>Timescale</span><br/>
-       <select v-model="epoch" v-on:change="updateParameters" class="form-control">
-        <option v-for="epoch in epochs" v-bind:value="epoch.name">
-         {{ epoch.label }} 
-        </option>
-       </select>
-	  </div>	
- 	  <div class="col-md-4">
-	   <span class='languageTranslate' data-category='hazard' data-message='Szenario'>Scenario</span><br/>
-       <select v-model="scenario" v-on:change="updateParameters" class="form-control">
-        <option v-for="scenario in scenarios" v-bind:value="scenario.name">
-         {{ scenario.label }} 
-        </option>
-       </select>
-	  </div-->		 
+  </div>
 </div> 
-
-{{filterLocation}}
 
  <div class="row mb-5">
   <div v-for="poster in selectedPosterData" :key="poster.id" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
