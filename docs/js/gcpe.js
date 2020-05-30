@@ -130,7 +130,9 @@ var vueGCPE = new Vue({
      addPoster: function(json) { 
         Vue.set(this.allPosterData, json.id, json); 
         this.allPosterContinents.push(json.location.continent);
-        this.allPosterCountries.push(json.location.country);
+        if(json.location.country) {
+          this.allPosterCountries.push(json.location.country);
+        }
      },
      inqCountries: function () {
        var volumesUrl = "https://globalchanges.github.io/MetaData/countries.json";
