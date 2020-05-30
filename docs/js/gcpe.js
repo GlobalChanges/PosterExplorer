@@ -155,8 +155,8 @@ var vueGCPE = new Vue({
           this.allPosterTopics.push(json.subtopic);
           this.allPosterTopics.sort();
         }
-        if(json.method && !this.allPosterMethods.includes(json.method)) {
-          this.allPosterMethods.push(json.method);
+        if(json.concept && !this.allPosterMethods.includes(json.concept)) {
+          this.allPosterMethods.push(json.concept);
           this.allPosterMethods.sort();
         }
 
@@ -229,7 +229,7 @@ var vueGCPE = new Vue({
                                 (this.filterTopic == poster.topic) ||
                                 (this.filterTopic == poster.subtopic));
           var methodFound =  ((this.filterMethod == 'Alle') || 
-                                (this.filterMethod == poster.method));
+                                (this.filterMethod == poster.concept));
           if(locationFound && topicFound && methodFound) {
             result.push(poster);
           }
