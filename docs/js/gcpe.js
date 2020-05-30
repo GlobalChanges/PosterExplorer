@@ -169,12 +169,6 @@ var vueGCPE = new Vue({
      updateFilters: function () {
         console.log("filter update");
      },
-  },
-  computed: {
-    selectedPosterData: function() {
-       // shuffle(this.allPosterData);  // not woring for keys
-       return this.allPosterData;
-    },
     allCountries: function() {
        var result = [];
        for(var j=0; j<this.allPosterData.length; j++) {
@@ -183,6 +177,13 @@ var vueGCPE = new Vue({
        }
        return result;
     },
+  },
+  computed: {
+    selectedPosterData: function() {
+       // shuffle(this.allPosterData);  // not woring for keys
+       return this.allPosterData;
+    },
+
   },
   filters: {
     lowercase: function (str) {
