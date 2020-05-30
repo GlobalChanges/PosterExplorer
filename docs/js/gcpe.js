@@ -101,6 +101,7 @@ function isoStr(str) {
 
 function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
+  return array;
 }
 
 function transparentize(color, opacity) {
@@ -193,12 +194,13 @@ var vueGCPE = new Vue({
        for(var j=0; j<this.allPosterData.length; j++) {
           var poster = this.allPosterData[j]; 
           var locationFound =  ((this.filterLocation == 'Alle') || 
-                                (this.filterLocation == poster.continent) ||
-                                (this.filterLocation == poster.country));
+                                (this.filterLocation == poster.location.continent) ||
+                                (this.filterLocation == poster.location.country));
           if(locationFound) {
             result.push(poster);
           }
        }
+       shuffle(result)
        this.selectedPosterData = shuffle(result);
     },
   },
