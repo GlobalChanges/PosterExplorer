@@ -177,8 +177,8 @@ var vueGCPE = new Vue({
     },
     allCountries: function() {
        var result = [];
-       for(var j=0; j<allPosterData.length; j++) {
-          var poster = allPosterData[j]; 
+       for(var j=0; j<this.allPosterData.length; j++) {
+          var poster = this.allPosterData[j]; 
           result.push(poster.location.country);
        }
        return result;
