@@ -121,13 +121,19 @@ var vueGCPE = new Vue({
         selectedPosterData: [], 
         allPosterContinents: [],
         allPosterCountries: [],
+        allPosterTopics: [],
+        allPosterMethods: [],
         filterLocation: "Alle",
+        filterTopic: "Alle",
+        filterMethod: "Alle",
   },
   methods: {
      resetPosters: function() { 
        this.allPosterData = [];
        this.allPosterContinents = [];
        this.allPosterCountries = [];
+       this.allPosterTopics = [];
+       this.allPosterMethods = [];
      }, 
      addPoster: function(json) { 
         // Vue.set(this.allPosterData2, json.id, json); 
@@ -141,6 +147,19 @@ var vueGCPE = new Vue({
           this.allPosterCountries.push(json.location.country);
           this.allPosterCountries.sort();
         }
+        if(json.topic && !this.allPosterTopics.includes(json.topic)) {
+          this.allPosterTopics.push(json.topic);
+          this.allPosterTopics.sort();
+        }
+        if(json.subtopic && !this.allPosterTopics.includes(json.subtopic)) {
+          this.allPosterTopics.push(json.subtopic);
+          this.allPosterTopics.sort();
+        }
+        if(json.method && !this.allPosterMethods.includes(json.method)) {
+          this.allPosterMethods.push(json.method);
+          this.allPosterMethods.sort();
+        }
+
      },
      inqCountries: function () {
        var volumesUrl = "https://globalchanges.github.io/MetaData/countries.json";
@@ -190,6 +209,14 @@ var vueGCPE = new Vue({
        this.filterLocation = location;
        this.filterPosterData();
      },
+     setTopicFilter: function(topic) {
+       this.filterTopic = topic;
+       this.filterPosterData();
+     },
+     setMethodFilter: function(method) {
+       this.filterMethod = method;
+       this.filterPosterData();
+     },
     filterPosterData: function() {
        var result = [];
        for(var j=0; j<this.allPosterData.length; j++) {
@@ -197,7 +224,13 @@ var vueGCPE = new Vue({
           var locationFound =  ((this.filterLocation == 'Alle') || 
                                 (this.filterLocation == poster.location.continent) ||
                                 (this.filterLocation == poster.location.country));
-          if(locationFound) {
+                                //may add countries
+          var topicFound =  ((this.filterTopic == 'Alle') || 
+                                (this.filterTopic == poster.topic) ||
+                                (this.filterTopic == poster.subtopic));
+          var methodFound =  ((this.filterMethod == 'Alle') || 
+                                (this.filterMethod == poster.method));
+          if(locationFound && topicFound && methodFound) {
             result.push(poster);
           }
        }
