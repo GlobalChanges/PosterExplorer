@@ -99,6 +99,9 @@ function isoStr(str) {
    return str.toLowerCase();
 }
 
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
 
 function transparentize(color, opacity) {
   var alpha = opacity === undefined ? 0.5 : 1 - opacity;
@@ -165,6 +168,7 @@ var vueGCPE = new Vue({
   },
   computed: {
     selectedPosterData: function() {
+       shuffle(this.allPosterData);
        return this.allPosterData;
     },
   },
