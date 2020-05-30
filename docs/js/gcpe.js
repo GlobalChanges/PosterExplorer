@@ -117,7 +117,7 @@ var vueGCPE = new Vue({
         //posterIds: [],
         allMapCountries: {},
         allPosterData: {},
-        filterLocation: null;
+        filterLocation: null,
   },
   methods: {
      resetPosters: function() { this.allPosterData = {}; }, 
