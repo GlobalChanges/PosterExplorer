@@ -182,6 +182,9 @@ var vueGCPE = new Vue({
             }
        });
      },
+     setLocationFilter: function(location) {
+       this.filterLocation = location;
+     },
      updateFilters: function () {
         console.log("filter update");
      },

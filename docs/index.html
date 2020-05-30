@@ -117,15 +117,15 @@
 
 
 <div class="dropdown">
+  <label class="my-1 mr-2">Location</label>
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
+    {{filterLocation}}
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-<h6 class="dropdown-header">Dropdown header</h6>
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#" @click="updateFilters">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+<h6 class="dropdown-header">Continents</h6>
+    <a v-for="continent in allPosterContinents" class="dropdown-item" href="#" @click="setLocationFilter(continent)">{{continent}}</a>
  <div class="dropdown-divider"></div>
+<h6 class="dropdown-header">Dropdown header</h6>
     <a class="dropdown-item" href="#">Action</a>
     <a class="dropdown-item" href="#">Another action</a>
     <a class="dropdown-item" href="#">Something else here</a>
