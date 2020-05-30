@@ -114,7 +114,6 @@ var vueGCPE = new Vue({
         //posterIds: [],
         allCountries: {},
         allPosterData: {},
-        selPosterData: {}, 
   },
   methods: {
      resetPosters: function() { this.allPosterData = {}; }, 
@@ -165,6 +164,9 @@ var vueGCPE = new Vue({
      },
   },
   computed: {
+    selectedPosterData: function() {
+       return this.allPosterData;
+    },
   },
   filters: {
     lowercase: function (str) {
