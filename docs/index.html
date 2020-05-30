@@ -93,7 +93,7 @@
  	  <div class="col-md-4">
 	   <span>Location</span><br/>
        <select v-model="filterLocation" v-on:change="updateFilters" class="form-control">
-        <option v-for="location in allCountries" v-bind:value="location">
+        <option v-for="location in allPosterCountries" v-bind:value="location">
          {{ location }} 
         </option>
        </select>

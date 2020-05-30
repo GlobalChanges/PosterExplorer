@@ -117,11 +117,21 @@ var vueGCPE = new Vue({
         //posterIds: [],
         allMapCountries: {},
         allPosterData: {},
+        allPosterContinents: [],
+        allPosterCountries: [],
         filterLocation: null,
   },
   methods: {
-     resetPosters: function() { this.allPosterData = {}; }, 
-     addPoster: function(json) { Vue.set(this.allPosterData, json.id, json); },
+     resetPosters: function() { 
+       this.allPosterData = {}; 
+       this.allPosterContinents = [];
+       this.allPosterCountries = [];
+     }, 
+     addPoster: function(json) { 
+        Vue.set(this.allPosterData, json.id, json); 
+        this.allPosterContinents.push(json.location.continent);
+        this.allPosterCountries.push(json.location.country);
+     },
      inqCountries: function () {
        var volumesUrl = "https://globalchanges.github.io/MetaData/countries.json";
        axios
