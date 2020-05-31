@@ -107,6 +107,10 @@ div.card li.pull-left, div.card li.pull-right {
  list-style-type:none;
 }
 
+div.card .card-title {
+ margin-bottom: 0.5rem;
+}
+
 @media (min-width: 1400px) {
 .col-xxl-2 {
     flex: 0 0 16.66667%;
