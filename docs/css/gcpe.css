@@ -81,6 +81,11 @@ body {
     border-color: #74a7cf !important;
 }
 
+div.dropdown div.dropdown-menu {
+ overflow-y: auto; 
+ max-height: 300px;
+}
+
 div.card {
   min-height: 400px;
 }
