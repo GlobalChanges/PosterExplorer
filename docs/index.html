@@ -197,11 +197,15 @@
          </ul>
         </div> 
         <h5 class="card-title clouds">{{poster.title}}</h5>
-        <span class="text-black-50">
+        <span class="text-black-50 media justify-content-between">
+         <span class="pull-left">
          <span v-for="author in poster.authors" :key="author.email">
            <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}<br/>
          </span>
-         <span clas="pull-right"><i class="mg mg-2x fab fa-creative-commons"></i><i class="mg mg-2x fab fa-creative-commons-by"></i>&nbsp;{{poster.year}}</span> 
+         </span>
+         <span clas="pull-right">
+          <i class="mg mg-2x fab fa-creative-commons"></i><i class="mg mg-2x fab fa-creative-commons-by"></i><br/>
+          <span clas="pull-right">{{poster.year}}</span> </span>
         </span>
        </div>
       </div>
