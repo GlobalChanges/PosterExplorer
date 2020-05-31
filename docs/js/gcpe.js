@@ -147,6 +147,15 @@ var vueGCPE = new Vue({
           this.allPosterCountries.push(json.location.country);
           this.allPosterCountries.sort();
         }
+        if(json.location.countries) {
+          for(var j=0; j<json.location.countries.length; j++) {
+            var country = json.location.countries[j]; 
+            if(country && !this.allPosterCountries.includes(country)) {
+              this.allPosterCountries.push(country);
+              this.allPosterCountries.sort();
+            }
+          }
+        }
         if(json.topic && !this.allPosterTopics.includes(json.topic)) {
           this.allPosterTopics.push(json.topic);
           this.allPosterTopics.sort();
@@ -223,8 +232,9 @@ var vueGCPE = new Vue({
           var poster = this.allPosterData[j]; 
           var locationFound =  ((this.filterLocation == 'Alle') || 
                                 (this.filterLocation == poster.location.continent) ||
-                                (this.filterLocation == poster.location.country));
-                                //may add countries
+                                (this.filterLocation == poster.location.country) ||
+                                (poster.location.countries && poster.location.countries.includes(this.filterLocation))
+                               );
           var topicFound =  ((this.filterTopic == 'Alle') || 
                                 (this.filterTopic == poster.topic) ||
                                 (this.filterTopic == poster.subtopic));
