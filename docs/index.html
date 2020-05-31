@@ -169,7 +169,7 @@
            <li v-if="poster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&nbsp;{{poster.location.country}}</li>
            <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&nbsp;{{poster.location.continent}}</li>
            <br/>
-           <li class="small sand pull-right">{{poster.landscape}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome('umbrella-beach')"></i></li>
+           <li class="small sand pull-right">{{poster.location.landscape}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome('poster.location.landscape')"></i></li>
          </ul>
          <ul class="pull-right">
            <li class="small ocean pull-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></li><br/>
