@@ -83,7 +83,7 @@ body {
 
 div.dropdown div.dropdown-menu {
  overflow-y: auto; 
- max-height: 300px;
+ max-height: 320px;
 }
 
 div.card {
