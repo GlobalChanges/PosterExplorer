@@ -4,6 +4,8 @@
     --morph-bg:    #84b7df;
     --morph-light: #98d2ff;
     --morph-dark:  #709cbe;
+    --morph-extr:  #6497bf;
+
     --earth:       #733d00;
     --sand:        #9a731f;
     --clouds:      #FFFFFF;
@@ -71,6 +73,13 @@ body {
     box-shadow: inset 2px 2px 5px var(--morph-dark), inset -3px -3px 7px var(--morph-light) !important;
 }
 
+.shadow-button {
+  background: linear-gradient(145deg, var(--morph-bg), var(--morph-extr)) !important;
+}
+.shadow-button:hover, .shadow-button:active {
+  background: linear-gradient(145deg, var(--morph-extr), var(--morph-bg)) !important;
+}
+
 .border-light {
     border-color: #84b7df !important;
 }
@@ -94,6 +103,8 @@ div.card p.card-text {
   color: black;
   text-align: justify;
 }
+
+
 
 div.card a.btn {
   width: 50%;
