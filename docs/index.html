@@ -168,6 +168,8 @@
          <ul class="pull-left">
            <li v-if="poster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&nbsp;{{poster.location.country}}</li>
            <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&nbsp;{{poster.location.continent}}</li>
+           <br/>
+           <li class="small sand pull-right">{{poster.landscape}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome('umbrella-beach')"></i></li>
          </ul>
          <ul class="pull-right">
            <li class="small ocean pull-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></li><br/>
@@ -175,7 +177,7 @@
            <li class="small forest pull-right">{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></li>
          </ul>
         </div> 
-        <h5 class="card-title mt-4 clouds">{{poster.title}}</h5>
+        <h5 class="card-title clouds">{{poster.title}}</h5>
         <span class="text-black-50">
          <span v-for="author in poster.authors" :key="author.email">
            <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}<br/>
