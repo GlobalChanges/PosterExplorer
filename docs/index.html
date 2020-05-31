@@ -169,7 +169,8 @@
           <span class="small ocean pull-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></span>
           <span v-if="poster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&nbsp;{{poster.location.country}}</span>
           <span v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&nbsp;{{poster.location.continent}}</span>
-          <span class="small forest pull-right">{{poster.topic}}/{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i>&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></span>
+          <span class="small forest pull-right">{{poster.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i></span>
+          <span class="small forest pull-right">{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></span>
          </div>
         </div> 
         <h5 class="card-title mt-4 clouds">{{poster.title}}</h5>
