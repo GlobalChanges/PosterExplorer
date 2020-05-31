@@ -29,6 +29,7 @@ body {
 
 .morph { background-color: var(--morph-bg) !important; }
 .earth { color: var(--earth) !important; } 
+.sand { color: var(--sand) !important; } 
 .clouds { color: var(--clouds) !important; } 
 .ocean { color: var(--ocean) !important; } 
 .forest { color: var(--forest) !important; } 
