@@ -125,7 +125,7 @@
       <i class="mg fas fa-check"></i>&nbsp;Alle
      </a> 
      <div class="dropdown-divider"></div>
-     <a v-for="landscape in allPosterLandscapes" :key="method" class="dropdown-item ocean" href="#" @click="setLandscapeFilter(method)">
+     <a v-for="landscape in allPosterLandscapes" :key="method" class="dropdown-item ocean" href="#" @click="setLandscapeFilter(landscape)">
       <i :class="'mg fas fa-' + awesome(landscape)"></i>&nbsp;{{landscape}}
      </a> 
     </div>
