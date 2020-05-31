@@ -121,9 +121,11 @@ var vueGCPE = new Vue({
         selectedPosterData: [], 
         allPosterContinents: [],
         allPosterCountries: [],
+        allPosterLandscapes: [],
         allPosterTopics: [],
         allPosterMethods: [],
         filterLocation: "Alle",
+        filterLandscape: "Alle",
         filterTopic: "Alle",
         filterMethod: "Alle",
   },
@@ -132,6 +134,7 @@ var vueGCPE = new Vue({
        this.allPosterData = [];
        this.allPosterContinents = [];
        this.allPosterCountries = [];
+       this.allPosterLandscapes = [];
        this.allPosterTopics = [];
        this.allPosterMethods = [];
      }, 
@@ -155,6 +158,10 @@ var vueGCPE = new Vue({
               this.allPosterCountries.sort();
             }
           }
+        }
+        if(json.location.landscape && !this.allPosterLandscapes.includes(json.location.landscape)) {
+          this.allPosterLandscapes.push(json.location.landscape);
+          this.allPosterLandscapes.sort();
         }
         if(json.topic && !this.allPosterTopics.includes(json.topic)) {
           this.allPosterTopics.push(json.topic);
@@ -218,6 +225,10 @@ var vueGCPE = new Vue({
        this.filterLocation = location;
        this.filterPosterData();
      },
+     setLandscapeFilter: function(landscape) {
+       this.filterLandscape = landscape;
+       this.filterPosterData();
+     },
      setTopicFilter: function(topic) {
        this.filterTopic = topic;
        this.filterPosterData();
@@ -235,12 +246,14 @@ var vueGCPE = new Vue({
                                 (this.filterLocation == poster.location.country) ||
                                 (poster.location.countries && poster.location.countries.includes(this.filterLocation))
                                );
+          var landscapeFound =  ((this.filterLandscape == 'Alle') || 
+                                (this.filterLandscape == poster.location.landscape));
           var topicFound =  ((this.filterTopic == 'Alle') || 
                                 (this.filterTopic == poster.topic) ||
                                 (this.filterTopic == poster.subtopic));
           var methodFound =  ((this.filterMethod == 'Alle') || 
                                 (this.filterMethod == poster.concept));
-          if(locationFound && topicFound && methodFound) {
+          if(locationFound && landscapeFound && topicFound && methodFound) {
             result.push(poster);
           }
        }
