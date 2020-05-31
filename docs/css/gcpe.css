@@ -97,6 +97,12 @@ div.card a.btn:hover, div.card a.btn:active {
   background: linear-gradient(145deg, #6497bf, #84b7df);
 }
 
+div.card ul.pull-left, div.card ul.pull-right {
+ padding-inline-start:0;
+ list-style-type:none;
+}
+
+
 @media (min-width: 1400px) {
 .col-xxl-2 {
     flex: 0 0 16.66667%;

@@ -164,14 +164,16 @@
         <img :src="poster.thumbnail" class="card-img-top rounded" :alt="poster.title">
        </div>
        <div class="card-body pt-2">
-        <div class="media d2-flex align-items-center justify-content-between">
-         <div class="d2-flex align-items-center">
-          <span class="small ocean pull-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></span>
-          <span v-if="poster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&nbsp;{{poster.location.country}}</span>
-          <span v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&nbsp;{{poster.location.continent}}</span>
-          <span class="small forest pull-right">{{poster.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i></span>
-          <span class="small forest pull-right">{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></span>
-         </div>
+        <div class="media justify-content-between">
+         <ul class="pull-left">
+           <li v-if="poster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&nbsp;{{poster.location.country}}</li>
+           <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&nbsp;{{poster.location.continent}}</li>
+         </ul>
+         <ul class="pull-right">
+           <li class="small ocean pull-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></li>
+           <li class="small forest pull-right">{{poster.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i></li>
+           <li class="small forest pull-right">{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></li>
+         </ul>
         </div> 
         <h5 class="card-title mt-4 clouds">{{poster.title}}</h5>
         <span class="text-black-50">
