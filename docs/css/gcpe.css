@@ -101,7 +101,10 @@ div.card ul.pull-left, div.card ul.pull-right {
  padding-inline-start:0;
  list-style-type:none;
 }
-
+div.card li.pull-left, div.card li.pull-right {
+ padding: 3px 0;
+ list-style-type:none;
+}
 
 @media (min-width: 1400px) {
 .col-xxl-2 {
