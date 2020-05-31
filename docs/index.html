@@ -116,7 +116,7 @@
 
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
-    <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button class="btn btn-block dropdown-toggle sand border-light shadow-soft" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <span class="pull-left"><i :class="'mg fas fa-' + awesome(filterLandscape)"></i>&nbsp;{{filterLandscape}}</span>
      <i class="fas fa-angle-down pull-right sand"></i> 
     </button>  
@@ -125,7 +125,7 @@
       <i class="mg fas fa-check"></i>&nbsp;Alle
      </a> 
      <div class="dropdown-divider"></div>
-     <a v-for="landscape in allPosterLandscapes" :key="method" class="dropdown-item ocean" href="#" @click="setLandscapeFilter(landscape)">
+     <a v-for="landscape in allPosterLandscapes" :key="landscape" class="dropdown-item ocean" href="#" @click="setLandscapeFilter(landscape)">
       <i :class="'mg fas fa-' + awesome(landscape)"></i>&nbsp;{{landscape}}
      </a> 
     </div>
