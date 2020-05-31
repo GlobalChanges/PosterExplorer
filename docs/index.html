@@ -166,15 +166,16 @@
        <div class="card-body pt-2">
         <div class="media justify-content-between">
          <ul class="pull-left">
-           <li v-if="poster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&nbsp;{{poster.location.country}}</li>
-           <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&nbsp;{{poster.location.continent}}</li>
+           <li v-if="poster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&ensp;{{poster.location.country}}</li>
+           <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&ensp;{{poster.location.continent}}</li>
            <br/>
-           <li v-if="poster.location.landscape" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(poster.location.landscape)"></i>&nbsp;{{poster.location.landscape}}</li>
+           <li v-if="poster.location.landscape" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(poster.location.landscape)"></i>&ensp;
+;{{poster.location.landscape}}</li>
          </ul>
          <ul class="pull-right">
-           <li class="small ocean pull-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></li><br/>
-           <li class="small forest pull-right">{{poster.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i></li><br/>
-           <li class="small forest pull-right">{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></li>
+           <li class="small ocean pull-right">{{poster.concept}}&ensp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></li><br/>
+           <li class="small forest pull-right">{{poster.topic}}&ensp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i></li><br/>
+           <li class="small forest pull-right">{{poster.subtopic}}&ensp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></li>
          </ul>
         </div> 
         <h5 class="card-title clouds">{{poster.title}}</h5>
