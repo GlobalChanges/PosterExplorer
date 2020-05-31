@@ -135,12 +135,12 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'mg fas fa-check' + awesome(filterMethod)"></i>&nbsp;{{filterMethod}}</span>
+     <span class="pull-left"><i :class="'mg fas fa-' + awesome(filterMethod)"></i>&nbsp;{{filterMethod}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton3" style="overflow-y: scroll; max-height: 250px">
      <a class="dropdown-item ocean" href="#" @click="setMethodFilter('Alle')">
-      <i class="mg fas fa-"></i>&nbsp;Alle
+      <i class="mg fas fa-check"></i>&nbsp;Alle
      </a> 
      <div class="dropdown-divider"></div>
      <a v-for="method in allPosterMethods" :key="method" class="dropdown-item ocean" href="#" @click="setMethodFilter(method)">
