@@ -96,7 +96,7 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="float-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;Ort:&nbsp;{{filterLocation}}</span>
+     <span class="float-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;<span v-if="('Alle'==filterLocation)">Ort:&nbsp;</span>{{filterLocation}}</span>
      <i class="fas fa-angle-down float-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
@@ -119,7 +119,7 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="float-left"><i :class="'fas fa-' + awesome(filterLandscape)"></i>&nbsp;Landschaft:&nbsp;{{filterLandscape}}</span>
+     <span class="float-left"><i :class="'fas fa-' + awesome(filterLandscape)"></i>&nbsp;<span v-if="('Alle'==filterLandscape)">Landschaft:&nbsp;</span>{{filterLandscape}}</span>
      <i class="fas fa-angle-down float-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton4">
@@ -155,7 +155,7 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="float-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;Konzept:&nbsp;{{filterMethod}}</span>
+     <span class="float-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;<span v-if="('Alle'==filterMethod)">Konzept:&nbsp;</span>{{filterMethod}}</span>
      <i class="fas fa-angle-down float-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton3">
