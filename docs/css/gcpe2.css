@@ -1,0 +1,170 @@
+/* @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans&subset=latin,latin-ext); */
+
+:root {
+    --morph-bg:    #84b7df;
+    --morph-light: #98d2ff;
+    --morph-dark:  #709cbe;
+    --morph-extr:  #6497bf;
+
+    --earth:       #733d00;
+    --sand:        #9a731f;
+    --clouds:      #FFFFFF;
+    --ocean:       #062379;
+    --forest:      #076002;
+    --fire:        #e04b0f;
+}
+
+body {
+    margin: 0;
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 0.5 rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #24274A;
+    text-align: left;
+    background-color: var(--morph-bg);
+}
+
+.bg-primary {
+    background-color: var(--morph-bg) !important;
+}
+
+.morph { background-color: var(--morph-bg) !important; }
+.earth { color: var(--earth) !important; } 
+.sand { color: var(--sand) !important; } 
+.clouds { color: var(--clouds) !important; } 
+.ocean { color: var(--ocean) !important; } 
+.forest { color: var(--forest) !important; } 
+.fire { color: var(--fire) !important; } 
+
+.navbar-theme-primary:not(.headroom) {
+    background-color: var(--morph-bg);
+}
+
+.navbar-theme-primary:not(.navbar-transparent) {
+    background-color: var(--morph-bg);
+}
+
+.navbar-brand img {
+    height: 100px;
+    width: 100px;
+}
+
+/*
+ orientation: landscape|portrait -> add class ?
+   -> adapt max-height
+*/
+.card-img-top {
+    max-width: 100%;
+    max-height: 160px;
+    border-top-left-radius: calc(0.55rem - 0.0625rem);
+    border-top-right-radius: calc(0.55rem - 0.0625rem);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.shadow-soft {
+    box-shadow: 6px 6px 12px var(--morph-dark), -6px -6px 12px var(--morph-light) !important; 
+}
+
+.shadow-inset {
+    box-shadow: inset 2px 2px 5px var(--morph-dark), inset -3px -3px 7px var(--morph-light) !important;
+}
+
+.shadow-button {
+  background: linear-gradient(145deg, var(--morph-bg), var(--morph-extr)) !important;
+}
+.shadow-button:hover, .shadow-button:active {
+  background: linear-gradient(145deg, var(--morph-extr), var(--morph-bg)) !important;
+}
+
+.border-light {
+    border-color: #84b7df !important;
+}
+.border-dark {
+    border-color: #6497bf !important;
+}
+.border-default {
+    border-color: #74a7cf !important;
+}
+
+div.dropdown div.dropdown-menu {
+ overflow-y: auto; 
+ max-height: 320px;
+}
+
+div.card {
+  min-height: 400px;
+}
+
+div.card p.card-text {
+  color: black;
+  text-align: justify;
+}
+
+
+
+div.card a.btn {
+  width: 50%;
+}
+
+div.card ul.float-left, div.card ul.float-right {
+ padding-inline-start:0;
+ list-style-type:none;
+}
+div.card li.float-left, div.card li.float-right {
+ padding: 3px 0;
+ list-style-type:none;
+}
+
+div.card .card-title {
+ margin-bottom: 0.5rem;
+}
+
+@media (min-width: 1400px) {
+.col-xxl-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+}
+
+/* Flip Cards  https://www.w3schools.com/howto/howto_css_flip_card.asp  */
+.flip-card {
+  /* width: 300px; */
+  height: 365px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+}
+
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+}

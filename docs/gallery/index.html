@@ -18,7 +18,7 @@
   <link href="../css/mapglyphs.css" rel="stylesheet" type="text/css">
   <link href="../css/star-rating-svg.css" rel="stylesheet" type="text/css">
   <link href='../css/neumorphism.css' rel='stylesheet' type='text/css'>
-  <link href='../css/gcpe.css' rel='stylesheet' type='text/css'>
+  <link href='../css/gcpe2.css' rel='stylesheet' type='text/css'>
 </head>
 
 
@@ -96,8 +96,8 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;Ort:&nbsp;{{filterLocation}}</span>
-     <i class="fas fa-angle-down pull-right ocean"></i> 
+     <span class="float-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;Ort:&nbsp;{{filterLocation}}</span>
+     <i class="fas fa-angle-down float-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
      <a class="dropdown-item earth" href="#" @click="setLocationFilter('Alle')">
@@ -119,8 +119,8 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'fas fa-' + awesome(filterLandscape)"></i>&nbsp;Landschaft:&nbsp;{{filterLandscape}}</span>
-     <i class="fas fa-angle-down pull-right ocean"></i> 
+     <span class="float-left"><i :class="'fas fa-' + awesome(filterLandscape)"></i>&nbsp;Landschaft:&nbsp;{{filterLandscape}}</span>
+     <i class="fas fa-angle-down float-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton4">
      <a class="dropdown-item sand" href="#" @click="setLandscapeFilter('Alle')">
@@ -137,8 +137,8 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'fas fa-' + awesome(filterTopic)"></i>&nbsp;Thema:&nbsp;{{filterTopic}}</span>
-     <i class="fas fa-angle-down pull-right ocean"></i> 
+     <span class="float-left"><i :class="'fas fa-' + awesome(filterTopic)"></i>&nbsp;Thema:&nbsp;{{filterTopic}}</span>
+     <i class="fas fa-angle-down float-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton2">
      <a class="dropdown-item forest" href="#" @click="setTopicFilter('Alle')">
@@ -155,8 +155,8 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;Konzept:&nbsp;{{filterMethod}}</span>
-     <i class="fas fa-angle-down pull-right ocean"></i> 
+     <span class="float-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;Konzept:&nbsp;{{filterMethod}}</span>
+     <i class="fas fa-angle-down float-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton3">
      <a class="dropdown-item ocean" href="#" @click="setMethodFilter('Alle')">
@@ -185,27 +185,27 @@
        </div>
        <div class="card-body pt-2">
         <div class="media justify-content-between">
-         <ul class="pull-left">
-           <li v-if="poster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&ensp;{{poster.location.country}}</li>
-           <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&ensp;{{poster.location.continent}}</li>
+         <ul class="float-left">
+           <li v-if="poster.location.country" class="small earth float-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&ensp;{{poster.location.country}}</li>
+           <li v-else class="small earth float-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&ensp;{{poster.location.continent}}</li>
            <br/>
-           <li v-if="poster.location.landscape" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(poster.location.landscape)"></i>&ensp;
+           <li v-if="poster.location.landscape" class="small sand float-left"><i :class="'mg mg-2x fas fa-' + awesome(poster.location.landscape)"></i>&ensp;
 {{poster.location.landscape}}</li>
          </ul>
-         <ul class="pull-right">
-           <li class="small ocean pull-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></li><br/>
-           <li class="small forest pull-right">{{poster.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i></li><br/>
-           <li class="small forest pull-right">{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></li>
+         <ul class="float-right">
+           <li class="small ocean float-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></li><br/>
+           <li class="small forest float-right">{{poster.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i></li><br/>
+           <li class="small forest float-right">{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></li>
          </ul>
         </div> 
         <h5 class="card-title clouds">{{poster.title}}</h5>
         <span class="text-black-50 media justify-content-between">
-         <span class="pull-left">
+         <span class="float-left">
          <span v-for="author in poster.authors" :key="author.email">
            <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}<br/>
          </span>
          </span>
-         <span clas="pull-right">
+         <span clas="float-right">
           <i class="far fa-copyright"></i>{{poster.year}}</span>
         </span>
        </div>
