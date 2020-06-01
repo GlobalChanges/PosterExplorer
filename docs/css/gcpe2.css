@@ -29,6 +29,10 @@ body {
     background-color: var(--morph-bg) !important;
 }
 
+.btn {
+    font-size: 0.6rem;
+}
+
 .morph { background-color: var(--morph-bg) !important; }
 .earth { color: var(--earth) !important; } 
 .sand { color: var(--sand) !important; } 
@@ -62,6 +66,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: unset;
 }
 
 
