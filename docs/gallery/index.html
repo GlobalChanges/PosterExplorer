@@ -137,7 +137,7 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="float-left"><i :class="'fas fa-' + awesome(filterTopic)"></i>&nbsp;Thema:&nbsp;{{filterTopic}}</span>
+     <span class="float-left"><i :class="'fas fa-' + awesome(filterTopic)"></i>&nbsp;<span v-if="('Alle'==filterTopic)">Thema:&nbsp;</span>{{filterTopic}}</span>
      <i class="fas fa-angle-down float-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton2">
