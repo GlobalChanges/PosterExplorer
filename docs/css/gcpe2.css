@@ -1,6 +1,7 @@
 /* @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans&subset=latin,latin-ext); */
 
 :root {
+    --size-font:   1.0rem;
     --morph-bg:    #84b7df;
     --morph-light: #98d2ff;
     --morph-dark:  #709cbe;
@@ -17,7 +18,7 @@
 body {
     margin: 0;
     font-family: "Merriweather Sans", sans-serif;
-    font-size: 0.5 rem;
+    font-size: 0.5rem;
     font-weight: 300;
     line-height: 1.5;
     color: #24274A;
@@ -31,6 +32,14 @@ body {
 
 .btn {
     font-size: 0.6rem;
+}
+.h6, h6 {
+    font-size: 0.85rem;
+}
+
+.profile-image {
+    width: 7rem;
+    height: 7rem;
 }
 
 .morph { background-color: var(--morph-bg) !important; }
