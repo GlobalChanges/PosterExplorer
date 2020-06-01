@@ -49,6 +49,10 @@ body {
     background-color: var(--morph-bg);
 }
 
+.navbar-brand {
+    height: 50px;
+}
+
 .navbar-brand img {
     height: 100px;
     width: 100px;
