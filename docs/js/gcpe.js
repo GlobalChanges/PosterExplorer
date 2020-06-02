@@ -194,7 +194,7 @@ var vueGCPE = new Vue({
            .catch(function (error) {
               console.log(error);
            })
-           .then(function () { 
+           .then(response => { 
               this.updatePoster(data);
            }); 
      },
@@ -203,7 +203,7 @@ var vueGCPE = new Vue({
        //var dbDelUrl = getGinDb()+"?q=probe:"+this.ginId;
        axios
          .get(dbUrl)
-         .catch(function (error) {
+         .catch(error => {
               this.updatePoster({"id": id, "count": 0, "value": 0, "ts": Date.now()});
            })
          .then(response => { 
