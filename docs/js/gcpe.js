@@ -1,12 +1,12 @@
 var jsonDBs = [
-  {"url": "https://jsonbox.io/sPIRITsGroupTastingForGin/" },  // https://github.com/vasanthv/jsonbox#readme
-  {"url": "https://jsonbase.com/sPIRITsGroupTastingForGin/" }
+  {"url": "https://jsonbox.io/GLoBaLCHaNGePoSTeReXPLoReR/" },  // https://github.com/vasanthv/jsonbox#readme
+  {"url": "https://jsonbase.com/GLoBaLCHaNGePoSTeReXPLoReR/" }
 
 // https://jsonstorage.net/
 
 ];
 
-function getGinDb() {
+function getJsonDb() {
  return jsonDBs[0].url;
 }
 
@@ -177,8 +177,46 @@ var vueGCPE = new Vue({
         }
 
      },
+     updatePoster: function(data) {
+         var dbPostUrl = getJsonDb()+"poster";
+         data.count += 1;
+         data.ts = Date.now();
+         axios
+          .post(dbPostUrl, data)
+          .catch(function (error) {
+             console.log(error);
+           });
+     },
+     removeUpdatePoster: function (data) {
+         var dbDelUrl = getJsonDb()+"poster?q=id:"+data.id;
+         axios
+           .delete(dbDelUrl)
+           .catch(function (error) {
+              console.log(error);
+           })
+           .then(function () { 
+              this.updatePoster(data);
+           }); 
+     },
+     getRemoveUpdatePoster: function (id) {
+       var dbUrl = getJsonDb()+"poster?q=id:"+id;
+       //var dbDelUrl = getGinDb()+"?q=probe:"+this.ginId;
+       axios
+         .get(dbUrl)
+         .catch(function (error) {
+              this.updatePoster({"id": id, "count": 0, "value": 0, "ts": Date.now()});
+           })
+         .then(response => { 
+            if(response.data) {
+               console.log('got data id: '+response.data[0].id);
+               this.removeUpdatePoster(response.data);
+            }
+       });
+
+     },
      openPoster: function (id) {
-        console.log('Poster clicked: '+id);
+       console.log('Poster clicked: '+id);
+       this.getRemoveUpdatePoster(id);
         return true;
      },
      inqCountries: function () {
