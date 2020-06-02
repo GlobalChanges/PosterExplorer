@@ -203,7 +203,6 @@ var vueGCPE = new Vue({
      },
      getRemoveUpdatePoster: function (id) {
        var dbUrl = getJsonDb()+"poster?q=id:"+id;
-       //var dbDelUrl = getGinDb()+"?q=probe:"+this.ginId;
        axios
          .get(dbUrl)
          .catch(error => {
