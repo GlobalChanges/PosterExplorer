@@ -180,6 +180,9 @@ var vueGCPE = new Vue({
      updatePoster: function(data) {
          var dbPostUrl = getJsonDb()+"poster";
          data.count += 1;
+         var delta = (data.ts - Date.now())/(1000*60*60*24*90);  // 3 month
+         data.value *= Math.exp(delta)
+         data.value += 1.0;
          data.ts = Date.now();
          axios
           .post(dbPostUrl, data)
@@ -204,14 +207,14 @@ var vueGCPE = new Vue({
        axios
          .get(dbUrl)
          .catch(error => {
-              this.updatePoster({"id": id, "count": 0, "value": 0, "ts": Date.now()});
+              this.updatePoster({"id": id, "count": 0, "value": 0.0, "ts": Date.now()});
            })
          .then(response => { 
             if(response.data.length > 0) {
                console.log('got data id: '+response.data[0].id);
                this.removeUpdatePoster(response.data[0]);
             } else {
-              this.updatePoster({"id": id, "count": 0, "value": 0, "ts": Date.now()});
+              this.updatePoster({"id": id, "count": 0, "value": 0.0, "ts": Date.now()});
             }
        });
 
