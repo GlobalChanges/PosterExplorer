@@ -200,7 +200,9 @@
         <span class="text-black-50 media justify-content-between">
          <span class="pull-left">
          <span v-for="author in poster.authors" :key="author.email">
-           <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}<br/>
+           <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}
+           <span v-if="author.orcid">&nbsp;<a :href="('https://orcid.org/'+author.orcid)" target="_orcid">
+            <img src="./img/orcid_16x16.png" :alt="author.orcid"></a></span><br/>   
          </span>
          </span>
          <span clas="pull-right">
