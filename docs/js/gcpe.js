@@ -207,9 +207,11 @@ var vueGCPE = new Vue({
               this.updatePoster({"id": id, "count": 0, "value": 0, "ts": Date.now()});
            })
          .then(response => { 
-            if(response.data) {
+            if(response.data.length > 0) {
                console.log('got data id: '+response.data[0].id);
-               this.removeUpdatePoster(response.data);
+               this.removeUpdatePoster(response.data[0]);
+            } else {
+              this.updatePoster({"id": id, "count": 0, "value": 0, "ts": Date.now()});
             }
        });
 
