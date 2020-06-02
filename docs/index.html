@@ -214,7 +214,7 @@
        <div class="shadow-inset card-body pt-2">
         <p v-if="(poster.abstract && (poster.abstract.length < 705))" class="card-text">{{poster.abstract}}</p>
         <p v-else-if="(poster.teaser && (poster.teaser.length < 705))" class="card-text">{{poster.teaser}}</p>
-        <p v-else-if="(poster.teaser" class="card-text">{{poster.teaser|shorting}}</p>
+        <p v-else-if="poster.teaser" class="card-text">{{poster.teaser|shorting}}</p>
         <p v-else class="card-text">{{poster.abstract|shorting}}</p>
        </div>
       </div>
