@@ -270,8 +270,8 @@ var vueGCPE = new Vue({
       return isoStr(str);
     },
     shorting: function (str) {
-      if(str.length > 705) {
-        str = str.substr(0, 700)+' ...';
+      if(str.length > 715) {
+        str = str.substr(0, 710)+' ...';
       }
       return str;
     },
