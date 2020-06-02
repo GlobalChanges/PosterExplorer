@@ -177,6 +177,10 @@ var vueGCPE = new Vue({
         }
 
      },
+     openPoster: function (id) {
+        console.log('Poster clicked: '+id);
+        return true;
+     },
      inqCountries: function () {
        var volumesUrl = "https://globalchanges.github.io/MetaData/countries.json";
        axios
