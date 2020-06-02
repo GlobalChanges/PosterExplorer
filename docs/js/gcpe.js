@@ -207,11 +207,11 @@ var vueGCPE = new Vue({
        axios
          .get(dbUrl)
          .catch(error => {
+              console.log(error);
               this.updatePoster({"id": id, "count": 0, "value": 0.0, "ts": Date.now()});
            })
          .then(response => { 
             if(response.data.length > 0) {
-               console.log('got data id: '+response.data[0].id);
                this.removeUpdatePoster(response.data[0]);
             } else {
               this.updatePoster({"id": id, "count": 0, "value": 0.0, "ts": Date.now()});
@@ -220,9 +220,8 @@ var vueGCPE = new Vue({
 
      },
      openPoster: function (id) {
-       console.log('Poster clicked: '+id);
        this.getRemoveUpdatePoster(id);
-        return true;
+       return true;
      },
      inqCountries: function () {
        var volumesUrl = "https://globalchanges.github.io/MetaData/countries.json";
