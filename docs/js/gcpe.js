@@ -257,7 +257,7 @@ var vueGCPE = new Vue({
             this.resetPosters();
             for(var j=0; j<ids.length; j++) {
               var id = ids[j]; 
-              var posterUrl = "https://globalchanges.github.io/MetaData/"+id+"/meta.json";
+              var posterUrl = "https://globalchanges.github.io/MetaData2020/"+id+"/meta.json";   
               axios
                 .get(posterUrl)
                 .then(response => { 
