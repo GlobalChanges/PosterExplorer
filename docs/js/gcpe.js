@@ -223,7 +223,7 @@ var vueGCPE = new Vue({
        return true;
      },
      inqCountries: function () {
-       var volumesUrl = "https://globalchanges.github.io/MetaData/countries.json";
+       var volumesUrl = "https://globalchanges.github.io/MetaData2020/countries.json";
        axios
          .get(volumesUrl)
          .then(response => { 
@@ -236,7 +236,7 @@ var vueGCPE = new Vue({
        return c ? c.map : 'wrld' ;
      }, 
      inqTopics: function () {
-       var volumesUrl = "https://globalchanges.github.io/MetaData/topics.json";
+       var volumesUrl = "https://globalchanges.github.io/MetaData2020/topics.json";
        axios
          .get(volumesUrl)
          .then(response => { 
@@ -249,7 +249,7 @@ var vueGCPE = new Vue({
        return c ? c.awesome : 'question';
      },
      inqIds: function() {
-       var volumesUrl = "https://globalchanges.github.io/MetaData/volumes.json";
+       var volumesUrl = "https://globalchanges.github.io/MetaData2020/volumes.json";
        axios
          .get(volumesUrl)
          .then(response => { 
