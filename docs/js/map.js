@@ -41,9 +41,11 @@ var overlayMaps = {
 };
 
 
+ var map = null;
+
  function initMap() { 
 
- var map = L.map('map', {
+ map = L.map('map', {
      center: [0, 0],
      zoom: 1,
      layers: [OpenTopoMap] // [background, markers]
