@@ -32,7 +32,7 @@ var baseMaps = {
 var markers = L.LayerGroup();
 
 var overlayMaps = {
-    "Markers": markers
+    // "Markers": markers
 };
 
 var map = L.map('map', {
