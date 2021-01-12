@@ -28,3 +28,13 @@ http://www.zoomify.com/converters.htm#conversionScripted
 https://openlayers.org/en/latest/examples/icon.html
 http://dev.openlayers.org/releases/OpenLayers-2.13.1/docs/files/OpenLayers/Marker-js.html
 
+
+--
+
+// https://mademyday.de/height-equals-width-with-pure-css/ 
+// https://stackoverflow.com/questions/5445491/height-equal-to-dynamic-width-css-fluid-layout 
+// https://stackoverflow.com/questions/11243075/css-scale-height-to-match-width-possibly-with-a-formfactor 
+// calc(100vw * 0.4) // calc(100vh - 250px) 
+// card-body  -> map-body: padding 0.5rem or 5px 
+
+// https://leafletjs.com/examples/custom-icons/
