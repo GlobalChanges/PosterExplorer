@@ -1,4 +1,6 @@
-function initMap() { 
+{
+
+
 
 
 var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
@@ -38,12 +40,17 @@ var overlayMaps = {
     // "Markers": markers
 };
 
-var map = L.map('map', {
-    center: [0, 0],
-    zoom: 1,
-    layers: [OpenTopoMap] // [background, markers]
-});
 
-L.control.layers(baseMaps, overlayMaps).addTo(map);
+ function initMap() { 
+
+ var map = L.map('map', {
+     center: [0, 0],
+     zoom: 1,
+     layers: [OpenTopoMap] // [background, markers]
+ });
+
+ L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+ }
 
 }
