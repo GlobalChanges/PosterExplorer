@@ -117,6 +117,11 @@ body {
     border-radius: 50% !important;
 }
 
+.globe-image {
+   width: 100px;
+   height: 100px;
+}
+
 /*    */
 
 div.dropdown div.dropdown-menu {
