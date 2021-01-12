@@ -93,7 +93,7 @@
 
  <div class="row">
 
-  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <span class="float-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;<span v-if="('Alle'==filterLocation)">Ort:&nbsp;</span>{{filterLocation}}</span>
@@ -116,7 +116,7 @@
    </div>
   </div>
 
-  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <span class="float-left"><i :class="'fas fa-' + awesome(filterLandscape)"></i>&nbsp;<span v-if="('Alle'==filterLandscape)">Landschaft:&nbsp;</span>{{filterLandscape}}</span>
@@ -134,7 +134,7 @@
    </div>
   </div>
 
-  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <span class="float-left"><i :class="'fas fa-' + awesome(filterTopic)"></i>&nbsp;<span v-if="('Alle'==filterTopic)">Thema:&nbsp;</span>{{filterTopic}}</span>
@@ -152,7 +152,7 @@
    </div>
   </div>
 
-  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <span class="float-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;<span v-if="('Alle'==filterMethod)">Konzept:&nbsp;</span>{{filterMethod}}</span>
@@ -198,7 +198,7 @@
 </div>
 
 <style>
-#map{ width: 100%; height: calc(100vw * 0.4 - 50px) }
+#map{ width: 100%; height: calc(100vw * 0.35 - 120px) }
 </style>
 
 
@@ -240,6 +240,7 @@
 // https://stackoverflow.com/questions/5445491/height-equal-to-dynamic-width-css-fluid-layout
 // https://stackoverflow.com/questions/11243075/css-scale-height-to-match-width-possibly-with-a-formfactor
 // calc(100vw * 0.4) // calc(100vh - 250px)
+// card-body  -> map-body: padding 0.5rem or 5px
 
 
  var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
