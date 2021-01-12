@@ -8,8 +8,6 @@
 * filter by year
 
 
-
-
 ---
 
 https://freidok.uni-freiburg.de/landingpage/getFreidokData?id=165768&lang=en   -> json serie
