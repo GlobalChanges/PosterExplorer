@@ -1,5 +1,3 @@
-function initMap() {return null};
-
 var jsonDBs = [
   {"url": "https://jsonbox.io/GLoBaLCHaNGePoSTeReXPLoReR/" },  // https://github.com/vasanthv/jsonbox#readme
   {"url": "https://jsonbase.com/GLoBaLCHaNGePoSTeReXPLoReR/" }
@@ -334,6 +332,8 @@ var vueGCPE = new Vue({
      //this.filterPosterData();
   },
   created () {
-     initMap();
+     if (typeof initMap === 'function') {
+       initMap();
+     }
   }
 }) 
