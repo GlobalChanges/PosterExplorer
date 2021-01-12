@@ -26,6 +26,8 @@ var baseMaps = {
     "Paint": Stamen_Watercolor
 };
 
+var markers = L.LayerGroup();
+
 var overlayMaps = {
     "Markers": markers
 };
