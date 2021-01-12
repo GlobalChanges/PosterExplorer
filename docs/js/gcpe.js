@@ -323,8 +323,8 @@ var vueGCPE = new Vue({
     },
   },
   mounted () { 
-     this.inqCountries();
      this.inqTopics();
+     this.inqCountries();
      this.initTs = Date.now();
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
