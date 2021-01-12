@@ -1,4 +1,7 @@
- var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+function initMap() { 
+
+
+var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
  maxZoom: 16,
  minZoom: 1,
  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -39,3 +42,5 @@ var map = L.map('map', {
 });
 
 L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+}

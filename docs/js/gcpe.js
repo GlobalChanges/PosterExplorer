@@ -1,3 +1,5 @@
+function initMap() {return null};
+
 var jsonDBs = [
   {"url": "https://jsonbox.io/GLoBaLCHaNGePoSTeReXPLoReR/" },  // https://github.com/vasanthv/jsonbox#readme
   {"url": "https://jsonbase.com/GLoBaLCHaNGePoSTeReXPLoReR/" }
@@ -328,6 +330,8 @@ var vueGCPE = new Vue({
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
      this.inqIds();
+
+     initMap();
      //this.filterPosterData();
   }
 }) 
