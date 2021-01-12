@@ -247,6 +247,7 @@ var vueGCPE = new Vue({
      },
      setTopics: function(data) { this.allTopics = data; },
      awesome: function (str) {
+       if(!this.allTopics) {return 'question'; } 
        var c = this.allTopics[str]
        return c ? c.awesome : 'question';
      },
