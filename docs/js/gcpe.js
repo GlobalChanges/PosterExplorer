@@ -245,7 +245,7 @@ var vueGCPE = new Vue({
      },
      setTopics: function(data) { this.allTopics = data; },
      awesome: function (str) {
-       if(!this.allTopics) {return 'question'; } 
+       // if(!this.allTopics) {return 'question'; }  // is remembered... 
        var c = this.allTopics[str]
        return c ? c.awesome : 'question';
      },
@@ -330,10 +330,13 @@ var vueGCPE = new Vue({
      this.uidOld = getFingerprint(4.0, 2.0);
      this.inqIds();
      //this.filterPosterData();
+     if (typeof initMap === 'function') {
+       initMap();
+     }
   },
   created () {
      if (typeof initMap === 'function') {
-       initMap();
+       //initMap();
      }
   }
 }) 
