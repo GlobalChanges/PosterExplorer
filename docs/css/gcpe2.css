@@ -122,6 +122,11 @@ body {
    height: 100px;
 }
 
+.map-body {
+    flex: 1 1 auto;
+    padding: 0.5rem;
+}
+
 /*    */
 
 div.dropdown div.dropdown-menu {
