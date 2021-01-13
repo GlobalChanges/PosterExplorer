@@ -82,7 +82,7 @@ function getMarkerOptions(label) {
 
 
 function clearPosterMarkers() {
-  pointLayer.clearlayer();
+  pointLayer.clearLayers();
 }
 
 
