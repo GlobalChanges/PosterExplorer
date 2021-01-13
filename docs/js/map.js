@@ -82,6 +82,7 @@ map.addLayer(pointLayer);
 
 
 function addPosterMarkers() {
+   if(!map) { initMap(); }
    var geojsonFeature = {
     "type": "Feature",
     "properties": {
