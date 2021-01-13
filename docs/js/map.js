@@ -80,7 +80,7 @@ function getMarkerOptions(property) {
   } 
   var extraOptions = {icon: 'fa-number',
     innerHTML: html,
-    markerColor: ,
+    markerColor: color,
     iconColor: 'black',
     shape: 'circle',
     prefix: 'fa',
