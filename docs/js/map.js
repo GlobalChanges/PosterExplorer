@@ -62,7 +62,7 @@ function onMarkerClick(e) {
      center: [40, 8],
      zoom: 1,
      worldCopyJump: true,
-     //maxBounds: [[-180,-90],[+180,+90]],
+     maxBounds: [[-90,-270],[90,270]],
      layers: [OpenTopoMap] // [background, markers]
  });-
 
