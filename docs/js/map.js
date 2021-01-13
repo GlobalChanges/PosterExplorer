@@ -48,6 +48,9 @@ var overlayMaps = {
  var map = null;
  var pointLayer = null;
 
+
+function onMarkerClick(e) {alert(e);}
+
  function initMap() { 
 
  map = L.map('map', {
@@ -62,7 +65,7 @@ var overlayMaps = {
 	pointToLayer: function (feature, latlng) {
 		return L.marker( latlng, {icon: L.ExtraMarkers.icon(getMarkerOptions(feature.properties)), iconSize: [80,80] } );
 	}
-}).addTo(map)  //  .on('click', onMapClick);  
+}).addTo(map).on('click', onMarkerClick);  
   
 map.addLayer(pointLayer);
 
