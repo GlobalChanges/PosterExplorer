@@ -118,7 +118,8 @@ var vueGCPE = new Vue({
         //posterIds: [],
         allMapCountries: {},
         allPosterData: [],    
-        selectedPosterData: [], 
+        selectedPosterData: [],
+        currentPosterData: null, 
         allPosterContinents: [],
         allPosterCountries: [],
         allPosterLandscapes: [],
@@ -138,10 +139,16 @@ var vueGCPE = new Vue({
        this.allPosterTopics = [];
        this.allPosterMethods = [];
      }, 
+     selectPoster: function(poster) {
+        this.currentPosterData = poster;
+     },
      addPoster: function(json) { 
         // Vue.set(this.allPosterData2, json.id, json); 
         this.allPosterData.push(json);
         this.selectedPosterData.push(json);
+        if(!this.currentPosterData) {
+          this.currentPosterData = json;
+        }
         if (typeof initMap === 'function') {
           addPosterMarkers([json]);
         }

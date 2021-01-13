@@ -49,7 +49,12 @@ var overlayMaps = {
  var pointLayer = null;
 
 
-function onMarkerClick(e) {alert(e.layer.feature.properties.id);}
+function onMarkerClick(e) {
+ //alert(e.layer.feature.properties.id);
+ if (vueGCPE) {
+   vueGCPE.selectPoster(e.layer.feature.properties);
+ }
+}
 
  function initMap() { 
 
