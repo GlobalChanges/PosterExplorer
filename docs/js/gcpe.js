@@ -142,7 +142,9 @@ var vueGCPE = new Vue({
         // Vue.set(this.allPosterData2, json.id, json); 
         this.allPosterData.push(json);
         this.selectedPosterData.push(json);
-        addPosterMarkers([json]);
+        if (typeof initMap === 'function') {
+          addPosterMarkers([json]);
+        }
         if(json.location.continent && !this.allPosterContinents.includes(json.location.continent)) {
           this.allPosterContinents.push(json.location.continent);
           this.allPosterContinents.sort();
@@ -306,8 +308,10 @@ var vueGCPE = new Vue({
        }
        shuffle(result)
        this.selectedPosterData = shuffle(result);
-       clearPosterMarkers();
-       addPosterMarkers(result);
+       if (typeof initMap === 'function') {
+         clearPosterMarkers();
+         addPosterMarkers(result);
+       }
     },
   },
   computed: {
@@ -333,13 +337,8 @@ var vueGCPE = new Vue({
      this.uidOld = getFingerprint(4.0, 2.0);
      this.inqIds();
      //this.filterPosterData();
-     if (typeof initMap === 'function') {
-       initMap();
-     }
   },
   created () {
-     if (typeof initMap === 'function') {
-       //initMap();
-     }
+
   }
 }) 
