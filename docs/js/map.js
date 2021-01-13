@@ -99,11 +99,7 @@ function addPosterMarkers(posters) {
      var poster = posters[j]; 
      var geojsonFeature = {
       "type": "Feature",
-      "properties": {
-        "id": poster.id,
-        "amenity": "Baseball Stadium",
-        "popupContent": "This is where the Rockies play!"
-      },
+      "properties": posters,
       "geometry": {
         "type": "Point",
         "coordinates": [poster.location.longitude, poster.location.latitude]
