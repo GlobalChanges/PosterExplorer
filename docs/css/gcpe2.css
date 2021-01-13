@@ -144,6 +144,10 @@ div.dropdown div.dropdown-menu {
  max-height: 320px;
 }
 
+dropdown-toggle::after {
+    display: none !important;
+}
+
 div.card {
   min-height: 400px;
 }
