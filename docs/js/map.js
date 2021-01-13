@@ -60,7 +60,7 @@ var overlayMaps = {
 
  pointLayer = new L.GeoJSON(null, {
 	pointToLayer: function (feature, latlng) {
-		return L.marker( latlng, {icon: L.ExtraMarkers.icon(getMarkerOptions(feature.properties))} );
+		return L.marker( latlng, {icon: L.ExtraMarkers.icon(getMarkerOptions(feature.properties)), iconSize: [80,80] } );
 	}
 }).addTo(map)  //  .on('click', onMapClick);  
   
@@ -84,7 +84,6 @@ function getMarkerOptions(property) {
     iconColor: 'black',
     shape: 'circle',
     prefix: 'fa',
-    iconSize: [80,80],
     number: property.id
   };
   return extraOptions;
