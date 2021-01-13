@@ -7,7 +7,9 @@
 
 * filter by year
 
-
+* get rid of neumorphism
+* navbar collapse
+* submenu
 ---
 
 https://freidok.uni-freiburg.de/landingpage/getFreidokData?id=165768&lang=en   -> json serie
