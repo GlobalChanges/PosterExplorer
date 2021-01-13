@@ -6,7 +6,7 @@
 var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
  maxZoom: 16,
  minZoom: 1,
- noWrap: true,
+ noWrap: false,
  zoomSnap: 0.25,
  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
  })
@@ -62,7 +62,7 @@ function onMarkerClick(e) {
      center: [40, 8],
      zoom: 1,
      worldCopyJump: true,
-     maxBounds: [[-180,-90],[+180,+90]],
+     //maxBounds: [[-180,-90],[+180,+90]],
      layers: [OpenTopoMap] // [background, markers]
  });-
 
