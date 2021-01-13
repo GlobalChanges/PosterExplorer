@@ -15,7 +15,7 @@ var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmd
 var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	maxZoom: 16,
         minZoom: 2,
-        noWrap: true,
+        noWrap: false,
         zoomDelta: 0.25,
         zoomSnap: 0.0,
 	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
@@ -27,7 +27,7 @@ var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/w
 	subdomains: 'abcd',
 	minZoom: 1,
 	maxZoom: 16,
-        noWrap: true,
+        noWrap: false,
         zoomSnap: 0.25,
 	ext: 'jpg'
 })
