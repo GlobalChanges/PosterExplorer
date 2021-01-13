@@ -50,6 +50,11 @@ body {
 .forest { color: var(--forest) !important; } 
 .fire { color: var(--fire) !important; } 
 
+
+.navbar {
+    padding: 0.1rem 1rem;
+}
+
 .navbar-theme-primary:not(.headroom) {
     background-color: var(--morph-bg);
 }
@@ -101,13 +106,13 @@ body {
 }
 
 .border-light {
-    border-color: #84b7df !important;
+    border-color: var(--morph-bg) !important;
 }
 .border-dark {
-    border-color: #6497bf !important;
+    border-color: var(--morph-extr) !important;
 }
 .border-default {
-    border-color: #74a7cf !important;
+    border-color: var(--morph-dark) !important;
 }
 
 .rounded {
@@ -124,7 +129,7 @@ body {
 
 .map-body {
     flex: 1 1 auto;
-    padding: 0.5rem;
+    padding: 0.25rem;
 }
 
 /*    */
