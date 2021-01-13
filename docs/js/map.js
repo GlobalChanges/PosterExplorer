@@ -81,25 +81,29 @@ function getMarkerOptions(label) {
 }  
 
 
+function clearPosterMarkers() {
+  pointLayer.clearlayer();
+}
 
 
-
-function addPosterMarkers() {
+function addPosterMarkers(posters) {
    if(!map) { initMap(); }
-   var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-        "id": "17",
+   for(var j=0; j<posters.length; j++) {
+     var poster = posters[j]; 
+     var geojsonFeature = {
+      "type": "Feature",
+      "properties": {
+        "id": poster.id,
         "amenity": "Baseball Stadium",
         "popupContent": "This is where the Rockies play!"
-    },
-    "geometry": {
+      },
+      "geometry": {
         "type": "Point",
-        "coordinates": [-104.99404, 39.75621]
-    }
-};
-  data = [geojsonFeature]
-  pointLayer.addData(data);
+        "coordinates": [poster.location.longitude, poster.location.latitude]
+      }
+    };
+    pointLayer.addData(geojsonFeature);
+   }
  }
 
 }
