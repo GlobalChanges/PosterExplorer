@@ -8,8 +8,14 @@
 * filter by year
 
 * get rid of neumorphism
+ * modal dialog
+ * input field?
 * navbar collapse
 * submenu
+
+* hilight current poster marker
+
+
 ---
 
 https://freidok.uni-freiburg.de/landingpage/getFreidokData?id=165768&lang=en   -> json serie

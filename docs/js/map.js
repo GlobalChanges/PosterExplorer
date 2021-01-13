@@ -61,8 +61,10 @@ function onMarkerClick(e) {
  map = L.map('map', {
      center: [40, 8],
      zoom: 1,
+     worldCopyJump: true,
+     maxBounds: [[-180,-90],[+180,+90]],
      layers: [OpenTopoMap] // [background, markers]
- });
+ });-
 
  L.control.layers(baseMaps, overlayMaps).addTo(map);
 
