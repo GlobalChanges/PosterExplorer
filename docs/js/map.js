@@ -73,7 +73,7 @@ function getMarkerOptions(property) {
   // if icon -> use...
   // if topic -> use... (or subtopic ???)
   var extraOptions = {icon: 'fa-number',
-    innerHTML: "<br style='font-size: 50%'/><b>'+property.id+'</b>",
+    innerHTML: "<br style='font-size: 50%'/><b>"+property.id+"</b>",
     markerColor: 'orange-dark',
     iconColor: 'black',
     shape: 'circle',
