@@ -46,6 +46,7 @@ var overlayMaps = {
 
 
  var map = null;
+ var pointLayer = null;
 
  function initMap() { 
 
@@ -57,7 +58,7 @@ var overlayMaps = {
 
  L.control.layers(baseMaps, overlayMaps).addTo(map);
 
-var pointLayer = new L.GeoJSON(null, {
+ pointLayer = new L.GeoJSON(null, {
 	pointToLayer: function (feature, latlng) {
 		return L.marker( latlng, {icon: L.ExtraMarkers.icon(getMarkerOptions(feature.properties.id))} );
 	}
