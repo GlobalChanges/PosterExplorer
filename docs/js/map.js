@@ -72,13 +72,15 @@ map.addLayer(pointLayer);
 function getMarkerOptions(property) {
   // if icon -> use...
   // if topic -> use... (or subtopic ???)
+  var color = 'orange-dark';
   var html = "<br style='font-size: 50%'/><b>"+property.id+"</b>";
   if(property.icon) {
-     html = "<img src='"+property.icon+"'></img>"
+     color = 'violet';
+     html = "<img src='"+property.icon+"' width='16' height='16'></img>";
   } 
   var extraOptions = {icon: 'fa-number',
     innerHTML: html,
-    markerColor: 'orange-dark',
+    markerColor: ,
     iconColor: 'black',
     shape: 'circle',
     prefix: 'fa',
