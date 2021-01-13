@@ -305,6 +305,7 @@ var vueGCPE = new Vue({
        }
        shuffle(result)
        this.selectedPosterData = shuffle(result);
+       addPosterMarkers()
     },
   },
   computed: {

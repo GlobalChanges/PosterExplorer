@@ -59,4 +59,43 @@ var overlayMaps = {
 
  }
 
+// markers
+function getMarkerOptions(label) {
+  var extraOptions = {icon: 'fa-number',
+    markerColor: 'yellow',
+	iconColor: 'black',
+    shape: 'square',
+    prefix: 'fa',
+	number: label
+  };
+  return extraOptions;
+}  
+
+var pointLayer = new L.GeoJSON(null, {
+	pointToLayer: function (feature, latlng) {
+		return L.marker( latlng, {icon: L.ExtraMarkers.icon(getMarkerOptions(feature.properties.id))} );
+	}
+}).addTo(map)  //  .on('click', onMapClick);  
+  
+map.addLayer(pointLayer);
+
+
+
+function addPosterMarkers() {
+   var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "id": "17",
+        "amenity": "Baseball Stadium",
+        "popupContent": "This is where the Rockies play!"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-104.99404, 39.75621]
+    }
+};
+  data = [geojsonFeature]
+  pointLayer.addData(data);
+ }
+
 }

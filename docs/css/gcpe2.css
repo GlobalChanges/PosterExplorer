@@ -92,7 +92,8 @@ body {
 }
 /* card p:  line-height: 1.3; */
 
-/* NeoMorph -> extract */
+/* NeoMorph -> extract     */
+/* https://neumorphism.io  */
 
 .shadow-soft {
     box-shadow: 6px 6px 12px var(--morph-dark), -6px -6px 12px var(--morph-light) !important; 
