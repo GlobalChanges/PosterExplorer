@@ -49,7 +49,7 @@ var overlayMaps = {
  var pointLayer = null;
 
 
-function onMarkerClick(e) {alert(e);}
+function onMarkerClick(e) {alert(e.layer.feature.properties.id);}
 
  function initMap() { 
 
