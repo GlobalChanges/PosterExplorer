@@ -76,7 +76,7 @@ function getMarkerOptions(property) {
   var html = "<br style='font-size: 50%'/><b>"+property.id+"</b>";
   if(property.icon) {
      color = 'violet';
-     html = "<img src='"+property.icon+"' width='16' height='16'></img>";
+     html = "<img src='"+property.icon+"' width='24' height='24' style='position:relative; top: 6px' ></img>";
   } 
   var extraOptions = {icon: 'fa-number',
     innerHTML: html,
@@ -84,6 +84,7 @@ function getMarkerOptions(property) {
     iconColor: 'black',
     shape: 'circle',
     prefix: 'fa',
+    iconSize: [80,80],
     number: property.id
   };
   return extraOptions;
