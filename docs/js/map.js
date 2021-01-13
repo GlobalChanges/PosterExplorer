@@ -57,6 +57,14 @@ var overlayMaps = {
 
  L.control.layers(baseMaps, overlayMaps).addTo(map);
 
+var pointLayer = new L.GeoJSON(null, {
+	pointToLayer: function (feature, latlng) {
+		return L.marker( latlng, {icon: L.ExtraMarkers.icon(getMarkerOptions(feature.properties.id))} );
+	}
+}).addTo(map)  //  .on('click', onMapClick);  
+  
+map.addLayer(pointLayer);
+
  }
 
 // markers
@@ -71,13 +79,7 @@ function getMarkerOptions(label) {
   return extraOptions;
 }  
 
-var pointLayer = new L.GeoJSON(null, {
-	pointToLayer: function (feature, latlng) {
-		return L.marker( latlng, {icon: L.ExtraMarkers.icon(getMarkerOptions(feature.properties.id))} );
-	}
-}).addTo(map)  //  .on('click', onMapClick);  
-  
-map.addLayer(pointLayer);
+
 
 
 
