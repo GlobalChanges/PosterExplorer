@@ -132,7 +132,7 @@ body {
     border-radius: 50%;
     position:relative; 
     top: 6px; 
-    right: 1px;
+    left: 1px;
 }
 
 .globe-image {
