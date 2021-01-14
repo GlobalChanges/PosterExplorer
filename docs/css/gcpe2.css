@@ -127,6 +127,14 @@ body {
     border-radius: 50% !important;
 }
 
+
+.marker-image {
+    border-radius: 50%;
+    position:relative; 
+    top: 6px; 
+    right: 1px;
+}
+
 .globe-image {
    width: 100px;
    height: 100px;
