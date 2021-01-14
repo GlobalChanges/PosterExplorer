@@ -131,8 +131,8 @@ body {
 .marker-image {
     border-radius: 50%;
     position:relative; 
-    top: 6px; 
-    left: 1px;
+    top: 7px; 
+    left: 0px;
 }
 
 .globe-image {
