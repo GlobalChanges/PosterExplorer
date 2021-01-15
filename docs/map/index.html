@@ -187,6 +187,41 @@
     <div class="row mb-5">
       <div class="col-6 col-sm-12 col-md-6 col-lg-6 col-xxl-6 mb-5">
  <h5 class="card-title clouds">{{currentPosterData.title}}</h5>
+
+      <div class="flip-card-front morph">
+
+       <div class="shadow-inset card-header p-3">
+        <img :src="currentPosterData.thumbnail" class="card-img-top rounded" :alt="poster.title">
+       </div>
+       <div class="card-body pt-2">
+        <div class="media justify-content-between">
+         <ul class="pull-left">
+           <li v-if="currentPosterData.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(currentPosterData.location.country)"></i>&ensp;{{currentPosterData.location.country}}</li>
+           <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(currentPosterData.location.continent)"></i>&ensp;{{currentPosterData.location.continent}}</li>
+           <br/>
+           <li v-if="currentPosterData.location.landscape" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(currentPosterData.location.landscape)"></i>&ensp;
+{{currentPosterData.location.landscape}}</li>
+         </ul>
+         <ul class="pull-right">
+           <li class="small ocean pull-right">{{currentPosterData.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(currentPosterData.concept)"></i></li><br/>
+           <li class="small forest pull-right">{{currentPosterData.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(currentPosterData.topic)"></i></li><br/>
+           <li class="small forest pull-right">{{currentPosterData.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(currentPosterData.subtopic)"></i></li>
+         </ul>
+        </div> 
+        <h5 class="card-title clouds">{{currentPosterData.title}}</h5>
+        <span class="text-black-50 media justify-content-between">
+         <span class="pull-left">
+         <span v-for="author in currentPosterData.authors" :key="author.email">
+           <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}
+           <span v-if="author.orcid">&nbsp;<a :href="('https://orcid.org/'+author.orcid)" target="_orcid">
+            <img src="./img/orcid_16x16.png" :alt="author.orcid"></a></span><br/>   
+         </span>
+         </span>
+         <span clas="pull-right">
+          <i class="far fa-copyright"></i>{{currentPosterData.year}}</span>
+        </span>
+       </div>
+
       </div>
       <div class="col-6 col-sm-12 col-md-6 col-lg-6 col-xxl-6 mb-5">
        <div class="shadow-inset card-body pt-2">
