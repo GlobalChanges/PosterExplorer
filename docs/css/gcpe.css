@@ -128,6 +128,15 @@ div.card .card-title {
     flex: 0 0 16.66667%;
     max-width: 16.66667%;
 }
+.col-xxl-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+.col-xxl-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+}
 }
 
 /* Flip Cards  https://www.w3schools.com/howto/howto_css_flip_card.asp  */
