@@ -193,7 +193,10 @@ div.card .card-title {
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
 }
-
+.col-xxl-6 {
+    flex: 0 0 50.0%;
+    max-width: 50.0%;
+}
 .col-xxl-8 {
     flex: 0 0 66.66667%;
     max-width: 66.66667%;
