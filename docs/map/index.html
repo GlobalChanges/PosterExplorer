@@ -185,7 +185,7 @@
    <div id="poster" class="card bg-primary border-light shadow-soft">
    
     <div class="row mb-5">
-      <div class="col-6 col-sm-12 col-md-6 col-lg-6 col-xxl-6 mb-5">
+      <div class="col-6 col-sm-6 col-md-12 col-lg-6 col-xxl-6 mb-5">
 
 
        <div class="shadow-inset card-header p-3">
@@ -212,7 +212,7 @@
          <span v-for="author in currentPosterData.authors" :key="author.email">
            <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}
            <span v-if="author.orcid">&nbsp;<a :href="('https://orcid.org/'+author.orcid)" target="_orcid">
-            <img src="./img/orcid_16x16.png" :alt="author.orcid"></a></span><br/>   
+            <img src="../img/orcid_16x16.png" :alt="author.orcid"></a></span><br/>   
          </span>
          </span>
          <span clas="pull-right">
@@ -222,7 +222,7 @@
       </div>
 
 
-      <div class="col-6 col-sm-12 col-md-6 col-lg-6 col-xxl-6 mb-5">
+      <div class="col-6 col-sm-6 col-md-12 col-lg-6 col-xxl-6 mb-5">
        <div class="shadow-inset card-body pt-2">
         <p v-if="(currentPosterData.abstract && (currentPosterData.abstract.length < 720))" class="card-text">{{currentPosterData.abstract}}</p>
         <p v-else-if="(currentPosterData.teaser && (currentPosterData.teaser.length < 720))" class="card-text">{{currentPosterData.teaser}}</p>
