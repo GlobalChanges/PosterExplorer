@@ -186,12 +186,10 @@
    
     <div class="row mb-5">
       <div class="col-6 col-sm-12 col-md-6 col-lg-6 col-xxl-6 mb-5">
- <h5 class="card-title clouds">{{currentPosterData.title}}</h5>
 
-      <div class="flip-card-front morph">
 
        <div class="shadow-inset card-header p-3">
-        <img :src="currentPosterData.thumbnail" class="card-img-top rounded" :alt="poster.title">
+        <img :src="currentPosterData.thumbnail" class="card-img-top rounded" :alt="currentPosterData.title">
        </div>
        <div class="card-body pt-2">
         <div class="media justify-content-between">
@@ -221,8 +219,9 @@
           <i class="far fa-copyright"></i>{{currentPosterData.year}}</span>
         </span>
        </div>
-
       </div>
+
+
       <div class="col-6 col-sm-12 col-md-6 col-lg-6 col-xxl-6 mb-5">
        <div class="shadow-inset card-body pt-2">
         <p v-if="(currentPosterData.abstract && (currentPosterData.abstract.length < 720))" class="card-text">{{currentPosterData.abstract}}</p>
