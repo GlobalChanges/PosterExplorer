@@ -77,9 +77,9 @@ function initializeYoutube() {
           videoId: youtubeId,
           playerVars: {
             playlist: youtubeId,
-            autoplay=1,
-            start = 35,
-            end = 45,
+            autoplay: 1,
+            start: 35,
+            end: 45,
             loop: 1
           },
           events: {
