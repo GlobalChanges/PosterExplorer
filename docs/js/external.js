@@ -105,6 +105,6 @@ function initializeYoutube() {
         }
       }
       function stopVideo() {
-        player.stopVideo();
+        // player.stopVideo();
       }
 
