@@ -70,10 +70,10 @@ function findGetParameter(parameterName) {
       var fullWidth = window.outerWidth
       var fullHeight = window.outerHeight
 
-      var posString = "width=" + math.round(fullWidth*winWidth/100).toString()+","
-                    + "height=" + math.round(fullHeight*winHeight/100).toString()+","
-                    + "left=" + math.round(fullWidth*winLeft/100).toString()+","
-                    + "top=" + math.round(fullHeight*winTop/100).toString()+","
+      var posString = "width=" + Math.round(fullWidth*winWidth/100).toString()+","
+                    + "height=" + Math.round(fullHeight*winHeight/100).toString()+","
+                    + "left=" + Math.round(fullWidth*winLeft/100).toString()+","
+                    + "top=" + Math.round(fullHeight*winTop/100).toString()+","
                     + "location=no,menubar=no,status=no,titlebar=no,toolbar=no";
       
       newWindow = window.open(newHref, "_blank", posString);
