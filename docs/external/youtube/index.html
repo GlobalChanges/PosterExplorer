@@ -54,10 +54,12 @@ function findGetParameter(parameterName) {
 function moveToMouse(event) {
   if(newWindow) {
      newWindow.moveTo(event.pageX, event.pageY);
+     console.log('moved');
   }
 }
 
-document.addEventListener("mousemove", moveToMouse, {once:true});
+window.addEventListener("mousemove", moveToMouse, {once:true});
+window.addEventListener("mouseup", moveToMouse, {once:true});
 
     var isNew = findGetParameter("new");
     if(!isNew) {
@@ -65,9 +67,13 @@ document.addEventListener("mousemove", moveToMouse, {once:true});
       
       newWindow = window.open(newHref, "_blank", "width=800,height=400,top=50,left=100,location=no,menubar=no,status=no,titlebar=no,toolbar=no" );
       if(null!=newWindow) {
+        newWindow.addEventListener("mousemove", moveToMouse, {once:true});
+        newWindow.addEventListener("mouseup", moveToMouse, {once:true});
         window.history.back(); 
         newWindow.resizeTo(700, 500);
         newWindow.moveTo(50, 100);  
+        console.log('init');
+
       }
     } else {
       //window.resizeTo(700, 400);
