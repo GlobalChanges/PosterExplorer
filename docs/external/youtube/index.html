@@ -39,6 +39,10 @@
 
  <script>
 var newWindow = null;
+var winTop = 12
+var winLeft = 12
+var winWidth = 75
+var winHeight = 75
 
 function findGetParameter(parameterName) {
     var result = null,
@@ -51,29 +55,30 @@ function findGetParameter(parameterName) {
     return result;
 }
 
-function moveToMouse(event) {
-  if(newWindow) {
-     newWindow.moveTo(event.pageX, event.pageY);
-     console.log('moved');
-  }
-}
 
-window.addEventListener("mousemove", moveToMouse, {once:true});
-window.addEventListener("mouseup", moveToMouse, {once:true});
 
-    var isNew = findGetParameter("new");
+    var isNew = findGetParameter("popup");
     if(!isNew) {
-      var newHref= location.href + '&new=1'
-      
-      newWindow = window.open(newHref, "_blank", "width=800,height=400,top=50,left=100,location=no,menubar=no,status=no,titlebar=no,toolbar=no" );
-      if(null!=newWindow) {
-        newWindow.addEventListener("mousemove", moveToMouse, {once:true});
-        newWindow.addEventListener("mouseup", moveToMouse, {once:true});
-        window.history.back(); 
-        newWindow.resizeTo(700, 500);
-        newWindow.moveTo(50, 100);  
-        console.log('init');
+      var newHref = location.href + '?popup=1'
+      if (location.href.indexOf('?') > -1) {
+         newHref = location.href + '&popup=1'
+      }
+      var newUrl = findGetParameter("url");
+      if(newUrl) {
+        newHref = newUrl;
+      }
+      var fullWidth = window.outerWidth
+      var fullHeight = window.outerHeight
 
+      var posString = "width=" + math.round(fullWidth*winWidth/100).toString()+","
+                    + "height=" + math.round(fullHeight*winHeight/100).toString()+","
+                    + "left=" + math.round(fullWidth*winLeft/100).toString()+","
+                    + "top=" + math.round(fullHeight*winTop/100).toString()+","
+                    + "location=no,menubar=no,status=no,titlebar=no,toolbar=no";
+      
+      newWindow = window.open(newHref, "_blank", posString);
+      if(null!=newWindow) {
+        window.history.back(); 
       }
     } else {
       //window.resizeTo(700, 400);
