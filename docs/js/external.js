@@ -27,9 +27,16 @@ if(!isNew) {
   if(newUrl) {
     newHref = newUrl;
   }
+
+  var newSize = findGetParameter("size");
+  if(newSize) {
+     winSize = parseInt(newSize);
+  }
   var fullWidth = window.outerWidth;
   var fullHeight = window.outerHeight;
   var winBorder = (100.0-winSize)/2;
+
+
 
   newWidth = Math.round(fullWidth*winSize/100);
   newHeight = Math.round(fullHeight*winSize/100);
@@ -68,6 +75,13 @@ function initializeYoutube() {
           height: newHeight.toString(),
           width: newWidth.toString(),
           videoId: youtubeId,
+          playerVars: {
+            playlist: youtubeId,
+            autoplay=1,
+            start = 35,
+            end = 45,
+            loop: 1
+          },
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
