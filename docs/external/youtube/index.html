@@ -54,8 +54,11 @@ function findGetParameter(parameterName) {
       var newHref= location.href + '&new=1'
       var newWindow = window.open(newHref, "_blank", width=800, height=400, top=50, left=100, resizable=1);
       if(null!=newWindow) {
-        window.close();
+        //window.close();
+        window.open('','_self').close()
       }
+    } else {
+      window.resizeTo(800, 400);
     }
  </script>
 
