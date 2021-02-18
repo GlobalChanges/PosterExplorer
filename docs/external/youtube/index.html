@@ -54,14 +54,15 @@ function findGetParameter(parameterName) {
       var newHref= location.href + '&new=1'
       // window.open(location.href,'_self').resizeTo(800, 500);
       window.resizeTo(800, 500); 
-      window.blur();
+
       var newWindow = window.open(newHref, "_blank", width=800, height=400, top=50, left=100, resizable=1);
       if(null!=newWindow) {
         //window.close();
         newWindow.resizeTo(800, 400);
         //var oldWindow = window.open('','_self');
         //oldWindows.close();
-        open(location, '_self').close();
+        window.open(location, '_self').close();
+        window.blur();
       }
     } else {
       window.resizeTo(700, 400);
