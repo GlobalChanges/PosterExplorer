@@ -38,6 +38,8 @@
  <script src="../../js/gcpe.js" type="text/javascript"></script>		
 
  <script>
+var newWindow = null;
+
 function findGetParameter(parameterName) {
     var result = null,
         tmp = [];
@@ -49,12 +51,21 @@ function findGetParameter(parameterName) {
     return result;
 }
 
+function moveToMouse(event) {
+  if(newWindow) {
+     newWindow.moveTo(event.pageX, event.pageY);
+  }
+}
+
+document.addEventListener("mousemove", moveToMouse, {once:true});
+
     var isNew = findGetParameter("new");
     if(!isNew) {
       var newHref= location.href + '&new=1'
-      window.history.back();
-      var newWindow = window.open(newHref, "_blank", "width=800,height=400,top=50,left=100,location=no,menubar=no,status=no,titlebar=no,toolbar=no" );
+      
+      newWindow = window.open(newHref, "_blank", "width=800,height=400,top=50,left=100,location=no,menubar=no,status=no,titlebar=no,toolbar=no" );
       if(null!=newWindow) {
+        window.history.back(); 
         newWindow.resizeTo(700, 500);
         newWindow.moveTo(50, 100);  
       }
