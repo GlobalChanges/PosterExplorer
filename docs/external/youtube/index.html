@@ -39,10 +39,11 @@
 
  <script>
 var newWindow = null;
-var winTop = 12;
-var winLeft = 12;
-var winWidth = 75;
-var winHeight = 75;
+//var winTop = 12;
+//var winLeft = 12;
+//var winWidth = 75;
+//var winHeight = 75;
+var winSize = 75;
 
 function findGetParameter(parameterName) {
     var result = null,
@@ -69,11 +70,12 @@ function findGetParameter(parameterName) {
       }
       var fullWidth = window.outerWidth;
       var fullHeight = window.outerHeight;
+      var winBorder = (100.0-winSize)/2;
 
-      var posString = "width=" + Math.round(fullWidth*winWidth/100).toString()+","
-                    + "height=" + Math.round(fullHeight*winHeight/100).toString()+","
-                    + "left=" + Math.round(fullWidth*winLeft/100).toString()+","
-                    + "top=" + Math.round(fullHeight*winTop/100).toString()+","
+      var posString = "width=" + Math.round(fullWidth*winSize/100).toString()+","
+                    + "height=" + Math.round(fullHeight*winSize/100).toString()+","
+                    + "left=" + Math.round(fullWidth*winBorder/100).toString()+","
+                    + "top=" + Math.round(fullHeight*winBorder/100).toString()+","
                     + "location=no,menubar=no,status=no,titlebar=no,toolbar=no";
       
       newWindow = window.open(newHref, "_blank", posString);
