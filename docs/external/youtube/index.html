@@ -39,10 +39,10 @@
 
  <script>
 var newWindow = null;
-var winTop = 12
-var winLeft = 12
-var winWidth = 75
-var winHeight = 75
+var winTop = 12;
+var winLeft = 12;
+var winWidth = 75;
+var winHeight = 75;
 
 function findGetParameter(parameterName) {
     var result = null,
@@ -61,14 +61,14 @@ function findGetParameter(parameterName) {
     if(!isNew) {
       var newHref = location.href + '?popup=1'
       if (location.href.indexOf('?') > -1) {
-         newHref = location.href + '&popup=1'
+         newHref = location.href + '&popup=1';
       }
       var newUrl = findGetParameter("url");
       if(newUrl) {
         newHref = newUrl;
       }
-      var fullWidth = window.outerWidth
-      var fullHeight = window.outerHeight
+      var fullWidth = window.outerWidth;
+      var fullHeight = window.outerHeight;
 
       var posString = "width=" + Math.round(fullWidth*winWidth/100).toString()+","
                     + "height=" + Math.round(fullHeight*winHeight/100).toString()+","
