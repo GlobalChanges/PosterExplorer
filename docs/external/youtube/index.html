@@ -52,21 +52,14 @@ function findGetParameter(parameterName) {
     var isNew = findGetParameter("new");
     if(!isNew) {
       var newHref= location.href + '&new=1'
-      // window.open(location.href,'_self').resizeTo(800, 500);
-      // window.resizeTo(800, 500); 
       window.history.back();
-      //window.blur();
-      var newWindow = window.open(newHref, "_blank", width=800, height=400, top=50, left=100, resizable=1);
+      var newWindow = window.open(newHref, "_blank", "width=800,height=400,top=50,left=100,location=no,menubar=no,status=no,titlebar=no,toolbar=no" );
       if(null!=newWindow) {
-        //window.close();
-        newWindow.resizeTo(800, 500);
-        //var oldWindow = window.open('','_self');
-        //oldWindows.close();
-        //window.open(location, '_self').close();
-        //window.blur();
+        newWindow.resizeTo(700, 500);
+        newWindow.moveTo(50, 100);  
       }
     } else {
-      window.resizeTo(700, 400);
+      //window.resizeTo(700, 400);
       window.focus();
     }
  </script>
