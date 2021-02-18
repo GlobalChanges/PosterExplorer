@@ -1,5 +1,7 @@
 var youtubeId = null;
 var newWindow = null;
+var newWidth = window.outerWidth;
+var newHeight = window.outerHeight;
 var winSize = 75;
 
 function findGetParameter(parameterName) {
@@ -29,8 +31,11 @@ if(!isNew) {
   var fullHeight = window.outerHeight;
   var winBorder = (100.0-winSize)/2;
 
-  var posString = "width=" + Math.round(fullWidth*winSize/100).toString()+","
-                + "height=" + Math.round(fullHeight*winSize/100).toString()+","
+  newWidth = Math.round(fullWidth*winSize/100);
+  newHeight = Math.round(fullHeight*winSize/100);
+
+  var posString = "width=" + newWidth.toString()+","
+                + "height=" + newHeight.toString()+","
                 + "left=" + Math.round(fullWidth*winBorder/100).toString()+","
                 + "top=" + Math.round(fullHeight*winBorder/100).toString()+","
                 + "location=no,menubar=no,status=no,titlebar=no,toolbar=no";
@@ -49,7 +54,7 @@ if(!isNew) {
 
 }
 
-
+// https://developers.google.com/youtube/iframe_api_reference
 function initializeYoutube() {
       var tag = document.createElement('script');
       tag.src = "https://www.youtube.com/iframe_api";
@@ -60,8 +65,8 @@ function initializeYoutube() {
  var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('youtube', {
-          height: '390',
-          width: '640',
+          height: newHeight.toString(),
+          width: newWidth.toString(),
           videoId: youtubeId,
           events: {
             'onReady': onPlayerReady,
