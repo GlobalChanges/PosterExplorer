@@ -49,7 +49,7 @@ if(!isNew) {
   newWindow = window.open(newHref, "_blank", posString);
   if(null!=newWindow) {
     var popup = document.getElementById("popup");
-    elem.parentNode.removeChild(popup);
+    popup.parentNode.removeChild(popup);
     window.history.back(); 
   }
 } else {
@@ -83,7 +83,7 @@ if(!isNew) {
   //dailymotion
   var dailymotionId = findGetParameter("dailymotion");
   if(dailymotionId) {
-     dailymotionSrc = "https://www.dailymotion.com/embed/video/" + tibId;
+     dailymotionSrc = "https://www.dailymotion.com/embed/video/" + dailymotionId;
      dailymotionSrc += "?autoplay=1";
      dailymotionAllow = "autoplay";
      initializeIframe(dailymotionSrc, dailymotionAllow);
