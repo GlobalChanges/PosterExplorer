@@ -40,8 +40,8 @@ if(!isNew) {
   newWidth = Math.round(fullWidth*winSize/100);
   newHeight = Math.round(fullHeight*winSize/100);
 
-  var posString = "width=" + (32+newWidth).toString()+","
-                + "height=" + (48+newHeight).toString()+","
+  var posString = "width=" + (48+newWidth).toString()+","
+                + "height=" + (96+newHeight).toString()+","
                 + "left=" + Math.round(fullWidth*winBorder/100).toString()+","
                 + "top=" + Math.round(fullHeight*winBorder/100).toString()+","
                 + "location=no,menubar=no,status=no,titlebar=no,toolbar=no";
