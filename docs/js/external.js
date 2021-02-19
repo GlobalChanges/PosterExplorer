@@ -1,5 +1,5 @@
 var youtubeId = null;
-var iframeSrc = null;
+//var iframeSrc = null;
 var newWindow = null;
 var newWidth = window.outerWidth;
 var newHeight = window.outerHeight;
@@ -37,8 +37,6 @@ if(!isNew) {
   var fullHeight = window.outerHeight;
   var winBorder = (100.0-winSize)/2;
 
-
-
   newWidth = Math.round(fullWidth*winSize/100);
   newHeight = Math.round(fullHeight*winSize/100);
 
@@ -50,29 +48,59 @@ if(!isNew) {
      
   newWindow = window.open(newHref, "_blank", posString);
   if(null!=newWindow) {
+    var popup = document.getElementById("popup");
+    elem.parentNode.removeChild(popup);
     window.history.back(); 
   }
 } else {
   //window.resizeTo(700, 400);
   window.focus();
+  //youtube
   youtubeId = findGetParameter("youtube");
   if(youtubeId) {
      initializeYoutube();
   }
-  iframeSrc = findGetParameter("iframe");
+ //iframe
+  var iframeSrc = findGetParameter("iframe");
   if(iframeSrc) {
-     initializeIframe();
+     iframeAllow = findGetParameter("allow");
+     initializeIframe(iframeSrc, iframeAllow);
   }
-
+  //vimeo
+  var vimeoId = findGetParameter("vimeo");
+  if(vimeoId) {
+     vimeoSrc = "https://player.vimeo.com/video/" + vimeoId;
+     vimeoAllow = "autoplay; fullscreen; picture-in-picture";
+     initializeIframe(vimeoSrc, vimeoAllow);
+  }
+  //tib
+  var tibId = findGetParameter("tib");
+  if(tibId) {
+     tibSrc = "https://av.tib.eu/player/" + tibId;
+     tibAllow = null;
+     initializeIframe(tibSrc, tibAllow);
+  }
+  //dailymotion
+  var dailymotionId = findGetParameter("dailymotion");
+  if(dailymotionId) {
+     dailymotionSrc = "https://www.dailymotion.com/embed/video/" + tibId;
+     dailymotionSrc += "?autoplay=1";
+     dailymotionAllow = "autoplay";
+     initializeIframe(dailymotionSrc, dailymotionAllow);
+  }
 }
 
-function initializeIframe() {
+function initializeIframe(iframeSrc, iframeAllow) {
       var iframe = document.createElement('iframe');
       iframe.src = iframeSrc;
       iframe.width = newWidth.toString();
       iframe.height = newHeight.toString();
-      iframeAllow = findGetParameter("allow");
-      iframe.allow = iframeAllow;
+      iframe.frameborder = "0";
+      iframe.scrolling = "no";
+      iframe.allowfullscreen = "";
+      if(iframeAllow) {
+        iframe.allow = iframeAllow;
+      }
       iframeDiv = document.getElementById("iframe");
       iframeDiv.appendChild(iframe);      
 }
