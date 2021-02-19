@@ -1,4 +1,5 @@
 var youtubeId = null;
+var iframeSrc - null;
 var newWindow = null;
 var newWidth = window.outerWidth;
 var newHeight = window.outerHeight;
@@ -58,7 +59,22 @@ if(!isNew) {
   if(youtubeId) {
      initializeYoutube();
   }
+  iframeSrc = findGetParameter("iframe");
+  if(iframeSrc) {
+     initializeIframe();
+  }
 
+}
+
+function initializeIframe() {
+      var iframe = document.createElement('iframe');
+      iframe.src = iframeSrc;
+      iframe.width = newWidth.toString();
+      iframe.height = newHeight.toString();
+      iframeAllow = findGetParameter("allow");
+      iframe.allow = iframeAllow;
+      iframeDiv = document.getElementById("iframe");
+      iframeDiv.appendChild(iframe);      
 }
 
 // https://developers.google.com/youtube/iframe_api_reference
