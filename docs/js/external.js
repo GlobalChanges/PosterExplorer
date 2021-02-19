@@ -1,5 +1,5 @@
 var youtubeId = null;
-var iframeSrc - null;
+var iframeSrc = null;
 var newWindow = null;
 var newWidth = window.outerWidth;
 var newHeight = window.outerHeight;
