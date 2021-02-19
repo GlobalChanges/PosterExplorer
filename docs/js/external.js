@@ -53,9 +53,12 @@ if(!isNew) {
     window.history.back(); 
   }
 } else {
+  var popup = document.getElementById("popup");
+  popup.parentNode.removeChild(popup);  
   //window.resizeTo(700, 400);
   window.focus();
   //youtube
+  // https://developers.google.com/youtube/iframe_api_reference
   youtubeId = findGetParameter("youtube");
   if(youtubeId) {
      initializeYoutube();
@@ -81,6 +84,7 @@ if(!isNew) {
      initializeIframe(tibSrc, tibAllow);
   }
   //dailymotion
+  // https://developer.dailymotion.com/tools/sdks/#sdk-javascript
   var dailymotionId = findGetParameter("dailymotion");
   if(dailymotionId) {
      dailymotionSrc = "https://www.dailymotion.com/embed/video/" + dailymotionId;
