@@ -1,0 +1,34 @@
+{
+ "Ägypten": {"map": "eg"},
+ "Argentinien": {"map": "ar"},
+ "Bolivien": {"map": "bo"},
+ "Brasilien": {"map": "br"},
+ "Burkina Faso": {"map": "bf"},
+ "Chile": {"map": "cl"}, 
+ "China": {"map": "cn"},
+ "Deutschland": {"map": "de"}, 
+ "Ghana": {"map": "gh"}, 
+ "Großbritannien": {"map": "uk"},
+ "Japan": {"map": "jp"},
+ "Kanada": {"map": "ca"}, 
+ "Spanien": {"map": "es"},
+ "Südkorea": {"map": "kr"},
+ "USA": {"map": "us"}, 
+
+ "Afrika": {"map": "wrld-af"},
+ "Asien": {"map": "wrld-as"},
+ "Antarktik": {"map": "wrld-an"},
+ "Arktik": {"map": "wrld-ar"},
+ "Europa": {"map": "wrld-eu"},
+ "Nordamerika": {"map": "wrld-na"},
+ "Ozeanien": {"map": "wrld-oc"},
+ "Südamerika": {"map": "wrld-sa"},
+
+ "Atlantik": {"map": "wrld-at"},
+ "Pazifik": {"map": "wrld-pa"},
+ "Mittlerer Osten": {"map": "wrld-me"},
+
+ "Welt": {"map": "wrld"},
+ "Alle": {"map": "wrld"},
+ "use-this-icons": {"map": "http://mapglyphs.com/maps"}
+}
