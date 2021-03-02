@@ -12,6 +12,7 @@
     --ocean:       #062379;
     --forest:      #076002;
     --fire:        #e04b0f;
+    --coal:        #000000;
 }
 
 body {
@@ -36,6 +37,7 @@ body {
 .ocean { color: var(--ocean) !important; } 
 .forest { color: var(--forest) !important; } 
 .fire { color: var(--fire) !important; } 
+.coal { color: var(--coal) !important; } 
 
 .navbar-theme-primary:not(.headroom) {
     background-color: var(--morph-bg);
