@@ -275,9 +275,10 @@ var vueGCPE = new Vue({
      inqIds: function(subdir) {
        var volumesUrl = "https://globalchanges.github.io/"+subdir+"/volumes.json";
        axios
-         .get(volumesUrl)
+         .get(volumesUrl, {params: {subdir: subdir}})
          .then(response => { 
             var ids = response.data;
+            var subdir = response.config.subdir;
             //this.resetPosters();
             for(var j=0; j<ids.length; j++) {
               var id = ids[j]; 
