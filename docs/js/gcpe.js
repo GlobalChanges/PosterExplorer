@@ -191,6 +191,7 @@ var vueGCPE = new Vue({
         if(json.year && !this.allPosterYears.includes(json.year.toString())) {
           this.allPosterYears.push(json.year.toString());
           this.allPosterYears.sort();
+          this.allPosterYears.reverse();
         }
      },
      updatePoster: function(data) {
