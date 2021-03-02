@@ -278,11 +278,11 @@ var vueGCPE = new Vue({
          .get(volumesUrl, {params: {subdir: subdir}})
          .then(response => { 
             var ids = response.data;
-            var subdir = response.config.subdir;
+            var subdir = response.config.params.subdir;
             //this.resetPosters();
             for(var j=0; j<ids.length; j++) {
               var id = ids[j]; 
-              var posterUrl = "https://globalchanges.github.io/MetaData2020/"+id+"/meta.json";   
+              var posterUrl = "https://globalchanges.github.io/"+subdir+"/"+id+"/meta.json";   
               axios
                 .get(posterUrl)
                 .then(response => { 
