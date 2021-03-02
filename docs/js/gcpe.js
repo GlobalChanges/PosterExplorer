@@ -125,10 +125,12 @@ var vueGCPE = new Vue({
         allPosterLandscapes: [],
         allPosterTopics: [],
         allPosterMethods: [],
+        allPosterYears: [],
         filterLocation: "Alle",
         filterLandscape: "Alle",
         filterTopic: "Alle",
         filterMethod: "Alle",
+        filterYear: "Alle",
   },
   methods: {
      resetPosters: function() { 
@@ -138,6 +140,7 @@ var vueGCPE = new Vue({
        this.allPosterLandscapes = [];
        this.allPosterTopics = [];
        this.allPosterMethods = [];
+       this.allPosterYears = [];
      }, 
      selectPoster: function(poster) {
         this.currentPosterData = poster;
@@ -185,7 +188,10 @@ var vueGCPE = new Vue({
           this.allPosterMethods.push(json.concept);
           this.allPosterMethods.sort();
         }
-
+        if(json.year && !this.allPosterYears.includes(json.year.toString())) {
+          this.allPosterYears.push(json.year.toString());
+          this.allPosterYears.sort();
+        }
      },
      updatePoster: function(data) {
          var dbPostUrl = getJsonDb()+"poster";
@@ -307,6 +313,10 @@ var vueGCPE = new Vue({
        this.filterMethod = method;
        this.filterPosterData();
      },
+     setYearFilter: function(year) {
+       this.filterYear = year;
+       this.filterPosterData();
+     },
     filterPosterData: function() {
        var result = [];
        for(var j=0; j<this.allPosterData.length; j++) {
@@ -323,7 +333,9 @@ var vueGCPE = new Vue({
                                 (this.filterTopic == poster.subtopic));
           var methodFound =  ((this.filterMethod == 'Alle') || 
                                 (this.filterMethod == poster.concept));
-          if(locationFound && landscapeFound && topicFound && methodFound) {
+          var yearFound =  ((this.filterYear == 'Alle') || 
+                                (this.filterYear == poster.year.toString()));
+          if(locationFound && landscapeFound && topicFound && methodFound && yearFound) {
             result.push(poster);
           }
        }
