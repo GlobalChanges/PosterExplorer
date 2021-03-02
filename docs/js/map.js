@@ -75,6 +75,7 @@ function onMarkerClick(e) {
 }).addTo(map).on('click', onMarkerClick);  
   
 map.addLayer(pointLayer);
+map.redraw();
 
  }
 
