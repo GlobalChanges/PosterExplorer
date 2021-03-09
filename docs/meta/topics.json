@@ -14,6 +14,7 @@
  "Erwärmung":  {"awesome": "thermometer-half"},
  "Landwirtschaft":  {"awesome": "tractor"},
  "Ernährung":  {"awesome": "utensils"},
+ "Hochwasser":  {"awesome": "ship"},
  "Meeresspiegel":  {"awesome": "water"},
  "Schädlinge":  {"awesome": "bug"},
  "Ressourcen":  {"awesome": "piggy-bank"},
@@ -22,6 +23,7 @@
  "Gesundheit":  {"awesome": "ambulance"},
  "Klimawandel":  {"awesome": "cloud-sun"},
  "Indigene Völker":  {"awesome": "users"},
+ "Katastrophe":  {"awesome": "meteor"},
  "Migration":  {"awesome": "plane"},
  "Rohstoffe":  {"awesome": "hammer"},
  "Verkehr":  {"awesome": "car"},
@@ -47,6 +49,8 @@
  "user":  {"awesome": "user-graduate"},
  "question":  {"awesome": "question"},
 
+ "Agrar":  {"awesome": "sedling"},
+ "Atmosphäre":  {"awesome": "wind"},
  "Gebirge":  {"awesome": "mountain"},
  "Wald":  {"awesome": "tree"},
  "Küste":  {"awesome": "umbrella-beach"},
@@ -59,6 +63,7 @@
  "Fluss":  {"awesome": "fish"},
  "Wüste":  {"awesome": "spider"},
  "Tiefland":  {"awesome": "grip-lines"},
+ "Trockengebiet":  {"awesome": "tint-slash"},
  "Inseln":  {"awesome": "pastafarianism"},
  "Alle":  {"awesome": "check"},
 

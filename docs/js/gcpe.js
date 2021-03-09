@@ -293,7 +293,13 @@ var vueGCPE = new Vue({
               axios
                 .get(posterUrl)
                 .then(response => { 
-                   this.addPoster(response.data);
+                   var visible = true;
+                   if("visible" in response.data) {
+                     visible = response.data.visible;
+                   }
+                   if(visible) {   
+                     this.addPoster(response.data);
+                   } 
               });              
             }
        });
