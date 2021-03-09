@@ -294,7 +294,7 @@ var vueGCPE = new Vue({
                 .get(posterUrl)
                 .then(response => { 
                    var visible = true;
-                   if("visible" in response.data) {
+                   if(response.data.hasOwnProperty('visible')){
                      visible = response.data.visible;
                    }
                    if(visible) {   
