@@ -32,6 +32,7 @@
  "Österreich": {"map": "at"}, 
  "Palästina": {"map": "il"},
  "Papua-Neu-Guinea": {"map": "pg"},
+ "Peru": {"map": "pe"},
  "Philippinen": {"map": "ph"},
  "Portugal": {"map": "pt"},
  "Russland": {"map": "ru"}, 
@@ -44,6 +45,7 @@
  "Südkorea": {"map": "kr"},
  "Syrien": {"map": "sy"},
  "Tansania": {"map": "tz"},
+ "Thailand": {"map": "th"},
  "Timor-Leste": {"map": "tl"},
  "USA": {"map": "us"}, 
 
