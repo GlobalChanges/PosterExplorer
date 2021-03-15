@@ -14,7 +14,7 @@ var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmd
 
 var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 	maxZoom: 16,
-        minZoom: 2,
+        minZoom: 1,
         noWrap: false,
         zoomDelta: 0.25,
         zoomSnap: 0.0,
@@ -75,7 +75,6 @@ function onMarkerClick(e) {
 }).addTo(map).on('click', onMarkerClick);  
   
 map.addLayer(pointLayer);
-map.redraw();
 
  }
 
