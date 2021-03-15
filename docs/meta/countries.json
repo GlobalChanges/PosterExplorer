@@ -35,6 +35,7 @@
  "Malaysia": {"map": "my"}, 
  "Mali": {"map": "ml"}, 
  "Mauretanien": {"map": "mr"}, 
+ "Mexiko": {"map": "mx"}, 
  "Monaco": {"map": "mc"}, 
  "Norwegen": {"map": "no"},
  "Niederlande": {"map": "nl"}, 
@@ -62,7 +63,7 @@
  "Timor-Leste": {"map": "tl"},
  "Tschad": {"map": "td"}, 
  "USA": {"map": "us"}, 
-
+ "VAE": {"map": "ae"}, 
 
  "Afrika": {"map": "wrld-af"},
  "Asien": {"map": "wrld-as"},
