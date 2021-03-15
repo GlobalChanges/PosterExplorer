@@ -59,8 +59,8 @@ function onMarkerClick(e) {
  function initMap() { 
 
  map = L.map('map', {
-     center: [40, 8],
-     zoom: 1,
+     center: [40, 0],
+     zoom: 2,
      worldCopyJump: true,
      maxBounds: [[-90,-270],[90,270]],
      layers: [OpenTopoMap] // [background, markers]
