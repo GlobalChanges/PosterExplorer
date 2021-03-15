@@ -59,7 +59,7 @@ function onMarkerClick(e) {
  function initMap() { 
 
  map = L.map('map', {
-     center: [40, 0],
+     center: [20, 0],
      zoom: 2,
      worldCopyJump: true,
      maxBounds: [[-90,-270],[90,270]],
