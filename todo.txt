@@ -46,3 +46,22 @@ http://dev.openlayers.org/releases/OpenLayers-2.13.1/docs/files/OpenLayers/Marke
 // card-body  -> map-body: padding 0.5rem or 5px 
 
 // https://leafletjs.com/examples/custom-icons/
+
+
+// navigation:  Map, Gallery, About, Contribute
+#?page=map&location=de&landscape=gnd&topic=gnd&method=gnd&year=2021&curr=104&language=en
+
+
+// localisation
+https://kazupon.github.io/vue-i18n/started.html#html
+https://phrase.com/blog/posts/ultimate-guide-to-vue-localization-with-vue-i18n/
+
+
+
+
+
+// Uni Logo
+
+<div class="profile-image shadow-inset border border-light bg-primary  mt-n5 mx-auto"><img src="https://www.zuv.uni-freiburg.de/service/cd/cd-manual/images/logo/logo/logo-grundversion-01.png" alt="Home" class="c2ard-img-top shadow-soft p-2 border border-light"></div>
+
+
