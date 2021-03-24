@@ -39,6 +39,8 @@ body {
 .fire { color: var(--fire) !important; } 
 .coal { color: var(--coal) !important; } 
 
+.lg-text { font-size: 120%; }
+
 .navbar-theme-primary:not(.headroom) {
     background-color: var(--morph-bg);
 }
