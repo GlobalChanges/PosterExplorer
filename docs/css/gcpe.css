@@ -112,6 +112,11 @@ body {
     padding: 0.25rem;
 }
 
+#map { 
+    width: 100%; 
+    height: calc(100vw * 0.35 - 120px) 
+}
+
 div.dropdown div.dropdown-menu {
  overflow-y: auto; 
  max-height: 320px;
