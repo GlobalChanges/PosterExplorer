@@ -126,6 +126,7 @@ var vueGCPE = new Vue({
         allPosterTopics: [],
         allPosterMethods: [],
         allPosterYears: [],
+        currentPage: "gallery",
         filterLocation: "Alle",
         filterLandscape: "Alle",
         filterTopic: "Alle",
@@ -133,6 +134,9 @@ var vueGCPE = new Vue({
         filterYear: "Alle",
   },
   methods: {
+     setPage: function(page) {
+        this.currentPage = page;
+     },
      resetPosters: function() { 
        this.allPosterData = [];
        this.allPosterContinents = [];
