@@ -80,7 +80,7 @@ body {
 .shadow-button {
   background: linear-gradient(145deg, var(--morph-bg), var(--morph-extr)) !important;
 }
-.shadow-button:hover, .shadow-button:active {
+.shadow-button:hover, .shadow-button:active, .shadow-button-active {
   background: linear-gradient(145deg, var(--morph-extr), var(--morph-bg)) !important;
 }
 

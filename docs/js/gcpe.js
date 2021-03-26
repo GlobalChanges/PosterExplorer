@@ -136,6 +136,7 @@ var vueGCPE = new Vue({
   methods: {
      setPage: function(page) {
         this.currentPage = page;
+        return false; 
      },
      resetPosters: function() { 
        this.allPosterData = [];
