@@ -57,7 +57,12 @@ https://kazupon.github.io/vue-i18n/started.html#html
 https://phrase.com/blog/posts/ultimate-guide-to-vue-localization-with-vue-i18n/
 
 
+//compress pdf
+https://opensource.com/article/20/8/reduce-pdf
 
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
+-dNOPAUSE -dBATCH -dColorImageResolution=150 \
+-sOutputFile=output.pdf someBigFile.pdf
 
 
 // Uni Logo
