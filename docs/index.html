@@ -62,17 +62,17 @@
                 <li class="nav-item text-center">
                     <a href="#" @click="setPage('about')" :class="('about' == currentPage) && 'shadow-button-active'" 
                        class="nav-link ocean shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
-                      <i class="clouds fa-3x fas fa-info-circle"></i><br><br><h5>About</h5></a>
+                      <i :class="('about' == currentPage) ? 'ocean' : 'clouds'" class="fa-3x fas fa-info-circle"></i><br><br><h5>About</h5></a>
                 </li>
                 <li class="nav-item text-center">
                     <a href="#" @click="setPage('gallery')" :class="('gallery' == currentPage) && 'shadow-button-active'" 
                        class="nav-link ocean shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
-                      <i class="clouds fa-3x fas fa-images"></i><br><br><h5>Gallery</h5></a>
+                      <i :class="('about' == currentPage) ? 'ocean' : 'clouds'" class="fa-3x fas fa-images"></i><br><br><h5>Gallery</h5></a>
                 </li>
                 <li class="nav-item text-center">
                     <a href="#" @click="setPage('map')" :class="('map' == currentPage) && 'shadow-button-active'" 
                        class="nav-link ocean shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
-                      <i class="clouds fa-3x fas fa-map-marked-alt"></i><br><br><h5>Map</h5></a>
+                      <i :class="('about' == currentPage) ? 'ocean' : 'clouds'" class="fa-3x fas fa-map-marked-alt"></i><br><br><h5>Map</h5></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link" data-toggle="dropdown" role="button">
