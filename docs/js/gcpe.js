@@ -126,7 +126,7 @@ var vueGCPE = new Vue({
         allPosterTopics: [],
         allPosterMethods: [],
         allPosterYears: [],
-        currentPage: "gallery",
+        currentPage: "all",
         filterLocation: "Alle",
         filterLandscape: "Alle",
         filterTopic: "Alle",
@@ -138,6 +138,9 @@ var vueGCPE = new Vue({
         this.currentPage = page;
         return false; 
      },
+     checkPage: function(page) {
+       return ((this.currentPage == page) || (this.currentPage == "all"));  
+     }
      resetPosters: function() { 
        this.allPosterData = [];
        this.allPosterContinents = [];
@@ -375,6 +378,9 @@ var vueGCPE = new Vue({
     },
   },
   mounted () { 
+     if (typeof initMap === 'function') {
+        initMap();
+     }
      this.inqTopics();
      this.inqCountries();
      this.initTs = Date.now();
@@ -382,6 +388,7 @@ var vueGCPE = new Vue({
      this.uidOld = getFingerprint(4.0, 2.0);
      this.inqFolders();
      //this.filterPosterData();
+     this.setPage('gallery');
   },
   created () {
 
