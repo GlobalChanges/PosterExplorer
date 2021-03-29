@@ -110,7 +110,10 @@ function transparentize(color, opacity) {
 }
 
 
+var i18n = new VueI18n({ locale: 'de', messages: {en: {}, de: {} }});
+
 var vueGCPE = new Vue({
+  i18n: { locale: 'de', messages: {en: {}, de: {} }},
   el: '#gcpe', 
   data: {
         uid: '0',
@@ -133,6 +136,7 @@ var vueGCPE = new Vue({
         filterMethod: "Alle",
         filterYear: "Alle",
         currentLanguage: "de",
+        languageMessages: {en: {}, de: {}}
   },
   methods: {
      setPage: function(page) {
@@ -320,6 +324,19 @@ var vueGCPE = new Vue({
             }
        });
      },
+     inqLocale: function(language) {
+       var languageUrl = "https://globalchanges.github.io/meta/language-"+language+".json";
+       axios
+         .get(volumesUrl, {params: {language: language}})
+         .then(response => { 
+            var locale = response.data;
+            var language = response.config.params.language;
+            this.addLocale(language, locale);
+         });
+     },
+     addLocale: function(language, locale) {
+      languageMessages[language] = locale;  //better merge
+     },
      setLocationFilter: function(location) {
        this.filterLocation = location;
        this.filterPosterData();
@@ -403,6 +420,8 @@ var vueGCPE = new Vue({
      this.checkMap();
   },
   created () {
+     this.inqLocale('de');
+     this.inqLocale('en');     
      this.inqTopics();
      this.inqCountries();
      this.initTs = Date.now();

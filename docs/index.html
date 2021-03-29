@@ -78,14 +78,13 @@
             </ul>
         </div>
         <div class="d-flex align-items-center">
-            <p class="text-dark mb-0">Primary navbar</p>
             <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-              <li class="nav-item text-center" >
+              <li class="nav-item text-center sm-text" >
                 <a href="#" @click="setLanguage('de')" :class="('de' == currentLanguage) && 'shadow-button-active'" 
                    class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
-                  <img src="./img/language-de.png" width="40px" height="30px" /><br><br><h5 :class="('en' == currentLanguage) ? 'clouds' : 'ocean'">Deutsch</h5></a>
+                  <img src="./img/language-de.png" width="40px" height="30px" /><br><br><h5 :class="('de' == currentLanguage) ? 'clouds' : 'ocean'">Deutsch</h5></a>
             </li>
-            <li class="nav-item text-center">
+            <li class="nav-item text-center sm-text">
                 <a href="#" @click="setLanguage('en')" :class="('en' == currentLanguage) && 'shadow-button-active'" 
                    class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
                    <img src="./img/language-en.png" width="40px" height="30px" /><br><br><h5 :class="('en' == currentLanguage) ? 'clouds' : 'ocean'">English</h5></a>
