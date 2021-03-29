@@ -325,7 +325,7 @@ var vueGCPE = new Vue({
        });
      },
      inqLocale: function(language) {
-       var languageUrl = "https://globalchanges.github.io/meta/language-"+language+".json";
+       var languageUrl = "https://globalchanges.github.io/meta/locale-"+language+".json";
        axios
          .get(languageUrl, {params: {language: language}})
          .then(response => { 
@@ -335,7 +335,8 @@ var vueGCPE = new Vue({
          });
      },
      addLocale: function(language, locale) {
-      languageMessages[language] = locale;  //better merge
+      //languageMessages[language] = locale;  //better merge
+      this.i18n.setLocaleMessage(language, locale);
      },
      setLocationFilter: function(location) {
        this.filterLocation = location;
