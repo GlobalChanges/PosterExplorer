@@ -388,7 +388,7 @@ var vueGCPE = new Vue({
      this.uidOld = getFingerprint(4.0, 2.0);
      this.inqFolders();
      //this.filterPosterData();
-     this.setPage('gallery');
+     //this.setPage('gallery');
   },
   created () {
 
