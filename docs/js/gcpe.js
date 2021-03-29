@@ -381,16 +381,16 @@ var vueGCPE = new Vue({
      //if (typeof initMap === 'function') {
      //   initMap();
      //}
-     this.inqTopics();
-     this.inqCountries();
-     this.initTs = Date.now();
-     this.uid = getFingerprint(4.0, 0.0);
-     this.uidOld = getFingerprint(4.0, 2.0);
+
      this.inqFolders();
      //this.filterPosterData();
      //this.setPage('gallery');
   },
   created () {
-
+     this.inqTopics();
+     this.inqCountries();
+     this.initTs = Date.now();
+     this.uid = getFingerprint(4.0, 0.0);
+     this.uidOld = getFingerprint(4.0, 2.0);
   }
 }) 
