@@ -378,9 +378,9 @@ var vueGCPE = new Vue({
     },
   },
   mounted () { 
-     if (typeof initMap === 'function') {
-        initMap();
-     }
+     //if (typeof initMap === 'function') {
+     //   initMap();
+     //}
      this.inqTopics();
      this.inqCountries();
      this.initTs = Date.now();
