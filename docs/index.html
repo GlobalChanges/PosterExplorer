@@ -222,6 +222,50 @@
    </div>
   </div>
 
+  <div v-for="poster in selectedPosterData" :key="poster.id" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
+   <div class="card bg-primary border-light shadow-soft" v-show="checkPoster(poster.id)">
+
+       <div class="shadow-inset card-header p-3">
+        <img :src="poster.thumbnail" class="card-img-top rounded" :alt="poster.title">
+       </div>
+       <div class="card-body pt-2">
+        <div class="media justify-content-between">
+         <ul class="pull-left">
+           <li v-if="poster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.country)"></i>&ensp;{{poster.location.country}}</li>
+           <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(poster.location.continent)"></i>&ensp;{{poster.location.continent}}</li>
+           <br/>
+           <li v-if="poster.location.landscape" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(poster.location.landscape)"></i>&ensp;
+{{poster.location.landscape}}</li>
+         </ul>
+         <ul class="pull-right">
+           <li class="small ocean pull-right">{{poster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.concept)"></i></li><br/>
+           <li class="small forest pull-right">{{poster.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.topic)"></i></li><br/>
+           <li class="small forest pull-right">{{poster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(poster.subtopic)"></i></li>
+         </ul>
+        </div> 
+        <h5 class="card-title clouds">{{poster.title}}</h5>
+        <span class="text-black-50 media justify-content-between">
+         <span class="pull-left">
+         <span v-for="author in poster.authors" :key="author.email">
+           <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}
+           <span v-if="author.orcid">&nbsp;<a :href="('https://orcid.org/'+author.orcid)" target="_orcid">
+            <img src="./img/orcid_16x16.png" :alt="author.orcid"></a></span><br/>   
+         </span>
+         </span>
+         <span clas="pull-right">
+          <i class="far fa-copyright"></i>{{poster.year}}</span>
+        </span>
+       </div>
+
+       <div class="shadow-inset card-body pt-2">
+        <p v-if="(poster.abstract && (poster.abstract.length < 720))" class="card-text">{{poster.abstract}}</p>
+        <p v-else-if="(poster.teaser && (poster.teaser.length < 720))" class="card-text">{{poster.teaser}}</p>
+        <p v-else-if="poster.teaser" class="card-text">{{poster.teaser|shorting}}</p>
+        <p v-else class="card-text">{{poster.abstract|shorting}}</p>
+       </div>
+ 
+    <a v-if="poster.pdf" :href="poster.pdf" @click="openPoster(poster.id)" class="btn mx-auto border-light shadow-soft shadow-button" target="_gcpe"><i class="fas fa-eye"></i>&nbsp;Poster</a>
+   </div> 
 
  </div>
 

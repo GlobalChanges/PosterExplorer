@@ -150,6 +150,9 @@ var vueGCPE = new Vue({
        this.allPosterMethods = [];
        this.allPosterYears = [];
      }, 
+     checkPoster: function(posterId) {
+      this.currentPosterData.id = posterId;
+     },
      selectPoster: function(poster) {
         this.currentPosterData = poster;
      },
