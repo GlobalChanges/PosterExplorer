@@ -325,7 +325,7 @@ var vueGCPE = new Vue({
        });
      },
      inqLocale: function(language) {
-       var languageUrl = "https://globalchanges.github.io/meta/locale-"+language+".json";
+       var languageUrl = "https://globalchanges.github.io/PosterExplorer/meta/locale-"+language+".json";
        axios
          .get(languageUrl, {params: {language: language}})
          .then(response => { 
