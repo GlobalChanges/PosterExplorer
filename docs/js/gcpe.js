@@ -361,6 +361,13 @@ var vueGCPE = new Vue({
          addPosterMarkers(result);
        }
     },
+    checkMap: function() {
+       if(isMapReady()) {
+         this.setPage('gallery');
+       } else {
+         window.setTimeout(this.checkMap, 200);
+       }
+    },
   },
   computed: {
 
@@ -385,6 +392,7 @@ var vueGCPE = new Vue({
      this.inqFolders();
      //this.filterPosterData();
      //this.setPage('gallery');
+     this.checkMap();
   },
   created () {
      this.inqTopics();

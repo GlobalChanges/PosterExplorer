@@ -56,6 +56,10 @@ function onMarkerClick(e) {
  }
 }
 
+ function isMapReady() {
+   return (map != null);
+ } 
+
  function initMap() { 
 
  map = L.map('map', {
