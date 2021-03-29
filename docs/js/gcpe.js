@@ -140,7 +140,7 @@ var vueGCPE = new Vue({
      },
      checkPage: function(page) {
        return ((this.currentPage == page) || (this.currentPage == "all"));  
-     }
+     },
      resetPosters: function() { 
        this.allPosterData = [];
        this.allPosterContinents = [];
