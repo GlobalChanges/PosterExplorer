@@ -327,7 +327,7 @@ var vueGCPE = new Vue({
      inqLocale: function(language) {
        var languageUrl = "https://globalchanges.github.io/meta/language-"+language+".json";
        axios
-         .get(volumesUrl, {params: {language: language}})
+         .get(languageUrl, {params: {language: language}})
          .then(response => { 
             var locale = response.data;
             var language = response.config.params.language;
