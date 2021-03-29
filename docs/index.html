@@ -77,14 +77,14 @@
 
 
               <li class="nav-item text-center" >
-                  <a href="#" @click="setPage('de')" :class="('de' == currentPage) && 'shadow-button-active'" 
+                  <a href="#" @click="setLanguage('de')" :class="('de' == currentLanguage) && 'shadow-button-active'" 
                      class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
-                    <img src="./img/language-de.png" width="50px" height="50px" /><br><br><h5 :class="('en' == currentPage) ? 'clouds' : 'ocean'">Deutsch</h5></a>
+                    <img src="./img/language-de.png" width="40px" height="30px" /><br><br><h5 :class="('en' == currentPage) ? 'clouds' : 'ocean'">Deutsch</h5></a>
               </li>
               <li class="nav-item text-center">
-                  <a href="#" @click="setPage('en')" :class="('en' == currentPage) && 'shadow-button-active'" 
+                  <a href="#" @click="setLanguage('en')" :class="('en' == currentLanguage) && 'shadow-button-active'" 
                      class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
-                     <img src="./img/language-en.png" width="50px" height="50px" /><br><br><h5 :class="('en' == currentPage) ? 'clouds' : 'ocean'">English</h5></a>
+                     <img src="./img/language-en.png" width="40px" height="30px" /><br><br><h5 :class="('en' == currentPage) ? 'clouds' : 'ocean'">English</h5></a>
               </li>
 
 

@@ -132,6 +132,7 @@ var vueGCPE = new Vue({
         filterTopic: "Alle",
         filterMethod: "Alle",
         filterYear: "Alle",
+        currentLanguage: "de",
   },
   methods: {
      setPage: function(page) {
@@ -140,6 +141,10 @@ var vueGCPE = new Vue({
      },
      checkPage: function(page) {
        return ((this.currentPage == page) || (this.currentPage == "all"));  
+     },
+     setLanguage: function(language) {
+      this.currentLanguage = language;
+      return false; 
      },
      resetPosters: function() { 
        this.allPosterData = [];
