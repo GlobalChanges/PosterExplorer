@@ -336,7 +336,7 @@ var vueGCPE = new Vue({
      },
      addLocale: function(language, locale) {
       //languageMessages[language] = locale;  //better merge
-      $i18n.setLocaleMessage(language, locale);
+      this.$i18n.setLocaleMessage(language, locale);
      },
      setLocationFilter: function(location) {
        this.filterLocation = location;
