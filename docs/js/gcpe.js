@@ -135,8 +135,8 @@ var vueGCPE = new Vue({
         filterTopic: "Alle",
         filterMethod: "Alle",
         filterYear: "Alle",
-        currentLanguage: "de",
-        languageMessages: {en: {}, de: {}}
+        //currentLanguage: "de",
+        //languageMessages: {en: {}, de: {}}
   },
   methods: {
      setPage: function(page) {
@@ -147,8 +147,12 @@ var vueGCPE = new Vue({
        return ((this.currentPage == page) || (this.currentPage == "all"));  
      },
      setLanguage: function(language) {
-      this.currentLanguage = language;
+      //this.currentLanguage = language;
+      this.$i18n.locale = language;
       return false; 
+     },
+     checkLanguage: function(language) {
+       return (this.$i18n.locale == language);
      },
      resetPosters: function() { 
        this.allPosterData = [];
@@ -336,7 +340,8 @@ var vueGCPE = new Vue({
      },
      addLocale: function(language, locale) {
       //languageMessages[language] = locale;  //better merge
-      this.$i18n.setLocaleMessage(language, locale);
+      //this.$i18n.setLocaleMessage(language, locale);
+      this.$i18n.mergeLocaleMessage(language, locale);
      },
      setLocationFilter: function(location) {
        this.filterLocation = location;

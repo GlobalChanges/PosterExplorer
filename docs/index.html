@@ -69,7 +69,7 @@
                        class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
                       <i class="fa-3x fas fa-images clouds"></i><br><br><h5 :class="('gallery' == currentPage) ? 'clouds' : 'ocean'">Gallery</h5></a>
                 </li>
-                <li class="nav-item text-center mr-lg-5">
+                <li class="nav-item text-center">
                     <a href="#" @click="setPage('map')" :class="('map' == currentPage) && 'shadow-button-active'" 
                        class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
                       <i class="fa-3x fas fa-map-marked-alt clouds"></i><br><br><h5 :class="('map' == currentPage) ? 'clouds' : 'ocean'">Map</h5></a>
@@ -80,14 +80,14 @@
         <div class="d-flex align-items-center">
             <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
               <li class="nav-item text-center sm-text" >
-                <a href="#" @click="setLanguage('de')" :class="('de' == currentLanguage) && 'shadow-button-active'" 
+                <a href="#" @click="setLanguage('de')" :class="checkLanguage('de') && 'shadow-button-active'" 
                    class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
-                  <img src="./img/language-de.png" width="40px" height="30px" /><br><br><h5 :class="('de' == currentLanguage) ? 'clouds' : 'ocean'">Deutsch</h5></a>
+                  <img src="./img/language-de.png" width="40px" height="30px" /><br><br><h5 :class="checkLanguage('de') ? 'clouds' : 'ocean'">Deutsch</h5></a>
             </li>
             <li class="nav-item text-center sm-text">
-                <a href="#" @click="setLanguage('en')" :class="('en' == currentLanguage) && 'shadow-button-active'" 
+                <a href="#" @click="setLanguage('en')" :class="checkLanguage('en') && 'shadow-button-active'" 
                    class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
-                   <img src="./img/language-en.png" width="40px" height="30px" /><br><br><h5 :class="('en' == currentLanguage) ? 'clouds' : 'ocean'">English</h5></a>
+                   <img src="./img/language-en.png" width="40px" height="30px" /><br><br><h5 :class="checkLanguage('en') ? 'clouds' : 'ocean'">English</h5></a>
             </li>
             </ul>
             <button class="navbar-toggler ml-2" type="button" data-toggle="collapse"
@@ -198,7 +198,7 @@
  </div> 
 
  <div class="row" v-show="checkPage('about')">
-  About
+  {{ $t("message.about") }}
  </div>
 
  <div class="row" v-show="checkPage('map')">
