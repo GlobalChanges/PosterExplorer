@@ -164,7 +164,7 @@ function findPreferedLanguage() {
   return candidates[0];
 }
 
-//var i18n = new VueI18n({ locale: findPreferedLanguage(), messages: {en: {}, de: {} }});
+var i18n = new VueI18n({ locale: findPreferedLanguage(), messages: {en: {}, de: {} }});
 
 var vueGCPE = new Vue({
   i18n: { locale: findPreferedLanguage(), messages: {en: {}, de: {} }},
