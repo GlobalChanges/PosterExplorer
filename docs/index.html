@@ -108,7 +108,7 @@
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
      <a class="dropdown-item earth" href="#" @click="setLocationFilter('Alle')">
-      <i class="mg map-wrld"></i>&nbsp;Alle
+      <i class="mg map-wrld"></i>&nbsp;{{ $t("menu.all") }}
      </a> 
      <h6 class="dropdown-header">Continents</h6>
      <a v-for="continent in allPosterContinents" :key="continent" class="dropdown-item earth" href="#" @click="setLocationFilter(continent)">
@@ -131,7 +131,7 @@
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton4">
      <a class="dropdown-item sand" href="#" @click="setLandscapeFilter('Alle')">
-      <i class="mg fas fa-check"></i>&nbsp;Alle
+      <i class="mg fas fa-check"></i>&nbsp;{{ $t("menu.all") }}
      </a> 
      <div class="dropdown-divider"></div>
      <a v-for="landscape in allPosterLandscapes" :key="landscape" class="dropdown-item sand" href="#" @click="setLandscapeFilter(landscape)">
@@ -149,7 +149,7 @@
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton2">
      <a class="dropdown-item forest" href="#" @click="setTopicFilter('Alle')">
-      <i class="mg fas fa-check"></i>&nbsp;Alle
+      <i class="mg fas fa-check"></i>&nbsp;{{ $t("menu.all") }}
      </a> 
      <div class="dropdown-divider"></div>
      <a v-for="topic in allPosterTopics" :key="topic" class="dropdown-item forest" href="#" @click="setTopicFilter(topic)">
@@ -167,7 +167,7 @@
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton3">
      <a class="dropdown-item ocean" href="#" @click="setMethodFilter('Alle')">
-      <i class="mg fas fa-check"></i>&nbsp;Alle
+      <i class="mg fas fa-check"></i>&nbsp;{{ $t("menu.all") }}
      </a> 
      <div class="dropdown-divider"></div>
      <a v-for="method in allPosterMethods" :key="method" class="dropdown-item ocean" href="#" @click="setMethodFilter(method)">
@@ -185,7 +185,7 @@
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton5">
      <a class="dropdown-item coal" href="#" @click="setYearFilter('Alle')">
-      Alle
+      {{ $t("menu.all") }}
      </a> 
      <div class="dropdown-divider"></div>
      <a v-for="year in allPosterYears" :key="year" class="dropdown-item coal" href="#" @click="setYearFilter(year)">
@@ -256,7 +256,7 @@
 
  <div class="row" v-show="checkPage('about')">
 
-  <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-8 col-xxl-8 mb-5">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5">
     <div class="card bg-primary border-light shadow-soft">
      <div class="shadow-inset p-5">
        <h4 class="clouds">  {{ $t("about.about") }}</h4><br>

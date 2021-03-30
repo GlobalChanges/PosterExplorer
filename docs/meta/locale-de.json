@@ -16,6 +16,7 @@
      "topic": "Thema",
      "concept": "Konzept",
      "year": "Jahr",
-     "language": "Sprache"   
+     "language": "Sprache",
+     "all": "Alle"         
    }
 }
