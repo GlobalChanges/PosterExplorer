@@ -140,7 +140,24 @@ var abc = 1;
 
 // may add candidate list
 function findPreferedLanguage() {
-  return 'de';
+  var candidates = ['de','en'];
+  var langHash = findHashParameter('lang');
+  if(langHash && candidates.includes(langHash)) {
+    return langHash;
+  }
+  var langNavi = navigator.language || navigator.userLanguage;
+  if(langNavi && candidates.includes(langNavi.substr(0,2))) {
+    return langNavi.substr(0,2);
+  }
+  if(navigator.languages) {
+    for(var j=0; j<navigator.languages.length; j++) {
+        var langList = navigator.languages[j].substr(0,2);
+        if(langList && candidates.includes(langList)) {
+          return langList;
+        }
+    }
+  }    
+  return candidates[0];
 }
 
 var i18n = new VueI18n({ locale: findPreferedLanguage(), messages: {en: {}, de: {} }});
