@@ -110,7 +110,40 @@ function transparentize(color, opacity) {
 }
 
 
-var i18n = new VueI18n({ locale: 'de', messages: {en: {}, de: {} }});
+function findGetParameter(parameterName) {
+  var result = null,
+      tmp = [];
+  var items = location.search.substr(1).split("&");
+  for (var index = 0; index < items.length; index++) {
+      tmp = items[index].split("=");
+      if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+  }
+  return result;
+}
+
+function findHashParameter(parameterName) {
+  var result = null,
+      tmp = [];
+  var items = location.hash.substr(1).split("&");
+  for (var index = 0; index < items.length; index++) {
+      tmp = items[index].split("=");
+      if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+  }
+  return result;
+}
+
+
+var langs = navigator.languages;
+var lang = navigator.language || navigator.userLanguage;
+var lang2 = findHashParameter('lang');
+var abc = 1;
+
+// may add candidate list
+function findPreferedLanguage() {
+  return 'de';
+}
+
+var i18n = new VueI18n({ locale: findPreferedLanguage(), messages: {en: {}, de: {} }});
 
 var vueGCPE = new Vue({
   i18n: { locale: 'de', messages: {en: {}, de: {} }},
