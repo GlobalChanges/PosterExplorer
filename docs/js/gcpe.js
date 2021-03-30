@@ -145,6 +145,10 @@ function findPreferedLanguage() {
   if(langHash && candidates.includes(langHash)) {
     return langHash;
   }
+  var langGet = findGetParameter('lang');
+  if(langGet && candidates.includes(langGet)) {
+    return langGet;
+  }
   var langNavi = navigator.language || navigator.userLanguage;
   if(langNavi && candidates.includes(langNavi.substr(0,2))) {
     return langNavi.substr(0,2);
@@ -160,10 +164,10 @@ function findPreferedLanguage() {
   return candidates[0];
 }
 
-var i18n = new VueI18n({ locale: findPreferedLanguage(), messages: {en: {}, de: {} }});
+//var i18n = new VueI18n({ locale: findPreferedLanguage(), messages: {en: {}, de: {} }});
 
 var vueGCPE = new Vue({
-  i18n: { locale: 'de', messages: {en: {}, de: {} }},
+  i18n: { locale: findPreferedLanguage(), messages: {en: {}, de: {} }},
   el: '#gcpe', 
   data: {
         uid: '0',
