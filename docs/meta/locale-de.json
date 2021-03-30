@@ -1,7 +1,9 @@
 {
    "about": {
      "about": "Info",
-     "creation1": "Die Postergalerie im 'Global Change Poster Explorer' entstand im Rahmen des Master Moduls 'Schauplätze des Globalen Wandels' der Physischen Geographie im Wintersemester 2019/2020.<br>Von Prof. Dr. Rüdiger Glaser wurden die Poster konzeptionell und inhaltlich betreut, von Michael Kahle wurde die Programmierung und die Veröffentlichung auf FreiDok übernommen.",
-     "creation2": "Dieses Format wurde mittlerweile für die Ringvorlesung Globaler Wandel übernommen. An dieser Ringvorlesung sind mehrere Dozierende der Geographie in Freiburg beteiligt.<br>Entsprechend vielfältig sind die Themen, Ansätze und Orte.<br>Die Poster können nach Themen, Orten, Konzepten und verschiedenen Landschaftstypen gefiltert oder auf der Übersichtskarte lokalisiert werden."
+     "creation": "Die Postergalerie im 'Global Change Poster Explorer' entstand im Rahmen des Master Moduls 'Schauplätze des Globalen Wandels' der Physischen Geographie im Wintersemester 2019/2020.<br>Dieses Format wurde mittlerweile für die Ringvorlesung Globaler Wandel übernommen. An dieser Ringvorlesung sind mehrere Dozierende der Geographie in Freiburg beteiligt.<br>Entsprechend vielfältig sind die Themen, Ansätze und Orte.<br>Die Poster können nach Themen, Orten, Konzepten und verschiedenen Landschaftstypen gefiltert oder auf der Übersichtskarte lokalisiert werden.",
+     "glaser": "Von Prof. Dr. Rüdiger Glaser wurden die Poster konzeptionell und inhaltlich betreut.",
+     "kahle": "Von Michael Kahle wurde die Programmierung und die Veröffentlichung auf FreiDok übernommen.",
+     "book": "Bevölkerungsentwicklung, Urbanisierung, Globalisierung, Klimawandel und Biodiversität - der Globale Wandel hat viele Gesichter. Umfassend, thematisch übergreifend und verständlich erklärt Rüdiger Glaser alle Aspekte dieses Prozesses, der das heutige Erscheinungsbild der Erde grundlegend verändert. Konkretisierend betrachtet Glaser weltweite Schauplätze, an denen sich der Wandel vollzieht und bringt so das Phänomen auf eine regionale Ebene. Abschließend spielt er verschiedene Zukunftsszenarien durch und zeigt Alternativen zum bisherigen Weg auf. Zahlreiche Abbildungen veranschaulichen die nachdenklich stimmenden Darstellungen."
    }
 }
