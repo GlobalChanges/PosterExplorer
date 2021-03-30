@@ -1,5 +1,7 @@
 {
-   "message": {
-     "about": "Info"
+   "about": {
+     "about": "Info",
+     "creation1": "Die Postergalerie im 'Global Change Poster Explorer' entstand im Rahmen des Master Moduls 'Schauplätze des Globalen Wandels' der Physischen Geographie im Wintersemester 2019/2020. Von Prof. Dr. Rüdiger Glaser wurden die Poster konzeptionell und inhaltlich betreut, von Michael Kahle wurde die Programmierung und die Veröffentlichung auf FreiDok übernommen.",
+     "creation2": "Dieses Format wurde mittlerweile für die Ringvorlesung Globaler Wandel übernommen. An dieser Ringvorlesung sind mehrere Dozierende der Geographie in Freiburg beteiligt.<br>Entsprechend vielfältig sind die Themen, Ansätze und Orte.<br>Die Poster können nach Themen, Orten, Konzepten und verschiedenen Landschaftstypen gefiltert oder auf der Übersichtskarte lokalisiert werden."
    }
 }
