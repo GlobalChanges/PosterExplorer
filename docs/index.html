@@ -103,7 +103,7 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;Ort:&nbsp;{{filterLocation}}</span>
+     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.location") }}:&nbsp;{{filterLocation}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
@@ -126,7 +126,7 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'fas fa-' + awesome(filterLandscape)"></i>&nbsp;Landschaft:&nbsp;{{filterLandscape}}</span>
+     <span class="pull-left"><i :class="'fas fa-' + awesome(filterLandscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{filterLandscape}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton4">
@@ -144,7 +144,7 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'fas fa-' + awesome(filterTopic)"></i>&nbsp;Thema:&nbsp;{{filterTopic}}</span>
+     <span class="pull-left"><i :class="'fas fa-' + awesome(filterTopic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{filterTopic}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton2">
@@ -162,7 +162,7 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;Konzept:&nbsp;{{filterMethod}}</span>
+     <span class="pull-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{filterMethod}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton3">
@@ -180,7 +180,7 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle coal border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left">Jahr:&nbsp;{{filterYear}}</span>
+     <span class="pull-left">{{ $t("menu.year") }}:&nbsp;{{filterYear}}</span>
      <i class="fas fa-angle-down pull-right coal"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton5">
@@ -276,11 +276,11 @@
        <p v-html="$t('about.kahle')" class="coal"></p>
        <p class="coal">Software@github:&nbsp 
        <a href="https://zenodo.org/badge/latestdoi/267008484" target="_new" class=""> 
-         <span class="ocean">DOI:10.5281/zenode.4644487</span>
+         <span class="ocean">DOI::&nbsp10.5281/zenode.4644487</span>
        </a></p>
        <p class="coal">Poster@FreiDok:&nbsp
        <a href="https://doi.org/10.6094/UNIFR/165768" target="_new" class=""> 
-         <span  class="ocean">DOI:10.6094/UNIFR/165768</span>
+         <span  class="ocean">DOI::&nbsp10.6094/UNIFR/165768</span>
        </a></p>
        <span class="clearfix"></span>
        <a href="http://www.amazon.de/dp/3863123603/ref=nosim?tag=kmicha-21" target="_new" class="shadow-inset border border-light bg-primary  mt-n5 mx-auto  mr-lg-5"> 

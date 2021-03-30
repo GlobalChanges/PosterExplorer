@@ -10,6 +10,12 @@
      "about": "Info",
      "gallery": "Gallerie",
      "map": "Karte",
-     "partake": "Beitrag"   
+     "partake": "Beitrag",
+     "location": "Ort",
+     "landscape": "Landschaft",
+     "topic": "Thema",
+     "concept": "Konzept",
+     "year": "Jahr",
+     "language": "Sprache"   
    }
 }

@@ -10,6 +10,12 @@
      "about": "About",
      "gallery": "Gallery",
      "map": "Map",
-     "partake": "Partake"   
+     "partake": "Partake",
+     "location": "Location",
+     "landscape": "Landscape",
+     "topic": "Topic",
+     "concept": "Concept",
+     "year": "Year",
+     "language": "Language"      
    }
 }
