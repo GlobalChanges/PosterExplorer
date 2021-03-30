@@ -62,17 +62,17 @@
                 <li class="nav-item text-center" >
                     <a href="#" @click="setPage('about')" :class="('about' == currentPage) && 'shadow-button-active'" 
                        class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
-                      <i class="fa-3x fas fa-info-circle clouds"></i><br><br><h5 :class="('about' == currentPage) ? 'clouds' : 'ocean'">About</h5></a>
+                      <i class="fa-3x fas fa-info-circle clouds"></i><br><br><h5 :class="('about' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.about") }}</h5></a>
                 </li>
                 <li class="nav-item text-center">
                     <a href="#" @click="setPage('gallery')" :class="('gallery' == currentPage) && 'shadow-button-active'" 
                        class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
-                      <i class="fa-3x fas fa-images clouds"></i><br><br><h5 :class="('gallery' == currentPage) ? 'clouds' : 'ocean'">Gallery</h5></a>
+                      <i class="fa-3x fas fa-images clouds"></i><br><br><h5 :class="('gallery' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.gallery") }}</h5></a>
                 </li>
                 <li class="nav-item text-center">
                     <a href="#" @click="setPage('map')" :class="('map' == currentPage) && 'shadow-button-active'" 
                        class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
-                      <i class="fa-3x fas fa-map-marked-alt clouds"></i><br><br><h5 :class="('map' == currentPage) ? 'clouds' : 'ocean'">Map</h5></a>
+                      <i class="fa-3x fas fa-map-marked-alt clouds"></i><br><br><h5 :class="('map' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.map") }}</h5></a>
                 </li>
 
             </ul>
