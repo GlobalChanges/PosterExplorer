@@ -5,8 +5,6 @@
 
 * view poster with zoomify 
 
-* filter by year
-
 * get rid of neumorphism.css
  * modal dialog
  * input field?
@@ -65,9 +63,8 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
 -dNOPAUSE -dBATCH -dColorImageResolution=150 \
 -sOutputFile=output.pdf someBigFile.pdf
 
+// glassmorphism as alternative style to neumorphism
+https://www.freecodecamp.org/news/glassmorphism-design-effect-with-html-css/
 
-// Uni Logo
-
-<div class="profile-image shadow-inset border border-light bg-primary  mt-n5 mx-auto"><img src="https://www.zuv.uni-freiburg.de/service/cd/cd-manual/images/logo/logo/logo-grundversion-01.png" alt="Home" class="c2ard-img-top shadow-soft p-2 border border-light"></div>
 
 
