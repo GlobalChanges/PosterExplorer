@@ -31,6 +31,11 @@ http://www.zoomify.com/converters.htm#conversionScripted
  https://sourceforge.net/projects/zoomifyimage/
  http://greengaloshes.cc/2007/05/zoomifyimage-ported-to-php/
 
+https://openseadragon.github.io/#examples-and-features
+https://gitlab.com/Daniel-KM/LibraryZoomify/-/tree/master/
+https://metacpan.org/pod/release/DRRHO/Graphics-DZI-0.05/script/deepzoom
+
+
 
 https://openlayers.org/en/latest/examples/icon.html
 http://dev.openlayers.org/releases/OpenLayers-2.13.1/docs/files/OpenLayers/Marker-js.html
@@ -65,6 +70,7 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
 
 // glassmorphism as alternative style to neumorphism
 https://www.freecodecamp.org/news/glassmorphism-design-effect-with-html-css/
+https://speckyboy.com/css-glassmorphism/
 
 
 
