@@ -34,7 +34,9 @@ http://www.zoomify.com/converters.htm#conversionScripted
 https://openseadragon.github.io/#examples-and-features
 https://gitlab.com/Daniel-KM/LibraryZoomify/-/tree/master/
 https://metacpan.org/pod/release/DRRHO/Graphics-DZI-0.05/script/deepzoom
-
+https://openseadragon.github.io/examples/creating-zooming-images/
+https://github.com/openzoom/deepzoom.py
+https://github.com/VoidVolker/MagickSlicer
 
 
 https://openlayers.org/en/latest/examples/icon.html
