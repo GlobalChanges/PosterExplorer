@@ -487,5 +487,8 @@ var vueGCPE = new Vue({
      this.initTs = Date.now();
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
+     Vue.use(KonamiCode, {callback: function () {
+      alert('Snake? Snake!? Snaaaake!');
+     }})  
   }
 }) 
