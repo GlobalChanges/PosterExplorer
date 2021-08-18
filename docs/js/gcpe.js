@@ -357,6 +357,19 @@ var vueGCPE = new Vue({
             }
        });
      }, 
+     inqHidden: function() {
+       var foldersUrl = "https://globalchanges.github.io/PosterExplorer/meta/hidden.json";
+       axios
+         .get(foldersUrl)
+         .then(response => { 
+            var dirs = response.data;
+            this.resetPosters();
+            for(var j=0; j<dirs.length; j++) {
+              var subdir = dirs[j]; 
+              this.inqIds(subdir);
+            }
+       });
+     }, 
      inqIds: function(subdir) {
        var volumesUrl = "https://globalchanges.github.io/"+subdir+"/volumes.json";
        axios
@@ -487,8 +500,7 @@ var vueGCPE = new Vue({
      this.initTs = Date.now();
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
-     Konami(function () {
-      alert('Snake? Snake!? Snaaaake!');
-     });  
+     Konami(function () { this.inqHidden(); });  
+
   }
 }) 
