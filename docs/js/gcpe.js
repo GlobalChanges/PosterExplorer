@@ -191,12 +191,12 @@ var vueGCPE = new Vue({
         filterYear: "Alle",
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
-        myPoster: {location: {country:'',continent:'',landscape:'',latitude:0,longitude:0,city:'',region:''}}, 
+        myPoster: { location: {country:'',continent:'',landscape:'',latitude:0,longitude:0,city:'',region:''}, 
                     concept:'', topic:'', subtopic:'', title:'', year:2022, abstract:'',
                     period: {begin:1950, end:2022}, keywords: [], sources: [],
                     id:0, language:'', freidok:'', doi:'', pdf:'', image:'', orientation:'', thumbnail:'', icon:'',
                     authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}]
-                   },
+                  },
   },
   methods: {
      setPage: function(page) {
