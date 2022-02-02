@@ -74,6 +74,13 @@
                        class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
                       <i class="fa-3x fas fa-map-marked-alt clouds"></i><br><br><h5 :class="('map' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.map") }}</h5></a>
                 </li>
+                <li class="nav-item text-center">
+                    <a href="#" @click="setPage('contribute')" :class="('partake' == currentPage) && 'shadow-button-active'" 
+                       class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
+                      <i class="fa-3x fas fa-lightbulb clouds"></i><br><br><h5 :class="('partake' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.partake") }}</h5></a>
+                </li>
+
+
             </ul>
         </div>
         <div class="d-flex align-items-center">
@@ -294,7 +301,79 @@
 
  </div>  <!-- end about -->
 
+ <div class="row" v-show="checkPage('partake')">
 
+  <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-8 col-xxl-8 mb-5">
+   <div class="card bg-primary border-light shadow-soft">
+    <div class="shadow-inset partake-body">
+     <p>Form</p>
+    </div>
+   </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
+   <div class="card bg-primary border-light shadow-soft">
+    <div class="flip-card">
+     <div class="flip-card-inner">
+      <div class="flip-card-front morph">
+
+       <div class="shadow-inset card-header p-3">
+        <img :src="myposter.thumbnail" class="card-img-top rounded" :alt="myposter.title">
+       </div>
+       <div class="card-body pt-2">
+        <div class="media justify-content-between">
+         <ul class="pull-left">
+           <li v-if="myposter.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myposter.location.country)"></i>&ensp;{{myposter.location.country}}</li>
+           <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myposter.location.continent)"></i>&ensp;{{myposter.location.continent}}</li>
+           <br/>
+           <li v-if="myposter.location.landscape" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(myposter.location.landscape)"></i>&ensp;
+{{myposter.location.landscape}}</li>
+         </ul>
+         <ul class="pull-right">
+           <li class="small ocean pull-right">{{myposter.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myposter.concept)"></i></li><br/>
+           <li class="small forest pull-right">{{myposter.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myposter.topic)"></i></li><br/>
+           <li class="small forest pull-right">{{myposter.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myposter.subtopic)"></i></li>
+         </ul>
+        </div>
+        <h5 class="card-title clouds">{{myposter.title}}</h5>
+        <span class="text-black-50 media justify-content-between">
+         <span class="pull-left">
+         <span v-for="author in myposter.authors" :key="author.email">
+           <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}
+           <span v-if="author.orcid">&nbsp;<a :href="('https://orcid.org/'+author.orcid)" target="_orcid">
+            <img src="./img/orcid_16x16.png" :alt="author.orcid"></a></span><br/>   
+         </span>
+         </span>
+         <span clas="pull-right">
+          <i class="far fa-copyright"></i>{{myposter.year}}</span>
+        </span>
+       </div>
+      </div>
+      <div class="flip-card-back morph">
+       <div class="shadow-inset card-body pt-2">
+        <p v-if="(myposter.abstract && (myposter.abstract.length < 720))" class="card-text">{{myposter.abstract}}</p>
+        <p v-else-if="(myposter.teaser && (myposter.teaser.length < 720))" class="card-text">{{myposter.teaser}}</p>
+        <p v-else-if="myposter.teaser" class="card-text">{{myposter.teaser|shorting}}</p>
+        <p v-else class="card-text">{{myposter.abstract|shorting}}</p>
+       </div>
+      </div>
+     </div>
+    </div>  
+    <a :href="#" @click="return False" class="btn mx-auto border-light shadow-soft shadow-button" target="_gcpe"><i class="fas fa-eye"></i>&nbsp;Poster</a>
+   </div> 
+   </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
+   <div class="card bg-primary border-light shadow-soft">
+    <div class="shadow-inset map-body">
+     <div id="map2">
+     </div>
+    </div>
+   </div>
+  </div>
+
+ </div>  <!-- end partake -->
 
  <div class="row" v-show="checkPage('map')">
   <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-8 col-xxl-8 mb-5">
