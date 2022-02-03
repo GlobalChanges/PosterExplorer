@@ -473,12 +473,14 @@ var vueGCPE = new Vue({
        }
     },
     createPdf: function() {
-        const { jsPDF } = window.jspdf;
+        //const { jsPDF } = window.jspdf;
+        var jsPDF = window.jspdf.jsPDF;
         var pdf = new jsPDF("p", "mm", "a4");
         pdf.text ("ESTESTAS SEMPER LOREM", 20, 30);
         pdf.addPage();
         pdf.text ("Hallo Universum!", 20, 30);
         pdf.save ("hallowelt.pdf");
+        return False;
         
     }, 
   },
