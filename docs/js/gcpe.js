@@ -477,6 +477,18 @@ var vueGCPE = new Vue({
       const file = e.target.files[0];
       this.urlFile = URL.createObjectURL(file);
     },
+    createMeta: function() {
+	// credit: https://www.bitdegree.org/learn/javascript-download
+	let text = JSON.stringify(this.myPoster);
+	let filename = 'meta.json';
+	let element = document.createElement('a');
+	element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(text));
+	element.setAttribute('download', filename);
+	element.style.display = 'none';
+	document.body.appendChild(element);
+	element.click();
+	document.body.removeChild(element);     
+    },
     createPdf: function() {
         //const { jsPDF } = window.jspdf;
         var jsPDF = window.jspdf.jsPDF;
