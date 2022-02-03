@@ -306,10 +306,7 @@
   <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-8 col-xxl-8 mb-5">
    <div class="card bg-primary border-light shadow-soft">
 
-    <div>Title:</div>
-    <input class="shadow-inset partake-body" v-model="myPoster.title" placeholder="title">
-
-    <form action="#" class="w-75">
+    <form action="#" class="w-80 m-3">
       <div class="form-group mb-3">
         <label for="email">Email address</label>
         <input type="text" v-model="myPoster.title" class="form-control" id="email" aria-describedby="emailHelp" maxlength="70"  placeholder="Enter Poster Title">
@@ -324,7 +321,7 @@
 
 
       <div class="custom-file">
-       <input type="file" class="custom-file-input" id="customFile">
+       <input type="file" class="custom-file-input" id="customFile" @change="onFileChange">
        <label class="custom-file-label" for="customFile">Choose file</label>
       </div>
 
@@ -363,6 +360,9 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="card bg-primary border-light shadow-soft">
     {{myPoster.title}}
+    <div id="preview">
+      <img v-if="urlFile" :src="urlFile" />
+    </div>
     <!--div class="flip-card">
      <div class="flip-card-inner">
       <div class="flip-card-front morph">

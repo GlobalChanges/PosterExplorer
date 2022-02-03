@@ -191,6 +191,7 @@ var vueGCPE = new Vue({
         filterYear: "Alle",
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
+        urlFile: null,
         myPoster: { location: {country:'',continent:'',landscape:'',latitude:0,longitude:0,city:'',region:''}, 
                     concept:'', topic:'', subtopic:'', title:'', year:2022, abstract:'',
                     period: {begin:1950, end:2022}, keywords: [], sources: [],
@@ -471,6 +472,10 @@ var vueGCPE = new Vue({
        } else {
          window.setTimeout(this.checkMap, 200);
        }
+    },
+    onFileChange: function(e) {
+      const file = e.target.files[0];
+      this.urlFile = URL.createObjectURL(file);
     },
     createPdf: function() {
         //const { jsPDF } = window.jspdf;
