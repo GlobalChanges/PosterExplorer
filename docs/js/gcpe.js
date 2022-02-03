@@ -484,6 +484,9 @@ var vueGCPE = new Vue({
         pdf.text ("ESTESTAS SEMPER LOREM", 20, 30);
         pdf.addPage();
         pdf.text ("Hallo Universum!", 20, 30);
+        if(this.urlFile) {
+          pdf.addImage(this.urlFile, 'PNG', 20, 50, 50, 45, 'test', 'MEDIUM', 0);
+        }
         pdf.save ("hallowelt.pdf");
         return false;
         
