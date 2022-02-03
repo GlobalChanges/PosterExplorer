@@ -478,7 +478,7 @@ var vueGCPE = new Vue({
         pdf.addPage();
         pdf.text ("Hallo Universum!", 20, 30);
         pdf.save ("hallowelt.pdf");
-
+        
     }, 
   },
   computed: {
