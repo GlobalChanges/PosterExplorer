@@ -473,6 +473,7 @@ var vueGCPE = new Vue({
        }
     },
     createPdf: function() {
+        const { jsPDF } = window.jspdf;
         var pdf = new jsPDF("p", "mm", "a4");
         pdf.text ("ESTESTAS SEMPER LOREM", 20, 30);
         pdf.addPage();
