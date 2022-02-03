@@ -305,6 +305,53 @@
 
   <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-8 col-xxl-8 mb-5">
    <div class="card bg-primary border-light shadow-soft">
+
+    <div>Title:</div>
+    <input class="shadow-inset partake-body" v-model="myPoster.title" placeholder="title">
+
+    <form action="#" class="w-75">
+      <div class="form-group mb-3">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea2">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+      </div>
+
+
+      <div class="custom-file">
+       <input type="file" class="custom-file-input" id="customFile">
+       <label class="custom-file-label" for="customFile">Choose file</label>
+      </div>
+
+<fieldset>
+    <legend class="h6">Radios</legend>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">
+            Default radio
+        </label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+            Second default radio
+        </label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+        <label class="form-check-label" for="exampleRadios3">
+            Disabled radio
+        </label>
+        </div>
+</fieldset>
+
+    </form>
+
     <div class="shadow-inset partake-body">
      <p>Form</p>
      <a v-if="checkPage('partake')" href="#" @click="createPdf()" class="btn mx-auto border-light shadow-soft shadow-button" ><i class="fas fa-eye"></i>&nbsp;PDF</a>
