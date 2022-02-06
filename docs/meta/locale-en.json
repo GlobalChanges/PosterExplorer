@@ -17,6 +17,7 @@
      "concept": "Concept",
      "year": "Year",
      "language": "Language",
-     "all": "All"      
+     "all": "All",
+     "none": "-"    
    }
 }

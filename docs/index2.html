@@ -347,6 +347,27 @@
         </div>
 </fieldset>
 
+
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
+   <div class="dropdown">
+    <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.location") }}:&nbsp;{{myPoster.continent}}</span>
+     <i class="fas fa-angle-down pull-right ocean"></i> 
+    </button>  
+    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+     <a class="dropdown-item earth" href="#" @click="setMyContinent('None')">
+      <i class="mg map-wrld"></i>&nbsp;{{ $t("menu.none") }}
+     </a> 
+     <h6 class="dropdown-header">Continents</h6>
+     <a v-for="continent in allPosterContinents" :key="continent" class="dropdown-item earth" href="#" @click="setMyContinent(continent)">
+      <i :class="'mg map-' + mapicon(continent)"></i>&nbsp;{{continent}}
+     </a> 
+    </div>
+   </div>
+  </div>
+
+
     </form>
 
     <div class="shadow-inset partake-body">

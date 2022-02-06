@@ -479,7 +479,7 @@ var vueGCPE = new Vue({
     },
     createMeta: function() {
 	// credit: https://www.bitdegree.org/learn/javascript-download
-	let text = JSON.stringify(this.myPoster, null, 4);  
+	let text = JSON.stringify(this.myPoster, null, 2);  
 	let filename = 'meta.json'; 
 	let element = document.createElement('a');
 	element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(text));

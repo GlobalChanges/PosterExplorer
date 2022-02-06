@@ -17,6 +17,7 @@
      "concept": "Konzept",
      "year": "Jahr",
      "language": "Sprache",
-     "all": "Alle"         
+     "all": "Alle",
+     "none": "-"   
    }
 }
