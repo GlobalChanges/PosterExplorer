@@ -338,7 +338,7 @@ var vueGCPE = new Vue({
        return c ? c.map : 'wrld' ;
      }, 
      inqTopics: function () {
-       var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/topics.json";
+       var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/topics2.json";
        axios
          .get(volumesUrl)
          .then(response => { 
