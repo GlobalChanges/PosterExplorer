@@ -1,0 +1,17 @@
+{
+ "Politische Ökologie":  {"awesome": "landmark", "gnd": "4115585-3", "name":"Politische Ökologie"},
+ "Critical Zones":  {"awesome": "map-marked", "gnd": "4140407-5", "name":"Biosphäre"},
+ "Tipping Points":  {"awesome": "random", "gnd": "4227569-6", "name":"Kataklysmentheorie"},
+ "Footprint":  {"awesome": "shoe-prints", "gnd": "7705788-0", "name":"Ökologischer Fußabdruck"},
+ "Wirkpfade": {"awesome": "code-branch", "gnd": "4163511-5", "name":"Kausalanalyse"},
+ "Risiko":  {"awesome": "dice", "gnd": "4137042-9", "name":"Risikoanalyse"},
+ "Netzwerkanalyse": {"awesome": "bezier-curve", "gnd": "4205975-6", "name":"Netzwerkanalyse <Soziologie>"},
+ "Complexity Theory": {"awesome": "cogs", "gnd": "4135369-9", "name":"Komplexität"},
+ "Diskursanalyse": {"awesome": "chalkboard-teacher", "gnd": "4012475-7", "name":"Diskurs"},
+ "Syndromkonzept": {"awesome": "dharmachakra", "gnd": "4058753-8", "name":"Syndrom"},
+ "Vulnerabel&Resilienz":  {"awesome": "glass-cheers", "gnd": "4188166-7,4817917-6", "name":"Verwundbarkeit,Resilienz"},
+ "Wertebasiert":  {"awesome": "heartbeat", "gnd": "4065654-8)", "name":"Wert"},
+ "Gerechtigkeit":  {"awesome": "balance-scale", "gnd": "1079417915", "name":"Umweltgerechtigkeit"},
+}
+
+

@@ -1,0 +1,18 @@
+{
+ "Afrika": {"map": "wrld-af", "gnd": "4000695-5", "ddc":"916,960", "geonames": "", "latitude":0.0, "longitude":0.0},
+ "Asien": {"map": "wrld-as", "gnd": "4003217-6", "ddc":"915,950", "geonames": "", "latitude":0.0, "longitude":0.0},
+ "Antarktis": {"map": "wrld-an", "gnd": "4192069-7", "ddc":"998", "geonames": "", "latitude":0.0, "longitude":0.0},
+ "Arktis": {"map": "glb-ar", "gnd": "4002924-4", "ddc":"998", "geonames": "", "latitude":0.0, "longitude":0.0},
+ "Europa": {"map": "wrld-eu", "gnd": "4015701-5", "ddc":"914,940", "geonames": "", "latitude":0.0, "longitude":0.0},
+ "Nordamerika": {"map": "wrld-na", "gnd": "4042483-2", "ddc":"917,970", "geonames": "", "latitude":0.0, "longitude":0.0},
+ "Ozeanien": {"map": "wrld-oc", "gnd": "4044257-3", "ddc":"993,994,996", "geonames": "", "latitude":0.0, "longitude":0.0},
+ "Südamerika": {"map": "wrld-sa", "gnd": "4078014-4", "ddc":"918,980", "geonames": "", "latitude":0.0, "longitude":0.0},
+
+ "Atlantik": {"map": "glb-at", "gnd": "4003388-0", "geonames": "", "latitude":0.0, "longitude":0.0},
+ "Pazifik": {"map": "glb-pa", "gnd": "4044981-6", "geonames": "", "latitude":0.0, "longitude":0.0},
+ "Indik": {"map": "glb-pa", "gnd": "4026737-4", "geonames": "", "latitude":0.0, "longitude":0.0},
+ 
+ "Naher Osten": {"map": "wrld-me", "gnd": "4068878-1", "geonames": "", "latitude":0.0, "longitude":0.0},
+
+ "Welt": {"map": "wrld", "gnd": "1135962553", "geonames": "", "latitude":-40.0, "longitude":-135.0},
+}

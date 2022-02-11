@@ -1,0 +1,21 @@
+{
+ "Agrar":  {"awesome": "seedling", "gnd": "4000766-2", "name":"Agrarlandschaft"},
+ "Atmosphäre":  {"awesome": "wind", "gnd": "4003397-1", "name":"Atmosphäre "},
+ "Gebirge":  {"awesome": "mountain", "gnd": "4019535-1", "name":"Gebirge"},
+ "Wald":  {"awesome": "tree", "gnd": "4064354-2", "name":"Wald"},
+ "Küste":  {"awesome": "umbrella-beach", "gnd": "4033469-7", "name":"Küste"},
+ "Polarregion":  {"awesome": "igloo", "gnd": "4076200-2", "name":"Polargebiete"},
+ "Feuchtgebiet":  {"awesome": "frog", "gnd": "4016960-1", "name":"Feuchtgebiet"},
+ "Meer":  {"awesome": "water", "gnd": "4038301-5", "name":"Meer"},
+ "Großstadt":  {"awesome": "building", "gnd": "4022233-0", "name":"Großstadt"},
+ "Regenwald":  {"awesome": "suse fab", "gnd": "4131965-5", "name":"Regenwald"},
+ "Mediterran":  {"awesome": "lemon", "gnd": "4074900-9", "name":"Mittelmeerraum"},
+ "Fluss":  {"awesome": "fish", "gnd": "4132857-7", "name":"Flusslandschaft"},
+ "Wüste":  {"awesome": "spider", "gnd": "4067043-0", "name":"Wüste"},
+ "Tiefland":  {"awesome": "grip-lines", "gnd": "4185433-0", "name":"Tiefland"},
+ "Trockengebiet":  {"awesome": "tint-slash", "gnd": "4060958-3", "name":"Trockengebiet"},
+ "Tundra":  {"awesome": "holly-berry", "gnd": "4061205-3", "name":"Tundra"},
+ "Inseln":  {"awesome": "pastafarianism", "gnd": "4128227-9", "name":"Insel"},
+}
+
+
