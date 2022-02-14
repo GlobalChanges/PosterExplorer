@@ -372,18 +372,18 @@
 
 
 <div class="form-group  mb-3"> 
- <label for="exampleFormControlTextarea3">Method</label>     
+ <label for="exampleFormControlTextarea3">{{ $t("menu.concept") }}</label>     
  <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.location") }}:&nbsp;{{myPoster.continent}}</span>
+     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{myPoster.concept}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
      <a class="dropdown-item ocean" href="#" @click="setMyMethod('None')">
       <i class="mg fas fa-check"></i>&nbsp;{{ $t("menu.none") }}
      </a> 
-     <h6 class="dropdown-header">Continents</h6>
+     <h6 class="dropdown-header">Methods</h6>
      <a v-for="method in allMethods" :key="method" class="dropdown-item ocean" href="#" @click="setMyMethod(method)">
-      <i :class="'mg fas fa-' + mapicon(method)"></i>&nbsp;{{continent}}
+      <i :class="'mg fas fa-' + awesome(method)"></i>&nbsp;{{method}}
      </a> 
     </div>
 </div>
