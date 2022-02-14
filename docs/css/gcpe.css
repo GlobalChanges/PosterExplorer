@@ -205,3 +205,8 @@ div.card .card-title {
 .flip-card-back {
   transform: rotateY(180deg);
 }
+
+.custom-file-label {
+  box-shadow: none !important;
+}
+
