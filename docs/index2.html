@@ -378,7 +378,7 @@
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
-     <a v-for="method in allMethods" :key="method" class="dropdown-item ocean" href="#" @click="setMyMethod(method)">
+     <a v-for="(value, method, index) in allMethods" :key="method" class="dropdown-item ocean" href="#" @click="setMyMethod(method)">
       <i :class="'mg fas fa-' + awesome(method)"></i>&nbsp;{{method}}
      </a> 
     </div>
