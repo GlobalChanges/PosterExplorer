@@ -378,12 +378,12 @@
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
-     <a class="dropdown-item earth" href="#" @click="setMyContinent('None')">
-      <i class="mg map-wrld"></i>&nbsp;{{ $t("menu.none") }}
+     <a class="dropdown-item ocean" href="#" @click="setMyMethod('None')">
+      <i class="mg fas fa-check"></i>&nbsp;{{ $t("menu.none") }}
      </a> 
      <h6 class="dropdown-header">Continents</h6>
-     <a v-for="continent in allPosterContinents" :key="continent" class="dropdown-item earth" href="#" @click="setMyContinent(continent)">
-      <i :class="'mg map-' + mapicon(continent)"></i>&nbsp;{{continent}}
+     <a v-for="method in allMethods" :key="method" class="dropdown-item ocean" href="#" @click="setMyMethod(method)">
+      <i :class="'mg fas fa-' + mapicon(method)"></i>&nbsp;{{continent}}
      </a> 
     </div>
 </div>

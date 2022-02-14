@@ -338,17 +338,54 @@ var vueGCPE = new Vue({
        return c ? c.map : 'wrld' ;
      }, 
      inqTopics: function () {
-       var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/topics2.json";
+       var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/topics.json";
        axios
          .get(volumesUrl)
          .then(response => { 
             this.setTopics(response.data);
        });
      },
+     inqMethods: function () {
+       var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/methods.json";
+       axios
+         .get(volumesUrl)
+         .then(response => { 
+            this.setMethods(response.data);
+       });
+     },
+     inqLandscapes: function () {
+       var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/landscapes.json";
+       axios
+         .get(volumesUrl)
+         .then(response => { 
+            this.setLandscapes(response.data);
+       });
+     },
+     inqOthers: function () {
+       var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/others.json";
+       axios
+         .get(volumesUrl)
+         .then(response => { 
+            this.setOthers(response.data);
+       });
+     },
+
+     inqTopics2: function () {
+       var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/topics2.json";
+       axios
+         .get(volumesUrl)
+         .then(response => { 
+            this.setTopics2(response.data);
+       });
+     },
      setTopics: function(data) { this.allTopics = data; },
+     setMethods: function(data) { this.allMethods = data; },
+     setLandscapes: function(data) { this.allLandscapes = data; },
+     setOthers: function(data) { this.allOthers = data; },
+     setTopics2: function(data) { this.allTopics2 = data; },
      awesome: function (str) {
-       // if(!this.allTopics) {return 'question'; }  // is remembered... 
-       var c = this.allTopics[str]
+       // if(!this.allTopics2) {return 'question'; }  // is remembered... 
+       var c = this.allTopics2[str]
        return c ? c.awesome : 'question';
      },
      inqFolders: function() {
@@ -532,7 +569,10 @@ var vueGCPE = new Vue({
   created () {
      this.inqLocale('de');
      this.inqLocale('en');     
+     this.inqTopics2();
      this.inqTopics();
+     this.inqMethods();
+     this.inqLandscapes();
      this.inqCountries();
      this.initTs = Date.now();
      this.uid = getFingerprint(4.0, 0.0);

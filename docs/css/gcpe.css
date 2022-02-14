@@ -206,6 +206,12 @@ div.card .card-title {
   transform: rotateY(180deg);
 }
 
+input.shadow-inset {
+  background-color: #98d2ff; 
+  border-color: #5577dd;
+}
+
+
 .custom-file-label {
   box-shadow: none !important;
 }
