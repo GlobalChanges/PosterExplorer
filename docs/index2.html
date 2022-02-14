@@ -302,11 +302,14 @@
  </div>  <!-- end about -->
 
  <div class="row" v-show="checkPage('partake')">
-
+  
+  <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 col-xxl-8 mb-4">
   <form action="#" class="w-80 m-3">
   <div class="card bg-primary border-light shadow-soft">
 
-  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-4">
+
+  <div class="row">
+  <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-9 mb-4">
 
       <div class="form-group mb-3">
         <label for="id">Poster-Id</label>
@@ -376,7 +379,7 @@
   </div>
 
 
-  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-2 mb-5">
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 mb-5">
       
  <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.location") }}:&nbsp;{{myPoster.continent}}</span>
@@ -416,6 +419,9 @@
       </div>
 
   </div>
+  </div>
+  </div>
+
   </form>
 
 
