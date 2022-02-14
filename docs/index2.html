@@ -304,8 +304,23 @@
  <div class="row" v-show="checkPage('partake')">
 
   <form action="#" class="w-80 m-3">
+  <div class="card bg-primary border-light shadow-soft">
+
   <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-4">
-   <div class="card bg-primary border-light shadow-soft">
+
+      <div class="form-group mb-3">
+        <label for="id">Poster-Id</label>
+        <input type="text" v-model="myPoster.id" class="form-control" id="id" maxlength="4"  placeholder="9999">
+      </div>
+      <div class="form-group mb-3">
+        <label for="year">Year</label>
+        <input type="text" v-model="myPoster.year" class="form-control" id="email" maxlength="4"  placeholder="Year">
+      </div>
+      <div class="form-group mb-3">
+        <label for="language">Language</label>
+        <input type="text" v-model="myPoster.language" class="form-control" id="language" maxlength="2"  placeholder="Language">
+      </div>
+
 
       <div class="form-group mb-3">
         <label for="email">Email address</label>
@@ -321,9 +336,21 @@
 
 
       <div class="custom-file">
-       <input type="file" class="custom-file-input" id="customFile" @change="onFileChange">
-       <label class="custom-file-label" for="customFile">Choose file</label>
+       <input type="file" class="custom-file-input" aria-describedby="iconHelp" id="customFile" @change="onFileChange">
+       <label class="custom-file-label" for="customFile">Icon upload</label>
+       <small id="iconHelp" class="form-text text-muted">Upload icon here.</small>
       </div>
+      <div class="custom-file">
+       <input type="file" class="custom-file-input" aria-describedby="thumbHelp" id="customFile2" @change="onFileChange">
+       <label class="custom-file-label" for="customFile">Thumbnail upload</label>
+       <small id="thumbHelp" class="form-text text-muted">Upload Thumbnail here.</small>
+      </div>
+      <div class="custom-file">
+       <input type="file" class="custom-file-input" aria-describedby="pdfHelp" id="customFile3" @change="onFileChange">
+       <label class="custom-file-label" for="customFile">PDF upload</label>
+       <small id="pdfHelp" class="form-text text-muted">Upload PDF here.</small>
+      </div>
+
 
 <fieldset>
     <legend class="h6">Radios</legend>
@@ -346,12 +373,10 @@
         </label>
         </div>
 </fieldset>
-   </div>
   </div>
 
 
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 col-xxl-2 mb-5">
-   <div class="card bg-primary border-light shadow-soft">
       
  <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.location") }}:&nbsp;{{myPoster.continent}}</span>
@@ -381,17 +406,23 @@
      </a> 
     </div>
 
+      <div class="form-group mb-3">
+        <label for="longitude">Longitude</label>
+        <input type="text" v-model="myPoster.location.longitude" class="form-control" id="longitude" maxlength="10"  placeholder="0.0">
+      </div>
+      <div class="form-group mb-3">
+        <label for="latitude">Latitude</label>
+        <input type="text" v-model="myPoster.location.latitude" class="form-control" id="latitude" maxlength="10"  placeholder="0.0">
+      </div>
 
-   </div>
   </div>
   </form>
 
+
     <div class="shadow-inset partake-body">
-     <p>Form</p>
      <a v-if="checkPage('partake')" href="#" @click="createPdf()" class="btn mx-auto border-light shadow-soft shadow-button" ><i class="fas fa-eye"></i>&nbsp;PDF</a>
      <a v-if="checkPage('partake')" href="#" @click="createMeta()" class="btn mx-auto border-light shadow-soft shadow-button" ><i class="fas fa-eye"></i>&nbsp;Meta</a>
     </div>
-   </div>
   </div>
 
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
