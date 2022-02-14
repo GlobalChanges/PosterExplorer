@@ -381,6 +381,7 @@ var vueGCPE = new Vue({
      },
      setTopics: function(data) { this.allTopics = data; },
      setMethods: function(data) { this.allMethods = data; },
+     setMyMethod: function(method) { this.myPoster.concept = method; },
      setLandscapes: function(data) { this.allLandscapes = data; },
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
