@@ -182,6 +182,7 @@ var vueGCPE = new Vue({
         allPosterLandscapes: [],
         allPosterTopics: [],
         allPosterMethods: [],
+        allMethods: [],
         allPosterYears: [],
         currentPage: "all",
         filterLocation: "Alle",
