@@ -437,7 +437,7 @@
   <i class="fas fa-angle-down pull-right ocean"></i> 
  </button>  
  <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
-  <a v-for="(value, topic, index) in allTopics" :key="topic" class="dropdown-item forest" href="#" @click="setMySubTopic(topic)">
+  <a v-for="(value, topic, index) in allTopics" :key="topic" class="dropdown-item forest" href="#" @click="setMySubtopic(topic)">
    <i :class="'mg fas fa-' + awesome(topic)"></i>&nbsp;{{topic}}
   </a> 
  </div>

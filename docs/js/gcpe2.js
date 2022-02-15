@@ -366,7 +366,7 @@ var vueGCPE = new Vue({
             this.setLandscapes(response.data);
        });
      },
-     inContinents: function () {
+     inqContinents: function () {
       var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/continents.json";
       axios
         .get(volumesUrl)
