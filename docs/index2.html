@@ -171,8 +171,8 @@
      <!--span class="pull-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{filterMethod}}</span-->
      <span v-for="method in allPosterMethods" :key="method" class="pull-left">
        <span v-show="(filterMethod == method)"><i :class="'fas fa-' + awesome(method)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{method}}</span>
-       <span v-show="(filterMethod == 'Alle')"><i :class="'fas fa-' + awesome('Alle')"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{ $t("menu.all" )}}</span>
      </span>
+     <span class="pull-left"><span v-show="(filterMethod == 'Alle')"><i :class="'fas fa-' + awesome('Alle')"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{ $t("menu.all" )}}</span></span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton3">
