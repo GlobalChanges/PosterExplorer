@@ -15,9 +15,18 @@
      "landscape": "Landscape",
      "topic": "Topic",
      "concept": "Concept",
+     "orientation": "Orientation",
      "year": "Year",
      "language": "Language",
      "all": "All",
      "none": "-"    
+   },
+   "language" : {
+     "de":"German",
+     "en":"English"
+   },
+   "orientation" : {
+     "landscape":"Landscape",
+     "portrait":"Portrait"
    }
 }

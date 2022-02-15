@@ -15,9 +15,18 @@
      "landscape": "Landschaft",
      "topic": "Thema",
      "concept": "Konzept",
+     "orientation": "Orientierung",
      "year": "Jahr",
      "language": "Sprache",
      "all": "Alle",
      "none": "-"   
+   },
+   "language" : {
+     "de":"Deutsch",
+     "en":"Englisch"
+   },
+   "orientation" : {
+     "landscape":"Querformat",
+     "portrait":"Hochformat"
    }
 }
