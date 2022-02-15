@@ -463,7 +463,7 @@
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
-     <a v-for="continent in allPosterContinents" :key="continent" class="dropdown-item earth" href="#" @click="setMyContinent(continent)">
+     <a v-for="(value, continent, index) in allContinents" :key="continent" class="dropdown-item earth" href="#" @click="setMyContinent(continent)">
       <i :class="'mg map-' + mapicon(continent)"></i>&nbsp;{{continent}}
      </a> 
     </div>

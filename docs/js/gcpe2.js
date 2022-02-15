@@ -366,6 +366,14 @@ var vueGCPE = new Vue({
             this.setLandscapes(response.data);
        });
      },
+     inContinents: function () {
+      var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/continents.json";
+      axios
+        .get(volumesUrl)
+        .then(response => { 
+           this.setContinents(response.data);
+      });
+    },     
      inqOthers: function () {
        var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/others.json";
        axios
@@ -390,6 +398,7 @@ var vueGCPE = new Vue({
      setMyMethod: function(method) { this.myPoster.concept = method; },
      setLandscapes: function(data) { this.allLandscapes = data; },
      setMyLandscape: function(landscape) { this.myPoster.location.landscape = landscape; },
+     setContinents: function(data) { this.allContinents = data; },
      setMyContinent: function(continent) { this.myPoster.location.continent = continent; },
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
@@ -585,6 +594,7 @@ var vueGCPE = new Vue({
      this.inqTopics();
      this.inqMethods();
      this.inqLandscapes();
+     this.inqContinents();
      this.inqCountries();
      this.initTs = Date.now();
      this.uid = getFingerprint(4.0, 0.0);

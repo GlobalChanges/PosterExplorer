@@ -27,7 +27,7 @@
  "Verkehr":  {"awesome": "car", "gnd": "4062901-6", "name":""},
  "Landnutzung":  {"awesome": "layer-group", "gnd": "4259046-2", "name":""},
  "Klimaextreme":  {"awesome": "cloud-sun-rain", "gnd": "4231163-9", "name":""},
- "Planetare Grenzen": {"awesome": "dharmachakra", "gnd": "4113786-3", "name":"Grenzen des Wachstums "},
+ "Planetare Grenzen": {"awesome": "dharmachakra", "gnd": "4113786-3", "name":"Grenzen des Wachstums "}
 
 }
 
