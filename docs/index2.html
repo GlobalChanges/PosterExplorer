@@ -152,10 +152,10 @@
     <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <!--span class="pull-left"><i :class="'fas fa-' + awesome(filterTopic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{filterTopic}}</span-->
      <span v-for="topic in allPosterTopics" :key="topic" class="pull-left">
-       <span v-show="(filterTopic == topic)"><i :class="'fas fa-' + awesome(topic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{filterTopic}}</span>      
-     </spn>
-     <span class="pull-left">  <i v-show="(filterTopic == 'Alle')" :class="'fas fa-' + awesome('Alle')"></i> 
-       &nbsp;{{ $t("menu.topic") }}:&nbsp;{{ $t("menu.all" )}}</span>
+       <span v-show="(filterTopic == topic)"><i :class="'fas fa-' + awesome(topic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{topic}}</span>      
+     </span>
+     <span class="pull-left"><span v-show="(filterTopic == 'Alle')>  <i" :class="'fas fa-' + awesome('Alle')"></i> 
+       &nbsp;{{ $t("menu.topic") }}:&nbsp;{{ $t("menu.all" )}}</span></span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton2">
