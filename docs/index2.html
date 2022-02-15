@@ -331,12 +331,35 @@
         <input type="text" v-model="myPoster.year" class="form-control" id="email" maxlength="4"  placeholder="Year">
       </div>
       <div class="form-group mb-3 col-md-3">
-        <label for="language">Language</label>
+        <label for="language">{{ $t("menu.language") }}</label>
         <input type="text" v-model="myPoster.language" class="form-control" id="language" maxlength="2"  placeholder="Language">
+        <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="pull-left"><img :src="'./img/language-'+myPoster.language+'.png'" width="20px" height="15px" />&nbsp;{{ $t("menu.language") }}:&nbsp;{{myPoster.language}}</span>
+          <i class="fas fa-angle-down pull-right ocean"></i> 
+         </button>  
+         <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item ocean" href="#" @click="setMyOrientation('de')">
+            <img src="./img/language-en.png" width="20px" height="15px" />&nbsp;{{ $t("menu.deutsch") }}
+          </a> 
+          <a class="dropdown-item ocean" href="#" @click="setMyOrientation('en')">
+            <img src="./img/language-en.png" width="20px" height="15px" />&nbsp;{{ $t("menu.english") }}
+           </a>           
+         </div>
       </div>
       <div class="form-group mb-3 col-md-3">
-        <label for="orientation">Orientation</label>
-        <input type="text" v-model="myPoster.orientation" class="form-control" id="orientation" maxlength="2"  placeholder="Orientation">
+        <label for="orientation">{{ $t("menu.orientation") }}</label>
+        <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="pull-left"><i :class="'mg fas fa-image-' + awesome(myPoster.orientation)"></i>&nbsp;{{ $t("menu.orientation") }}:&nbsp;{{myPoster.orientation}}</span>
+          <i class="fas fa-angle-down pull-right ocean"></i> 
+         </button>  
+         <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item ocean" href="#" @click="setMyOrientation('landscape')">
+           <i class="mg fas fa-image-landscape"></i>&nbsp;{{ $t("menu.landscape") }}
+          </a> 
+          <a class="dropdown-item ocean" href="#" @click="setMyOrientation('portrait')">
+            <i class="mg fas fa-image-portrait"></i>&nbsp;{{ $t("menu.portrait") }}
+           </a>           
+         </div>
       </div>
     </div> 
 
