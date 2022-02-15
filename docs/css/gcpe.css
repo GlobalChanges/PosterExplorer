@@ -213,6 +213,22 @@ input.shadow-inset {
 
 
 .custom-file-label {
-  box-shadow: none !important;
+  /* box-shadow: none !important; */
+  box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff !important;
+  font-family: "Merriweather Sans", sans-serif !important;
+  font-weight: 400;
 }
+
+.custom-file-input ~ .custom-file-label::after {
+    background: linear-gradient(145deg, var(--morph-bg), var(--morph-extr)) !important;
+    box-shadow: 6px 6px 12px var(--morph-dark), -0px -6px 12px var(--morph-light) !important;
+    color: #24274A; 
+}
+
+.custom-file-input:hover ~ .custom-file-label::after {
+    background: linear-gradient(145deg, var(--morph-extr), var(--morph-bg)) !important;
+    color: #24274A;
+}
+
+
 
