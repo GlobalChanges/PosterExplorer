@@ -14,6 +14,12 @@
 * hilight current poster marker
 * marker cluster
 
+* add supervisors on info-page.
+
+* creation of meta.json & freidok.pdf with form
+
+* statistics on gallery (topics, access, landscapes, countries, supervisors, ...)
+
 
 ---
 

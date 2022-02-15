@@ -445,8 +445,8 @@
 
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Landscape</label-->   
- <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.location") }}:&nbsp;{{myPoster.location.continent}}</span>
+ <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <span class="pull-left"><i :class="'mg fas fa-' + awesome(myPoster.location.landscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{myPoster.location.landscape}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
@@ -459,7 +459,7 @@
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Continent</label-->   
  <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.location") }}:&nbsp;{{myPoster.location.continent}}</span>
+     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(myPoster.location.continent)"></i>&nbsp;{{ $t("menu.continent") }}:&nbsp;{{myPoster.location.continent}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
