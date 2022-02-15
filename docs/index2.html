@@ -168,7 +168,10 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{filterMethod}}</span>
+     <!--span class="pull-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{filterMethod}}</span-->
+     <span v-for="method in allPosterMethods" :key="method" class="pull-left">
+       <span v-show="(filterMethod == method)"><i :class="'fas fa-' + awesome(method)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{method}}</span>
+     </span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton3">
