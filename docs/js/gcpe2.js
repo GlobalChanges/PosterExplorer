@@ -182,7 +182,10 @@ var vueGCPE = new Vue({
         allPosterLandscapes: [],
         allPosterTopics: [],
         allPosterMethods: [],
-        allMethods: [],
+        allMethods : [],
+        allTopics : [],
+        allLandscapes : [],
+        allContinents : [],                
         allPosterYears: [],
         currentPage: "all",
         filterLocation: "Alle",
@@ -193,9 +196,9 @@ var vueGCPE = new Vue({
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
         urlFile: null,
-        myPoster: { location: {country:'',continent:'',landscape:'',latitude:0,longitude:0,city:'',region:''}, 
+        myPoster: { location: {country:'',countries:[], continent:'Welt',landscape:'Großstadt',latitude:0,longitude:0,city:'',region:''}, 
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', title:'', year:2022, abstract:'',
-                    period: {begin:1950, end:2022}, keywords: [], sources: [],
+                    period: {begin:1950, end:2022}, keywords:[], sources:[],
                     id:0, language:'en', freidok:'', doi:'', pdf:'', image:'', orientation:'landscape', thumbnail:'', icon:'',
                     authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}]
                   },
@@ -381,11 +384,16 @@ var vueGCPE = new Vue({
        });
      },
      setTopics: function(data) { this.allTopics = data; },
+     setMyTopic: function(topic) { this.myPoster.topic = topic; },
+     setMySubtopic: function(subtopic) { this.myPoster.subtopic = subtopic; },
      setMethods: function(data) { this.allMethods = data; },
      setMyMethod: function(method) { this.myPoster.concept = method; },
      setLandscapes: function(data) { this.allLandscapes = data; },
+     setMyLandscape: function(landscape) { this.myPoster.location.landscape = landscape; },
+     setMyContinent: function(continent) { this.myPoster.location.continent = continent; },
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
+     setMyLanguage: function(language) { this.myPoster.language = language; },
      awesome: function (str) {
        // if(!this.allTopics2) {return 'question'; }  // is remembered... 
        var c = this.allTopics2[str]
@@ -518,16 +526,16 @@ var vueGCPE = new Vue({
       this.urlFile = URL.createObjectURL(file);
     },
     createMeta: function() {
-	// credit: https://www.bitdegree.org/learn/javascript-download
-	let text = JSON.stringify(this.myPoster, null, 2);  
-	let filename = 'meta.json'; 
-	let element = document.createElement('a');
-	element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(text));
-	element.setAttribute('download', filename);
-	element.style.display = 'none';
-	document.body.appendChild(element);
-	element.click();
-	document.body.removeChild(element);     
+	    // credit: https://www.bitdegree.org/learn/javascript-download
+	    let text = JSON.stringify(this.myPoster, null, 2);  
+	    let filename = 'meta.json'; 
+	    let element = document.createElement('a');
+	    element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(text));
+	    element.setAttribute('download', filename);
+	    element.style.display = 'none';
+	    document.body.appendChild(element);
+	    element.click();
+	    document.body.removeChild(element);     
     },
     createPdf: function() {
         //const { jsPDF } = window.jspdf;

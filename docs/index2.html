@@ -337,11 +337,11 @@
           <i class="fas fa-angle-down pull-right ocean"></i> 
          </button>  
          <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item ocean" href="#" @click="setMyOrientation('de')">
-            <img src="./img/language-en.png" width="20px" height="15px" />&nbsp;{{ $t("menu.deutsch") }}
+          <a class="dropdown-item ocean" href="#" @click="setMyLanguage('de')">
+            <!--img src="./img/language-de.png" width="20px" height="15px" /-->&nbsp;{{ $t("language.deutsch") }}
           </a> 
-          <a class="dropdown-item ocean" href="#" @click="setMyOrientation('en')">
-            <img src="./img/language-en.png" width="20px" height="15px" />&nbsp;{{ $t("menu.english") }}
+          <a class="dropdown-item ocean" href="#" @click="setMyLanguage('en')">
+            <!--img src="./img/language-en.png" width="20px" height="15px" /-->&nbsp;{{ $t("language.english") }}
            </a>           
          </div>
       </div>
@@ -353,10 +353,10 @@
          </button>  
          <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item ocean" href="#" @click="setMyOrientation('landscape')">
-           <i class="mg fa-solid fa-image"></i>&nbsp;{{ $t("orientation.landscape") }}
+           <i class="fas fa-solid fa-image"></i>&nbsp;{{ $t("orientation.landscape") }}
           </a> 
           <a class="dropdown-item ocean" href="#" @click="setMyOrientation('portrait')">
-            <i class="mg fa-solid fa-image-portrait"></i>&nbsp;{{ $t("orientation.portrait") }}
+            <i class="fas fa-solid fa-image-portrait"></i>&nbsp;{{ $t("orientation.portrait") }}
            </a>           
          </div>
       </div>
@@ -446,16 +446,12 @@
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Landscape</label-->   
  <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.location") }}:&nbsp;{{myPoster.continent}}</span>
+     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.location") }}:&nbsp;{{myPoster.location.continent}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
-     <a class="dropdown-item earth" href="#" @click="setMyContinent('None')">
-      <i class="mg map-wrld"></i>&nbsp;{{ $t("menu.none") }}
-     </a> 
-     <h6 class="dropdown-header">Continents</h6>
-     <a v-for="continent in allPosterContinents" :key="continent" class="dropdown-item earth" href="#" @click="setMyContinent(continent)">
-      <i :class="'mg map-' + mapicon(continent)"></i>&nbsp;{{continent}}
+     <a v-for="(value, landscape, index) in allLandscapes" :key="landscape" class="dropdown-item sand" href="#" @click="setMyLandscape(landscape)">
+      <i :class="'mg fas fa-' + awesome(landscape)"></i>&nbsp;{{landscape}}
      </a> 
     </div>
 </div>
@@ -463,14 +459,10 @@
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Continent</label-->   
  <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.location") }}:&nbsp;{{myPoster.continent}}</span>
+     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(filterLocation)"></i>&nbsp;{{ $t("menu.location") }}:&nbsp;{{myPoster.location.continent}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
-     <a class="dropdown-item earth" href="#" @click="setMyContinent('None')">
-      <i class="mg map-wrld"></i>&nbsp;{{ $t("menu.none") }}
-     </a> 
-     <h6 class="dropdown-header">Continents</h6>
      <a v-for="continent in allPosterContinents" :key="continent" class="dropdown-item earth" href="#" @click="setMyContinent(continent)">
       <i :class="'mg map-' + mapicon(continent)"></i>&nbsp;{{continent}}
      </a> 
