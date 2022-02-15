@@ -154,7 +154,7 @@
      <span v-for="topic in allPosterTopics" :key="topic" class="pull-left">
        <span v-show="(filterTopic == topic)"><i :class="'fas fa-' + awesome(topic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{topic}}</span>      
      </span>
-     <span class="pull-left"><span v-show="(filterTopic == 'Alle')>  <i" :class="'fas fa-' + awesome('Alle')"></i> 
+     <span class="pull-left"><span v-show="(filterTopic == 'Alle')">  <i" :class="'fas fa-' + awesome('Alle')"></i> 
        &nbsp;{{ $t("menu.topic") }}:&nbsp;{{ $t("menu.all" )}}</span></span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
