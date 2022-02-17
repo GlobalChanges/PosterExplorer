@@ -370,6 +370,26 @@
 
       <!-- List of Autors, Supervisor -->
 
+    <div v-for="author in myPoster.authors" :key="author.email" class="form-row">
+      <div class="form-group mb-3 col-md-3">
+        <label for="first">Firstname</label>
+        <input type="text" v-model="author.firstname" class="form-control" id="first" maxlength="20"  placeholder="Firstname">
+      </div>
+      <div class="form-group mb-3 col-md-3">
+        <label for="name">Name</label>
+        <input type="text" v-model="author.name" class="form-control" id="name" maxlength="20"  placeholder="Name">
+      </div>
+      <div class="form-group mb-3 col-md-3">
+        <label for="email">eMail</label>
+        <input type="text" v-model="author.email" class="form-control" id="email" maxlength="22"  placeholder="eMail">
+      </div>
+      <div class="form-group mb-3 col-md-3">
+        <label for="Orcid">Orcid</label>
+        <input type="text" v-model="author.orcid" class="form-control" id="orcid" maxlength="20"  placeholder="Orcid">
+      </div>
+    </div> 
+
+
       <div class="form-group">
         <label for="exampleFormControlTextarea2">Example textarea</label>
         <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" maxlength="700"></textarea>
