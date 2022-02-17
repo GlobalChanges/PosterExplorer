@@ -200,7 +200,7 @@ var vueGCPE = new Vue({
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', title:'', year:2022, abstract:'',
                     period: {begin:1950, end:2022}, keywords:[], sources:[],
                     id:0, language:'en', freidok:'', doi:'', pdf:'', image:'', orientation:'landscape', thumbnail:'', icon:'',
-                    authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}]
+                    authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}, {email:'', firstname:'', name:'', freidok:'', orcid:''}]
                   },
   },
   methods: {

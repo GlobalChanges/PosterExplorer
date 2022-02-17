@@ -371,15 +371,20 @@
       <!-- List of Autors, Supervisor -->
 
     <div v-for="author in myPoster.authors" :key="author.email" class="form-row">
-      <div class="form-group mb-3 col-md-3">
+      <div class="form-group mb-3 col-md-1">
+        <label for="remove">Del</label>
+        <!--input type="button" class="form-control" id="remove" @click="createPdf()" -->
+        <a href="#" @click="createMeta()" class="btn mx-auto border-light shadow-soft shadow-button col-md-1" ><i class="fire fas fa-circle-minus"></i></a>
+      </div>      
+      <div class="form-group mb-3 col-md-4">
         <label for="first">Firstname</label>
         <input type="text" v-model="author.firstname" class="form-control" id="first" maxlength="20"  placeholder="Firstname">
       </div>
-      <div class="form-group mb-3 col-md-3">
+      <div class="form-group mb-3 col-md-4">
         <label for="name">Name</label>
         <input type="text" v-model="author.name" class="form-control" id="name" maxlength="20"  placeholder="Name">
       </div>
-      <div class="form-group mb-3 col-md-3">
+      <div class="form-group mb-3 col-md-4">
         <label for="email">eMail</label>
         <input type="text" v-model="author.email" class="form-control" id="email" maxlength="22"  placeholder="eMail">
       </div>
@@ -388,6 +393,14 @@
         <input type="text" v-model="author.orcid" class="form-control" id="orcid" maxlength="20"  placeholder="Orcid">
       </div>
     </div> 
+    <div class="form-row">
+      <div class="form-group mb-3 col-md-1">
+        <!--label for="remove">Del</label-->
+        <!--input type="button" class="form-control" id="remove" @click="createPdf()" -->
+        <a href="#" @click="createMeta()" class="btn mx-auto border-light shadow-soft shadow-button col-md-1" ><i class="forest fas fa-circle-plus"></i></a>
+      </div>  
+     </div>
+
 
 <!-- delete / add -->
 <!-- https://stackoverflow.com/questions/50140910/vuejs-how-can-i-delete-array-item-within-v-for-item-element  -->
