@@ -533,6 +533,8 @@ var vueGCPE = new Vue({
     onFileChange: function(e) {
       const file = e.target.files[0];
       this.urlFile = URL.createObjectURL(file);
+      // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
+
     },
     createMeta: function() {
 	    // credit: https://www.bitdegree.org/learn/javascript-download
