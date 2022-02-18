@@ -371,35 +371,32 @@
       <!-- List of Autors, Supervisor -->
 
     <div v-for="author in myPoster.authors" :key="author.email" class="form-row">
-      <div class="form-group mb-3 col-md-1">
+      <!-- div class="form-group mb-3 col-md-1">
         <label for="remove">Del</label>
-        <!--input type="button" class="form-control" id="remove" @click="createPdf()" -->
         <a href="#" @click="createMeta()" class="btn mx-auto border-light shadow-soft shadow-button" ><i class="fire fas fa-minus-circle"></i></a>
-      </div>      
+      </div -->      
       <div class="form-group mb-3 col-md-2">
         <label for="first">Firstname</label>
-        <input type="text" v-model="author.firstname" class="form-control" id="first" maxlength="20"  placeholder="Firstname">
+        <input type="text" v-model="author.firstname" class="form-control" id="first" maxlength="25"  placeholder="Firstname">
       </div>
       <div class="form-group mb-3 col-md-2">
         <label for="name">Name</label>
-        <input type="text" v-model="author.name" class="form-control" id="name" maxlength="20"  placeholder="Name">
+        <input type="text" v-model="author.name" class="form-control" id="name" maxlength="25"  placeholder="Name">
       </div>
       <div class="form-group mb-3 col-md-4">
         <label for="email">eMail</label>
-        <input type="text" v-model="author.email" class="form-control" id="email" maxlength="22"  placeholder="eMail">
+        <input type="text" v-model="author.email" class="form-control" id="email" maxlength="50"  placeholder="eMail">
       </div>
-      <div class="form-group mb-3 col-md-3">
+      <div class="form-group mb-3 col-md-4">
         <label for="Orcid">Orcid</label>
-        <input type="text" v-model="author.orcid" class="form-control" id="orcid" maxlength="20"  placeholder="Orcid">
+        <input type="text" v-model="author.orcid" class="form-control" id="orcid" maxlength="19"  placeholder="Orcid 0000-0000-0000-0000">
       </div>
     </div> 
-    <div class="form-row">
+    <!--div class="form-row">
       <div class="form-group mb-3 col-md-1">
-        <!--label for="remove">Del</label-->
-        <!--input type="button" class="form-control" id="remove" @click="createPdf()" -->
         <a href="#" @click="createMeta()" class="btn mx-auto border-light shadow-soft shadow-button" ><i class="forest fas fa-plus-circle"></i></a>
       </div>  
-     </div>
+     </div-->
 
 
 <!-- delete / add -->
@@ -509,6 +506,19 @@
 </div>
 
 <!-- List of Countries -->
+
+<div v-for="(country, index) in myPoster.location.countries" :key="country" class="form-group  mb-3">
+  <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(country)"></i>&nbsp;{{ $t("menu.country") }}:&nbsp;{{country}}</span>
+    <i class="fas fa-angle-down pull-right ocean"></i> 
+   </button>  
+   <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+    <a v-for="(value, continent, index) in allCountries" :key="country" class="dropdown-item earth" href="#" @click="setMyCountry(country)">
+     <i :class="'mg map-' + mapicon(country)"></i>&nbsp;{{country}}
+    </a> 
+   </div>
+
+</div>
 
 
 

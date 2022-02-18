@@ -196,7 +196,7 @@ var vueGCPE = new Vue({
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
         urlFile: null,
-        myPoster: { location: {country:'',countries:[], continent:'Welt',landscape:'Großstadt',latitude:0,longitude:0,city:'',region:''}, 
+        myPoster: { location: {country:'',countries:['Argentinien','Bolivien','Chile'], continent:'Welt',landscape:'Großstadt',latitude:0,longitude:0,city:'',region:''}, 
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', title:'', year:2022, abstract:'',
                     period: {begin:1950, end:2022}, keywords:[], sources:[],
                     id:0, language:'en', freidok:'', doi:'', pdf:'', image:'', orientation:'landscape', thumbnail:'', icon:'',

@@ -19,6 +19,7 @@
      "orientation": "Orientierung",
      "year": "Jahr",
      "language": "Sprache",
+     "keywords": "Schlagworte",
      "all": "Alle",
      "none": "-"   
    },
