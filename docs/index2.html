@@ -515,7 +515,11 @@
    </button>  
 
    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="countries">
-    <a v-for="(value, country2, index2) in allCountries" :key="country2" class="dropdown-item earth" href="#" @click="setMyCountry(country2, index2)">
+    <a class="dropdown-item earth" href="#" @click="setMyCountry('None', index)">
+      <i class="mg map-wrld"></i>&nbsp;{{ $t("menu.none") }}
+    </a> 
+    <h6 class="dropdown-header">Countries</h6>
+    <a v-for="(value, country2, index2) in allCountries" :key="country2" class="dropdown-item earth" href="#" @click="setMyCountry(country2, index)">
      <i :class="'mg map-' + mapicon(country2)"></i>&nbsp;{{country2}}
     </a> 
    </div>

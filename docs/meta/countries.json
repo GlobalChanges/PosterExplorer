@@ -85,6 +85,7 @@
 
  "Welt": {"map": "wrld", "gnd": "", "geonames": ""},
  "Alle": {"map": "wrld", "gnd": "", "geonames": ""},
+ "None": {"map": "wrld", "gnd": "", "geonames": ""},
  "use-this-icons": {"map": "http://mapglyphs.com/maps"},
  "geonames-info": {"gn": "http://api.geonames.org/countryInfo?username=demo"}
 }
