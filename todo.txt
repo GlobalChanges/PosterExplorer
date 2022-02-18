@@ -16,7 +16,14 @@
 
 * add supervisors on info-page.
 
-* creation of meta.json & freidok.pdf with form
+* creation of meta.json with form
+* creation of freidok.pdf with form
+* some input ids are same: email, etc....
+* open pdf on click?
+* icon in marker-cluster on map at latitude,longitude
+* sync icons in Schlagworte-ranges and in button and in preview (maps & awesome)
+* check upload sizes (memory,width,height) and type (pdf,png)
+* intro text for third party
 
 * statistics on gallery (topics, access, landscapes, countries, supervisors, ...)
 
