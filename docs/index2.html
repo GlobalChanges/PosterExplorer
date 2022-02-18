@@ -512,11 +512,12 @@
     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(country)"></i>&nbsp;{{ $t("menu.country") }}:&nbsp;{{country}}</span>
     <i class="fas fa-angle-down pull-right ocean"></i> 
    </button>  
-   <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+
+   <!--div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
     <a v-for="(value, country2, index) in allCountries" :key="country2" class="dropdown-item earth" href="#" @click="setMyCountry(country2)">
      <i :class="'mg map-' + mapicon(country2)"></i>&nbsp;{{country2}}
     </a> 
-   </div>
+   </div-->
 
 </div>
 
