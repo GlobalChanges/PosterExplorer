@@ -197,7 +197,7 @@ var vueGCPE = new Vue({
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
         urlFile: null,
-        myPoster: { location: {country:'',countries:['Argentinien','Bolivien','Chile'], continent:'Welt',landscape:'Großstadt',latitude:0,longitude:0,city:'',region:''}, 
+        myPoster: { location: {country:'None',countries:['None'], continent:'Welt',landscape:'Großstadt',latitude:0,longitude:0,city:'',region:''}, 
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', title:'', year:2022, abstract:'',
                     period: {begin:1950, end:2022}, keywords:[], sources:[],
                     id:0, language:'en', freidok:'', doi:'', pdf:'', image:'', orientation:'landscape', thumbnail:'', icon:'',
@@ -549,7 +549,10 @@ var vueGCPE = new Vue({
     },
     createMeta: function() {
 	    // credit: https://www.bitdegree.org/learn/javascript-download
+      this.myPoster.location.country = this.myPoster.location.countries[0];
+      this.myPoster.location.countries = [];
 	    let text = JSON.stringify(this.myPoster, null, 2);  
+      this.myPoster.location.countries = [ this.myPoster.location.country ];
 	    let filename = 'meta.json'; 
 	    let element = document.createElement('a');
 	    element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(text));
