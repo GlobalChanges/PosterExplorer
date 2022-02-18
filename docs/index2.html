@@ -407,8 +407,8 @@
 
 
       <div class="form-group">
-        <label for="exampleFormControlTextarea2">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea2" rows="3" maxlength="700"></textarea>
+        <label for="abstract">Abstract</label>
+        <textarea v-model="abstract" class="form-control" id="abstract" rows="4" maxlength="700"></textarea>
       </div>
 
     <label for="customFile">File Upload</label>
@@ -566,8 +566,8 @@
        <div class="shadow-inset card-header p-3">
         <img v-if="urlFileThumb" :src="urlFileThumb" class="card-img-top rounded" :alt="myPoster.title">
        </div>
-       <!-- div class="card-body pt-2">
-        <div class="media justify-content-between">
+       <div class="card-body pt-2">
+        <!--div class="media justify-content-between">
          <ul class="pull-left">
            <li v-if="myPoster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myPoster.location.country)"></i>&ensp;{{myPoster.location.country}}</li>
            <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myPoster.location.continent)"></i>&ensp;{{myPoster.location.continent}}</li>
@@ -592,8 +592,8 @@
          </span>
          <span clas="pull-right">
           <i class="far fa-copyright"></i>{{myPoster.year}}</span>
-        </span>
-       </div-->
+        </span-->
+       </div>
       </div>
       <div class="flip-card-back morph">
        <div class="shadow-inset card-body pt-2">
