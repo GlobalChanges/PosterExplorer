@@ -567,7 +567,7 @@
         <img v-if="urlFileThumb" :src="urlFileThumb" class="card-img-top rounded" :alt="myPoster.title">
        </div>
        <div class="card-body pt-2">
-        <!--div class="media justify-content-between">
+        <div class="media justify-content-between">
          <ul class="pull-left">
            <li v-if="myPoster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myPoster.location.country)"></i>&ensp;{{myPoster.location.country}}</li>
            <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myPoster.location.continent)"></i>&ensp;{{myPoster.location.continent}}</li>
@@ -582,17 +582,17 @@
          </ul>
         </div>
         <h5 class="card-title clouds">{{myPoster.title}}</h5>
-        <span class="text-black-50 media justify-content-between">
+        <!--span class="text-black-50 media justify-content-between">
          <span class="pull-left">
          <span v-for="author in myPoster.authors" :key="author.email">
            <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}
            <span v-if="author.orcid">&nbsp;<a :href="('https://orcid.org/'+author.orcid)" target="_orcid">
             <img src="./img/orcid_16x16.png" :alt="author.orcid"></a></span><br/>   
          </span>
-         </span>
+         </span-->
          <span clas="pull-right">
           <i class="far fa-copyright"></i>{{myPoster.year}}</span>
-        </span-->
+        </span>
        </div>
       </div>
       <div class="flip-card-back morph">
