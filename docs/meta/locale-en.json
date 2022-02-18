@@ -13,6 +13,8 @@
      "partake": "Partake",
      "location": "Location",
      "continent": "Continent",
+     "countries": "Countries",
+     "country": "Country",
      "landscape": "Landscape",
      "topic": "Topic",
      "concept": "Concept",

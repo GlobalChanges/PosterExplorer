@@ -185,7 +185,8 @@ var vueGCPE = new Vue({
         allMethods : [],
         allTopics : [],
         allLandscapes : [],
-        allContinents : [],                
+        allContinents : [],   
+        allCountries : [],              
         allPosterYears: [],
         currentPage: "all",
         filterLocation: "Alle",
@@ -374,6 +375,14 @@ var vueGCPE = new Vue({
            this.setContinents(response.data);
       });
     },     
+    inqCountries: function () {
+      var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/countries.json";
+      axios
+        .get(volumesUrl)
+        .then(response => { 
+           this.setCountries(response.data);
+      });
+    },       
      inqOthers: function () {
        var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/others.json";
        axios
@@ -400,6 +409,8 @@ var vueGCPE = new Vue({
      setMyLandscape: function(landscape) { this.myPoster.location.landscape = landscape; },
      setContinents: function(data) { this.allContinents = data; },
      setMyContinent: function(continent) { this.myPoster.location.continent = continent; },
+     setCountries: function(data) { this.allCountries = data; },
+     setMyCountry: function(country, index) { this.myPoster.location.country[index] = country; },     
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
      setMyLanguage: function(language) { this.myPoster.language = language; },

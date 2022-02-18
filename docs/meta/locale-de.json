@@ -13,6 +13,8 @@
      "partake": "Beitrag",
      "location": "Ort",
      "continent": "Kontinent",
+     "countries": "Länder",
+     "country": "Land",
      "landscape": "Landschaft",
      "topic": "Thema",
      "concept": "Konzept",

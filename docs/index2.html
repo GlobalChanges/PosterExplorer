@@ -508,13 +508,14 @@
 <!-- List of Countries -->
 
 <div v-for="(country, index) in myPoster.location.countries" :key="country" class="form-group  mb-3">
-  <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <label v-if="(index == 0)" for="countries">{{ $t("menu.countries") }}</label>
+  <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="countries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(country)"></i>&nbsp;{{ $t("menu.country") }}:&nbsp;{{country}}</span>
     <i class="fas fa-angle-down pull-right ocean"></i> 
    </button>  
 
-   <!--div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
-    <a v-for="(value, country2, index) in allCountries" :key="country2" class="dropdown-item earth" href="#" @click="setMyCountry(country2)">
+   <!--div class="dropdown-menu btn-block shadow-soft" aria-labelledby="countries">
+    <a v-for="(value, country2, index2) in allCountries" :key="country2" class="dropdown-item earth" href="#" @click="setMyCountry(country2, index2)">
      <i :class="'mg map-' + mapicon(country2)"></i>&nbsp;{{country2}}
     </a> 
    </div-->
