@@ -410,7 +410,7 @@ var vueGCPE = new Vue({
      setContinents: function(data) { this.allContinents = data; },
      setMyContinent: function(continent) { this.myPoster.location.continent = continent; },
      setCountries: function(data) { this.allCountries = data; },
-     setMyCountry: function(country, index) { this.myPoster.location.country[index] = country; },     
+     setMyCountry: function(country, index) { Vue.set(this.myPoster.location.country, index, country); },     
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
      setMyLanguage: function(language) { this.myPoster.language = language; },
