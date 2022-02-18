@@ -415,17 +415,17 @@
     <div class="form-row">
       
       <div class="custom-file form-group col-md-4">
-       <input type="file" class="custom-file-input" aria-describedby="iconHelp" id="customFile" @change="onFileChange">
+       <input type="file" class="custom-file-input" aria-describedby="iconHelp" id="customFile" @change="onIconChange">
        <label class="custom-file-label" for="customFile">Icon upload</label>
        <small id="iconHelp" class="form-text text-muted">Upload icon here.</small>
       </div>
       <div class="custom-file form-group col-md-4">
-       <input type="file" class="custom-file-input" aria-describedby="thumbHelp" id="customFile2" @change="onFileChange">
+       <input type="file" class="custom-file-input" aria-describedby="thumbHelp" id="customFile2" @change="onThumbChange">
        <label class="custom-file-label" for="customFile">Thumbnail upload</label>
        <small id="thumbHelp" class="form-text text-muted">Upload Thumbnail here.</small>
       </div>
       <div class="custom-file form-group col-md-4">
-       <input type="file" class="custom-file-input" aria-describedby="pdfHelp" id="customFile3" @change="onFileChange">
+       <input type="file" class="custom-file-input" aria-describedby="pdfHelp" id="customFile3" @change="onPdfChange">
        <label class="custom-file-label" for="customFile">PDF upload</label>
        <small id="pdfHelp" class="form-text text-muted">Upload PDF here.</small>
       </div>
@@ -558,17 +558,15 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="card bg-primary border-light shadow-soft">
     {{myPoster.title}}
-    <div id="preview">
-      <img v-if="urlFile" :src="urlFile" />
-    </div>
-    <!--div class="flip-card">
+
+    <div class="flip-card">
      <div class="flip-card-inner">
       <div class="flip-card-front morph">
 
        <div class="shadow-inset card-header p-3">
-        <img :src="myPoster.thumbnail" class="card-img-top rounded" :alt="myPoster.title">
+        <img v-if="urlFileThump" :src="urlFileThumb" class="card-img-top rounded" :alt="myPoster.title">
        </div>
-       <div class="card-body pt-2">
+       <!-- div class="card-body pt-2">
         <div class="media justify-content-between">
          <ul class="pull-left">
            <li v-if="myPoster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myPoster.location.country)"></i>&ensp;{{myPoster.location.country}}</li>
@@ -603,10 +601,10 @@
         <p v-else-if="(myPoster.teaser && (myPoster.teaser.length < 720))" class="card-text">{{myPoster.teaser}}</p>
         <p v-else-if="myPoster.teaser" class="card-text">{{myPoster.teaser|shorting}}</p>
         <p v-else class="card-text">{{myPoster.abstract|shorting}}</p>
-       </div>
+       </div-->
       </div>
      </div>
-    </div -->  
+    </div>  
     <a href="#" onclick="return false;" class="btn mx-auto border-light shadow-soft shadow-button" target="_gcpe"><i class="fas fa-eye"></i>&nbsp;Poster</a>
    </div>
   </div>

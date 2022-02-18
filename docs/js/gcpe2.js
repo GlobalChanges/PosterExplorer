@@ -196,7 +196,9 @@ var vueGCPE = new Vue({
         filterYear: "Alle",
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
-        urlFile: null,
+        urlFileIcon: null,
+        urlFileThumb: null,
+        urlFilePdf: null,
         myPoster: { location: {country:'None',countries:['None'], continent:'Welt',landscape:'Großstadt',latitude:0,longitude:0,city:'',region:''}, 
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', title:'', year:2022, abstract:'',
                     period: {begin:1950, end:2022}, keywords:[], sources:[],
@@ -541,9 +543,21 @@ var vueGCPE = new Vue({
          window.setTimeout(this.checkMap, 200);
        }
     },
-    onFileChange: function(e) {
+    onIconChange: function(e) {
       const file = e.target.files[0];
-      this.urlFile = URL.createObjectURL(file);
+      this.urlFileIcon = URL.createObjectURL(file);
+      // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
+
+    },
+    onThumbChange: function(e) {
+      const file = e.target.files[0];
+      this.urlFileThumb = URL.createObjectURL(file);
+      // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
+
+    },
+    onPdfChange: function(e) {
+      const file = e.target.files[0];
+      this.urlFilePdf = URL.createObjectURL(file);
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
 
     },
