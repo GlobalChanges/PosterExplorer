@@ -513,8 +513,8 @@
     <i class="fas fa-angle-down pull-right ocean"></i> 
    </button>  
    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
-    <a v-for="(value, continent, index) in allCountries" :key="country" class="dropdown-item earth" href="#" @click="setMyCountry(country)">
-     <i :class="'mg map-' + mapicon(country)"></i>&nbsp;{{country}}
+    <a v-for="(value, country2, index) in allCountries" :key="country2" class="dropdown-item earth" href="#" @click="setMyCountry(country2)">
+     <i :class="'mg map-' + mapicon(country2)"></i>&nbsp;{{country2}}
     </a> 
    </div>
 
