@@ -200,7 +200,7 @@ var vueGCPE = new Vue({
         urlFileThumb: null,
         urlFilePdf: null,
         myPoster: { location: {country:'None',countries:['None'], continent:'Welt',landscape:'Großstadt',latitude:0,longitude:0,city:'',region:''}, 
-                    concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', title:'', year:2022, abstract:'',
+                    concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', title:'', year:2022, abstract:'', teaser:'',
                     period: {begin:1950, end:2022}, keywords:[], sources:[],
                     id:0, language:'en', freidok:'', doi:'', pdf:'', image:'', orientation:'landscape', thumbnail:'', icon:'',
                     authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}]
@@ -412,7 +412,10 @@ var vueGCPE = new Vue({
      setContinents: function(data) { this.allContinents = data; },
      setMyContinent: function(continent) { this.myPoster.location.continent = continent; },
      setCountries: function(data) { this.allCountries = data; },
-     setMyCountry: function(country, index) { Vue.set(this.myPoster.location.countries, index, country); },     
+     setMyCountry: function(country, index) { 
+        Vue.set(this.myPoster.location.countries, index, country); 
+        this.myPoster.location.country = country; //todo: if length = 1, else null...
+     },     
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
      setMyLanguage: function(language) { this.myPoster.language = language; },
@@ -583,8 +586,8 @@ var vueGCPE = new Vue({
         pdf.text ("ESTESTAS SEMPER LOREM", 20, 30);
         pdf.addPage();
         pdf.text ("Hallo Universum!", 20, 30);
-        if(this.urlFile) {
-          pdf.addImage(this.urlFile, 'PNG', 20, 50, 50, 45, 'test', 'MEDIUM', 0);
+        if(this.urlFileThumb) {
+          pdf.addImage(this.urlFileThumb, 'PNG', 20, 50, 50, 45, 'test', 'MEDIUM', 0);
         }
         pdf.save ("hallowelt.pdf");
         return false;
