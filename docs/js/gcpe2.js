@@ -199,7 +199,7 @@ var vueGCPE = new Vue({
         urlFileIcon: null,
         urlFileThumb: null,
         urlFilePdf: null,
-        myPoster: { location: {country:'None',countries:['None'], continent:'Welt',landscape:'Großstadt',latitude:0,longitude:0,city:'',region:''}, 
+        myPoster: { location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:0, longitude:0, city:'', region:''}, 
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', title:'', year:2022, abstract:'', teaser:'',
                     period: {begin:1950, end:2022}, keywords:[], sources:[],
                     id:0, language:'en', freidok:'', doi:'', pdf:'', image:'', orientation:'landscape', thumbnail:'', icon:'',
@@ -415,6 +415,9 @@ var vueGCPE = new Vue({
      setMyCountry: function(country, index) { 
         Vue.set(this.myPoster.location.countries, index, country); 
         this.myPoster.location.country = country; //todo: if length = 1, else null...
+        if(this.myPoster.location.country == 'None') {
+          this.myPoster.location.country = null;
+        }
      },     
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
