@@ -657,7 +657,7 @@ var vueGCPE = new Vue({
         pdf.addPage();
         pdf.text ("Keywords and Relations", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_11.png', 'PNG', 100, 30, 100, 80, 'keywords', 'MEDIUM', 0);
-        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_12.png', 'PNG', 100, 150, 100, 80, 'relations', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_12.png', 'PNG', 100, 150, 100, 70, 'relations', 'MEDIUM', 0);
  
         pdf.addPage();
         pdf.text ("Upload and Licence", 10, 10, {'maxWidth':200});
