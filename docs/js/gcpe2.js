@@ -560,7 +560,7 @@ var vueGCPE = new Vue({
       img.onload = function () {
             alert(this.width + " " + this.height);
         };
-      img.src = objectUrl;
+      img.src = this.urlFileIcon;
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
       var a = 1;
     },
