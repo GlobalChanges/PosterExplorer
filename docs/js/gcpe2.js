@@ -446,6 +446,7 @@ var vueGCPE = new Vue({
        });
      }, 
      inqHidden: function() {
+       setTimeout(() => {this.allPosterData = this.allPosterData}, 3000);
        var foldersUrl = "https://globalchanges.github.io/PosterExplorer/meta/hidden.json";
        axios
          .get(foldersUrl)
