@@ -552,18 +552,31 @@ var vueGCPE = new Vue({
     onIconChange: function(e) {
       const file = e.target.files[0];
       this.urlFileIcon = URL.createObjectURL(file);
+      // file.type == 'image/png' 
+      // file.size < 
+      //   ~450*300px oder ~300*450px
+      // 
+      img = new Image();
+      img.onload = function () {
+            alert(this.width + " " + this.height);
+        };
+      img.src = objectUrl;
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
-
+      var a = 1;
     },
     onThumbChange: function(e) {
       const file = e.target.files[0];
       this.urlFileThumb = URL.createObjectURL(file);
+      // file.type == 'image/png'  
+      // 48*48
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
 
     },
     onPdfChange: function(e) {
       const file = e.target.files[0];
       this.urlFilePdf = URL.createObjectURL(file);
+      // file.type == 'application/pdf' 
+      // < 50Mb
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
 
     },
@@ -590,13 +603,14 @@ var vueGCPE = new Vue({
         pdf.setLanguage(this.$i18n.locale);
         pdf.text ("ESTESTAS SEMPER LOREM", 20, 30);
         pdf.addPage();
+        pdf.text ("Start and Login to Freidok", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_01.png', 'PNG', 100, 30, 100, 30, 'start', 'MEDIUM', 0);
-        pdf.text ("Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum!", 10, 50, {'maxWidth':80});
+        pdf.text ("Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum!", 10, 30, {'maxWidth':80});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_02.png', 'PNG', 100, 120, 100, 70, 'login', 'MEDIUM', 0);
         pdf.addPage();
-        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_03.png', 'PNG', 100, 30, 100, 70, 'start', 'MEDIUM', 0);
-        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_04.png', 'PNG', 100, 130, 100, 50, 'start', 'MEDIUM', 0);
-        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_05.png', 'PNG', 100, 210, 100, 80, 'start', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_03.png', 'PNG', 100, 30, 100, 70, 'type', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_04.png', 'PNG', 100, 130, 100, 50, 'poster', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_05.png', 'PNG', 100, 210, 100, 80, 'title', 'MEDIUM', 0);
 
              
         pdf.addPage();
