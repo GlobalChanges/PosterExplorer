@@ -639,16 +639,26 @@ var vueGCPE = new Vue({
 
         pdf.addPage();
         pdf.text ("Document type and title", 10, 10, {'maxWidth':200});
-        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_03.png', 'PNG', 100, 30, 100, 70, 'type', 'MEDIUM', 0);
-        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_04.png', 'PNG', 100, 130, 100, 50, 'poster', 'MEDIUM', 0);
-        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_05.png', 'PNG', 100, 210, 100, 80, 'title', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_03.png', 'PNG', 100, 30, 100, 60, 'type', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_04.png', 'PNG', 100, 120, 100, 50, 'poster', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_05.png', 'PNG', 100, 200, 100, 80, 'title', 'MEDIUM', 0);
 
         pdf.addPage();
         pdf.text ("Persons and Institutions", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_06.png', 'PNG', 100, 30, 100, 80, 'author', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_07.png', 'PNG', 100, 120, 100, 80, 'editor', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_08.png', 'PNG', 100, 210, 100, 80, 'institution', 'MEDIUM', 0);
-             
+   
+        pdf.addPage();
+        pdf.text ("Skip and Abstract", 10, 10, {'maxWidth':200});
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_09.png', 'PNG', 100, 30, 100, 100, 'skip', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_10.png', 'PNG', 100, 150, 100, 40, 'abstract', 'MEDIUM', 0);
+ 
+        pdf.addPage();
+        pdf.text ("Keywords and Relations", 10, 10, {'maxWidth':200});
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_11.png', 'PNG', 100, 30, 100, 100, 'keywords', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_12.png', 'PNG', 100, 150, 100, 100, 'relations', 'MEDIUM', 0);
+          
         pdf.addPage();
         pdf.text ("Hallo Universum!", 20, 30);
         if(this.urlFileThumb) {
