@@ -636,11 +636,18 @@ var vueGCPE = new Vue({
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_01.png', 'PNG', 100, 30, 100, 30, 'start', 'MEDIUM', 0);
         pdf.text ("Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum!", 10, 30, {'maxWidth':80});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_02.png', 'PNG', 100, 120, 100, 70, 'login', 'MEDIUM', 0);
+
         pdf.addPage();
+        pdf.text ("Document type and title", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_03.png', 'PNG', 100, 30, 100, 70, 'type', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_04.png', 'PNG', 100, 130, 100, 50, 'poster', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_05.png', 'PNG', 100, 210, 100, 80, 'title', 'MEDIUM', 0);
 
+        pdf.addPage();
+        pdf.text ("Persons and Institutions", 10, 10, {'maxWidth':200});
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_06.png', 'PNG', 100, 30, 100, 80, 'author', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_07.png', 'PNG', 100, 120, 100, 80, 'editor', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_08.png', 'PNG', 100, 210, 100, 80, 'institution', 'MEDIUM', 0);
              
         pdf.addPage();
         pdf.text ("Hallo Universum!", 20, 30);
