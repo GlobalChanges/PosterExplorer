@@ -583,10 +583,17 @@ var vueGCPE = new Vue({
 	    document.body.removeChild(element);     
     },
     createPdf: function() {
-        //const { jsPDF } = window.jspdf;
+        // const { jsPDF } = window.jspdf;
+        // http://raw.githack.com/MrRio/jsPDF/master/docs/module-addImage.html
         var jsPDF = window.jspdf.jsPDF;
         var pdf = new jsPDF("p", "mm", "a4");
+        pdf.setLanguage(this.$i18n.locale);
         pdf.text ("ESTESTAS SEMPER LOREM", 20, 30);
+        pdf.addPage();
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_01.png', 'PNG', 100, 50, 100, 30, 'start', 'MEDIUM', 0);
+        pdf.text ("Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum!", 20, 50, {'maxWidth':50});
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_02.png', 'PNG', 100, 150, 100, 70, 'login', 'MEDIUM', 0);
+             
         pdf.addPage();
         pdf.text ("Hallo Universum!", 20, 30);
         if(this.urlFileThumb) {

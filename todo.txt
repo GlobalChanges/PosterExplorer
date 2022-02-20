@@ -20,13 +20,20 @@
 * creation of freidok.pdf with form
 * some input ids are same: email, etc....
 * open pdf on click?
+* https://usefulangle.com/post/87/javascript-preview-pdf-during-upload
+* create pdf,icon,pdf link based on year and id
+
+
 * icon in marker-cluster on map at latitude,longitude
 * sync icons in Schlagworte-ranges and in button and in preview (maps & awesome)
 * check upload sizes (memory,width,height) and type (pdf,png)
+* store/retrieve data locally (https://stackoverflow.com/questions/2010892/how-to-store-objects-in-html5-localstorage)
+https://javascript.info/blob
 * intro text for third party
 
 * statistics on gallery (topics, access, landscapes, countries, supervisors, ...)
 
+* range select -> show remaining, available options only. 
 
 ---
 
