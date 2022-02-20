@@ -194,7 +194,7 @@ var vueGCPE = new Vue({
         filterTopic: "Alle",
         filterMethod: "Alle",
         filterYear: "Alle",
-        konami: null,
+        konamiFnc: null,
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
         urlFileIcon: null,
@@ -721,7 +721,7 @@ var vueGCPE = new Vue({
      this.initTs = Date.now();
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
-     this.konami = new Konami(() => this.inqHidden(););
+     this.konamiFnc = new Konami(() => this.inqHidden());
 
   }
 }) 
