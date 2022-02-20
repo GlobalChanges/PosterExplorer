@@ -205,6 +205,10 @@ var vueGCPE = new Vue({
                     id:0, language:'en', freidok:'', doi:'', pdf:'', image:'', orientation:'landscape', thumbnail:'', icon:'',
                     authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}]
                   },
+        myUploads: { icon:  {type:'', size:0, width:0, height:0, url:null, error:null},
+                     thumb: {type:'', size:0, width:0, height:0, url:null, error:null},
+                     pdf:   {type:'', size:0, width:0, height:0, url:null, error:null}
+                  }
   },
   methods: {
      setPage: function(page) {
@@ -551,30 +555,51 @@ var vueGCPE = new Vue({
     },
     onIconChange: function(e) {
       const file = e.target.files[0];
-      this.urlFileIcon = URL.createObjectURL(file);
+      //this.urlFileIcon = URL.createObjectURL(file);
+      this.myUploads.icon.type = file.type;
+      this.myUploads.icon.size = file.size;
+      this.myUploads.icon.url = URL.createObjectURL(file);
+// type:'', size:0, width:0, height:0, url:null
       // file.type == 'image/png' 
       // file.size < 
       //   ~450*300px oder ~300*450px
       // 
-      img = new Image();
+      var img = new Image();
       img.onload = function () {
-            alert(this.width + " " + this.height);
+            //alert(this.width + " " + this.height);
+            this.myUploads.icon.width = this.width;
+            this.myUploads.icon.height = this.height;
+            // error:  
         };
-      img.src = this.urlFileIcon;
+      img.src = this.myUploads.icon.url;
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
       var a = 1;
     },
     onThumbChange: function(e) {
       const file = e.target.files[0];
-      this.urlFileThumb = URL.createObjectURL(file);
+      //this.urlFileThumb = URL.createObjectURL(file);
+      this.myUploads.thumb.type = file.type;
+      this.myUploads.thumb.size = file.size;
+      this.myUploads.thumb.url = URL.createObjectURL(file);
       // file.type == 'image/png'  
       // 48*48
+      var img = new Image();
+      img.onload = function () {
+            //alert(this.width + " " + this.height);
+            this.myUploads.thumb.width = this.width;
+            this.myUploads.thumb.height = this.height;
+            // error:  
+        };
+      img.src = this.myUploads.thumb.url;
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
 
     },
     onPdfChange: function(e) {
       const file = e.target.files[0];
-      this.urlFilePdf = URL.createObjectURL(file);
+      //this.urlFilePdf = URL.createObjectURL(file);
+      this.myUploads.pdf.type = file.type;
+      this.myUploads.pdf.size = file.size;
+      this.myUploads.pdf.url = URL.createObjectURL(file);
       // file.type == 'application/pdf' 
       // < 50Mb
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript

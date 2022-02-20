@@ -563,7 +563,7 @@
       <div class="flip-card-front morph">
 
        <div class="shadow-inset card-header p-3">
-        <img v-if="urlFileThumb" :src="urlFileThumb" class="card-img-top rounded" :alt="myPoster.title">
+        <img v-if="myUploads.thumb.url" :src="myUploads.thumb.url" class="card-img-top rounded" :alt="myPoster.title">
        </div>
        <div class="card-body pt-2">
         <div class="media justify-content-between">
@@ -604,7 +604,7 @@
       </div>
      </div>
     </div>  
-    <a :src="urlFilePdf" onclick="return true;" class="btn mx-auto border-light shadow-soft shadow-button" target="_gcpe"><i class="fas fa-eye"></i>&nbsp;Poster</a>
+    <a :src="myUploads.pdf.url" onclick="return true;" class="btn mx-auto border-light shadow-soft shadow-button" target="_gcpe"><i class="fas fa-eye"></i>&nbsp;Poster</a>
    </div>
   </div>
 
@@ -612,7 +612,7 @@
    <div class="card bg-primary border-light shadow-soft">
     <div class="shadow-inset map-body">
      <div id="map2">
-       <img v-if="urlFileIcon" :src="urlFileIcon" width='22' height='22' class='marker-image' ></img>
+       <img v-if="myUploads.icon.url" :src="myUploads.icon.url" width='22' height='22' class='marker-image' ></img>
      </div>
     </div>
    </div>
