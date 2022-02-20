@@ -194,6 +194,7 @@ var vueGCPE = new Vue({
         filterTopic: "Alle",
         filterMethod: "Alle",
         filterYear: "Alle",
+        easterEgg: null,
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
         urlFileIcon: null,
@@ -720,7 +721,8 @@ var vueGCPE = new Vue({
      this.initTs = Date.now();
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
-     Konami(function () { this.inqHidden(); });  
+     //Konami(function () { this.inqHidden(); });  
+     this.easterEgg = new Konami(() => alert("Konami JS lives!"))
 
   }
 }) 
