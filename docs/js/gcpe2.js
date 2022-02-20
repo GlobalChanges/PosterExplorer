@@ -205,9 +205,9 @@ var vueGCPE = new Vue({
                     id:0, language:'en', freidok:'', doi:'', pdf:'', image:'', orientation:'landscape', thumbnail:'', icon:'',
                     authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}]
                   },
-        myUploads: { icon:  {type:'', size:0, width:0, height:0, url:null, error:null},
-                     thumb: {type:'', size:0, width:0, height:0, url:null, error:null},
-                     pdf:   {type:'', size:0, width:0, height:0, url:null, error:null}
+        myUploads: { icon:  {type:'', name:'', size:0, width:0, height:0, url:null, error:null},
+                     thumb: {type:'', name:'', size:0, width:0, height:0, url:null, error:null},
+                     pdf:   {type:'', name:'', size:0, width:0, height:0, url:null, error:null}
                   }
   },
   methods: {
@@ -558,12 +558,13 @@ var vueGCPE = new Vue({
       //this.urlFileIcon = URL.createObjectURL(file);
       this.myUploads.icon.type = file.type;
       this.myUploads.icon.size = file.size;
+      this.myUploads.icon.name = file.name;
       this.myUploads.icon.url = URL.createObjectURL(file);
 // type:'', size:0, width:0, height:0, url:null
       // file.type == 'image/png' 
       // file.size < 
-      //   ~450*300px oder ~300*450px
-      // 
+      // 48*48
+      // name == 'icon.png' 
       var img = new Image();
       img.onload = function () {
             //alert(this.width + " " + this.height);
@@ -580,9 +581,11 @@ var vueGCPE = new Vue({
       //this.urlFileThumb = URL.createObjectURL(file);
       this.myUploads.thumb.type = file.type;
       this.myUploads.thumb.size = file.size;
+      this.myUploads.thumb.name = file.name;
       this.myUploads.thumb.url = URL.createObjectURL(file);
       // file.type == 'image/png'  
-      // 48*48
+      //   ~450*300px oder ~300*450px
+      // name == 'icon.png'
       var img = new Image();
       img.onload = function () {
             //alert(this.width + " " + this.height);
@@ -599,6 +602,7 @@ var vueGCPE = new Vue({
       //this.urlFilePdf = URL.createObjectURL(file);
       this.myUploads.pdf.type = file.type;
       this.myUploads.pdf.size = file.size;
+      this.myUploads.pdf.name = file.name;
       this.myUploads.pdf.url = URL.createObjectURL(file);
       // file.type == 'application/pdf' 
       // < 50Mb

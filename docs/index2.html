@@ -328,11 +328,11 @@
       </div>
       <div class="form-group mb-3 col-md-3">
         <label for="year">Year</label>
-        <input type="text" v-model="myPoster.year" class="form-control" id="email" maxlength="4"  placeholder="Year">
+        <input type="text" v-model="myPoster.year" class="form-control" id="year" maxlength="4"  placeholder="Year">
       </div>
       <div class="form-group mb-3 col-md-3">
         <label for="language">{{ $t("menu.language") }}</label>
-        <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="pull-left"><img :src="'./img/language-'+myPoster.language+'.png'" width="20px" height="15px" />&nbsp;{{ $t("menu.language") }}:&nbsp;{{$t('language.'+myPoster.language)}}</span>
           <i class="fas fa-angle-down pull-right ocean"></i> 
          </button>  
@@ -347,7 +347,7 @@
       </div>
       <div class="form-group mb-3 col-md-3">
         <label for="orientation">{{ $t("menu.orientation") }}</label>
-        <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="orientation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="pull-left"><i :class="'mg fas fa-image-' + awesome(myPoster.orientation)"></i>&nbsp;{{ $t("menu.orientation") }}:&nbsp;{{$t('orientation.'+myPoster.orientation)}}</span>
           <i class="fas fa-angle-down pull-right ocean"></i> 
          </button>  
@@ -365,7 +365,7 @@
 
       <div class="form-group mb-3">
         <label for="title">Title</label>
-        <input type="text" v-model="myPoster.title" class="form-control" id="email" maxlength="70"  placeholder="Enter Poster Title">
+        <input type="text" v-model="myPoster.title" class="form-control" id="title" maxlength="70"  placeholder="Enter Poster Title">
       </div>
 
       <!-- List of Autors, Supervisor -->
@@ -415,19 +415,19 @@
     <div class="form-row">
       
       <div class="custom-file form-group col-md-4">
-       <input type="file" class="custom-file-input" aria-describedby="iconHelp" id="customFile" @change="onIconChange">
-       <label class="custom-file-label" for="customFile">Icon upload</label>
-       <small id="iconHelp" class="form-text text-muted">Upload icon here.</small>
+       <input type="file" class="custom-file-input" aria-describedby="iconHelp" id="iconFile" @change="onIconChange">
+       <label class="custom-file-label" for="iconFile">Icon upload</label>
+       <small id="iconHelp" class="form-text text-muted">Upload icon.png here.</small>
       </div>
       <div class="custom-file form-group col-md-4">
-       <input type="file" class="custom-file-input" aria-describedby="thumbHelp" id="customFile2" @change="onThumbChange">
-       <label class="custom-file-label" for="customFile">Thumbnail upload</label>
-       <small id="thumbHelp" class="form-text text-muted">Upload Thumbnail here.</small>
+       <input type="file" class="custom-file-input" aria-describedby="thumbHelp" id="thumbFile" @change="onThumbChange">
+       <label class="custom-file-label" for="thumbFile">Thumbnail upload</label>
+       <small id="thumbHelp" class="form-text text-muted">Upload thumb.png here.</small>
       </div>
       <div class="custom-file form-group col-md-4">
-       <input type="file" class="custom-file-input" aria-describedby="pdfHelp" id="customFile3" @change="onPdfChange">
-       <label class="custom-file-label" for="customFile">PDF upload</label>
-       <small id="pdfHelp" class="form-text text-muted">Upload PDF here.</small>
+       <input type="file" class="custom-file-input" aria-describedby="pdfHelp" id="pdfFile" @change="onPdfChange">
+       <label class="custom-file-label" for="pdfFile">PDF upload</label>
+       <small id="pdfHelp" class="form-text text-muted">Upload poster.pdf here.</small>
       </div>
     </div>
 
@@ -441,11 +441,11 @@
 <div class="form-group  mb-3"> 
  <label for="exampleFormControlTextarea3">{{ $t("menu.keywords") }}</label>
  <!--label for="exampleFormControlTextarea3">{{ $t("menu.concept") }}</label-->     
- <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="concept" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <span class="pull-left"><i :class="'mg fas fa-' + awesome(myPoster.concept)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{myPoster.concept}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
-    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="concept">
      <a v-for="(value, method, index) in allMethods" :key="method" class="dropdown-item ocean" href="#" @click="setMyMethod(method)">
       <i :class="'mg fas fa-' + awesome(method)"></i>&nbsp;{{method}}
      </a> 
@@ -455,11 +455,11 @@
 
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Topic1</label-->   
- <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="topic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <span class="pull-left"><i :class="'mg fas fa-' + awesome(myPoster.topic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{myPoster.topic}}</span>
   <i class="fas fa-angle-down pull-right ocean"></i> 
  </button>  
- <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+ <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="topic">
   <a v-for="(value, topic, index) in allTopics" :key="topic" class="dropdown-item forest" href="#" @click="setMyTopic(topic)">
    <i :class="'mg fas fa-' + awesome(topic)"></i>&nbsp;{{topic}}
   </a> 
@@ -468,11 +468,11 @@
 
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Topic2</label-->   
- <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="subtopic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <span class="pull-left"><i :class="'mg fas fa-' + awesome(myPoster.subtopic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{myPoster.subtopic}}</span>
   <i class="fas fa-angle-down pull-right ocean"></i> 
  </button>  
- <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+ <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="subtopic">
   <a v-for="(value, topic, index) in allTopics" :key="topic" class="dropdown-item forest" href="#" @click="setMySubtopic(topic)">
    <i :class="'mg fas fa-' + awesome(topic)"></i>&nbsp;{{topic}}
   </a> 
@@ -481,11 +481,11 @@
 
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Landscape</label-->   
- <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="orientation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <span class="pull-left"><i :class="'mg fas fa-' + awesome(myPoster.location.landscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{myPoster.location.landscape}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
-    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="orientation">
      <a v-for="(value, landscape, index) in allLandscapes" :key="landscape" class="dropdown-item sand" href="#" @click="setMyLandscape(landscape)">
       <i :class="'mg fas fa-' + awesome(landscape)"></i>&nbsp;{{landscape}}
      </a> 
@@ -494,11 +494,11 @@
 
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Continent</label-->   
- <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="continent" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(myPoster.location.continent)"></i>&nbsp;{{ $t("menu.continent") }}:&nbsp;{{myPoster.location.continent}}</span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
-    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="continent">
      <a v-for="(value, continent, index) in allContinents" :key="continent" class="dropdown-item earth" href="#" @click="setMyContinent(continent)">
       <i :class="'mg map-' + mapicon(continent)"></i>&nbsp;{{continent}}
      </a> 
