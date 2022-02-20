@@ -590,9 +590,14 @@ var vueGCPE = new Vue({
         pdf.setLanguage(this.$i18n.locale);
         pdf.text ("ESTESTAS SEMPER LOREM", 20, 30);
         pdf.addPage();
-        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_01.png', 'PNG', 100, 50, 100, 30, 'start', 'MEDIUM', 0);
-        pdf.text ("Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum!", 20, 50, {'maxWidth':50});
-        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_02.png', 'PNG', 100, 150, 100, 70, 'login', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_01.png', 'PNG', 100, 30, 100, 30, 'start', 'MEDIUM', 0);
+        pdf.text ("Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum!", 10, 50, {'maxWidth':80});
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_02.png', 'PNG', 100, 120, 100, 70, 'login', 'MEDIUM', 0);
+        pdf.addPage();
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_03.png', 'PNG', 100, 30, 100, 70, 'start', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_04.png', 'PNG', 100, 130, 100, 50, 'start', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_05.png', 'PNG', 100, 210, 100, 80, 'start', 'MEDIUM', 0);
+
              
         pdf.addPage();
         pdf.text ("Hallo Universum!", 20, 30);
