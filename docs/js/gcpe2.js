@@ -200,11 +200,15 @@ var vueGCPE = new Vue({
         urlFileIcon: null,
         urlFileThumb: null,
         urlFilePdf: null,
-        myPoster: { location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:0, longitude:0, city:'', region:''}, 
-                    concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', title:'', year:2022, abstract:'', teaser:'',
-                    period: {begin:1950, end:2022}, keywords:[], sources:[],
-                    id:0, language:'en', freidok:'', doi:'', pdf:'', image:'', orientation:'landscape', thumbnail:'', icon:'',
+        myPoster: { 
+                    id:"0", year:"2022", freidok:'', doi:'', language:'en', orientation:'landscape',
+                    title:'', abstract:'', 
                     authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}]
+                    location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:0.0, longitude:0.0, city:'', region:''}, 
+                    concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', 
+                    period: {begin:1950, end:2022}, keywords:[], 
+                    pdf:'',  thumbnail:'', icon:'', 
+                    sources:[]
                   },
         myUploads: { icon:  {type:'', name:'', size:0, width:0, height:0, url:null, error:null},
                      thumb: {type:'', name:'', size:0, width:0, height:0, url:null, error:null},
@@ -613,8 +617,15 @@ var vueGCPE = new Vue({
     },
     createMeta: function() {
 	    // credit: https://www.bitdegree.org/learn/javascript-download
+      // country hack
       this.myPoster.location.country = this.myPoster.location.countries[0];
       this.myPoster.location.countries = [];
+      // file hack:
+      pdf:'',  thumbnail:'', icon:''
+      this.myPoster.pdf = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/poster.pdf';
+      this.myPoster.thumbnail = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/thumbnail.png';
+      this.myPoster.icon = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/icon.png';
+
 	    let text = JSON.stringify(this.myPoster, null, 2);  
       this.myPoster.location.countries = [ this.myPoster.location.country ];
 	    let filename = 'meta.json'; 
