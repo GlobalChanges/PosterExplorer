@@ -12,7 +12,7 @@
  "Vulnerabel&Resilienz":  {"awesome": "glass-cheers", "gnd": "4188166-7,4817917-6", "name":"Verwundbarkeit,Resilienz"},
  "Wertebasiert":  {"awesome": "heartbeat", "gnd": "4065654-8)", "name":"Wert"},
  "Gerechtigkeit":  {"awesome": "balance-scale", "gnd": "1079417915", "name":"Umweltgerechtigkeit"},
- "Zeitreihen":  {"awesome": "line-chart", "gnd": "4067486-1", "name":"Zeitreihenanalyse"}
+ "Zeitreihen":  {"awesome": "chart-line", "gnd": "4067486-1", "name":"Zeitreihenanalyse"}
 }
 
 
