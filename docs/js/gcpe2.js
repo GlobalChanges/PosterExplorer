@@ -173,7 +173,6 @@ var vueGCPE = new Vue({
         uid: '0',
         uidOld: '0',
         //posterIds: [],
-        allMapCountries: {},
         allPosterData: [],    
         selectedPosterData: [],
         currentPosterData: null, 
@@ -345,7 +344,6 @@ var vueGCPE = new Vue({
             this.setCountries(response.data);
        });
      },
-     // setCountries: function(data) { this.allMapCountries = data; },
      mapicon: function (str) {
        var cou = this.allCountries[str]
        var con = this.allContinents[str]
