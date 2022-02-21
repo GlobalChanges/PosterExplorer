@@ -345,10 +345,11 @@ var vueGCPE = new Vue({
             this.setCountries(response.data);
        });
      },
-     setCountries: function(data) { this.allMapCountries = data; },
+     // setCountries: function(data) { this.allMapCountries = data; },
      mapicon: function (str) {
-       var c = this.allMapCountries[str]
-       return c ? c.map : 'wrld' ;
+       var cou = this.allCountries[str]
+       var con = this.allContinents[str]
+       return cou ? cou.map : con ? con.map : 'wrld';
      }, 
      inqTopics: function () {
        var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/topics.json";
