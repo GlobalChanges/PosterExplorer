@@ -183,6 +183,7 @@ var vueGCPE = new Vue({
         allPosterMethods: [],
         allMethods : [],
         allTopics : [],
+        allTopics2 : [],
         allLandscapes : [],
         allContinents : [],   
         allCountries : [],              
