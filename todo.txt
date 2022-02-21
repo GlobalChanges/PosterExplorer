@@ -94,5 +94,7 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
 https://www.freecodecamp.org/news/glassmorphism-design-effect-with-html-css/
 https://speckyboy.com/css-glassmorphism/
 
-
+extract pdf pages: 
+ pdfseparate -f 1 -l 5 input.pdf output-page%d.pdf
+ pdfunite
 

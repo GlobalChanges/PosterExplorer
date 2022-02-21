@@ -46,6 +46,7 @@
  "Wertebasiert":  {"awesome": "heartbeat"},
  "Gerechtigkeit":  {"awesome": "balance-scale"},
  "Umweltgerechtigkeit":  {"awesome": "balance-scale"},
+ "Zeitreihen":  {"awesome": "line-chart", "gnd": "4067486-1", "name":"Zeitreihenanalyse"},
 
  "user":  {"awesome": "user-graduate"},
  "question":  {"awesome": "question"},

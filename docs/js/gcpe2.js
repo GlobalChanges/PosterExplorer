@@ -452,7 +452,7 @@ var vueGCPE = new Vue({
          .get(foldersUrl)
          .then(response => { 
             var dirs = response.data;
-            this.resetPosters();
+            //this.resetPosters();
             for(var j=0; j<dirs.length; j++) {
               var subdir = dirs[j]; 
               this.inqIds(subdir);
