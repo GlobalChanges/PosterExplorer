@@ -203,7 +203,7 @@ var vueGCPE = new Vue({
         myPoster: { 
                     id:"0", year:"2022", freidok:'', doi:'', language:'en', orientation:'landscape',
                     title:'', abstract:'', 
-                    authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}]
+                    authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}],
                     location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:0.0, longitude:0.0, city:'', region:''}, 
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', 
                     period: {begin:1950, end:2022}, keywords:[], 
