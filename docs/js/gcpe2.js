@@ -621,7 +621,6 @@ var vueGCPE = new Vue({
       this.myPoster.location.country = this.myPoster.location.countries[0];
       this.myPoster.location.countries = [];
       // file hack:
-      pdf:'',  thumbnail:'', icon:''
       this.myPoster.pdf = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/poster.pdf';
       this.myPoster.thumbnail = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/thumbnail.png';
       this.myPoster.icon = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/icon.png';
