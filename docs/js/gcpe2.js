@@ -676,10 +676,10 @@ var vueGCPE = new Vue({
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_03.png', 'PNG', 100, 30, 100, 60, 'type', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_04.png', 'PNG', 100, 120, 100, 50, 'poster', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_05.png', 'PNG', 100, 200, 100, 80, 'title', 'MEDIUM', 0);
-        pdf.setFontSize(8); pdf.setTextColor("#062379"); //ocean
-        pdf.text (this.myPoster.title, 120, 220, {'maxWidth':200});
+        pdf.setFontSize(7); pdf.setTextColor("#062379"); //ocean
+        pdf.text (this.myPoster.title, 120, 230, {'maxWidth':200});
         pdf.setDrawColor("#e04b0f")
-        pdf.rect(115,225,85,15)
+        pdf.rect(120,220,70,15)
 
         pdf.addPage();
         pdf.setFontSize(24); pdf.setTextColor("#000000");
@@ -696,7 +696,7 @@ var vueGCPE = new Vue({
         pdf.addPage();
         pdf.text ("Keywords and Relations", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_11.png', 'PNG', 100, 30, 100, 80, 'keywords', 'MEDIUM', 0);
-        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_12.png', 'PNG', 100, 150, 100, 70, 'relations', 'MEDIUM', 0);
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_12.png', 'PNG', 100, 170, 100, 60, 'relations', 'MEDIUM', 0);
  
         pdf.addPage();
         pdf.text ("Upload and Licence", 10, 10, {'maxWidth':200});
