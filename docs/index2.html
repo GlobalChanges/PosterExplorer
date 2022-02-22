@@ -445,7 +445,9 @@
  <label for="exampleFormControlTextarea3">{{ $t("menu.keywords") }}</label>
  <!--label for="exampleFormControlTextarea3">{{ $t("menu.concept") }}</label-->     
  <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="concept" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'mg fas fa-' + awesome(myPoster.concept)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{myPoster.concept}}</span>
+     <span v-for="(value, concept, index) in allConcepts" :key="concept" class="pull-left">
+      <span v-show="(myPoster.concept == concept)"><i :class="'fas fa-' + awesome(concept)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{concept}}</span>      
+     </span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="concept">
@@ -459,7 +461,9 @@
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Topic1</label-->   
  <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="topic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <span class="pull-left"><i :class="'mg fas fa-' + awesome(myPoster.topic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{myPoster.topic}}</span>
+  <span v-for="(value, topic, index) in allTopics" :key="topic" class="pull-left">
+    <span v-show="(myPoster.topic == topic)"><i :class="'fas fa-' + awesome(topic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{topic}}</span>      
+   </span>
   <i class="fas fa-angle-down pull-right ocean"></i> 
  </button>  
  <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="topic">
@@ -472,7 +476,9 @@
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Topic2</label-->   
  <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="subtopic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  <span class="pull-left"><i :class="'mg fas fa-' + awesome(myPoster.subtopic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{myPoster.subtopic}}</span>
+  <span v-for="(value, topic, index) in allTopics" :key="topic" class="pull-left">
+    <span v-show="(myPoster.subtopic == topic)"><i :class="'fas fa-' + awesome(topic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{topic}}</span>      
+   </span>
   <i class="fas fa-angle-down pull-right ocean"></i> 
  </button>  
  <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="subtopic">
@@ -576,22 +582,13 @@
            <li v-if="myPoster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myPoster.location.country)"></i>&ensp;{{myPoster.location.country}}</li>
            <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myPoster.location.continent)"></i>&ensp;{{myPoster.location.continent}}</li>
            <br/>
-           <!--li v-if="myPoster.location.landscape" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(myPoster.location.landscape)"></i>&ensp;
-{{myPoster.location.landscape}}</li-->
-
-<li v-for="(value, landscape, index) in allLandscapes" :key="landscape" v-if="myPoster.location.landscape" v-show="(myPoster.location.landscape == landscape)" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(landscape)"></i>&ensp;
+           <li v-for="(value, landscape, index) in allLandscapes" :key="landscape" v-if="myPoster.location.landscape" v-show="(myPoster.location.landscape == landscape)" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(landscape)"></i>&ensp;
   {{landscape}}</li>
-
-<!--span v-for="(value, landscape, index) in allLandscapes" :key="landscape" class="pull-left">
-  <span v-show="(myPoster.location.landscape == landscape)"><i :class="'fas fa-' + awesome(landscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{landscape}}</span>      
- </span-->
-
-
          </ul>
          <ul class="pull-right">
-           <li class="small ocean pull-right">{{myPoster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myPoster.concept)"></i></li><br/>
-           <li class="small forest pull-right">{{myPoster.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myPoster.topic)"></i></li><br/>
-           <li class="small forest pull-right">{{myPoster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myPoster.subtopic)"></i></li>
+           <li v-for="(value, concept, index) in allConcepts" :key="concept" v-show="(myPoster.concept == concept)" class="small ocean pull-right">{{myPoster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myPoster.concept)"></i></li><br/>
+           <li v-for="(value, topic, index) in allTopics" :key="topic" v-show="(myPoster.topic == topic)" class="small forest pull-right">{{myPoster.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myPoster.topic)"></i></li><br/>
+           <li v-for="(value, topic, index) in allTopics" :key="topic" v-show="(myPoster.subtopic == topic)" class="small forest pull-right">{{myPoster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myPoster.subtopic)"></i></li>
          </ul>
         </div>
         <h5 class="card-title clouds">{{myPoster.title}}</h5>
