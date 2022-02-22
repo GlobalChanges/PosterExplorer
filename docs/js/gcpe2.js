@@ -220,6 +220,9 @@ var vueGCPE = new Vue({
      checkPage: function(page) {
        return ((this.currentPage == page) || (this.currentPage == "all"));  
      },
+     checkFilter: function() {
+      return ((this.currentPage == "gallery") || (this.currentPage == "map") || (this.currentPage == "all"));  
+    },     
      setLanguage: function(language) {
       //this.currentLanguage = language;
       this.$i18n.locale = language;

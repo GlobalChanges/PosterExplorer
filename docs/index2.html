@@ -104,8 +104,7 @@
         </div>
   </nav>
 
- <div class="row">
-
+ <div class="row" v-show="checkFilter()" >
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -132,8 +131,12 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'fas fa-' + awesome(filterLandscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{filterLandscape}}</span>
-     <i class="fas fa-angle-down pull-right ocean"></i> 
+     <span v-for="landscape in allPosterLandscapes" :key="landscape" class="pull-left">
+      <span v-show="(filterLandscape == landscape)"><i :class="'fas fa-' + awesome(landscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{landscape}}</span>      
+     </span>
+     <span class="pull-left"> <span v-show="(filterLandscape == 'Alle')"><i :class="'fas fa-' + awesome('Alle')"></i> 
+      &nbsp;{{ $t("menu.landscape") }}:&nbsp;{{ $t("menu.all" )}}</span></span>
+     <i class="fas fa-angle-down pull-right ocean"></i>
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton4">
      <a class="dropdown-item sand" href="#" @click="setLandscapeFilter('Alle')">
@@ -482,7 +485,9 @@
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Landscape</label-->   
  <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="orientation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'mg fas fa-' + awesome(myPoster.location.landscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{myPoster.location.landscape}}</span>
+     <span v-for="landscape in allLandscapes" :key="landscape" class="pull-left">
+      <span v-show="(myPoster.location.landscape == landscape)"><i :class="'fas fa-' + awesome(landscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{landscape}}</span>      
+     </span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="orientation">
