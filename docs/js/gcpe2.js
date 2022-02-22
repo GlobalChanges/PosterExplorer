@@ -755,11 +755,11 @@ var vueGCPE = new Vue({
 
           
         pdf.addPage();
-        pdf.text ("Hallo Universum!", 20, 30);
-        if(this.urlFileThumb) {
-          pdf.addImage(this.urlFileThumb, 'PNG', 20, 50, 50, 45, 'test', 'MEDIUM', 0);
+        //pdf.text ("Hallo Universum!", 20, 30);
+        if(this.myUploads.thumb.url) {
+          pdf.addImage(this.myUploads.thumb.url, 'PNG', 20, 50, 50, 45, 'test', 'MEDIUM', 0);
         }
-        pdf.save ("hallowelt.pdf");
+        pdf.save ("freidok.pdf");
         return false;
         
     }, 
