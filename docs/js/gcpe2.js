@@ -733,22 +733,22 @@ var vueGCPE = new Vue({
         keywords += "'Global Change' (frei-englisch)\n";
         keywords += "\n eventuell weitere spezifische Topics (nur kontrollierte)";
         pdf.setFontSize(8); pdf.setTextColor("#000000");
-        pdf.text (keywords, 10, 30, {'maxWidth':80});
+        pdf.text(keywords, 10, 30, {'maxWidth':80});
 
         dewey = "Geschichte, Geografie (900)\n";
-        dewey += keywords += this.myPoster.location.continent+" ("+this.findDdc(this.myPoster.location.continent)+")\n";
+        dewey += this.myPoster.location.continent+" ("+this.findDdc(this.myPoster.location.continent)+")\n";
         dewey += "\n eventuell weitere spezifische Topics";
-        pdf.text (dewey, 10, 100, {'maxWidth':80});
+        pdf.text(dewey, 10, 100, {'maxWidth':80});
         
 
         pdf.addPage();
-        pdf.text ("Upload and Licence", 10, 10, {'maxWidth':200});
+        pdf.text("Upload and Licence", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_13.png', 'PNG', 100, 30, 100, 80, 'upload', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_14.png', 'PNG', 100, 120, 100, 80, 'licence', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_15.png', 'PNG', 100, 210, 100, 80, 'preview', 'MEDIUM', 0);
 
         pdf.addPage();
-        pdf.text ("Contract and Activate", 10, 10, {'maxWidth':200});
+        pdf.text("Contract and Activate", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_16.png', 'PNG', 100, 30, 100, 80, 'contract', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_17.png', 'PNG', 100, 120, 100, 80, 'date', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_18.png', 'PNG', 100, 210, 100, 80, 'activate', 'MEDIUM', 0);
