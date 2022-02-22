@@ -348,7 +348,7 @@
       <div class="form-group mb-3 col-md-3">
         <label for="orientation">{{ $t("menu.orientation") }}</label>
         <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="orientation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="pull-left"><i :class="'mg fas fa-image-' + awesome(myPoster.orientation)"></i>&nbsp;{{ $t("menu.orientation") }}:&nbsp;{{$t('orientation.'+myPoster.orientation)}}</span>
+          <span class="pull-left"><i :class="'mg fas fa-' + awesome(myPoster.orientation)"></i>&nbsp;{{ $t("menu.orientation") }}:&nbsp;{{$t('orientation.'+myPoster.orientation)}}</span>
           <i class="fas fa-angle-down pull-right ocean"></i> 
          </button>  
          <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
