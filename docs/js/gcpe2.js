@@ -677,9 +677,9 @@ var vueGCPE = new Vue({
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_04.png', 'PNG', 100, 120, 100, 50, 'poster', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_05.png', 'PNG', 100, 200, 100, 80, 'title', 'MEDIUM', 0);
         pdf.setFontSize(7); pdf.setTextColor("#062379"); //ocean
-        pdf.text (this.myPoster.title, 120, 230, {'maxWidth':200});
+        pdf.text (this.myPoster.title, 120, 225, {'maxWidth':200});
         pdf.setDrawColor("#e04b0f")
-        pdf.rect(120,220,70,15)
+        pdf.rect(117,220,80,15)
 
         pdf.addPage();
         pdf.setFontSize(24); pdf.setTextColor("#000000");
