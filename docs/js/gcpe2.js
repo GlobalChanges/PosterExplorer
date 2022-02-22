@@ -204,7 +204,7 @@ var vueGCPE = new Vue({
                     id:"0", year:"2022", freidok:'', doi:'', language:'en', orientation:'landscape',
                     title:'', abstract:'', 
                     authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}],
-                    location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:0.0, longitude:0.0, city:'', region:''}, 
+                    location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:-35.0, longitude:-145.0, city:'', region:''}, 
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', 
                     period: {begin:1950, end:2022}, keywords:[], 
                     pdf:'',  thumbnail:'', icon:'', 
@@ -624,6 +624,9 @@ var vueGCPE = new Vue({
       this.myPoster.pdf = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/poster.pdf';
       this.myPoster.thumbnail = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/thumbnail.png';
       this.myPoster.icon = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/icon.png';
+      // lat/long
+      this.myPoster.location.longitude = parseFloat(this.myPoster.location.longitude.replace(',','.'));
+      this.myPoster.location.latitude = parseFloat(this.myPoster.location.latitude.replace(',','.'));
 
 	    let text = JSON.stringify(this.myPoster, null, 2);  
       this.myPoster.location.countries = [ this.myPoster.location.country ];
