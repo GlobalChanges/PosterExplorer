@@ -485,7 +485,7 @@
 <div class="form-group  mb-3"> 
  <!--label for="exampleFormControlTextarea3">Landscape</label-->   
  <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="orientation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span v-for="landscape in allLandscapes" :key="landscape" class="pull-left">
+     <span v-for="(value, landscape, index) in allLandscapes" :key="landscape" class="pull-left">
       <span v-show="(myPoster.location.landscape == landscape)"><i :class="'fas fa-' + awesome(landscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{landscape}}</span>      
      </span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
