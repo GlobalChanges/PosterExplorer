@@ -373,6 +373,11 @@ var vueGCPE = new Vue({
        if(c) {return c.gnd ? c.gnd : '?';}       
        return '?';
      },
+     findDdc: function (str) {
+      var c = this.allContinents[str];
+      if(c) {return c.ddc ? c.ddc : '?';}
+      return '?';
+    },
      inqTopics: function () {
        var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/topics.json";
        axios
@@ -724,7 +729,11 @@ var vueGCPE = new Vue({
         keywords += "\n eventuell weitere spezifische Topics (nur kontrollierte)";
         pdf.setFontSize(8); pdf.setTextColor("#000000");
         pdf.text (keywords, 10, 30, {'maxWidth':80});
-        
+
+        dewey = "Geschichte, Geografie (900)\n";
+        dewey += keywords += this.myPoster.location.continent+" ("+this.findDdc(this.myPoster.location.continent)+")\n";
+        keywords += "\n eventuell weitere spezifische Topics";
+        pdf.text (keywords, 10, 130, {'maxWidth':80});
         
 
         pdf.addPage();
