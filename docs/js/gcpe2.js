@@ -195,6 +195,7 @@ var vueGCPE = new Vue({
         filterMethod: "Alle",
         filterYear: "Alle",
         konamiFnc: null,
+        isBusy: false,
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
         myPoster: { 
@@ -544,6 +545,7 @@ var vueGCPE = new Vue({
        this.filterPosterData();
      },
     filterPosterData: function() {
+       this.isBusy = true;
        var result = [];
        for(var j=0; j<this.allPosterData.length; j++) {
           var poster = this.allPosterData[j]; 
@@ -571,6 +573,7 @@ var vueGCPE = new Vue({
          clearPosterMarkers();
          addPosterMarkers(result);
        }
+       this.isBusy = false;
     },
     checkMap: function() {
        if(isMapReady()) {
