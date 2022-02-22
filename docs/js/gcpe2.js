@@ -605,8 +605,12 @@ var vueGCPE = new Vue({
     },
     formatLatLong: function() {
       // lat/long
-      this.myPoster.location.longitude = parseFloat(this.myPoster.location.longitude.replace(',','.'));
-      this.myPoster.location.latitude = parseFloat(this.myPoster.location.latitude.replace(',','.'));
+      if (typeof this.myPoster.location.longitude === 'string') {
+        this.myPoster.location.longitude = parseFloat(this.myPoster.location.longitude.replace(',','.'));
+      }
+      if (typeof this.myPoster.location.latitude === 'string') {
+        this.myPoster.location.latitude = parseFloat(this.myPoster.location.latitude.replace(',','.'));
+      }
     },
     onPdfChange: function(e) {
       const file = e.target.files[0];
