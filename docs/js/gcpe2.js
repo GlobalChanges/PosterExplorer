@@ -619,16 +619,17 @@ var vueGCPE = new Vue({
       if(w<h) {
         this.myPoster.orientation = 'portrait';
         if((h > 500) || (h < 400) || (w>400) || (w<200)) {
-          this.myUploads.icon.errors.push("WARNING: Thumnail size should be around 300*450, not "+w.toString()+"*"+h.toString()+" !");
+          this.myUploads.thumb.errors.push("WARNING: Thumnail size should be around 300*450, not "+w.toString()+"*"+h.toString()+" !");
         }        
       } else {
         this.myPoster.orientation = 'landscape';
         if((w > 500) || (w < 400) || (h>400) || (h<200)) {
-          this.myUploads.icon.errors.push("WARNING: Thumnail size should be around 450*300, not "+w.toString()+"*"+h.toString()+" !");
+          this.myUploads.thumb.errors.push("WARNING: Thumnail size should be around 450*300, not "+w.toString()+"*"+h.toString()+" !");
         }         
       }
     },
     onThumbChange: function(e) {
+      this.myUploads.thumb.errors = [];
       const file = e.target.files[0];
       //this.urlFileThumb = URL.createObjectURL(file);
       this.myUploads.thumb.type = file.type;
@@ -662,6 +663,7 @@ var vueGCPE = new Vue({
       }
     },
     onPdfChange: function(e) {
+      this.myUploads.pdf.errors = [];
       const file = e.target.files[0];
       //this.urlFilePdf = URL.createObjectURL(file);
       this.myUploads.pdf.type = file.type;
