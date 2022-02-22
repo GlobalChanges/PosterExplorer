@@ -576,8 +576,8 @@ var vueGCPE = new Vue({
       // name == 'icon.png' 
       var img = new Image();
       img.onload = function () {
-            this.setIconSize(this.width, this.height)
-        };
+          vueGCPE.setIconSize(this.width, this.height)
+      };
       img.src = this.myUploads.icon.url;
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
       var a = 1;
@@ -599,7 +599,7 @@ var vueGCPE = new Vue({
       // name == 'icon.png'
       var img = new Image();
       img.onload = function () {
-         this.setThumbSize(this.width, this.height)
+         vueGCPE.setThumbSize(this.width, this.height)
       };
       img.src = this.myUploads.thumb.url;
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
