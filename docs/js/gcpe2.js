@@ -603,6 +603,11 @@ var vueGCPE = new Vue({
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
 
     },
+    formatLatLong: function() {
+      // lat/long
+      this.myPoster.location.longitude = parseFloat(this.myPoster.location.longitude.replace(',','.'));
+      this.myPoster.location.latitude = parseFloat(this.myPoster.location.latitude.replace(',','.'));
+    },
     onPdfChange: function(e) {
       const file = e.target.files[0];
       //this.urlFilePdf = URL.createObjectURL(file);
@@ -624,9 +629,6 @@ var vueGCPE = new Vue({
       this.myPoster.pdf = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/poster.pdf';
       this.myPoster.thumbnail = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/thumbnail.png';
       this.myPoster.icon = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/icon.png';
-      // lat/long
-      this.myPoster.location.longitude = parseFloat(this.myPoster.location.longitude.replace(',','.'));
-      this.myPoster.location.latitude = parseFloat(this.myPoster.location.latitude.replace(',','.'));
 
 	    let text = JSON.stringify(this.myPoster, null, 2);  
       this.myPoster.location.countries = [ this.myPoster.location.country ];
