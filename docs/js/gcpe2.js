@@ -349,6 +349,11 @@ var vueGCPE = new Vue({
             this.setCountries(response.data);
        });
      },
+     awesome: function (str) {
+      // if(!this.allTopics2) {return 'question'; }  // is remembered... 
+      var c = this.allTopics2[str]
+      return c ? c.awesome : 'question';
+    },
      mapicon: function (str) {
        var cou = this.allCountries[str]
        var con = this.allContinents[str]
@@ -431,11 +436,7 @@ var vueGCPE = new Vue({
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
      setMyLanguage: function(language) { this.myPoster.language = language; },
-     awesome: function (str) {
-       // if(!this.allTopics2) {return 'question'; }  // is remembered... 
-       var c = this.allTopics2[str]
-       return c ? c.awesome : 'question';
-     },
+     setMyOrientation: function(orientation) { this.myPoster.orientation = orientation; },
      inqFolders: function() {
        var foldersUrl = "https://globalchanges.github.io/PosterExplorer/meta/folders.json";
        axios

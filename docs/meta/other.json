@@ -4,6 +4,8 @@
  "xyz": {"awesome": "sitemap"},
  "abc": {"awesome": "puzzle-piece"}, 
  "???": {"awesome": "question"},
+ "landscape": {"awesome": "image"},
+ "portrait": {"awesome": "user"},
  "use-this-icons": {"awesome": "https://fontawesome.com/icons?d=gallery&m=free"}
 }
 

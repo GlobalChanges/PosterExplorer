@@ -50,6 +50,8 @@
 
  "user":  {"awesome": "user-graduate"},
  "question":  {"awesome": "question"},
+ "landscape": {"awesome": "image"},
+ "portrait": {"awesome": "user"},
 
  "Agrar":  {"awesome": "seedling"},
  "Atmosphäre":  {"awesome": "wind"},
