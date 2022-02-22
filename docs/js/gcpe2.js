@@ -607,6 +607,11 @@ var vueGCPE = new Vue({
     setThumbSize: function(w,h) {
       this.myUploads.thumb.width = w;
       this.myUploads.thumb.height = h;
+      if(w<h) {
+        this.myUploads.orientation = 'portrait';
+      } else {
+        this.myUploads.orientation = 'landscape';
+      }
       // set error
     },
     onThumbChange: function(e) {
