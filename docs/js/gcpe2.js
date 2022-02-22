@@ -683,21 +683,35 @@ var vueGCPE = new Vue({
 
         pdf.addPage();
         pdf.setFontSize(24); pdf.setTextColor("#000000");
-        pdf.text ("Persons and Institutions", 10, 10, {'maxWidth':200});
+        pdf.text ("4: Persons and Institutions", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_06.png', 'PNG', 100, 30, 100, 80, 'author', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_07.png', 'PNG', 100, 120, 100, 80, 'editor', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_08.png', 'PNG', 100, 210, 100, 80, 'institution', 'MEDIUM', 0);
    
         pdf.addPage();
-        pdf.text ("Skip and Abstract", 10, 10, {'maxWidth':200});
+        pdf.text ("5: Skip and Abstract", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_09.png', 'PNG', 100, 30, 100, 80, 'skip', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_10.png', 'PNG', 100, 150, 100, 60, 'abstract', 'MEDIUM', 0);
  
         pdf.addPage();
-        pdf.text ("Keywords and Relations", 10, 10, {'maxWidth':200});
+        pdf.text ("6: Keywords and Relations", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_11.png', 'PNG', 100, 30, 100, 80, 'keywords', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_12.png', 'PNG', 100, 170, 100, 60, 'relations', 'MEDIUM', 0);
- 
+        keywords = "Geografie\nWandel\nGlobalisierung\n";
+        keywords += this.myPoster.concept+"\n";
+        keywords += this.myPoster.topic+"\n";
+        keywords += this.myPoster.subtopic+"\n";
+        keywords += this.myPoster.location.landscape+"\n";
+        keywords += this.myPoster.location.continent+"\n";
+        keywords += this.myPoster.location.country+"\n";
+        keywords += "\n'Globaler Wandel (frei-deutsch)\n'";
+        keywords += "'Global Change (frei-englisch)\n'";
+        keywords += "\n eventuell weitere spezifische Topics (nur kontrolliert)";
+        pdf.setFontSize(12); pdf.setTextColor("#FF3333");
+        pdf.text (keywords, 10, 30, {'maxWidth':80});
+        
+        
+
         pdf.addPage();
         pdf.text ("Upload and Licence", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_13.png', 'PNG', 100, 30, 100, 80, 'upload', 'MEDIUM', 0);
