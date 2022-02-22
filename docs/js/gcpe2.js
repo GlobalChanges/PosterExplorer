@@ -608,9 +608,9 @@ var vueGCPE = new Vue({
       this.myUploads.thumb.width = w;
       this.myUploads.thumb.height = h;
       if(w<h) {
-        this.myUploads.orientation = 'portrait';
+        this.myPoster.orientation = 'portrait';
       } else {
-        this.myUploads.orientation = 'landscape';
+        this.myPoster.orientation = 'landscape';
       }
       // set error
     },
