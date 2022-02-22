@@ -576,8 +576,17 @@
            <li v-if="myPoster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myPoster.location.country)"></i>&ensp;{{myPoster.location.country}}</li>
            <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myPoster.location.continent)"></i>&ensp;{{myPoster.location.continent}}</li>
            <br/>
-           <li v-if="myPoster.location.landscape" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(myPoster.location.landscape)"></i>&ensp;
-{{myPoster.location.landscape}}</li>
+           <!--li v-if="myPoster.location.landscape" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(myPoster.location.landscape)"></i>&ensp;
+{{myPoster.location.landscape}}</li-->
+
+<li v-for="(value, landscape, index) in allLandscapes" :key="landscape" v-if="myPoster.location.landscape" v-show="(myPoster.location.landscape == landscape)" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(landscape)"></i>&ensp;
+  {{landscape}}</li>
+
+<!--span v-for="(value, landscape, index) in allLandscapes" :key="landscape" class="pull-left">
+  <span v-show="(myPoster.location.landscape == landscape)"><i :class="'fas fa-' + awesome(landscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{landscape}}</span>      
+ </span-->
+
+
          </ul>
          <ul class="pull-right">
            <li class="small ocean pull-right">{{myPoster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myPoster.concept)"></i></li><br/>
