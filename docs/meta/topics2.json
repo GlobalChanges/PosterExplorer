@@ -30,6 +30,8 @@
  "Verkehr":  {"awesome": "car"},
  "Landnutzung":  {"awesome": "layer-group"},
  "Klimaextreme":  {"awesome": "cloud-sun-rain"},
+ "Planetare Grenzen": {"awesome": "dharmachakra", "gnd": "4113786-3", "name":"Grenzen des Wachstums "},
+
 
  "Politische Ökologie":  {"awesome": "landmark"},
  "Critical Zones":  {"awesome": "map-marked"},
