@@ -207,9 +207,9 @@ var vueGCPE = new Vue({
                     pdf:'',  thumbnail:'', icon:'', 
                     sources:[]
                   },
-        myUploads: { icon:  {type:'', name:'', size:0, width:0, height:0, url:null, error:null},
-                     thumb: {type:'', name:'', size:0, width:0, height:0, url:null, error:null},
-                     pdf:   {type:'', name:'', size:0, width:0, height:0, url:null, error:null}
+        myUploads: { icon:  {type:'', name:'', size:0, width:0, height:0, url:null, errors:[]},
+                     thumb: {type:'', name:'', size:0, width:0, height:0, url:null, errors:[]},
+                     pdf:   {type:'', name:'', size:0, width:0, height:0, url:null, errors:[]}
                   }
   },
   methods: {
@@ -582,13 +582,19 @@ var vueGCPE = new Vue({
     setIconSize: function(w,h) {
       this.myUploads.icon.width = w;
       this.myUploads.icon.height = h;
-      // set error
+      if((w!=48) | (h!=48)) {
+        this.myUploads.icon.errors.push("Warning: Icon size should be 48*48, not "+w.toString()+"*"+h.toString()+" !");
+      }
     },
     onIconChange: function(e) {
+      this.myUploads.icon.errors = [];
       const file = e.target.files[0];
       //this.urlFileIcon = URL.createObjectURL(file);
       this.myUploads.icon.type = file.type;
       this.myUploads.icon.size = file.size;
+      if(file.size > 20000) {  
+        this.myUploads.icon.errors.push("Warning: Icon size should be less than 20kB, not "+(Math.round(file.size/1000)).toString()+"kB !");
+      }
       this.myUploads.icon.name = file.name;
       this.myUploads.icon.url = URL.createObjectURL(file);
       // type:'', size:0, width:0, height:0, url:null

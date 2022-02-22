@@ -421,6 +421,7 @@
        <input type="file" class="custom-file-input" aria-describedby="iconHelp" id="iconFile" @change="onIconChange">
        <label class="custom-file-label" for="iconFile">Icon upload</label>
        <small id="iconHelp" class="form-text text-muted">Upload icon.png here.</small>
+       <small v-for="error in myUploads.icon.errors" class="form-text fire">error</small>
       </div>
       <div class="custom-file form-group col-md-4">
        <input type="file" class="custom-file-input" aria-describedby="thumbHelp" id="thumbFile" @change="onThumbChange">
