@@ -586,7 +586,7 @@
   {{landscape}}</li>
          </ul>
          <ul class="pull-right">
-           <li v-for="(value, concept, index) in allConcepts" :key="concept" v-show="(myPoster.concept == concept)" class="small ocean pull-right">{{myPoster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myPoster.concept)"></i></li><br/>
+           <li v-for="(value, concept, index) in allMethods" :key="concept" v-show="(myPoster.concept == concept)" class="small ocean pull-right">{{myPoster.concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myPoster.concept)"></i></li><br/>
            <li v-for="(value, topic, index) in allTopics" :key="topic" v-show="(myPoster.topic == topic)" class="small forest pull-right">{{myPoster.topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myPoster.topic)"></i></li><br/>
            <li v-for="(value, topic, index) in allTopics" :key="topic" v-show="(myPoster.subtopic == topic)" class="small forest pull-right">{{myPoster.subtopic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(myPoster.subtopic)"></i></li>
          </ul>
