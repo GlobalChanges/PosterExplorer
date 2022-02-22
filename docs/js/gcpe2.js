@@ -732,8 +732,8 @@ var vueGCPE = new Vue({
 
         dewey = "Geschichte, Geografie (900)\n";
         dewey += keywords += this.myPoster.location.continent+" ("+this.findDdc(this.myPoster.location.continent)+")\n";
-        keywords += "\n eventuell weitere spezifische Topics";
-        pdf.text (keywords, 10, 130, {'maxWidth':80});
+        dewey += "\n eventuell weitere spezifische Topics";
+        pdf.text (dewey, 10, 100, {'maxWidth':80});
         
 
         pdf.addPage();
