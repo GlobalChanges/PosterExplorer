@@ -360,6 +360,19 @@ var vueGCPE = new Vue({
        var con = this.allContinents[str]
        return cou ? cou.map : con ? con.map : 'wrld';
      }, 
+     findGnd: function (str) {
+       var c = this.allTopics[str];
+       if(c) {return c.gnd ? c.gnd : '?';}
+       c = this.allMethods[str];
+       if(c) {return c.gnd ? c.gnd : '?';}
+       c = this.allLandscapes[str];
+       if(c) {return c.gnd ? c.gnd : '?';}
+       c = this.allContinents[str];
+       if(c) {return c.gnd ? c.gnd : '?';}
+       c = this.allCountries[str];
+       if(c) {return c.gnd ? c.gnd : '?';}       
+       return '?';
+     },
      inqTopics: function () {
        var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/topics.json";
        axios
@@ -697,17 +710,19 @@ var vueGCPE = new Vue({
         pdf.text ("6: Keywords and Relations", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_11.png', 'PNG', 100, 30, 100, 80, 'keywords', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_12.png', 'PNG', 100, 170, 100, 60, 'relations', 'MEDIUM', 0);
-        keywords = "Geografie\nWandel\nGlobalisierung\n";
-        keywords += this.myPoster.concept+"\n";
-        keywords += this.myPoster.topic+"\n";
-        keywords += this.myPoster.subtopic+"\n";
-        keywords += this.myPoster.location.landscape+"\n";
-        keywords += this.myPoster.location.continent+"\n";
-        keywords += this.myPoster.location.country+"\n";
-        keywords += "\n'Globaler Wandel (frei-deutsch)\n'";
-        keywords += "'Global Change (frei-englisch)\n'";
-        keywords += "\n eventuell weitere spezifische Topics (nur kontrolliert)";
-        pdf.setFontSize(12); pdf.setTextColor("#FF3333");
+        keywords = "Geografie (4020216-1)\nWandel (4234987-4)\nGlobalisierung (4557997-0)\n";
+        keywords += this.myPoster.concept+" ("+this.findGnd(this.myPoster.concept)+")\n";
+        keywords += this.myPoster.topic+" ("+this.findGnd(this.myPoster.topic)+")\n";
+        keywords += this.myPoster.subtopic+" ("+this.findGnd(this.myPoster.subtopic)+")\n";
+        keywords += this.myPoster.location.landscape+" ("+this.findGnd(this.myPoster.location.landscape)+")\n";
+        keywords += this.myPoster.location.continent+" ("+this.findGnd(this.myPoster.location.continent)+")\n";
+        if(this.myPoster.location.country) {
+          keywords += this.myPoster.location.country+" ("+this.findGnd(this.myPoster.location.country)+")\n";
+        }
+        keywords += "\n'Globaler Wandel' (frei-deutsch)\n";
+        keywords += "'Global Change' (frei-englisch)\n";
+        keywords += "\n eventuell weitere spezifische Topics (nur kontrollierte)";
+        pdf.setFontSize(8); pdf.setTextColor("#000000");
         pdf.text (keywords, 10, 30, {'maxWidth':80});
         
         
