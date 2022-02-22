@@ -420,18 +420,20 @@
       <div class="custom-file form-group col-md-4">
        <input type="file" class="custom-file-input" aria-describedby="iconHelp" id="iconFile" @change="onIconChange">
        <label class="custom-file-label" for="iconFile">Icon upload</label>
-       <small v-if="myUploads.icon.errors.length > 0" v-for="error in myUploads.icon.errors" class="form-text fire">{{error}}</small>
-       <small v-else id="iconHelp" class="form-text text-muted">Upload icon.png here.</small>
+       <small v-if="(myUploads.icon.errors.length > 0)" v-for="error in myUploads.icon.errors" class="form-text fire">{{error}}</small>
+       <small v-if="(myUploads.icon.errors.length == 0)" id="iconHelp" class="form-text text-muted">Upload icon.png here.</small>
       </div>
       <div class="custom-file form-group col-md-4">
        <input type="file" class="custom-file-input" aria-describedby="thumbHelp" id="thumbFile" @change="onThumbChange">
        <label class="custom-file-label" for="thumbFile">Thumbnail upload</label>
-       <small id="thumbHelp" class="form-text text-muted">Upload thumb.png here.</small>
+       <small v-if="(myUploads.thumb.errors.length > 0)" v-for="error in myUploads.thumb.errors" class="form-text fire">{{error}}</small>
+       <small v-if="(myUploads.thumb.errors.length == 0)" id="thumbHelp" class="form-text text-muted">Upload thumb.png here.</small>
       </div>
       <div class="custom-file form-group col-md-4">
        <input type="file" class="custom-file-input" aria-describedby="pdfHelp" id="pdfFile" @change="onPdfChange">
        <label class="custom-file-label" for="pdfFile">PDF upload</label>
-       <small id="pdfHelp" class="form-text text-muted">Upload poster.pdf here.</small>
+       <small v-if="(myUploads.pdf.errors.length > 0)" v-for="error in myUploads.pdf.errors" class="form-text fire">{{error}}</small>
+       <small v-if="(myUploads.pdf.errors.length == 0)" id="pdfHelp" class="form-text text-muted">Upload poster.pdf here.</small>
       </div>
     </div>
 

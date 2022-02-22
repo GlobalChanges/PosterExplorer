@@ -582,8 +582,8 @@ var vueGCPE = new Vue({
     setIconSize: function(w,h) {
       this.myUploads.icon.width = w;
       this.myUploads.icon.height = h;
-      if((w!=48) | (h!=48)) {
-        this.myUploads.icon.errors.push("Warning: Icon size should be 48*48, not "+w.toString()+"*"+h.toString()+" !");
+      if((w!=48) || (h!=48)) {
+        this.myUploads.icon.errors.push("WARNING: Icon size should be 48*48, not "+w.toString()+"*"+h.toString()+" !");
       }
     },
     onIconChange: function(e) {
@@ -591,9 +591,12 @@ var vueGCPE = new Vue({
       const file = e.target.files[0];
       //this.urlFileIcon = URL.createObjectURL(file);
       this.myUploads.icon.type = file.type;
+      if(file.type != 'image/png') {
+        this.myUploads.icon.errors.push("WARNING: Icon should be of type PNG, not "+file.type+" !");
+      }
       this.myUploads.icon.size = file.size;
       if(file.size > 20000) {  
-        this.myUploads.icon.errors.push("Warning: Icon size should be less than 20kB, not "+(Math.round(file.size/1000)).toString()+"kB !");
+        this.myUploads.icon.errors.push("WARNING: Icon size should be less than 20kB, not "+(Math.round(file.size/1000)).toString()+"kB !");
       }
       this.myUploads.icon.name = file.name;
       this.myUploads.icon.url = URL.createObjectURL(file);
@@ -615,16 +618,27 @@ var vueGCPE = new Vue({
       this.myUploads.thumb.height = h;
       if(w<h) {
         this.myPoster.orientation = 'portrait';
+        if((h > 500) || (h < 400) || (w>400) || (w<200)) {
+          this.myUploads.icon.errors.push("WARNING: Thumnail size should be around 300*450, not "+w.toString()+"*"+h.toString()+" !");
+        }        
       } else {
         this.myPoster.orientation = 'landscape';
+        if((w > 500) || (w < 400) || (h>400) || (h<200)) {
+          this.myUploads.icon.errors.push("WARNING: Thumnail size should be around 450*300, not "+w.toString()+"*"+h.toString()+" !");
+        }         
       }
-      // set error
     },
     onThumbChange: function(e) {
       const file = e.target.files[0];
       //this.urlFileThumb = URL.createObjectURL(file);
       this.myUploads.thumb.type = file.type;
+      if(file.type != 'image/png') {
+        this.myUploads.thumb.errors.push("WARNING: Thumbnail should be of type PNG, not "+file.type+" !");
+      }
       this.myUploads.thumb.size = file.size;
+      if(file.size > 300000) {  
+        this.myUploads.thumb.errors.push("WARNING: Thumbnail size should be less than 300kB, not "+(Math.round(file.size/1000)).toString()+"kB !");
+      }      
       this.myUploads.thumb.name = file.name;
       this.myUploads.thumb.url = URL.createObjectURL(file);
       // file.type == 'image/png'  
@@ -651,7 +665,13 @@ var vueGCPE = new Vue({
       const file = e.target.files[0];
       //this.urlFilePdf = URL.createObjectURL(file);
       this.myUploads.pdf.type = file.type;
+      if(file.type != 'application/pdf') {
+        this.myUploads.pdf.errors.push("WARNING: Poster should be of type PDF, not "+file.type+" !");
+      }
       this.myUploads.pdf.size = file.size;
+      if(file.size > 50000000) {  
+        this.myUploads.pdf.errors.push("WARNING: Thumbnail size should be less than 50MB, not "+(Math.round(file.size/1000000)).toString()+"MB !");
+      }  
       this.myUploads.pdf.name = file.name;
       this.myUploads.pdf.url = URL.createObjectURL(file);
       // file.type == 'application/pdf' 
