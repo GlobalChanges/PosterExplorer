@@ -679,7 +679,7 @@ var vueGCPE = new Vue({
         pdf.setFontSize(7); pdf.setTextColor("#062379"); //ocean
         pdf.text (this.myPoster.title, 120, 225, {'maxWidth':200});
         pdf.setDrawColor("#e04b0f")
-        pdf.rect(119,220,75,15)
+        pdf.rect(118.5,220,77,15)
 
         pdf.addPage();
         pdf.setFontSize(24); pdf.setTextColor("#000000");
