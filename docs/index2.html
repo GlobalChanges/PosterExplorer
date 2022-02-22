@@ -445,7 +445,7 @@
  <label for="exampleFormControlTextarea3">{{ $t("menu.keywords") }}</label>
  <!--label for="exampleFormControlTextarea3">{{ $t("menu.concept") }}</label-->     
  <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="concept" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span v-for="(value, concept, index) in allConcepts" :key="concept" class="pull-left">
+     <span v-for="(value, concept, index) in allMethods" :key="concept" class="pull-left">
       <span v-show="(myPoster.concept == concept)"><i :class="'fas fa-' + awesome(concept)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{concept}}</span>      
      </span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
