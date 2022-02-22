@@ -197,9 +197,6 @@ var vueGCPE = new Vue({
         konamiFnc: null,
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
-        urlFileIcon: null,
-        urlFileThumb: null,
-        urlFilePdf: null,
         myPoster: { 
                     id:"0", year:"2022", freidok:'', doi:'', language:'en', orientation:'landscape',
                     title:'', abstract:'', 
@@ -560,6 +557,11 @@ var vueGCPE = new Vue({
          window.setTimeout(this.checkMap, 200);
        }
     },
+    setIconSize: function(w,h) {
+      this.myUploads.icon.width = w;
+      this.myUploads.icon.height = h;
+      // set error
+    },
     onIconChange: function(e) {
       const file = e.target.files[0];
       //this.urlFileIcon = URL.createObjectURL(file);
@@ -567,21 +569,23 @@ var vueGCPE = new Vue({
       this.myUploads.icon.size = file.size;
       this.myUploads.icon.name = file.name;
       this.myUploads.icon.url = URL.createObjectURL(file);
-// type:'', size:0, width:0, height:0, url:null
+      // type:'', size:0, width:0, height:0, url:null
       // file.type == 'image/png' 
       // file.size < 
       // 48*48
       // name == 'icon.png' 
       var img = new Image();
       img.onload = function () {
-            //alert(this.width + " " + this.height);
-            this.myUploads.icon.width = this.width;
-            this.myUploads.icon.height = this.height;
-            // error:  
+            this.setIconSize(this.width, this.height)
         };
       img.src = this.myUploads.icon.url;
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
       var a = 1;
+    },
+    setThumbSize: function(w,h) {
+      this.myUploads.thumb.width = w;
+      this.myUploads.thumb.height = h;
+      // set error
     },
     onThumbChange: function(e) {
       const file = e.target.files[0];
@@ -595,11 +599,8 @@ var vueGCPE = new Vue({
       // name == 'icon.png'
       var img = new Image();
       img.onload = function () {
-            //alert(this.width + " " + this.height);
-            this.myUploads.thumb.width = this.width;
-            this.myUploads.thumb.height = this.height;
-            // error:  
-        };
+         this.setThumbSize(this.width, this.height)
+      };
       img.src = this.myUploads.thumb.url;
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
 
