@@ -662,21 +662,21 @@ var vueGCPE = new Vue({
         pdf.setFontSize(18);
         pdf.text ("1: Preparation", 10, 10, {'maxWidth':200});
         pdf.addPage();
-        pdf.setFontSize(18); setTextColor("#000000");
+        pdf.setFontSize(18); pdf.setTextColor("#000000");
         pdf.text ("2: Start and Login to Freidok", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_01.png', 'PNG', 100, 30, 100, 30, 'start', 'MEDIUM', 0);
-        pdf.setFontSize(12); setTextColor("#FF3333");
+        pdf.setFontSize(12); pdf.setTextColor("#FF3333");
         pdf.text ("Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum!", 10, 30, {'maxWidth':80});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_02.png', 'PNG', 100, 120, 100, 70, 'login', 'MEDIUM', 0);
 
         pdf.addPage();
-        pdf.setFontSize(18); setTextColor("#000000");
+        pdf.setFontSize(18); pdf.setTextColor("#000000");
         pdf.text ("3: Document type and title", 10, 10, {'maxWidth':200});
         pdf.setFontSize(12);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_03.png', 'PNG', 100, 30, 100, 60, 'type', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_04.png', 'PNG', 100, 120, 100, 50, 'poster', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_05.png', 'PNG', 100, 200, 100, 80, 'title', 'MEDIUM', 0);
-        pdf.setFontSize(12); setTextColor("#3333FF");
+        pdf.setFontSize(12); pdf.setTextColor("#3333FF");
         pdf.text ("Der Titel dieses Posters", 150, 250, {'maxWidth':200});
 
 
