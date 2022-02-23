@@ -535,7 +535,8 @@ var vueGCPE = new Vue({
      setTopicFilter: function(topic) {
        this.isBusy = true;
        this.filterTopic = topic;
-       this.filterPosterData();
+       //this.filterPosterData();
+       setTimeout(() => {this.filterPosterData();}, 10);
      },
      setMethodFilter: function(method) {
        this.filterMethod = method;
