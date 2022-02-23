@@ -525,30 +525,34 @@ var vueGCPE = new Vue({
       this.$i18n.mergeLocaleMessage(language, locale);
      },
      setLocationFilter: function(location) {
+       this.isBusy = true;
        this.filterLocation = location;
       //this.filterPosterData();
-      setTimeout(() => {this.filterPosterData();}, 100);
+      setTimeout(() => {this.filterPosterData();}, 200);
      },
      setLandscapeFilter: function(landscape) {
+       this.isBusy = true; 
        this.filterLandscape = landscape;
        //this.filterPosterData();
-       setTimeout(() => {this.filterPosterData();}, 100);
+       setTimeout(() => {this.filterPosterData();}, 200);
      },
      setTopicFilter: function(topic) {
        this.isBusy = true;
        this.filterTopic = topic;
        //this.filterPosterData();
-       setTimeout(() => {this.filterPosterData();}, 100);
+       setTimeout(() => {this.filterPosterData();}, 200);
      },
      setMethodFilter: function(method) {
+       this.isBusy = true;
        this.filterMethod = method;
        //this.filterPosterData();
-       setTimeout(() => {this.filterPosterData();}, 100);
+       setTimeout(() => {this.filterPosterData();}, 200);
      },
      setYearFilter: function(year) {
+       this.isBusy = true;
        this.filterYear = year;
        //this.filterPosterData();
-       setTimeout(() => {this.filterPosterData();}, 100);
+       setTimeout(() => {this.filterPosterData();}, 200);
      },
     filterPosterData: function() {
        this.isBusy = true;
