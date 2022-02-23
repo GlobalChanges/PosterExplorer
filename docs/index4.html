@@ -99,6 +99,36 @@
         </div>
   </nav>
 
+  <div class="row shadow-inset d-block d-md-none">
+
+      <a href="#" @click="setLanguage('de')" :class="checkLanguage('de') && 'shadow-button-active'" 
+         class="btn mx-auto border-light shadow-soft shadow-button col-md-6"> 
+        <img src="./img/language-de.png" width="40px" height="30px" /><br><br><h5 :class="checkLanguage('de') ? 'clouds' : 'ocean'">Deutsch</h5></a>
+
+      <a href="#" @click="setLanguage('en')" :class="checkLanguage('en') && 'shadow-button-active'" 
+         class="btn mx-auto border-light shadow-soft shadow-button col-md-6"> 
+         <img src="./img/language-en.png" width="40px" height="30px" /><br><br><h5 :class="checkLanguage('en') ? 'clouds' : 'ocean'">English</h5></a>
+  </li>
+
+
+ <div class="row shadow-inset d-block d-lg-none">
+        <a href="#" @click="setPage('about')" :class="('about' == currentPage) && 'shadow-button-active'" 
+           class="btn mx-auto border-light shadow-soft shadow-button col-md-3"> 
+          <i class="fa-3x fas fa-info-circle clouds"></i><br><br><h5 :class="('about' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.about") }}</h5></a>
+
+        <a href="#" @click="setPage('gallery')" :class="('gallery' == currentPage) && 'shadow-button-active'" 
+           class="btn mx-auto border-light shadow-soft shadow-button col-md-3"> 
+          <i class="fa-3x fas fa-images clouds"></i><br><br><h5 :class="('gallery' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.gallery") }}</h5></a>
+
+        <a href="#" @click="setPage('map')" :class="('map' == currentPage) && 'shadow-button-active'" 
+           class="btn mx-auto border-light shadow-soft shadow-button col-md-3"> 
+          <i class="fa-3x fas fa-map-marked-alt clouds"></i><br><br><h5 :class="('map' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.map") }}</h5></a>
+
+        <a href="#" @click="setPage('partake')" :class="('partake' == currentPage) && 'shadow-button-active'" 
+           class="btn mx-auto border-light shadow-soft shadow-button col-md-3"> 
+          <i class="fa-3x fas fa-lightbulb clouds"></i><br><br><h5 :class="('partake' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.partake") }}</h5></a>
+ </div>
+
  <div class="row" v-show="checkFilter()" >
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
