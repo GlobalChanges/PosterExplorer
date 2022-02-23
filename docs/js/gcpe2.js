@@ -573,7 +573,8 @@ var vueGCPE = new Vue({
          clearPosterMarkers();
          addPosterMarkers(result);
        }
-       this.isBusy = false;
+       //this.isBusy = false;
+       setTimeout(() => {this.isBusy = false;}, 2000);
     },
     checkMap: function() {
        if(isMapReady()) {
