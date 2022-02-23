@@ -526,25 +526,29 @@ var vueGCPE = new Vue({
      },
      setLocationFilter: function(location) {
        this.filterLocation = location;
-       this.filterPosterData();
+      //this.filterPosterData();
+      setTimeout(() => {this.filterPosterData();}, 100);
      },
      setLandscapeFilter: function(landscape) {
        this.filterLandscape = landscape;
-       this.filterPosterData();
+       //this.filterPosterData();
+       setTimeout(() => {this.filterPosterData();}, 100);
      },
      setTopicFilter: function(topic) {
        this.isBusy = true;
        this.filterTopic = topic;
        //this.filterPosterData();
-       setTimeout(() => {this.filterPosterData();}, 1000);
+       setTimeout(() => {this.filterPosterData();}, 100);
      },
      setMethodFilter: function(method) {
        this.filterMethod = method;
-       this.filterPosterData();
+       //this.filterPosterData();
+       setTimeout(() => {this.filterPosterData();}, 100);
      },
      setYearFilter: function(year) {
        this.filterYear = year;
-       this.filterPosterData();
+       //this.filterPosterData();
+       setTimeout(() => {this.filterPosterData();}, 100);
      },
     filterPosterData: function() {
        this.isBusy = true;
@@ -576,7 +580,7 @@ var vueGCPE = new Vue({
          addPosterMarkers(result);
        }
        //this.isBusy = false;
-       setTimeout(() => {this.isBusy = false;}, 2000);
+       setTimeout(() => {this.isBusy = false;}, 100);
     },
     checkMap: function() {
        if(isMapReady()) {
