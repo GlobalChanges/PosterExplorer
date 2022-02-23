@@ -533,6 +533,7 @@ var vueGCPE = new Vue({
        this.filterPosterData();
      },
      setTopicFilter: function(topic) {
+       this.isBusy = true;
        this.filterTopic = topic;
        this.filterPosterData();
      },
