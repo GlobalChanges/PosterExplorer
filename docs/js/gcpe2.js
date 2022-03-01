@@ -352,7 +352,7 @@ var vueGCPE = new Vue({
      },
      awesome: function (str) {
       // if(!this.allTopics2) {return 'question'; }  // is remembered... 
-      var c = this.allTopics2[str]
+      var c = this.allTopics2[str];
       return c ? c.awesome : str;
       //return c ? c.awesome : 'question';
     },

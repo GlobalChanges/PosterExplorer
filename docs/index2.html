@@ -340,6 +340,18 @@
 
  <div class="row" v-show="checkPage('partake')">
   
+
+  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-5">
+    <div class="card bg-primary border-light shadow-soft">
+     <div class="shadow-inset p-5">
+       <h4 class="clouds">  {{ $t("partake.partake") }}</h4><br>
+       <p v-html="$t('partake.intro1')" class="coal"></p>
+       <p v-html="$t('partake.intro2')+' '$t('partake.intro3')" class="coal"></p>
+       <p v-html="$t('partake.intro4')" class="coal"></p>                     
+     </div>
+    </div>
+   </div>
+
   <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 col-xxl-8 mb-4">
   <form action="#" class="w-80">
   <div class="card bg-primary border-light shadow-soft">
