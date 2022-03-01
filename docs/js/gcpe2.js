@@ -483,6 +483,7 @@ var vueGCPE = new Vue({
               this.inqIds(subdir);
             }
        });
+       this.konamiFnc.unload();
      }, 
      inqIds: function(subdir) {
        var volumesUrl = "https://globalchanges.github.io/"+subdir+"/volumes.json";
