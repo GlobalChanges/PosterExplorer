@@ -26,30 +26,36 @@
 <div id="gcpe">
 
 <div class="container-fluid">
+
+  <!--div>
+  <span class="d-none d-xl-block">xl</span>
+  <span class="d-none d-lg-block d-xl-none">lg</span>
+  <span class="d-none d-md-block d-lg-none">md</span>
+  <span class="d-none d-sm-block d-md-none">sm</span>  
+  </div-->
+
+
+  <div class="row shadow-inset d-block d-md-none">
+
+    <a href="#" @click="setLanguage('de')" :class="checkLanguage('de') && 'shadow-button-active'" 
+       class="btn mx-auto border-light shadow-soft shadow-button col-5 col-sm-5"> 
+      <img src="./img/language-de.png" width="40px" height="30px" /><br><br><h5 :class="checkLanguage('de') ? 'clouds' : 'ocean'">Deutsch</h5></a>
+
+    <a href="#" @click="setLanguage('en')" :class="checkLanguage('en') && 'shadow-button-active'" 
+       class="btn mx-auto border-light shadow-soft shadow-button col-5 col-sm-5"> 
+       <img src="./img/language-en.png" width="40px" height="30px" /><br><br><h5 :class="checkLanguage('en') ? 'clouds' : 'ocean'">English</h5></a>
+</div>
+
   <div class="row mb-5"></div>
-  <nav class="navbar navbar-expand-lg navbar-transparent navbar-light shadow-soft navbar-theme-primary mb-4">
-        <a class="navbar-brand mr-lg-1" href="/PosterExplorer/index.html">
+  <nav class="navbar navbar-expand navbar-transparent navbar-light shadow-soft navbar-theme-primary mb-4">
+        <a class="navbar-brand mr-lg-1 mr-md-0" href="/PosterExplorer/index.html">
             <div class="profile-image shadow-inset border border-light bg-primary rounded-circle mt-n5 mx-auto">
-                <img src="./img/globe.gif" class="c2ard-img-top shadow-soft p-2 border border-light rounded-circle" alt="Home">
+                <img v-if="isBusy" src="./img/busy.gif" class="c2ard-img-top shadow-soft p-2 border border-light rounded-circle" alt="Home">
+                <img v-else src="./img/globe.gif" class="c2ard-img-top shadow-soft p-2 border border-light rounded-circle" alt="Home">
             </div>
         </a>
-        <div class="navbar-collapse collapse" id="navbar-default-primary p-1">
-            <div class="navbar-collapse-header">
-                <div class="row">
-                    <div class="col-6 collapse-brand">
-                      <a class="navbar-brand mr-sm-0" href="/PosterExplorer/index.html">
-                        <div class="profile-image shadow-inset border border-light bg-primary rounded-circle mt-n5 mx-auto">
-                          <img src="./img/globe.gif" class="c2ard-img-top shadow-soft p-2 border border-light rounded-circle" alt="Home">
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-6 collapse-close">
-                        <i class="fas fa-times" data-toggle="collapse" role="button"
-                            data-target="#navbar-default-primary" aria-controls="navbar-default-primary"
-                            aria-expanded="false" aria-label="Toggle navigation"></i>
-                    </div>
-                </div>
-            </div>
+
+       
             <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
                 <li class="nav-item forest mr-lg-5" style="line-height:1.3;">
                   <span class="clouds lg-text">G</span>lobal<br>&nbsp;&nbsp;&nbsp;
@@ -59,6 +65,10 @@
                 <a href="https://www.geographie.uni-freiburg.de" target="_new" class="shadow-inset border border-light bg-primary  mt-n5 mx-auto  mr-lg-5"> 
                    <img src="./img/uni-fr.png" width="94px" height="94px" alt="Uni Freiburg" class="shadow-soft p-2 border border-light">
                 </a>
+              </ul>
+
+            <div class="navbar-collapse collapse" id="navbar-default-primary p-1">
+              <ul class="navbar-nav navbar-nav-hover align-items-lg-center d-none d-lg-flex">
                 <li class="nav-item text-center" >
                     <a href="#" @click="setPage('about')" :class="('about' == currentPage) && 'shadow-button-active'" 
                        class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
@@ -74,9 +84,17 @@
                        class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
                       <i class="fa-3x fas fa-map-marked-alt clouds"></i><br><br><h5 :class="('map' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.map") }}</h5></a>
                 </li>
+                <li class="nav-item text-center">
+                    <a href="#" @click="setPage('partake')" :class="('partake' == currentPage) && 'shadow-button-active'" 
+                       class="nav-link shadow-soft shadow-button border border-light bg-primary  mt-n5 mx-auto"> 
+                      <i class="fa-3x fas fa-lightbulb clouds"></i><br><br><h5 :class="('partake' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.partake") }}</h5></a>
+                </li>
+
+
             </ul>
-        </div>
-        <div class="d-flex align-items-center">
+    </div>
+
+        <div class="align-items-center  d-none d-md-flex">
             <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
               <li class="nav-item text-center sm-text" >
                 <a href="#" @click="setLanguage('de')" :class="checkLanguage('de') && 'shadow-button-active'" 
@@ -89,16 +107,29 @@
                    <img src="./img/language-en.png" width="40px" height="30px" /><br><br><h5 :class="checkLanguage('en') ? 'clouds' : 'ocean'">English</h5></a>
             </li>
             </ul>
-            <button class="navbar-toggler ml-2" type="button" data-toggle="collapse"
-                data-target="#navbar-default-primary" aria-controls="navbar-default-primary"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
         </div>
   </nav>
 
- <div class="row">
+ <div class="row mb-4 shadow-inset d-block d-lg-none">
+        <a href="#" @click="setPage('about')" :class="('about' == currentPage) && 'shadow-button-active'" 
+           class="btn mx-auto border-light shadow-soft shadow-button col-md-2 col-sm-2 col-5"> 
+          <i class="fa-3x fas fa-info-circle clouds"></i><br><br><h5 :class="('about' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.about") }}</h5></a>
 
+        <a href="#" @click="setPage('gallery')" :class="('gallery' == currentPage) && 'shadow-button-active'" 
+           class="btn mx-auto border-light shadow-soft shadow-button col-md-2 col-sm-2 col-5"> 
+          <i class="fa-3x fas fa-images clouds"></i><br><br><h5 :class="('gallery' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.gallery") }}</h5></a>
+
+        <a href="#" @click="setPage('map')" :class="('map' == currentPage) && 'shadow-button-active'" 
+           class="btn mx-auto border-light shadow-soft shadow-button col-md-2 col-sm-2 col-5"> 
+          <i class="fa-3x fas fa-map-marked-alt clouds"></i><br><br><h5 :class="('map' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.map") }}</h5></a>
+
+        <a href="#" @click="setPage('partake')" :class="('partake' == currentPage) && 'shadow-button-active'" 
+           class="btn mx-auto border-light shadow-soft shadow-button col-md-2 col-sm-2 col-5"> 
+          <i class="fa-3x fas fa-lightbulb clouds"></i><br><br><h5 :class="('partake' == currentPage) ? 'clouds' : 'ocean'">{{ $t("menu.partake") }}</h5></a>
+ </div>
+
+ <div class="row" v-show="checkFilter()" >
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -125,8 +156,12 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'fas fa-' + awesome(filterLandscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{filterLandscape}}</span>
-     <i class="fas fa-angle-down pull-right ocean"></i> 
+     <span v-for="landscape in allPosterLandscapes" :key="landscape" class="pull-left">
+      <span v-show="(filterLandscape == landscape)"><i :class="'fas fa-' + awesome(landscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{landscape}}</span>      
+     </span>
+     <span class="pull-left"> <span v-show="(filterLandscape == 'Alle')"><i class="fas fa-check"></i> 
+      &nbsp;{{ $t("menu.landscape") }}:&nbsp;{{ $t("menu.all" )}}</span></span>
+     <i class="fas fa-angle-down pull-right ocean"></i>
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton4">
      <a class="dropdown-item sand" href="#" @click="setLandscapeFilter('Alle')">
@@ -143,7 +178,12 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'fas fa-' + awesome(filterTopic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{filterTopic}}</span>
+     <!--span class="pull-left"><i :class="'fas fa-' + awesome(filterTopic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{filterTopic}}</span-->
+     <span v-for="topic in allPosterTopics" :key="topic" class="pull-left">
+       <span v-show="(filterTopic == topic)"><i :class="'fas fa-' + awesome(topic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{topic}}</span>      
+     </span>
+     <span class="pull-left"> <span v-show="(filterTopic == 'Alle')"><i class="fas fa-check"></i> 
+       &nbsp;{{ $t("menu.topic") }}:&nbsp;{{ $t("menu.all" )}}</span></span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton2">
@@ -161,7 +201,11 @@
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
    <div class="dropdown">
     <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-     <span class="pull-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{filterMethod}}</span>
+     <!--span class="pull-left"><i :class="'fas fa-' + awesome(filterMethod)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{filterMethod}}</span-->
+     <span v-for="method in allPosterMethods" :key="method" class="pull-left">
+       <span v-show="(filterMethod == method)"><i :class="'fas fa-' + awesome(method)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{method}}</span>
+     </span>
+     <span class="pull-left"><span v-show="(filterMethod == 'Alle')"><i class="fas fa-check"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{ $t("menu.all" )}}</span></span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton3">
@@ -294,7 +338,334 @@
 
  </div>  <!-- end about -->
 
+ <div class="row" v-show="checkPage('partake')">
+  
 
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 mb-5">
+    <div class="cXXard bg-primary border-light shadow-soft">
+     <div class="shadow-inset p-5">
+       <h4 class="clouds">  {{ $t("partake.partake") }}</h4><br>
+       <p v-html="$t('partake.intro1')+'<br/>'+$t('partake.intro2')+' '+$t('partake.intro3')+'<br/>'+$t('partake.intro4')" class="coal"></p>
+     </div>
+    </div>
+   </div>
+
+  <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 col-xxl-8 mb-4">
+  <form action="#" class="w-80">
+  <div class="card bg-primary border-light shadow-soft">
+
+  <div class="row m-3">
+  <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 col-xxl-9 mb-4">
+
+    <div class="form-row">
+      <div class="form-group mb-3 col-md-3">
+        <label for="id">Poster-Id</label>
+        <input type="text" v-model="myPoster.id" class="form-control" id="id" maxlength="4"  placeholder="9999">
+      </div>
+      <div class="form-group mb-3 col-md-3">
+        <label for="year">Year</label>
+        <input type="text" v-model="myPoster.year" class="form-control" id="year" maxlength="4"  placeholder="Year">
+      </div>
+      <div class="form-group mb-3 col-md-3">
+        <label for="language">{{ $t("menu.language") }}</label>
+        <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="language" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="pull-left"><img :src="'./img/language-'+myPoster.language+'.png'" width="20px" height="15px" />&nbsp;{{ $t("menu.language") }}:&nbsp;{{$t('language.'+myPoster.language)}}</span>
+          <i class="fas fa-angle-down pull-right ocean"></i> 
+         </button>  
+         <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item ocean" href="#" @click="setMyLanguage('de')">
+            <!--img src="./img/language-de.png" width="20px" height="15px" /-->&nbsp;{{ $t("language.deutsch") }}
+          </a> 
+          <a class="dropdown-item ocean" href="#" @click="setMyLanguage('en')">
+            <!--img src="./img/language-en.png" width="20px" height="15px" /-->&nbsp;{{ $t("language.english") }}
+           </a>           
+         </div>
+      </div>
+      <div class="form-group mb-3 col-md-3">
+        <label for="orientation">{{ $t("menu.orientation") }}</label>
+        <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="orientation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="pull-left"><i :class="'mg fas fa-' + awesome(myPoster.orientation)"></i>&nbsp;{{ $t("menu.orientation") }}:&nbsp;{{$t('orientation.'+myPoster.orientation)}}</span>
+          <i class="fas fa-angle-down pull-right ocean"></i> 
+         </button>  
+         <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item ocean" href="#" @click="setMyOrientation('landscape')">
+           <i class="fas fas fa-image"></i>&nbsp;{{ $t("orientation.landscape") }}
+          </a> 
+          <a class="dropdown-item ocean" href="#" @click="setMyOrientation('portrait')">
+            <i class="fas fas fa-user"></i>&nbsp;{{ $t("orientation.portrait") }}
+           </a>           
+         </div>
+      </div>
+    </div> 
+
+
+      <div class="form-group mb-3">
+        <label for="title">Title</label>
+        <input type="text" v-model="myPoster.title" class="form-control" id="title" maxlength="70"  placeholder="Enter Poster Title">
+      </div>
+
+      <!-- List of Autors, Supervisor -->
+
+    <div v-for="author in myPoster.authors" :key="author.email" class="form-row">
+      <!-- div class="form-group mb-3 col-md-1">
+        <label for="remove">Del</label>
+        <a href="#" @click="createMeta()" class="btn mx-auto border-light shadow-soft shadow-button" ><i class="fire fas fa-minus-circle"></i></a>
+      </div -->      
+      <div class="form-group mb-3 col-md-2">
+        <label for="first">Firstname</label>
+        <input type="text" v-model="author.firstname" class="form-control" id="first" maxlength="25"  placeholder="Firstname">
+      </div>
+      <div class="form-group mb-3 col-md-2">
+        <label for="name">Name</label>
+        <input type="text" v-model="author.name" class="form-control" id="name" maxlength="25"  placeholder="Name">
+      </div>
+      <div class="form-group mb-3 col-md-4">
+        <label for="email">eMail</label>
+        <input type="text" v-model="author.email" class="form-control" id="email" maxlength="50"  placeholder="eMail">
+      </div>
+      <div class="form-group mb-3 col-md-4">
+        <label for="Orcid">Orcid</label>
+        <input type="text" v-model="author.orcid" class="form-control" id="orcid" maxlength="19"  placeholder="0000-0000-0000-0000">
+      </div>
+    </div> 
+    <!--div class="form-row">
+      <div class="form-group mb-3 col-md-1">
+        <a href="#" @click="createMeta()" class="btn mx-auto border-light shadow-soft shadow-button" ><i class="forest fas fa-plus-circle"></i></a>
+      </div>  
+     </div-->
+
+
+<!-- delete / add -->
+<!-- https://stackoverflow.com/questions/50140910/vuejs-how-can-i-delete-array-item-within-v-for-item-element  -->
+<!--  supervisor/author -->
+
+<!-- https://stackoverflow.com/questions/58273242/how-to-create-a-simple-modal-for-create-edit-functions-in-vue-js -->
+
+
+      <div class="form-group">
+        <label for="abstract">Abstract</label>
+        <textarea v-model="myPoster.abstract" class="form-control" id="abstract" rows="4" maxlength="700"></textarea>
+      </div>
+
+    <label for="customFile">File Upload</label>
+    <div class="form-row">
+      
+      <div class="custom-file form-group col-md-4">
+       <input type="file" class="custom-file-input" aria-describedby="iconHelp" id="iconFile" @change="onIconChange">
+       <label class="custom-file-label" for="iconFile">Icon upload</label>
+       <small v-if="(myUploads.icon.errors.length > 0)" v-for="error in myUploads.icon.errors" class="form-text fire">{{error}}</small>
+       <small v-if="(myUploads.icon.errors.length == 0)" id="iconHelp" class="form-text text-muted">Upload icon.png here.</small>
+      </div>
+      <div class="custom-file form-group col-md-4">
+       <input type="file" class="custom-file-input" aria-describedby="thumbHelp" id="thumbFile" @change="onThumbChange">
+       <label class="custom-file-label" for="thumbFile">Thumbnail upload</label>
+       <small v-if="(myUploads.thumb.errors.length > 0)" v-for="error in myUploads.thumb.errors" class="form-text fire">{{error}}</small>
+       <small v-if="(myUploads.thumb.errors.length == 0)" id="thumbHelp" class="form-text text-muted">Upload thumb.png here.</small>
+      </div>
+      <div class="custom-file form-group col-md-4">
+       <input type="file" class="custom-file-input" aria-describedby="pdfHelp" id="pdfFile" @change="onPdfChange">
+       <label class="custom-file-label" for="pdfFile">PDF upload</label>
+       <small v-if="(myUploads.pdf.errors.length > 0)" v-for="error in myUploads.pdf.errors" class="form-text fire">{{error}}</small>
+       <small v-if="(myUploads.pdf.errors.length == 0)" id="pdfHelp" class="form-text text-muted">Upload poster.pdf here.</small>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 col-xxl-3 mb-5">
+
+
+<div class="form-group  mb-3"> 
+ <label for="exampleFormControlTextarea3">{{ $t("menu.keywords") }}</label>
+ <!--label for="exampleFormControlTextarea3">{{ $t("menu.concept") }}</label-->     
+ <button class="btn btn-block dropdown-toggle ocean border-light shadow-soft shadow-button" type="button" id="concept" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <span v-for="(value, concept, index) in allMethods" :key="concept" class="pull-left">
+      <span v-show="(myPoster.concept == concept)"><i :class="'fas fa-' + awesome(concept)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{concept}}</span>      
+     </span>
+     <i class="fas fa-angle-down pull-right ocean"></i> 
+    </button>  
+    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="concept">
+     <a v-for="(value, method, index) in allMethods" :key="method" class="dropdown-item ocean" href="#" @click="setMyMethod(method)">
+      <i :class="'mg fas fa-' + awesome(method)"></i>&nbsp;{{method}}
+     </a> 
+    </div>
+</div>
+
+
+<div class="form-group  mb-3"> 
+ <!--label for="exampleFormControlTextarea3">Topic1</label-->   
+ <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="topic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <span v-for="(value, topic, index) in allTopics" :key="topic" class="pull-left">
+    <span v-show="(myPoster.topic == topic)"><i :class="'fas fa-' + awesome(topic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{topic}}</span>      
+   </span>
+  <i class="fas fa-angle-down pull-right ocean"></i> 
+ </button>  
+ <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="topic">
+  <a v-for="(value, topic, index) in allTopics" :key="topic" class="dropdown-item forest" href="#" @click="setMyTopic(topic)">
+   <i :class="'mg fas fa-' + awesome(topic)"></i>&nbsp;{{topic}}
+  </a> 
+ </div>
+</div>
+
+<div class="form-group  mb-3"> 
+ <!--label for="exampleFormControlTextarea3">Topic2</label-->   
+ <button class="btn btn-block dropdown-toggle forest border-light shadow-soft shadow-button" type="button" id="subtopic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <span v-for="(value, topic, index) in allTopics" :key="topic" class="pull-left">
+    <span v-show="(myPoster.subtopic == topic)"><i :class="'fas fa-' + awesome(topic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{topic}}</span>      
+   </span>
+  <i class="fas fa-angle-down pull-right ocean"></i> 
+ </button>  
+ <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="subtopic">
+  <a v-for="(value, topic, index) in allTopics" :key="topic" class="dropdown-item forest" href="#" @click="setMySubtopic(topic)">
+   <i :class="'mg fas fa-' + awesome(topic)"></i>&nbsp;{{topic}}
+  </a> 
+ </div>
+</div>
+
+<div class="form-group  mb-3"> 
+ <!--label for="exampleFormControlTextarea3">Landscape</label-->   
+ <button class="btn btn-block dropdown-toggle sand border-light shadow-soft shadow-button" type="button" id="orientation" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <span v-for="(value, landscape, index) in allLandscapes" :key="landscape" class="pull-left">
+      <span v-show="(myPoster.location.landscape == landscape)"><i :class="'fas fa-' + awesome(landscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{landscape}}</span>      
+     </span>
+     <i class="fas fa-angle-down pull-right ocean"></i> 
+    </button>  
+    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="orientation">
+     <a v-for="(value, landscape, index) in allLandscapes" :key="landscape" class="dropdown-item sand" href="#" @click="setMyLandscape(landscape)">
+      <i :class="'mg fas fa-' + awesome(landscape)"></i>&nbsp;{{landscape}}
+     </a> 
+    </div>
+</div>
+
+<div class="form-group  mb-3"> 
+ <!--label for="exampleFormControlTextarea3">Continent</label-->   
+ <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="continent" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(myPoster.location.continent)"></i>&nbsp;{{ $t("menu.continent") }}:&nbsp;{{myPoster.location.continent}}</span>
+     <i class="fas fa-angle-down pull-right ocean"></i> 
+    </button>  
+    <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="continent">
+     <a v-for="(value, continent, index) in allContinents" :key="continent" class="dropdown-item earth" href="#" @click="setMyContinent(continent)">
+      <i :class="'mg map-' + mapicon(continent)"></i>&nbsp;{{continent}}
+     </a> 
+    </div>
+</div>
+
+<!-- List of Countries -->
+
+<div v-for="(country, index) in myPoster.location.countries" :key="country" class="form-group  mb-3">
+  <label v-if="(index == 0)" for="countries">{{ $t("menu.countries") }}</label>
+  <button class="btn btn-block dropdown-toggle earth border-light shadow-soft shadow-button" type="button" id="countries" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="pull-left"><i :class="'mg mg-2x map-' + mapicon(country)"></i>&nbsp;{{ $t("menu.country") }}:&nbsp;{{country}}</span>
+    <i class="fas fa-angle-down pull-right ocean"></i> 
+   </button>  
+
+   <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="countries">
+    <a class="dropdown-item earth" href="#" @click="setMyCountry('None', index)">
+      <i class="mg map-wrld"></i>&nbsp;{{ $t("menu.none") }}
+    </a> 
+    <h6 class="dropdown-header">Countries</h6>
+    <a v-for="(value, country2, index2) in allCountries" :key="country2" class="dropdown-item earth" href="#" @click="setMyCountry(country2, index)">
+     <i :class="'mg map-' + mapicon(country2)"></i>&nbsp;{{country2}}
+    </a> 
+   </div>
+
+</div>
+
+
+
+    <div class="form-row">
+      <div class="form-group mb-3 col-md-6">
+        <label for="longitude">Longitude</label>
+        <input type="text" v-model="myPoster.location.longitude" @change="formatLatLong()" class="form-control" id="longitude" maxlength="10"  placeholder="-180.0 to +180.0">
+      </div>
+      <div class="form-group mb-3 col-md-6">
+        <label for="latitude">Latitude</label>
+        <input type="text" v-model="myPoster.location.latitude" @change="formatLatLong()" class="form-control" id="latitude" maxlength="10"  placeholder="-90.0 to +180.0">
+      </div>
+     </div>
+
+  </div>
+  </div>
+
+
+
+    <div class="shadow-inset partake-body row m-3 b-3">
+     <a v-if="checkPage('partake')" href="#" @click="createPdf()" class="btn mx-auto border-light shadow-soft shadow-button col-md-6" ><i class="fas fa-download"></i>&nbsp;PDF</a>
+     <a v-if="checkPage('partake')" href="#" @click="createMeta()" class="btn mx-auto border-light shadow-soft shadow-button col-md-6" ><i class="fas fa-download"></i>&nbsp;Meta</a>
+    </div>
+
+  </div>
+
+  </form>
+
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
+   <div class="card bg-primary border-light shadow-soft">
+
+    <div class="flip-card">
+     <div class="flip-card-inner">
+      <div class="flip-card-front morph">
+
+       <div class="shadow-inset card-header p-3">
+        <img v-if="myUploads.thumb.url" :src="myUploads.thumb.url" class="card-img-top rounded" :alt="myPoster.title">
+       </div>
+       <div class="card-body pt-2">
+        <div class="media justify-content-between">
+         <ul class="pull-left">
+           <li v-if="myPoster.location.country" class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myPoster.location.country)"></i>&ensp;{{myPoster.location.country}}</li>
+           <li v-else class="small earth pull-left"><i :class="'mg mg-4x map-' + mapicon(myPoster.location.continent)"></i>&ensp;{{myPoster.location.continent}}</li>
+           <br/>
+           <li v-for="(value, landscape, index) in allLandscapes" :key="landscape" v-if="myPoster.location.landscape" v-show="(myPoster.location.landscape == landscape)" class="small sand pull-left"><i :class="'mg mg-2x fas fa-' + awesome(landscape)"></i>&ensp;
+  {{landscape}}</li>
+         </ul>
+         <ul class="pull-right">
+           <li v-for="(value, concept, index) in allMethods" :key="concept" v-show="(myPoster.concept == concept)" class="small ocean pull-right">{{concept}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(concept)"></i></li><br/>
+           <li v-for="(value, topic, index) in allTopics" :key="topic" v-show="(myPoster.topic == topic)" class="small forest pull-right">{{topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(topic)"></i></li><br/>
+           <li v-for="(value, topic, index) in allTopics" :key="topic" v-show="(myPoster.subtopic == topic)" class="small forest pull-right">{{topic}}&nbsp;<i :class="'mg mg-2x fas fa-' + awesome(topic)"></i></li>
+         </ul>
+        </div>
+        <h5 class="card-title clouds">{{myPoster.title}}</h5>
+        <span class="text-black-50 media justify-content-between">
+         <span class="pull-left">
+         <span v-for="author in myPoster.authors" :key="author.email">
+           <i class="mg fas fa-user-graduate"></i>&nbsp;{{author.firstname}}&nbsp;{{author.name}}
+           <span v-if="author.orcid">&nbsp;<a :href="('https://orcid.org/'+author.orcid)" target="_orcid">
+            <img src="./img/orcid_16x16.png" :alt="author.orcid"></a></span><br/>   
+         </span>
+         </span>
+         <span clas="pull-right">
+          <i class="far fa-copyright"></i>{{myPoster.year}}</span>
+        </span>
+       </div>
+      </div>
+      <div class="flip-card-back morph">
+       <div class="shadow-inset card-body pt-2">
+        <p v-if="(myPoster.abstract && (myPoster.abstract.length < 720))" class="card-text">{{myPoster.abstract}}</p>
+        <p v-else-if="(myPoster.teaser && (myPoster.teaser.length < 720))" class="card-text">{{myPoster.teaser}}</p>
+        <p v-else-if="myPoster.teaser" class="card-text">{{myPoster.teaser|shorting}}</p>
+        <p v-else class="card-text">{{myPoster.abstract|shorting}}</p>
+       </div>
+      </div>
+     </div>
+    </div>  
+    <a :src="myUploads.pdf.url" onclick="return true;" class="btn mx-auto border-light shadow-soft shadow-button" target="_gcpe"><i class="fas fa-eye"></i>&nbsp;Poster</a>
+   </div>
+  </div>
+
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-5">
+   <div class="card bg-primary border-light shadow-soft">
+    <div class="shadow-inset map-body">
+     <div id="map2">
+       <img v-if="myUploads.icon.url" :src="myUploads.icon.url" width='22' height='22' class='marker-image' ></img>
+     </div>
+    </div>
+   </div>
+  </div>
+
+ </div>  <!-- end partake -->
 
  <div class="row" v-show="checkPage('map')">
   <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-8 col-xxl-8 mb-5">
@@ -388,11 +759,13 @@
  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" type="text/javascript"></script>
  <script src="//cdn.jsdelivr.net/npm/konami@1.6.2/konami.js" type="text/javascript"></script>
  <!--script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js" type="text/javascript"></script-->
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/polyfills.umd.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" type="text/javascript"></script>
  
  <script src="./js/jquery.star-rating-svg.js" type="text/javascript"></script> 
  <script src="./js/neumorphism.js" type="text/javascript"></script>
  <script src="./js/map.js" type="text/javascript"></script>  
- <script src="./js/gcpe.js" type="text/javascript"></script>		
+ <script src="./js/gcpe2.js" type="text/javascript"></script>		
 
 </body>
 </html>
