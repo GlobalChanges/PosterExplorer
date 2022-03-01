@@ -771,7 +771,7 @@ var vueGCPE = new Vue({
         if(this.myPoster.location.country) {
           keywords += this.myPoster.location.country+" ("+this.findGnd(this.myPoster.location.country)+")\n";
         }
-        keywords += "\n alle GNDs der beteiligten/betroffenen Laender (evtl auf Wikipedia nachschlagen)";
+        keywords += "+ alle GNDs der beteiligten/betroffenen Laender (evtl auf Wikipedia nachschlagen)\n";
         keywords += "\n'Globaler Wandel' (frei-deutsch)\n";
         keywords += "'Global Change' (frei-englisch)\n";
         keywords += "\n eventuell weitere spezifische Topics (nur kontrollierte)";

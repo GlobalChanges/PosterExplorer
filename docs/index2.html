@@ -27,12 +27,12 @@
 
 <div class="container-fluid">
 
-  <div>
+  <!--div>
   <span class="d-none d-xl-block">xl</span>
   <span class="d-none d-lg-block d-xl-none">lg</span>
   <span class="d-none d-md-block d-lg-none">md</span>
   <span class="d-none d-sm-block d-md-none">sm</span>  
-  </div>
+  </div-->
 
 
   <div class="row shadow-inset d-block d-md-none">
@@ -159,7 +159,7 @@
      <span v-for="landscape in allPosterLandscapes" :key="landscape" class="pull-left">
       <span v-show="(filterLandscape == landscape)"><i :class="'fas fa-' + awesome(landscape)"></i>&nbsp;{{ $t("menu.landscape") }}:&nbsp;{{landscape}}</span>      
      </span>
-     <span class="pull-left"> <span v-show="(filterLandscape == 'Alle')"><i :class="'fas fa-' + awesome('Alle')"></i> 
+     <span class="pull-left"> <span v-show="(filterLandscape == 'Alle')"><i :class="'fas fa-check"></i> 
       &nbsp;{{ $t("menu.landscape") }}:&nbsp;{{ $t("menu.all" )}}</span></span>
      <i class="fas fa-angle-down pull-right ocean"></i>
     </button>  
@@ -182,7 +182,7 @@
      <span v-for="topic in allPosterTopics" :key="topic" class="pull-left">
        <span v-show="(filterTopic == topic)"><i :class="'fas fa-' + awesome(topic)"></i>&nbsp;{{ $t("menu.topic") }}:&nbsp;{{topic}}</span>      
      </span>
-     <span class="pull-left"> <span v-show="(filterTopic == 'Alle')"><i :class="'fas fa-' + awesome('Alle')"></i> 
+     <span class="pull-left"> <span v-show="(filterTopic == 'Alle')"><i :class="'fas fa-check"></i> 
        &nbsp;{{ $t("menu.topic") }}:&nbsp;{{ $t("menu.all" )}}</span></span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
@@ -205,7 +205,7 @@
      <span v-for="method in allPosterMethods" :key="method" class="pull-left">
        <span v-show="(filterMethod == method)"><i :class="'fas fa-' + awesome(method)"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{method}}</span>
      </span>
-     <span class="pull-left"><span v-show="(filterMethod == 'Alle')"><i :class="'fas fa-' + awesome('Alle')"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{ $t("menu.all" )}}</span></span>
+     <span class="pull-left"><span v-show="(filterMethod == 'Alle')"><i :class="'fas fa-check"></i>&nbsp;{{ $t("menu.concept") }}:&nbsp;{{ $t("menu.all" )}}</span></span>
      <i class="fas fa-angle-down pull-right ocean"></i> 
     </button>  
     <div class="dropdown-menu btn-block shadow-soft" aria-labelledby="dropdownMenuButton3">
