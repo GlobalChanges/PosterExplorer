@@ -86,6 +86,9 @@ http://dev.openlayers.org/releases/OpenLayers-2.13.1/docs/files/OpenLayers/Marke
 https://kazupon.github.io/vue-i18n/started.html#html
 https://phrase.com/blog/posts/ultimate-guide-to-vue-localization-with-vue-i18n/
 
+https://superuser.com/questions/802569/how-to-distill-rasterize-a-pdf-in-linux
+https://superuser.com/questions/185880/how-to-convert-a-pdf-document-to-png
+convert -density 600 +antialias input.pdf output.pdf
 
 //compress pdf
 https://opensource.com/article/20/8/reduce-pdf
