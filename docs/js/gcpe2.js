@@ -195,24 +195,22 @@ var vueGCPE = new Vue({
         filterMethod: "Alle",
         filterYear: "Alle",
         konamiFnc: null,
+        isBusy: false,
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
-        urlFileIcon: null,
-        urlFileThumb: null,
-        urlFilePdf: null,
         myPoster: { 
                     id:"0", year:"2022", freidok:'', doi:'', language:'en', orientation:'landscape',
                     title:'', abstract:'', 
                     authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}],
-                    location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:0.0, longitude:0.0, city:'', region:''}, 
+                    location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:-35.0, longitude:-145.0, city:'', region:''}, 
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', 
                     period: {begin:1950, end:2022}, keywords:[], 
                     pdf:'',  thumbnail:'', icon:'', 
                     sources:[]
                   },
-        myUploads: { icon:  {type:'', name:'', size:0, width:0, height:0, url:null, error:null},
-                     thumb: {type:'', name:'', size:0, width:0, height:0, url:null, error:null},
-                     pdf:   {type:'', name:'', size:0, width:0, height:0, url:null, error:null}
+        myUploads: { icon:  {type:'', name:'', size:0, width:0, height:0, url:null, errors:[]},
+                     thumb: {type:'', name:'', size:0, width:0, height:0, url:null, errors:[]},
+                     pdf:   {type:'', name:'', size:0, width:0, height:0, url:null, errors:[]}
                   }
   },
   methods: {
@@ -223,6 +221,9 @@ var vueGCPE = new Vue({
      checkPage: function(page) {
        return ((this.currentPage == page) || (this.currentPage == "all"));  
      },
+     checkFilter: function() {
+      return ((this.currentPage == "gallery") || (this.currentPage == "map") || (this.currentPage == "all"));  
+    },     
      setLanguage: function(language) {
       //this.currentLanguage = language;
       this.$i18n.locale = language;
@@ -349,11 +350,35 @@ var vueGCPE = new Vue({
             this.setCountries(response.data);
        });
      },
+     awesome: function (str) {
+      // if(!this.allTopics2) {return 'question'; }  // is remembered... 
+      var c = this.allTopics2[str];
+      return c ? c.awesome : str;
+      //return c ? c.awesome : 'question';
+    },
      mapicon: function (str) {
        var cou = this.allCountries[str]
        var con = this.allContinents[str]
        return cou ? cou.map : con ? con.map : 'wrld';
      }, 
+     findGnd: function (str) {
+       var c = this.allTopics[str];
+       if(c) {return c.gnd ? c.gnd : '?';}
+       c = this.allMethods[str];
+       if(c) {return c.gnd ? c.gnd : '?';}
+       c = this.allLandscapes[str];
+       if(c) {return c.gnd ? c.gnd : '?';}
+       c = this.allContinents[str];
+       if(c) {return c.gnd ? c.gnd : '?';}
+       c = this.allCountries[str];
+       if(c) {return c.gnd ? c.gnd : '?';}       
+       return '?';
+     },
+     findDdc: function (str) {
+      var c = this.allContinents[str];
+      if(c) {return c.ddc ? c.ddc : '?';}
+      return '?';
+    },
      inqTopics: function () {
        var volumesUrl = "https://globalchanges.github.io/PosterExplorer/meta/topics.json";
        axios
@@ -431,11 +456,7 @@ var vueGCPE = new Vue({
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
      setMyLanguage: function(language) { this.myPoster.language = language; },
-     awesome: function (str) {
-       // if(!this.allTopics2) {return 'question'; }  // is remembered... 
-       var c = this.allTopics2[str]
-       return c ? c.awesome : 'question';
-     },
+     setMyOrientation: function(orientation) { this.myPoster.orientation = orientation; },
      inqFolders: function() {
        var foldersUrl = "https://globalchanges.github.io/PosterExplorer/meta/folders.json";
        axios
@@ -462,6 +483,7 @@ var vueGCPE = new Vue({
               this.inqIds(subdir);
             }
        });
+       this.konamiFnc.unload();
      }, 
      inqIds: function(subdir) {
        var volumesUrl = "https://globalchanges.github.io/"+subdir+"/volumes.json";
@@ -504,26 +526,37 @@ var vueGCPE = new Vue({
       this.$i18n.mergeLocaleMessage(language, locale);
      },
      setLocationFilter: function(location) {
+       this.isBusy = true;
        this.filterLocation = location;
-       this.filterPosterData();
+      //this.filterPosterData();
+      setTimeout(() => {this.filterPosterData();}, 200);
      },
      setLandscapeFilter: function(landscape) {
+       this.isBusy = true; 
        this.filterLandscape = landscape;
-       this.filterPosterData();
+       //this.filterPosterData();
+       setTimeout(() => {this.filterPosterData();}, 200);
      },
      setTopicFilter: function(topic) {
+       this.isBusy = true;
        this.filterTopic = topic;
-       this.filterPosterData();
+       //this.filterPosterData();
+       setTimeout(() => {this.filterPosterData();}, 200);
      },
      setMethodFilter: function(method) {
+       this.isBusy = true;
        this.filterMethod = method;
-       this.filterPosterData();
+       //this.filterPosterData();
+       setTimeout(() => {this.filterPosterData();}, 200);
      },
      setYearFilter: function(year) {
+       this.isBusy = true;
        this.filterYear = year;
-       this.filterPosterData();
+       //this.filterPosterData();
+       setTimeout(() => {this.filterPosterData();}, 200);
      },
     filterPosterData: function() {
+       this.isBusy = true;
        var result = [];
        for(var j=0; j<this.allPosterData.length; j++) {
           var poster = this.allPosterData[j]; 
@@ -551,6 +584,8 @@ var vueGCPE = new Vue({
          clearPosterMarkers();
          addPosterMarkers(result);
        }
+       //this.isBusy = false;
+       setTimeout(() => {this.isBusy = false;}, 100);
     },
     checkMap: function() {
        if(isMapReady()) {
@@ -559,34 +594,67 @@ var vueGCPE = new Vue({
          window.setTimeout(this.checkMap, 200);
        }
     },
+    setIconSize: function(w,h) {
+      this.myUploads.icon.width = w;
+      this.myUploads.icon.height = h;
+      if((w!=48) || (h!=48)) {
+        this.myUploads.icon.errors.push("WARNING: Icon size should be 48*48, not "+w.toString()+"*"+h.toString()+" !");
+      }
+    },
     onIconChange: function(e) {
+      this.myUploads.icon.errors = [];
       const file = e.target.files[0];
       //this.urlFileIcon = URL.createObjectURL(file);
       this.myUploads.icon.type = file.type;
+      if(file.type != 'image/png') {
+        this.myUploads.icon.errors.push("WARNING: Icon should be of type PNG, not "+file.type+" !");
+      }
       this.myUploads.icon.size = file.size;
+      if(file.size > 20000) {  
+        this.myUploads.icon.errors.push("WARNING: Icon size should be less than 20kB, not "+(Math.round(file.size/1000)).toString()+"kB !");
+      }
       this.myUploads.icon.name = file.name;
       this.myUploads.icon.url = URL.createObjectURL(file);
-// type:'', size:0, width:0, height:0, url:null
+      // type:'', size:0, width:0, height:0, url:null
       // file.type == 'image/png' 
       // file.size < 
       // 48*48
       // name == 'icon.png' 
       var img = new Image();
       img.onload = function () {
-            //alert(this.width + " " + this.height);
-            this.myUploads.icon.width = this.width;
-            this.myUploads.icon.height = this.height;
-            // error:  
-        };
+          vueGCPE.setIconSize(this.width, this.height)
+      };
       img.src = this.myUploads.icon.url;
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
       var a = 1;
     },
+    setThumbSize: function(w,h) {
+      this.myUploads.thumb.width = w;
+      this.myUploads.thumb.height = h;
+      if(w<h) {
+        this.myPoster.orientation = 'portrait';
+        if((h > 500) || (h < 400) || (w>400) || (w<200)) {
+          this.myUploads.thumb.errors.push("WARNING: Thumnail size should be around 300*450, not "+w.toString()+"*"+h.toString()+" !");
+        }        
+      } else {
+        this.myPoster.orientation = 'landscape';
+        if((w > 500) || (w < 400) || (h>400) || (h<200)) {
+          this.myUploads.thumb.errors.push("WARNING: Thumnail size should be around 450*300, not "+w.toString()+"*"+h.toString()+" !");
+        }         
+      }
+    },
     onThumbChange: function(e) {
+      this.myUploads.thumb.errors = [];
       const file = e.target.files[0];
       //this.urlFileThumb = URL.createObjectURL(file);
       this.myUploads.thumb.type = file.type;
+      if(file.type != 'image/png') {
+        this.myUploads.thumb.errors.push("WARNING: Thumbnail should be of type PNG, not "+file.type+" !");
+      }
       this.myUploads.thumb.size = file.size;
+      if(file.size > 300000) {  
+        this.myUploads.thumb.errors.push("WARNING: Thumbnail size should be less than 300kB, not "+(Math.round(file.size/1000)).toString()+"kB !");
+      }      
       this.myUploads.thumb.name = file.name;
       this.myUploads.thumb.url = URL.createObjectURL(file);
       // file.type == 'image/png'  
@@ -594,20 +662,33 @@ var vueGCPE = new Vue({
       // name == 'icon.png'
       var img = new Image();
       img.onload = function () {
-            //alert(this.width + " " + this.height);
-            this.myUploads.thumb.width = this.width;
-            this.myUploads.thumb.height = this.height;
-            // error:  
-        };
+         vueGCPE.setThumbSize(this.width, this.height)
+      };
       img.src = this.myUploads.thumb.url;
       // https://stackoverflow.com/questions/8903854/check-image-width-and-height-before-upload-with-javascript
 
     },
+    formatLatLong: function() {
+      // lat/long
+      if (typeof this.myPoster.location.longitude === 'string') {
+        this.myPoster.location.longitude = parseFloat(this.myPoster.location.longitude.replace(',','.'));
+      }
+      if (typeof this.myPoster.location.latitude === 'string') {
+        this.myPoster.location.latitude = parseFloat(this.myPoster.location.latitude.replace(',','.'));
+      }
+    },
     onPdfChange: function(e) {
+      this.myUploads.pdf.errors = [];
       const file = e.target.files[0];
       //this.urlFilePdf = URL.createObjectURL(file);
       this.myUploads.pdf.type = file.type;
+      if(file.type != 'application/pdf') {
+        this.myUploads.pdf.errors.push("WARNING: Poster should be of type PDF, not "+file.type+" !");
+      }
       this.myUploads.pdf.size = file.size;
+      if(file.size > 50000000) {  
+        this.myUploads.pdf.errors.push("WARNING: Thumbnail size should be less than 50MB, not "+(Math.round(file.size/1000000)).toString()+"MB !");
+      }  
       this.myUploads.pdf.name = file.name;
       this.myUploads.pdf.url = URL.createObjectURL(file);
       // file.type == 'application/pdf' 
@@ -642,54 +723,87 @@ var vueGCPE = new Vue({
         var jsPDF = window.jspdf.jsPDF;
         var pdf = new jsPDF("p", "mm", "a4");
         pdf.setLanguage(this.$i18n.locale);
-        pdf.text ("ESTESTAS SEMPER LOREM", 20, 30);
+        //pdf.setFontSize(18);
+        //pdf.text ("ESTESTAS SEMPER LOREM", 20, 30);
+        pdf.setFontSize(24); pdf.setTextColor("#000000");
+        pdf.text ("1: Preparation", 10, 10, {'maxWidth':200});
         pdf.addPage();
-        pdf.text ("Start and Login to Freidok", 10, 10, {'maxWidth':200});
+        pdf.setFontSize(24); pdf.setTextColor("#000000");
+        pdf.text ("2: Start and Login to Freidok", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_01.png', 'PNG', 100, 30, 100, 30, 'start', 'MEDIUM', 0);
+        pdf.setFontSize(12); pdf.setTextColor("#FF3333");
         pdf.text ("Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum!", 10, 30, {'maxWidth':80});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_02.png', 'PNG', 100, 120, 100, 70, 'login', 'MEDIUM', 0);
 
         pdf.addPage();
-        pdf.text ("Document type and title", 10, 10, {'maxWidth':200});
+        pdf.setFontSize(24); pdf.setTextColor("#000000");
+        pdf.text ("3: Document type and title", 10, 10, {'maxWidth':200});
+        pdf.setFontSize(12);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_03.png', 'PNG', 100, 30, 100, 60, 'type', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_04.png', 'PNG', 100, 120, 100, 50, 'poster', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_05.png', 'PNG', 100, 200, 100, 80, 'title', 'MEDIUM', 0);
+        pdf.setFontSize(7); pdf.setTextColor("#062379"); //ocean
+        pdf.text (this.myPoster.title, 120, 225, {'maxWidth':200});
+        pdf.setDrawColor("#e04b0f")
+        pdf.rect(118.5,220,77,15)
 
         pdf.addPage();
-        pdf.text ("Persons and Institutions", 10, 10, {'maxWidth':200});
+        pdf.setFontSize(24); pdf.setTextColor("#000000");
+        pdf.text ("4: Persons and Institutions", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_06.png', 'PNG', 100, 30, 100, 80, 'author', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_07.png', 'PNG', 100, 120, 100, 80, 'editor', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_08.png', 'PNG', 100, 210, 100, 80, 'institution', 'MEDIUM', 0);
    
         pdf.addPage();
-        pdf.text ("Skip and Abstract", 10, 10, {'maxWidth':200});
+        pdf.text ("5: Skip and Abstract", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_09.png', 'PNG', 100, 30, 100, 80, 'skip', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_10.png', 'PNG', 100, 150, 100, 60, 'abstract', 'MEDIUM', 0);
  
         pdf.addPage();
-        pdf.text ("Keywords and Relations", 10, 10, {'maxWidth':200});
+        pdf.text ("6: Keywords and Relations", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_11.png', 'PNG', 100, 30, 100, 80, 'keywords', 'MEDIUM', 0);
-        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_12.png', 'PNG', 100, 150, 100, 70, 'relations', 'MEDIUM', 0);
- 
+        pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_12.png', 'PNG', 100, 170, 100, 60, 'relations', 'MEDIUM', 0);
+        keywords = "Geografie (4020216-1)\nWandel (4234987-4)\nGlobalisierung (4557997-0)\n";
+        keywords += this.myPoster.concept+" ("+this.findGnd(this.myPoster.concept)+")\n";
+        keywords += this.myPoster.topic+" ("+this.findGnd(this.myPoster.topic)+")\n";
+        keywords += this.myPoster.subtopic+" ("+this.findGnd(this.myPoster.subtopic)+")\n";
+        keywords += this.myPoster.location.landscape+" ("+this.findGnd(this.myPoster.location.landscape)+")\n";
+        keywords += this.myPoster.location.continent+" ("+this.findGnd(this.myPoster.location.continent)+")\n";
+        if(this.myPoster.location.country) {
+          keywords += this.myPoster.location.country+" ("+this.findGnd(this.myPoster.location.country)+")\n";
+        }
+        keywords += "+ alle GNDs der beteiligten/betroffenen Laender (evtl auf Wikipedia nachschlagen)\n";
+        keywords += "\n'Globaler Wandel' (frei-deutsch)\n";
+        keywords += "'Global Change' (frei-englisch)\n";
+        keywords += "\n eventuell weitere spezifische Topics (nur kontrollierte)";
+        pdf.setFontSize(8); pdf.setTextColor("#000000");
+        pdf.text(keywords, 10, 30, {'maxWidth':80});
+
+        dewey = "Geschichte, Geografie (900)\n";
+        dewey += this.myPoster.location.continent+" ("+this.findDdc(this.myPoster.location.continent)+")\n";
+        dewey += "\n eventuell weitere spezifische Topics";
+        pdf.text(dewey, 10, 100, {'maxWidth':80});
+        
+
         pdf.addPage();
-        pdf.text ("Upload and Licence", 10, 10, {'maxWidth':200});
+        pdf.text("Upload and Licence", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_13.png', 'PNG', 100, 30, 100, 80, 'upload', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_14.png', 'PNG', 100, 120, 100, 80, 'licence', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_15.png', 'PNG', 100, 210, 100, 80, 'preview', 'MEDIUM', 0);
 
         pdf.addPage();
-        pdf.text ("Contract and Activate", 10, 10, {'maxWidth':200});
+        pdf.text("Contract and Activate", 10, 10, {'maxWidth':200});
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_16.png', 'PNG', 100, 30, 100, 80, 'contract', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_17.png', 'PNG', 100, 120, 100, 80, 'date', 'MEDIUM', 0);
         pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_18.png', 'PNG', 100, 210, 100, 80, 'activate', 'MEDIUM', 0);
 
           
         pdf.addPage();
-        pdf.text ("Hallo Universum!", 20, 30);
-        if(this.urlFileThumb) {
-          pdf.addImage(this.urlFileThumb, 'PNG', 20, 50, 50, 45, 'test', 'MEDIUM', 0);
+        //pdf.text ("Hallo Universum!", 20, 30);
+        if(this.myUploads.thumb.url) {
+          pdf.addImage(this.myUploads.thumb.url, 'PNG', 20, 50, 50, 45, 'test', 'MEDIUM', 0);
         }
-        pdf.save ("hallowelt.pdf");
+        pdf.save ("freidok.pdf");
         return false;
         
     }, 

@@ -6,6 +6,13 @@
      "kahle": "Von <b class='earth'>Michael Kahle</b> wurde das Design und die Softwareentwicklung des Poster Explorers durchgeführt. Ausserdem betreut und koordiniert er die Veröffentlichung auf FreiDok.",
      "book": "<b class='earth'>Buchempfehlung:</b> Bevölkerungsentwicklung, Urbanisierung, Globalisierung, Klimawandel und Biodiversität - der Globale Wandel hat viele Gesichter. Umfassend, thematisch übergreifend und verständlich erklärt Rüdiger Glaser alle Aspekte dieses Prozesses, der das heutige Erscheinungsbild der Erde grundlegend verändert. Konkretisierend betrachtet Glaser weltweite Schauplätze, an denen sich der Wandel vollzieht und bringt so das Phänomen auf eine regionale Ebene. Abschließend spielt er verschiedene Zukunftsszenarien durch und zeigt Alternativen zum bisherigen Weg auf. Zahlreiche Abbildungen veranschaulichen die nachdenklich stimmenden Darstellungen."
    },
+   "partake": {
+     "partake": "Beitrag",
+     "intro1": "Hier kann ausprobiert werden, wie das eigene Poster in dem Global Change Poster Explorer aussehen <b class='earth'>würde</b>.",
+     "intro2": "Ausserdem kann eine <b class='earth'>Anleitung</b> als PDF, wie das Poster auf Freidok (dem Repositorium der Universitätsbibliothek Freiburg) zu veröffentlichen ist, erstellt und heruntergeladen werden.",
+     "intro3": "Zusätzlich wird auch das benötigte <b class='earth'>Meta-File-Format</b> erzeugt.",
+     "intro4": "Die Veröffentlichungsmöglichkeit richtet sich in erster Linie an die Studierenden der Geographie in Freiburg. Falls sie aber mit einem passenden Poster zum Global Change Poster Explorer beitragen wollen, können sie sich gerne an die Verantwortlichen in der <a href='https://www.geographie.uni-freiburg.de/de/professuren/physische-geographie/team-und-kontakt/index' target='_gcpe' class='ocean'>Physischen Geographie</a> (siehe Info-Tab) wenden."
+   }, 
    "menu" : {
      "about": "Info",
      "gallery": "Gallerie",
