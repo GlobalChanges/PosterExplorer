@@ -49,14 +49,18 @@ https://openlayers.org/en/latest/examples/magnify.html
 https://openlayers.org/en/latest/examples/zoomify.html
 http://www.zoomify.com/converters.htm#conversionScripted
  https://sourceforge.net/projects/zoomifyimage/
+ https://sourceforge.net/projects/zoomifyimage/
  http://greengaloshes.cc/2007/05/zoomifyimage-ported-to-php/
+http://brainmaps.org/index.php?p=brain-maps-api
 
-https://openseadragon.github.io/#examples-and-features
+
+** https://openseadragon.github.io/#examples-and-features
+** https://openseadragon.github.io/examples/tilesource-zoomify/
 https://gitlab.com/Daniel-KM/LibraryZoomify/-/tree/master/
-https://metacpan.org/pod/release/DRRHO/Graphics-DZI-0.05/script/deepzoom
+* https://metacpan.org/pod/release/DRRHO/Graphics-DZI-0.05/script/deepzoom
 https://openseadragon.github.io/examples/creating-zooming-images/
 https://github.com/openzoom/deepzoom.py
-https://github.com/VoidVolker/MagickSlicer
+** https://github.com/VoidVolker/MagickSlicer
 
 
 https://openlayers.org/en/latest/examples/icon.html
