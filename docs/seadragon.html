@@ -24,7 +24,16 @@
     var viewer = OpenSeadragon({
         id: "openseadragon1",
         prefixUrl: "https://globalchanges.github.io/MetaData2020/24/zoomify",
-        tileSources: "https://globalchanges.github.io/MetaData2020/24/zoomify"
+    tileSources: [{
+        //required	
+        type:       "zoomifytileservice",
+        width:      14043,
+        height:     9933,
+        tilesUrl:   "https://globalchanges.github.io/MetaData2020/24/zoomify",
+        //optional
+        tileSize: 256,
+        fileFormat: 'jpg'	
+    }]
     });
 </script>
 
