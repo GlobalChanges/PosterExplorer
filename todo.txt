@@ -61,6 +61,8 @@ https://gitlab.com/Daniel-KM/LibraryZoomify/-/tree/master/
 https://openseadragon.github.io/examples/creating-zooming-images/
 https://github.com/openzoom/deepzoom.py
 ** https://github.com/VoidVolker/MagickSlicer
+https://www.libvips.org/API/current/Making-image-pyramids.md.html
+https://libvips.github.io/libvips/API/current/using-cli.html
 
 
 https://openlayers.org/en/latest/examples/icon.html
