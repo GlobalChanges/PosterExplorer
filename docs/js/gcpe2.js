@@ -850,6 +850,7 @@ var vueGCPE = new Vue({
      this.inqLandscapes();
      this.inqContinents();
      this.inqCountries();
+     this.initSeadragon();
      this.initTs = Date.now();
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
