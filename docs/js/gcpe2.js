@@ -196,6 +196,7 @@ var vueGCPE = new Vue({
         filterYear: "Alle",
         konamiFnc: null,
         isBusy: false,
+        tilesView: null,
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
         myPoster: { 
@@ -586,6 +587,12 @@ var vueGCPE = new Vue({
        }
        //this.isBusy = false;
        setTimeout(() => {this.isBusy = false;}, 100);
+    },
+    initSeadragon() {
+      this.tilesView = OpenSeadragon({
+        id: "openseadragon", 
+        tileSources:   "https://globalchanges.github.io/Invisible2022/9999/tiles.dzi"
+      });
     },
     checkMap: function() {
        if(isMapReady()) {
