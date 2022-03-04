@@ -197,6 +197,8 @@ var vueGCPE = new Vue({
         konamiFnc: null,
         isBusy: false,
         tilesView: null,
+        active: false,
+        show: false,
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
         myPoster: { 
@@ -215,6 +217,14 @@ var vueGCPE = new Vue({
                   }
   },
   methods: {
+     toggleModal() {
+      const body = document.querySelector("body");
+      this.active = !this.active;
+      this.active
+        ? body.classList.add("modal-open")
+        : body.classList.remove("modal-open");
+      setTimeout(() => (this.show = !this.show), 10);
+     },
      setPage: function(page) {
         this.currentPage = page;
         return false; 
