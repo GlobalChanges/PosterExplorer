@@ -621,7 +621,7 @@ var vueGCPE = new Vue({
         tileSources: {
                       type: 'image',
                       url:  'https://globalchanges.github.io/PosterExplorer/img/book-gc.jpg',
-                      buildPyramid: false
+                      buildPyramid: true
                      }
       });
     },
