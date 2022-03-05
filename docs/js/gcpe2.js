@@ -353,12 +353,16 @@ var vueGCPE = new Vue({
        this.getRemoveUpdatePoster(id);
        for(var j=0; j<this.allPosterData.length; j++) {
           var poster = this.allPosterData[j]; 
-          if((poster.id == id) && poster.tiles) {
+          if(poster.id == id) {
+             if(poster.tiles) {
                this.currentPosterData = poster;
-               this.tilesView.addTiledImage({tileSource:poster.tiles, replace:True});
+               this.tilesView.addTiledImage({tileSource:poster.tiles, replace:true});
                this.toggleModal();
                if (event) { event.preventDefault(); }  
                return false;
+             } else {
+               return true;
+             }
           } 
        }       
        return true;
