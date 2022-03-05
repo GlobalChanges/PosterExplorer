@@ -208,7 +208,7 @@ var vueGCPE = new Vue({
                     location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:-35.0, longitude:-145.0, city:'', region:''}, 
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', 
                     period: {begin:1950, end:2022}, keywords:[], 
-                    pdf:'',  thumbnail:'', icon:'', 
+                    pdf:'',  thumbnail:'', icon:'', tiles:null,
                     sources:[]
                   },
         myUploads: { icon:  {type:'', name:'', size:0, width:0, height:0, url:null, errors:[]},
@@ -351,6 +351,14 @@ var vueGCPE = new Vue({
      },
      openPoster: function (id) {
        this.getRemoveUpdatePoster(id);
+       for(var j=0; j<this.allPosterData.length; j++) {
+          var poster = this.allPosterData[j]; 
+          if((poster.id == id) && poster.tiles) {
+               this.currentPosterData = poster;
+               this.tilesView.addTiledImage({tileSource:poster.tiles, replace:True});
+               this.toggleModal();
+             return false;
+          }        
        return true;
      },
      inqCountries: function () {
