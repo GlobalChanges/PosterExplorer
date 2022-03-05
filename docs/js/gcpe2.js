@@ -356,7 +356,10 @@ var vueGCPE = new Vue({
           if(poster.id == id) {
              if(poster.tiles) {
                this.currentPosterData = poster;
+               var oldImage = this.tilesView.world.getItemAt(0);
+               this.tilesView.world.removeItem(oldImage);
                this.tilesView.addTiledImage({tileSource:poster.tiles, replace:true});
+
                this.toggleModal();
                if (event) { event.preventDefault(); }  
                return false;
@@ -621,7 +624,7 @@ var vueGCPE = new Vue({
         tileSources: {
                       type: 'image',
                       url:  'https://globalchanges.github.io/PosterExplorer/img/book-gc.jpg',
-                      buildPyramid: true
+                      buildPyramid: false
                      }
       });
     },
