@@ -115,7 +115,8 @@ body {
 
 #map { 
     width: 100%; 
-    height: calc(100vw * 0.35 - 120px) 
+    height: calc(90vh - 120px);
+    min-height: 400px; 
 }
 
 div.dropdown div.dropdown-menu {
