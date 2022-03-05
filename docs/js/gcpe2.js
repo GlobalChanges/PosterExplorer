@@ -616,7 +616,11 @@ var vueGCPE = new Vue({
       this.tilesView = OpenSeadragon({
         id: "openseadragon", 
         //tileSources:   "https://globalchanges.github.io/Invisible2022/9999/tiles.dzi"
-        tileSources: "https://globalchanges.github.io/PosterExplorer/img/book-gc.jpg"
+        tileSources: {
+                      type: 'image',
+                      url:  'https://globalchanges.github.io/PosterExplorer/img/book-gc.jpg',
+                      buildPyramid: false
+                     }
       });
     },
     checkMap: function() {
