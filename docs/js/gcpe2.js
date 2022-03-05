@@ -356,7 +356,7 @@ var vueGCPE = new Vue({
           if(poster.id == id) {
              if(poster.tiles) {
                this.currentPosterData = poster;
-               this.tilesView.world.removeAll();
+               this.tilesView.removeAll();
                this.tilesView.addTiledImage({tileSource:poster.tiles});
                this.toggleModal();
                if (event) { event.preventDefault(); }  
