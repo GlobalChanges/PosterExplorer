@@ -349,7 +349,7 @@ var vueGCPE = new Vue({
        });
 
      },
-     openPoster: function (id) {
+     openPoster: function (id, event) {
        this.getRemoveUpdatePoster(id);
        for(var j=0; j<this.allPosterData.length; j++) {
           var poster = this.allPosterData[j]; 
@@ -357,6 +357,7 @@ var vueGCPE = new Vue({
                this.currentPosterData = poster;
                this.tilesView.addTiledImage({tileSource:poster.tiles, replace:True});
                this.toggleModal();
+               if (event) { event.preventDefault(); }  
                return false;
           } 
        }       
