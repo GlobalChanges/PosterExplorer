@@ -357,8 +357,9 @@ var vueGCPE = new Vue({
                this.currentPosterData = poster;
                this.tilesView.addTiledImage({tileSource:poster.tiles, replace:True});
                this.toggleModal();
-             return false;
-          }        
+               return false;
+          } 
+       }       
        return true;
      },
      inqCountries: function () {
