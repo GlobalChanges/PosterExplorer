@@ -358,7 +358,7 @@ var vueGCPE = new Vue({
                this.currentPosterData = poster;
                this.tilesView.addTiledImage({tileSource:poster.tiles, replace:true});
                this.toggleModal();
-               if (event) { event.preventDefault(); }  
+               //if (event) { event.preventDefault(); }  
                return false;
              } else {
                return true;
