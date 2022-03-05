@@ -356,7 +356,7 @@ var vueGCPE = new Vue({
           if(poster.id == id) {
              if(poster.tiles) {
                this.currentPosterData = poster;
-               this.tilesView.removeAll();
+               this.tilesView.world.removeAll();
                this.tilesView.addTiledImage({tileSource:poster.tiles});
                this.toggleModal();
                if (event) { event.preventDefault(); }  
@@ -618,12 +618,12 @@ var vueGCPE = new Vue({
       this.tilesView = OpenSeadragon({
         id: "openseadragon", 
         prefixUrl : 'https://globalchanges.github.io/PosterExplorer/img/seadragon/',
-        //tileSources:   "https://globalchanges.github.io/Invisible2022/9999/tiles.dzi"
-        tileSources: {
-                      type: 'image',
-                      url:  'https://globalchanges.github.io/PosterExplorer/img/book-gc.jpg',
-                      buildPyramid: false
-                     }
+        tileSources:   "https://globalchanges.github.io/Invisible2022/9999/tiles.dzi"
+        //tileSources: {
+        //              type: 'image',
+        //              url:  'https://globalchanges.github.io/PosterExplorer/img/book-gc.jpg',
+        //              buildPyramid: false
+        //             }
       });
     },
     checkMap: function() {
