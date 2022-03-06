@@ -34,7 +34,9 @@
    },
    "language" : {
      "de":"Deutsch",
-     "en":"Englisch"
+     "en":"Englisch",
+     "deutsch":"Deutsch",
+     "english":"Englisch"
    },
    "orientation" : {
      "landscape":"Querformat",

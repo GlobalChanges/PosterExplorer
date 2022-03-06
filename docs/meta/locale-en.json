@@ -34,7 +34,9 @@
    },
    "language" : {
      "de":"German",
-     "en":"English"
+     "en":"English",
+     "deutsch":"German",
+     "english":"English"
    },
    "orientation" : {
      "landscape":"Landscape",
