@@ -308,6 +308,7 @@ var vueGCPE = new Vue({
           this.allPosterYears.reverse();
         }
      },
+/*
      updatePoster: function(data) {
          var dbPostUrl = getJsonDb()+"poster";
          data.count += 1;
@@ -349,8 +350,9 @@ var vueGCPE = new Vue({
        });
 
      },
+*/
      openPoster: function (id, event) {
-       this.getRemoveUpdatePoster(id);
+       //this.getRemoveUpdatePoster(id);
        for(var j=0; j<this.allPosterData.length; j++) {
           var poster = this.allPosterData[j]; 
           if(poster.id == id) {
