@@ -353,9 +353,10 @@ var vueGCPE = new Vue({
 */
      openPoster: function (id, event) {
        //this.getRemoveUpdatePoster(id);
-       for(var j=0; j<this.allPosterData.length; j++) {
-          var poster = this.allPosterData[j]; 
-          if(poster.id == id) {
+       if(this.tilesView) {
+         for(var j=0; j<this.allPosterData.length; j++) {
+           var poster = this.allPosterData[j]; 
+           if(poster.id == id) {
              if(poster.tiles) {
                this.currentPosterData = poster;
                this.tilesView.world.removeAll();
@@ -366,7 +367,8 @@ var vueGCPE = new Vue({
              } else {
                return true;
              }
-          } 
+           }
+         } 
        }       
        return true;
      },
@@ -620,7 +622,7 @@ var vueGCPE = new Vue({
       this.tilesView = OpenSeadragon({
         id: "openseadragon", 
         prefixUrl : 'https://globalchanges.github.io/PosterExplorer/img/seadragon/',
-        tileSources:   "https://globalchanges.github.io/Invisible2022/9999/tiles.dzi"
+        tileSources:  {url: 'https://globalchanges.github.io/Invisible2022/9999/tiles.dzi'}
         //tileSources: {
         //              type: 'image',
         //              url:  'https://globalchanges.github.io/PosterExplorer/img/book-gc.jpg',
