@@ -4,6 +4,7 @@
  "Äthiopien": {"map": "et", "gnd": "", "geonames": ""}, 
  "Australien": {"map": "au", "gnd": "", "geonames": ""},
  "Bangladesch": {"map": "bd", "gnd": "", "geonames": ""},
+ "Belgien": {"map": "be", "gnd": "4005406-8", "geonames": "", "latitude":50.5, "longitude":4.8},
  "Belize": {"map": "bz", "gnd": "", "geonames": ""},
  "Bolivien": {"map": "bo", "gnd": "", "geonames": ""},
  "Brasilien": {"map": "br", "gnd": "", "geonames": ""},
