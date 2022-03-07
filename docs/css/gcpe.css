@@ -231,6 +231,10 @@ input.shadow-inset {
     color: #24274A;
 }
 
+.modal-xl {
+    max-width: 90vw !important;
+}
+
 .modal-backdrop {
     background-color: var(--morph-light) !important;
 }
