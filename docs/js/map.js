@@ -28,7 +28,7 @@ var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/w
 	minZoom: 1,
 	maxZoom: 16,
         noWrap: false,
-        zoomSnap: 0.25,
+        zoomSnap: 0.125,
 	ext: 'jpg'
 })
 
