@@ -622,7 +622,7 @@ var vueGCPE = new Vue({
       this.tilesView = OpenSeadragon({
         id: "openseadragon", 
         prefixUrl : 'https://globalchanges.github.io/PosterExplorer/img/seadragon/',
-        tileSources:   "https://globalchanges.github.io/Invisible2022/9999/tiles.dzi"
+        tileSources:   "https://globalchanges.github.io/PosterExplorer/img/seadragon/tiles.dzi"
         //tileSources: {
         //              type: 'image',
         //              url:  'https://globalchanges.github.io/PosterExplorer/img/book-gc.jpg',
