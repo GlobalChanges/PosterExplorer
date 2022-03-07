@@ -196,6 +196,9 @@ var vueGCPE = new Vue({
         filterYear: "Alle",
         konamiFnc: null,
         isBusy: false,
+        tilesView: null,
+        active: false,
+        show: false,
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
         myPoster: { 
@@ -205,7 +208,7 @@ var vueGCPE = new Vue({
                     location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:-35.0, longitude:-145.0, city:'', region:''}, 
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', 
                     period: {begin:1950, end:2022}, keywords:[], 
-                    pdf:'',  thumbnail:'', icon:'', 
+                    pdf:'',  thumbnail:'', icon:'', tiles:null,
                     sources:[]
                   },
         myUploads: { icon:  {type:'', name:'', size:0, width:0, height:0, url:null, errors:[]},
@@ -214,6 +217,14 @@ var vueGCPE = new Vue({
                   }
   },
   methods: {
+     toggleModal() {
+      const body = document.querySelector("body");
+      this.active = !this.active;
+      this.active
+        ? body.classList.add("modal-open")
+        : body.classList.remove("modal-open");
+      setTimeout(() => (this.show = !this.show), 10);
+     },
      setPage: function(page) {
         this.currentPage = page;
         return false; 
@@ -297,6 +308,7 @@ var vueGCPE = new Vue({
           this.allPosterYears.reverse();
         }
      },
+/*
      updatePoster: function(data) {
          var dbPostUrl = getJsonDb()+"poster";
          data.count += 1;
@@ -338,8 +350,26 @@ var vueGCPE = new Vue({
        });
 
      },
-     openPoster: function (id) {
-       this.getRemoveUpdatePoster(id);
+*/
+     openPoster: function (id, event) {
+       //this.getRemoveUpdatePoster(id);
+       if(this.tilesView) {
+         for(var j=0; j<this.allPosterData.length; j++) {
+           var poster = this.allPosterData[j]; 
+           if(poster.id == id) {
+             if(poster.tiles) {
+               this.currentPosterData = poster;
+               this.tilesView.world.removeAll();
+               this.tilesView.addTiledImage({tileSource:poster.tiles});
+               this.toggleModal();
+               if (event) { event.preventDefault(); }  
+               return false;
+             } else {
+               return true;
+             }
+           }
+         } 
+       }       
        return true;
      },
      inqCountries: function () {
@@ -587,6 +617,19 @@ var vueGCPE = new Vue({
        //this.isBusy = false;
        setTimeout(() => {this.isBusy = false;}, 100);
     },
+    initSeadragon() {
+      // http://openseadragon.github.io/docs/OpenSeadragon.html#.Options
+      this.tilesView = OpenSeadragon({
+        id: "openseadragon", 
+        prefixUrl : 'https://globalchanges.github.io/PosterExplorer/img/seadragon/',
+        tileSources:   "https://globalchanges.github.io/PosterExplorer/img/seadragon/tiles.dzi"
+        //tileSources: {
+        //              type: 'image',
+        //              url:  'https://globalchanges.github.io/PosterExplorer/img/book-gc.jpg',
+        //              buildPyramid: false
+        //             }
+      });
+    },
     checkMap: function() {
        if(isMapReady()) {
          this.setPage('gallery');
@@ -832,6 +875,7 @@ var vueGCPE = new Vue({
      //this.filterPosterData();
      //this.setPage('gallery');
      this.checkMap();
+     this.initSeadragon();
   },
   created () {
      this.inqLocale('de');
@@ -843,6 +887,7 @@ var vueGCPE = new Vue({
      this.inqLandscapes();
      this.inqContinents();
      this.inqCountries();
+     
      this.initTs = Date.now();
      this.uid = getFingerprint(4.0, 0.0);
      this.uidOld = getFingerprint(4.0, 2.0);
