@@ -735,7 +735,7 @@
         <div class="modal-content shadow-soft border-default">
           <div class="modal-header">
             <h5 class="modal-title clouds">Poster</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="toggleModal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="toggleModal" @keydown.esc="toggleModal">
               <span aria-hidden="true" class="ocean rounded-circle shadow-soft shadow-button" style="width:32px; height: 32px; font-size:32px; line-height:normal;">×</span>
             </button>
           </div>
