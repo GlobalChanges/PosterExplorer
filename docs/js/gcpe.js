@@ -876,6 +876,7 @@ var vueGCPE = new Vue({
      //this.setPage('gallery');
      this.checkMap();
      this.initSeadragon();
+     this.$refs.modalClose.$el.focus();
   },
   created () {
      this.inqLocale('de');
