@@ -48,6 +48,7 @@
  "Niger": {"map": "ne", "gnd": "", "geonames": ""}, 
  "Nigeria": {"map": "ng", "gnd": "", "geonames": ""}, 
  "Österreich": {"map": "at", "gnd": "", "geonames": ""}, 
+ "Pakistan": {"map": "pk", "gnd": "4075812-6", "geonames": "", "latitude":29.4, "longitude":69.2},
  "Palästina": {"map": "il", "gnd": "4044381-4", "geonames": ""},
  "Papua-Neu-Guinea": {"map": "pg", "gnd": "", "geonames": ""},
  "Peru": {"map": "pe", "gnd": "", "geonames": ""},
