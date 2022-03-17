@@ -220,6 +220,7 @@ var vueGCPE = new Vue({
      toggleModal() {
       const body = document.querySelector("body");
       this.active = !this.active;
+      //this.$refs.modalClose.$el.focus();
       this.active
         ? body.classList.add("modal-open")
         : body.classList.remove("modal-open");
