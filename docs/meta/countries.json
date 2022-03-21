@@ -71,6 +71,7 @@
  "Türkei": {"map": "tr", "gnd": "4061163-2", "geonames": "", "latitude":39.2, "longitude":35.7},
  "Timor-Leste": {"map": "tl", "gnd": "", "geonames": ""},
  "Tschad": {"map": "td", "gnd": "", "geonames": ""}, 
+ "Ukraine": {"map": "ua", "gnd": "4061496-7", "geonames": "", "latitude":49.8, "longitude":30.8},
  "USA": {"map": "us", "gnd": "", "geonames": ""}, 
  "VAE": {"map": "ae", "gnd": "", "geonames": ""}, 
 
