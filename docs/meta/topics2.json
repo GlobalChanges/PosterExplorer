@@ -32,6 +32,7 @@
  "Klimaextreme":  {"awesome": "cloud-sun-rain"},
  "Planetare Grenzen": {"awesome": "dharmachakra", "gnd": "4113786-3", "name":"Grenzen des Wachstums "},
  "Digitalisierung":  {"awesome": "calculator", "gnd": "4123065-6", "name":""},
+ "Konsum":  {"awesome": "shopping-cart", "gnd": "4078777-1", "name":""},
  "Tourismus":  {"awesome": "suitcase", "gnd": "4018406-7", "name":""},
 
  "Politische Ökologie":  {"awesome": "landmark"},
