@@ -3,8 +3,6 @@
  * icon as default from (topic, landscape, method, ...?)
  * thumbnail from freidok (service? for zoomify and thumb)
 
-* view poster with zoomify 
-
 * get rid of neumorphism.css
  * modal dialog
  * input field?
@@ -34,6 +32,17 @@ https://javascript.info/blob
 * statistics on gallery (topics, access, landscapes, countries, supervisors, ...)
 
 * range select -> show remaining, available options only. 
+
+
+* seadragon-overlays for active elements, Qr-Codes, Reference-Sources, ... 
+  https://stackoverflow.com/questions/17522793/openseadragon-make-overlay-clickable
+  https://github.com/openseadragon/html-overlay
+* seadragon-overlays Navigate to areas step by step
+  https://github.com/antonioxdias/OpenSeadragonHTMLelements
+https://antonioxdias.github.io/OpenSeadragonHTMLelements/
+html map area?
+
+
 
 ---
 
