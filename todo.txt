@@ -35,9 +35,10 @@ https://javascript.info/blob
 
 
 * seadragon-overlays for active elements, Qr-Codes, Reference-Sources, ... 
+  i.e. 9217 
   https://stackoverflow.com/questions/17522793/openseadragon-make-overlay-clickable
   https://github.com/openseadragon/html-overlay
-* seadragon-overlays Navigate to areas step by step
+* seadragon-overlays Navigate to areas step by step - i.e. 2021/28, 2022/9207
   https://github.com/antonioxdias/OpenSeadragonHTMLelements
 https://antonioxdias.github.io/OpenSeadragonHTMLelements/
 html map area?
@@ -115,4 +116,7 @@ https://speckyboy.com/css-glassmorphism/
 extract pdf pages: 
  pdfseparate -f 1 -l 5 input.pdf output-page%d.pdf
  pdfunite
+
+pdfjam poster1.pdf poster2.pdf --nup 2x1 --landscape --outfile poster12.pdf
+
 
