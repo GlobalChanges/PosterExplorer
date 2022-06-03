@@ -753,6 +753,8 @@ var vueGCPE = new Vue({
       this.myPoster.tiles = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/tiles.dzi';
 
 	    let text = JSON.stringify(this.myPoster, null, 2);  
+      this.myPoster.location.latitude +=  0.001*(Math.random()-0.5);
+      this.myPoster.location.longitude +=  0.001*(Math.random()-0.5);
       this.myPoster.location.countries = [ this.myPoster.location.country ];
 	    let filename = 'meta.json'; 
 	    let element = document.createElement('a');
