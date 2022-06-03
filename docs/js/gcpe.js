@@ -486,11 +486,17 @@ var vueGCPE = new Vue({
         if(this.myPoster.location.country == 'None') {
           this.myPoster.location.country = null;
         }
-     },     
+        this.setMyCoordinates(country, this.allCountries, false, 2);
+     },  
+     checkDistance(lat1,long1,lat2,long2,maxDistance) {
+       distance = 0.0
+       distance += Math.pow((lat1-lat2),2);
+       distance += Math.pow((lat1-lat2),2);
+       return(distance<Math.pow(maxDistance,2))
+     },   
      setMyCoordinates(location, locations, forced, distance) {
       var newLatitude = this.myPoster.location.latitude;
       var newLongitude = this.myPoster.location.longitude; 
-      // TODO: check if initial coordinates or forced  
       for (var key in locations) {
         // check if the property/key is defined in the object itself, not in parent
         if (locations.hasOwnProperty(key) && (key == location)) {           
@@ -503,8 +509,13 @@ var vueGCPE = new Vue({
           }
         }
       }
-      this.myPoster.location.latitude = newLatitude;
-      this.myPoster.location.longitude = newLongitude;
+      // TODO: check if initial coordinates or forced
+      if((forced || !this.checkDistance(this.myPoster.location.latitude,this.myPoster.location.longitude,-41.0,-150.0,0.01)) &&
+          !this.checkDistance(this.myPoster.location.latitude,this.myPoster.location.longitude,newLatitude,newLongitude,distance)
+          ) {
+          this.myPoster.location.latitude = newLatitude + distance*0.2*(Math.random()-0.5);
+          this.myPoster.location.longitude = newLongitude + distance*0.2*(Math.random()-0.5);
+      }
      },
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
