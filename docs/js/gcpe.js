@@ -202,10 +202,10 @@ var vueGCPE = new Vue({
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
         myPoster: { 
-                    id:"0", year:"2022", freidok:'', doi:'', language:'en', orientation:'landscape',
+                    id:"0", year:"2022", freidok:'', issue:"0", doi:'', language:'en', orientation:'landscape',
                     title:'', abstract:'', 
                     authors: [{email:'', firstname:'', name:'', freidok:'', orcid:''}],
-                    location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:-35.0, longitude:-145.0, city:'', region:''}, 
+                    location: {country:null, countries:['None'], continent:'Welt', landscape:'Großstadt', latitude:-41.0, longitude:-150.0, city:'', region:''}, 
                     concept:'Diskursanalyse', topic:'Klimawandel', subtopic:'Erwärmung', 
                     period: {begin:1950, end:2022}, keywords:[], 
                     pdf:'',  thumbnail:'', icon:'', tiles:null,
@@ -746,9 +746,11 @@ var vueGCPE = new Vue({
       this.myPoster.location.country = this.myPoster.location.countries[0];
       this.myPoster.location.countries = [];
       // file hack:
+      this.myPoster.issue = this.myPoster.id;
       this.myPoster.pdf = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/poster.pdf';
       this.myPoster.thumbnail = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/thumbnail.png';
       this.myPoster.icon = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/icon.png';
+      this.myPoster.tiles = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/tiles.dzi';
 
 	    let text = JSON.stringify(this.myPoster, null, 2);  
       this.myPoster.location.countries = [ this.myPoster.location.country ];
