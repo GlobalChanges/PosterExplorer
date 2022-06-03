@@ -510,7 +510,8 @@ var vueGCPE = new Vue({
         }
       }
       // TODO: check if initial coordinates or forced
-      if((forced || !this.checkDistance(this.myPoster.location.latitude,this.myPoster.location.longitude,-41.0,-150.0,0.01)) &&
+      if(forced || 
+           this.checkDistance(this.myPoster.location.latitude,this.myPoster.location.longitude,-41.0,-150.0,0.01) ||
           !this.checkDistance(this.myPoster.location.latitude,this.myPoster.location.longitude,newLatitude,newLongitude,distance)
           ) {
           this.myPoster.location.latitude = newLatitude + distance*0.2*(Math.random()-0.5);
