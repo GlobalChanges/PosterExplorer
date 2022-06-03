@@ -477,7 +477,7 @@ var vueGCPE = new Vue({
      setContinents: function(data) { this.allContinents = data; },
      setMyContinent: function(continent) { 
        this.myPoster.location.continent = continent; 
-       this.setMyCoordinates(continent, this.allContinents, false);
+       this.setMyCoordinates(continent, this.allContinents, false, 20);
       },
      setCountries: function(data) { this.allCountries = data; },
      setMyCountry: function(country, index) { 
@@ -487,20 +487,24 @@ var vueGCPE = new Vue({
           this.myPoster.location.country = null;
         }
      },     
-     setMyCoordinates(location, locations, forced) {
+     setMyCoordinates(location, locations, forced, distance) {
+      var newLatitude = this.myPoster.location.latitude;
+      var newLongitude = this.myPoster.location.longitude; 
       // TODO: check if initial coordinates or forced  
       for (var key in locations) {
         // check if the property/key is defined in the object itself, not in parent
         if (locations.hasOwnProperty(key) && (key == location)) {           
           object = locations[key];
           if(object.hasOwnProperty('latitude')) {
-            this.myPoster.location.latitude = object['latitude'];
+            newLatitude = object['latitude'];
           }
           if(object.hasOwnProperty('longitude')) {
-            this.myPoster.location.latitude = object['longitude'];
+            newLongitude = object['longitude'];
           }
         }
       }
+      this.myPoster.location.latitude = newLatitude;
+      this.myPoster.location.longitude = newLongitude;
      },
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
