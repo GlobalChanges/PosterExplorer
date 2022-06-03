@@ -475,7 +475,10 @@ var vueGCPE = new Vue({
      setLandscapes: function(data) { this.allLandscapes = data; },
      setMyLandscape: function(landscape) { this.myPoster.location.landscape = landscape; },
      setContinents: function(data) { this.allContinents = data; },
-     setMyContinent: function(continent) { this.myPoster.location.continent = continent; },
+     setMyContinent: function(continent) { 
+       this.myPoster.location.continent = continent; 
+       this.setMyCoordinates(continent, this.allContinents, false);
+      },
      setCountries: function(data) { this.allCountries = data; },
      setMyCountry: function(country, index) { 
         Vue.set(this.myPoster.location.countries, index, country); 
@@ -484,6 +487,21 @@ var vueGCPE = new Vue({
           this.myPoster.location.country = null;
         }
      },     
+     setMyCoordinates(location, locations, forced) {
+      // TODO: check if initial coordinates or forced  
+      for (var key in locations) {
+        // check if the property/key is defined in the object itself, not in parent
+        if (locations.hasOwnProperty(key) && (key == location)) {           
+          object = dictionary[key];
+          if(object.hasOwnProperty('latitude')) {
+            this.myPoster.location.latitude = object['latitude'];
+          }
+          if(object.hasOwnProperty('longitude')) {
+            this.myPoster.location.latitude = object['longitude'];
+          }
+        }
+      }
+     },
      setOthers: function(data) { this.allOthers = data; },
      setTopics2: function(data) { this.allTopics2 = data; },
      setMyLanguage: function(language) { this.myPoster.language = language; },
