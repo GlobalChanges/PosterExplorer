@@ -492,7 +492,7 @@ var vueGCPE = new Vue({
       for (var key in locations) {
         // check if the property/key is defined in the object itself, not in parent
         if (locations.hasOwnProperty(key) && (key == location)) {           
-          object = dictionary[key];
+          object = locations[key];
           if(object.hasOwnProperty('latitude')) {
             this.myPoster.location.latitude = object['latitude'];
           }
