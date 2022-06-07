@@ -6,7 +6,7 @@ var vueFreidok = new Vue({
          allPosterData: [],
          allDirectoriesData: [],
          allCountries : [], 
-         allTitles : [],
+         allTitles : []
         },
   methods: {  
      inqCountries: function () {
@@ -45,15 +45,17 @@ var vueFreidok = new Vue({
           for(var t=0; t<freidok.titles.length; t++) {
              title = freidok.titles[t].value; 
           }
-          var dokData = {id:freidok.id.toString(), title:title, type:freidok.pubtype.type}
-          this.allTitles.push(dokData);
+          if(freidok.id) {
+            var dokData = {id:freidok.id.toString(), title:title, type:freidok.pubtype.type}
+            this.allTitles.push(dokData);
+          }
       } 
     }
 
   },
  mounted () { 
      // this.inqFolders();
-     var startID = 165768;
+     var startID = "165768";
      this.inqFreidokById(startID);
   },
   created () {
