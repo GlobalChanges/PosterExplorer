@@ -25,8 +25,8 @@
 
 <div id="freidok">
 
-<div v-for="(country, index) in allCountries" :key="country">
-  <label>{{ index }}</label>
+<div v-for="(dok, index) in allTitles" :key="id">
+  <label>#{{ index }} [{{dok.type}}] {{ dok.title }} </label>
 </div>
 
 
