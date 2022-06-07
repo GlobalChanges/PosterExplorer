@@ -51,6 +51,7 @@ var vueFreidok = new Vue({
             for(var a=0; a<freidok.abstracts.length; a++) {
              abstract = freidok.abstracts[a].value; 
             }
+            //  i.e. https://freidok.uni-freiburg.de/jsonApi/v1/publications?available=issued&fieldset=lp&publicationId=166128
             // relations[==parent!].order  ->  issue  
             // files[].link -> pdf
             // pub_ids[type=doi].value
@@ -75,7 +76,6 @@ var vueFreidok = new Vue({
           }
         }
       } 
-    }
 
   },
  mounted () { 
