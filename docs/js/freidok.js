@@ -1,10 +1,8 @@
 
 
-var i18n = new VueI18n({ locale: findPreferedLanguage(), messages: {en: {}, de: {} }});
-
-var vueGCPE = new Vue({
+var vueFreidok = new Vue({
   i18n: { locale: findPreferedLanguage(), messages: {en: {}, de: {} }},
-  el: '#gcpe', 
+  el: '#freidok', 
   data: {
          allPosterData: [],
          allDirectoriesData: [],
