@@ -18,7 +18,7 @@ var vueFreidok = new Vue({
        });
      },
      setCountries: function(data) { this.allCountries = data; },
-     inqFreidok: function (freidokId) {
+     inqFreidokById: function (freidokId) {
        var freidokUrl = "https://freidok.uni-freiburg.de/jsonApi/v1/publications?available=issued&fieldset=lp&publicationId="+freidokId;
        axios
          .get(freidokUrl)
@@ -34,7 +34,7 @@ var vueFreidok = new Vue({
                var reverseDok = freidok.reverse_relations[j];
                if(reverseDok.type == 'is_part_of_rev') {
                  var nextId = reverseDok.norm_id.toString();
-                 this.inqFreidok(nextId); 
+                 this.inqFreidokById(nextId); 
                }        
              }
           }
