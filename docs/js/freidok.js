@@ -1,7 +1,6 @@
 
 
 var vueFreidok = new Vue({
-  i18n: { locale: findPreferedLanguage(), messages: {en: {}, de: {} }},
   el: '#freidok', 
   data: {
          allPosterData: [],
