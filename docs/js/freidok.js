@@ -45,7 +45,8 @@ var vueFreidok = new Vue({
           for(var t=0; t<freidok.titles.length; t++) {
              title = freidok.titles[t].value; 
           }
-          this.allTitles.push({id:freidok.id.toString(), title:title, type:freidok.pubtype.type});
+          var dokData = {id:freidok.id.toString(), title:title, type:freidok.pubtype.type}
+          this.allTitles.push(dokData);
       } 
     }
 
