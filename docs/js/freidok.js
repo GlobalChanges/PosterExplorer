@@ -60,7 +60,7 @@ var vueFreidok = new Vue({
             // countries !!
             // persons -> hrsg, author
             var dokData = {id:freidok.id.toString(),
-                           language:language, /* needs conversion */ 
+                           language:lang, /* needs conversion */ 
                            year:freidok.publication_year.value.toString(),
                            title:title, 
                            abstract:abstract,
