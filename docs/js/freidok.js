@@ -39,16 +39,41 @@ var vueFreidok = new Vue({
              }
           }
           if(freidok.pubtype.type == 'poster') {
-
-          }
-          var title = "???";
-          for(var t=0; t<freidok.titles.length; t++) {
+            var lang = "???";
+            for(var l=0; t<freidok.languages.length; l++) {
+             lang = freidok.languages[l].type; 
+            }
+            var title = "???";
+            for(var t=0; t<freidok.titles.length; t++) {
              title = freidok.titles[t].value; 
-          }
-          if(freidok.id) {
-            var dokData = {id:freidok.id.toString(), title:title, type:freidok.pubtype.type}
+            }
+            var abstract = "???";
+            for(var a=0; a<freidok.abstracts.length; a++) {
+             abstract = freidok.abstracts[a].value; 
+            }
+            // relations[==parent!].order  ->  issue  
+            // files[].link -> pdf
+            // pub_ids[type=doi].value
+            // keywords -> topic, country, continent, landscape
+            // classifications -> continent, country
+            // countries !!
+            // persons -> hrsg, author
+            var dokData = {id:freidok.id.toString(),
+                           language:language, /* needs conversion */ 
+                           year:freidok.publication_year.value.toString(),
+                           title:title, 
+                           abstract:abstract,
+                           license:freidok.license_metadata.type,  /* wrong - needs license from files! */
+                           thumbnail:freidok.preview_image.thumbnail900,
+                           icon:freidok.preview_image.thumbnail90, 
+                           image:freidok.preview_image.link,
+                           
+                           type:freidok.pubtype.type
+
+                          }
             this.allTitles.push(dokData);
           }
+        }
       } 
     }
 
