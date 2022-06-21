@@ -39,8 +39,10 @@ var vueFreidok = new Vue({
             var thumb = "https://globalchanges.github.io/MetaData"+pub.year+"/"+pub.issue+"/thumbnail.png";
             pdf.addImage(thumb, 'PNG', dx+3, dy+5, 30, 30, pub.id, 'MEDIUM', 0);
           }
-          pdf.setFontSize(8); pdf.setTextColor("#000000");
-          pdf.text (pub.title.substring(0,150), dx+35, dy+5, {'maxWidth':60});
+          pdf.setFontSize(7); pdf.setTextColor("#000000");
+          pdf.text (pub.title.substring(0,80), dx+35, dy+5, {'maxWidth':60});
+          pdf.setFontSize(6); pdf.setTextColor("#2222BB"); 
+          pdf.textWithLink(pub.doi, dx+35, dy+13, { url: pub.doi });
           pdf.setFontSize(5); pdf.setTextColor("#000000");
           pdf.text (pub.abstract.substring(0,400), dx+35, dy+16, {'maxWidth':60});    
           //if('ger' == pub.language) or ('eng' == pub.language)) {      
@@ -55,8 +57,7 @@ var vueFreidok = new Vue({
           }
           pdf.setFontSize(7); pdf.setTextColor("#000000");
           pdf.text (authors, dx+65, dy+31, {'maxWidth':35});
-          pdf.setFontSize(6); pdf.setTextColor("#2222BB"); 
-          pdf.textWithLink(pub.doi, dx+35, dy+12, { url: pub.doi });
+
         }          
 
 
@@ -184,7 +185,9 @@ var vueFreidok = new Vue({
                            type: freidok.pubtype.type
 
                           }
-            this.allTitles.push(dokData);
+            if('cr' !== license) {              
+              this.allTitles.push(dokData);
+            }
           }
         }
       } 
