@@ -85,6 +85,16 @@ var vueFreidok = new Vue({
              }
           }
           if(freidok.pubtype.type == 'poster') {
+            // look if newer version exists (i.e. Rosen)
+            var newVerson = null;
+            for(var r=0; r<freidok.reverse_relations.length; r++) {
+              var rel = freidok.reverse_relations[r];
+              if("is_new_version_of_rev" == rel.type) {
+                var nextId = rel.norm_id.toString();
+                this.inqFreidokById(nextId);
+                return null;
+              }
+            }
             var lang = "???";
             for(var l=0; l<freidok.languages.length; l++) {
              lang = freidok.languages[l].type; 
@@ -153,9 +163,11 @@ var vueFreidok = new Vue({
             if('2022' == freidok.publication_year.value) {
               issue = freidok.id.toString();
             }
-            if(165764 == freidok.id) {
-              issue = "8";
-            }
+            if(165764 == freidok.id) { issue = "8"; }
+            if(193881 == freidok.id) { issue = "104"; }
+            if(194136 == freidok.id) { issue = "88"; }
+            if(194329 == freidok.id) { issue = "48"; }
+
             var dokData = {id: freidok.id.toString(),
                            issue: issue,
                            language: lang, /* needs conversion */ 
