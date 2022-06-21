@@ -30,7 +30,7 @@ var vueFreidok = new Vue({
         if(0 == n) {
           pdf.addPage();
         }
-        var dy = 30*math.floor(n/8)
+        var dy = 30*Math.floor(n/8)
         var dx = 100*(n % 2)
         if(0 == n) {
           if(pub.issue) {
