@@ -127,6 +127,9 @@ var vueFreidok = new Vue({
                 }
               }
             }
+            if('2022' == freidok.publication_year.value) {
+              issue = freidok.id.toString();
+            }
             var dokData = {id: freidok.id.toString(),
                            issue: issue,
                            language: lang, /* needs conversion */ 
