@@ -31,7 +31,8 @@ var vueFreidok = new Vue({
           pdf.addPage();
         }
         if(0 == n) {
-          //pdf.addImage(pub.icon, 'PNG', 0, 40, 50, 50, pub.id, 'MEDIUM', 0);
+          var thumb = "https://globalchanges.github.io/MetaData"+pub.year+"/"+pub.issue+"/thumbnail.png"
+          pdf.addImage(thumb, 'PNG', 0, 40, 50, 50, pub.id, 'MEDIUM', 0);
           pdf.setFontSize(12); pdf.setTextColor("#000000");
           pdf.text (pub.title, 50, 10, {'maxWidth':200});
           pdf.setFontSize(7); pdf.setTextColor("#000000");
@@ -117,8 +118,17 @@ var vueFreidok = new Vue({
                 doi = "https://doi.org/"+pubid.value;
               }
             }
-
+            var issue = null;
+            for(var r=0; r<freidok.relations.length; r++) {
+              var rel = freidok.relatons[r];
+              if("is_part_of" == rel.type) {
+                if("order" == rel.order_type) {
+                  issue = rel.order;
+                }
+              }
+            }
             var dokData = {id: freidok.id.toString(),
+                           issue: issue,
                            language: lang, /* needs conversion */ 
                            year: freidok.publication_year.value.toString(),
                            title: title, 
