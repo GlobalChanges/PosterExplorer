@@ -168,7 +168,7 @@ var vueFreidok = new Vue({
             if(193881 == freidok.id) { issue = "104"; }
             if(194136 == freidok.id) { issue = "88"; }
             if(194329 == freidok.id) { issue = "48"; }
-
+            if(194143 == freidok.id) { issue = "105"; }
             var dokData = {id: freidok.id.toString(),
                            issue: issue,
                            language: lang, /* needs conversion */ 
