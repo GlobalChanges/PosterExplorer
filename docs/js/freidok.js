@@ -31,8 +31,10 @@ var vueFreidok = new Vue({
           pdf.addPage();
         }
         if(0 == n) {
-          var thumb = "https://globalchanges.github.io/MetaData"+pub.year+"/"+pub.issue+"/thumbnail.png"
-          pdf.addImage(thumb, 'PNG', 0, 40, 50, 50, pub.id, 'MEDIUM', 0);
+          if(pub.issue) {
+            var thumb = "https://globalchanges.github.io/MetaData"+pub.year+"/"+pub.issue+"/thumbnail.png";
+            pdf.addImage(thumb, 'PNG', 0, 40, 50, 50, pub.id, 'MEDIUM', 0);
+          }
           pdf.setFontSize(12); pdf.setTextColor("#000000");
           pdf.text (pub.title, 50, 10, {'maxWidth':200});
           pdf.setFontSize(7); pdf.setTextColor("#000000");
