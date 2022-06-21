@@ -36,7 +36,7 @@ var vueFreidok = new Vue({
           pdf.text (pub.title, 50, 10, {'maxWidth':200});
           pdf.setFontSize(12); pdf.setTextColor("#000000");
           pdf.text (pub.abstract, 50, 20, {'maxWidth':200});          
-          pdf.addImage('./img/cc/'+pub.license+'.png', 'PNG', 0, 60, 60, 20, pub.license, 'MEDIUM', 0);
+          pdf.addImage('img/cc/'+pub.license+'.png', 'PNG', 0, 60, 60, 20, pub.license, 'MEDIUM', 0);
           var authors = ""
           for(var a=0; a<pub.authors.length; a++) {
              if(a>0) {authors += ", "}
