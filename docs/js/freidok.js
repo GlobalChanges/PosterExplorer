@@ -34,23 +34,25 @@ var vueFreidok = new Vue({
         var dx = 100*(n % 2)
         var dy = 30*(n-(n%2))
 
-        if(n < 5) {
+        if(n < 5555) {
           if(pub.issue) {
             var thumb = "https://globalchanges.github.io/MetaData"+pub.year+"/"+pub.issue+"/thumbnail.png";
             pdf.addImage(thumb, 'PNG', dx+5, dy+5, 30, 30, pub.id, 'MEDIUM', 0);
           }
-          pdf.setFontSize(9); pdf.setTextColor("#000000");
-          pdf.text (pub.title.substring(0,200), dx+40, dy+5, {'maxWidth':60});
+          pdf.setFontSize(8); pdf.setTextColor("#000000");
+          pdf.text (pub.title.substring(0,150), dx+40, dy+5, {'maxWidth':60});
           pdf.setFontSize(5); pdf.setTextColor("#000000");
-          pdf.text (pub.abstract.substring(0,800), dx+40, dy+15, {'maxWidth':60});          
-          pdf.addImage('img/cc/'+pub.license+'.png', 'PNG', dx+40, dy+30, 15, 5, pub.license, 'MEDIUM', 0);
+          pdf.text (pub.abstract.substring(0,400), dx+40, dy+15, {'maxWidth':60});          
+          pdf.addImage('img/'+pub.language+'.png', 'PNG', dx+40, dy+30, 10, 5, pub.license, 'MEDIUM', 0);
+          pdf.addImage('img/cc/'+pub.license+'.png', 'PNG', dx+55, dy+30, 15, 5, pub.license, 'MEDIUM', 0);
+
           var authors = ""
           for(var a=0; a<pub.authors.length; a++) {
              if(a>0) {authors += ", "}
              authors += (pub.authors[a].forename + ' ' + pub.authors[a].surname);
           }
           pdf.setFontSize(7); pdf.setTextColor("#000000");
-          pdf.text (authors, dx+40, dy+50, {'maxWidth':60});
+          pdf.text (authors, dx+75, dy+30, {'maxWidth':50});
         }          
 
 
