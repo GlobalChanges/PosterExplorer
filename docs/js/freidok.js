@@ -22,13 +22,15 @@ var vueFreidok = new Vue({
       var jsPDF = window.jspdf.jsPDF;
       var pdf = new jsPDF("p", "mm", "a4");
       pdf.setLanguage("de");
-      pdf.setFontSize(24); pdf.setTextColor("#000000");
-      pdf.text ("Collection of all Posters", 10, 10, {'maxWidth':200});
+      //pdf.setFontSize(24); pdf.setTextColor("#000000");
+      //pdf.text ("Collection of all Posters", 10, 10, {'maxWidth':200});
       for(var i=0; i<this.allTitles.length; i++) {
         var pub = this.allTitles[i];
         var n = i % 14;
-        if(0 == n) {
-          pdf.addPage();
+        if(i > 0) {
+          if(0 == n) {
+            pdf.addPage();
+          }
         }
         //var dy = 30*Math.floor(n/2)
         var dx = 110*(n % 2)
