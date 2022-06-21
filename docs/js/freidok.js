@@ -120,7 +120,7 @@ var vueFreidok = new Vue({
             }
             var issue = null;
             for(var r=0; r<freidok.relations.length; r++) {
-              var rel = freidok.relatons[r];
+              var rel = freidok.relations[r];
               if("is_part_of" == rel.type) {
                 if("order" == rel.order_type) {
                   issue = rel.order;
