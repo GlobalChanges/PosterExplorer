@@ -62,15 +62,15 @@ var vueFreidok = new Vue({
             // persons -> hrsg, author
             var authors = [];
             for(var a=0; a<freidok.persons.length; a++) {
-              var p = freidok.persons[a];
-              if("author" == p.type) {
-                authors.push({forename: p.forename, surename: p.surename});
+              var person = freidok.persons[a];
+              if("author" == person.type) {
+                authors.push({forename: person.forename, surename: person.surename});
               }
             }
             var license = "";
             for(var f=0; f<freidok.files.length; f++) {
-              var f = freidok.files[f];
-              license = f.licence.type;
+              var file = freidok.files[f];
+              license = file.license.type;
             }
             var dokData = {id: freidok.id.toString(),
                            language: lang, /* needs conversion */ 
