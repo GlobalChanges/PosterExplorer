@@ -71,16 +71,20 @@ var vueFreidok = new Vue({
           }
           if(freidok.pubtype.type == 'poster') {
             var lang = "???";
-            for(var l=0; t<freidok.languages.length; l++) {
+            for(var l=0; l<freidok.languages.length; l++) {
              lang = freidok.languages[l].type; 
             }
             var title = "???";
             for(var t=0; t<freidok.titles.length; t++) {
-             title = freidok.titles[t].value; 
+              if(lang == freidok.titles[t].language) {
+                title = freidok.titles[t].value; 
+              }
             }
             var abstract = "???";
             for(var a=0; a<freidok.abstracts.length; a++) {
-             abstract = freidok.abstracts[a].value; 
+              if(lang == freidok.abstracts[a].language) {
+                abstract = freidok.abstracts[a].value; 
+              }
             }
             //  i.e. https://freidok.uni-freiburg.de/jsonApi/v1/publications?available=issued&fieldset=lp&publicationId=166128
             // relations[==parent!].order  ->  issue  
