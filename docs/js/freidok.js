@@ -26,26 +26,28 @@ var vueFreidok = new Vue({
       pdf.text ("Collection of all Posters", 10, 10, {'maxWidth':200});
       for(var i=0; i<this.allTitles.length; i++) {
         var pub = this.allTitles[i];
-        var n = i % 8;
+        var n = i % 16;
         if(0 == n) {
           pdf.addPage();
         }
+        var dy = 30*math.floor(n/8)
+        var dx = 100*(n % 2)
         if(0 == n) {
           if(pub.issue) {
             var thumb = "https://globalchanges.github.io/MetaData"+pub.year+"/"+pub.issue+"/thumbnail.png";
-            pdf.addImage(thumb, 'PNG', 0, 40, 50, 50, pub.id, 'MEDIUM', 0);
+            pdf.addImage(thumb, 'PNG', dx+5, dy+5, 35, 35, pub.id, 'MEDIUM', 0);
           }
           pdf.setFontSize(12); pdf.setTextColor("#000000");
-          pdf.text (pub.title, 50, 10, {'maxWidth':200});
+          pdf.text (pub.title, dx+50, dy+10, {'maxWidth':80});
           pdf.setFontSize(7); pdf.setTextColor("#000000");
-          pdf.text (pub.abstract, 50, 20, {'maxWidth':200});          
-          pdf.addImage('img/cc/'+pub.license+'.png', 'PNG', 0, 60, 20, 7, pub.license, 'MEDIUM', 0);
+          pdf.text (pub.abstract, dx+50, dy+20, {'maxWidth':80});          
+          pdf.addImage('img/cc/'+pub.license+'.png', 'PNG', 5, dy+60, 20, 7, pub.license, 'MEDIUM', 0);
           var authors = ""
           for(var a=0; a<pub.authors.length; a++) {
              if(a>0) {authors += ", "}
              authors += (pub.authors[a].forename + ' ' + pub.authors[a].surname);
           }
-          pdf.text (authors, 80, 25, {'maxWidth':200});
+          pdf.text (authors, 30, dy+65, {'maxWidth':80});
         }          
 
 
