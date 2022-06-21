@@ -32,7 +32,7 @@
 <div v-for="dok in allTitles">
   
   <img :src="dok.icon"><img :src="('https://globalchanges.github.io/MetaData'+dok.year+'/'+dok.issue+'/thumbnail.png')" width="90" height="90">
-  <label>#{{ dok.id }} [{{dok.type}}] {{ dok.title }} {{dok.language}} </label>
+  <label>#{{ dok.id }} [{{dok.type}}] {{ dok.title }} {{dok.language}} {{dok.year}}</label>
   <label v-for="author in dok.authors"> - {{ author.forename }} {{ author.surname }} </label>
   <img :src="('./img/cc/'+dok.license+'.png')" :title="dok.license" width=96 height=32>
   <img :src="('./img/'+dok.language+'.png')" :title="dok.language" width=48 height=32> 
