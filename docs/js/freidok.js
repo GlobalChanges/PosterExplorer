@@ -64,10 +64,10 @@ var vueFreidok = new Vue({
             for(var a=0; a<freidok.persons.length; a++) {
               var person = freidok.persons[a];
               if("author" == person.type) {
-                authors.push({forename: person.forename, surename: person.surename});
+                authors.push({forename: person.forename, surname: person.surname});
               }
             }
-            var license = "";
+            var license = "cr";
             for(var f=0; f<freidok.files.length; f++) {
               var file = freidok.files[f];
               license = file.license.type;

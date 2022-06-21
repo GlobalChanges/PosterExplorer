@@ -28,9 +28,9 @@
 <div v-for="dok in allTitles">
 
   <img :src="dok.icon">
-  <label>#{{ dok.id }} [{{dok.type}}] {{ dok.title }} </label>
-  <label v-for="author in dok.authors">#{{ author.forename }} [{{ author.surename }} </label>
-  <img :src="(dok.license+'.png')" :title="dok.license"> 
+  <label>#{{ dok.id }} [{{dok.type}}] {{ dok.title }} </label><br/>
+  <label v-for="author in dok.authors"> - {{ author.forename }} [{{ author.surname }} </label>
+  <img :src="('/img/cc/'+dok.license+'.png')" :title="dok.license"> 
 </div>
 
 
