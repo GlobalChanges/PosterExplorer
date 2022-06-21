@@ -37,9 +37,9 @@ var vueFreidok = new Vue({
             var thumb = "https://globalchanges.github.io/MetaData"+pub.year+"/"+pub.issue+"/thumbnail.png";
             pdf.addImage(thumb, 'PNG', dx+5, dy+5, 35, 35, pub.id, 'MEDIUM', 0);
           }
-          pdf.setFontSize(12); pdf.setTextColor("#000000");
+          pdf.setFontSize(9); pdf.setTextColor("#000000");
           pdf.text (pub.title, dx+50, dy+10, {'maxWidth':80});
-          pdf.setFontSize(7); pdf.setTextColor("#000000");
+          pdf.setFontSize(5); pdf.setTextColor("#000000");
           pdf.text (pub.abstract, dx+50, dy+20, {'maxWidth':80});          
           pdf.addImage('img/cc/'+pub.license+'.png', 'PNG', 5, dy+60, 20, 7, pub.license, 'MEDIUM', 0);
           var authors = ""
