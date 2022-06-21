@@ -29,7 +29,8 @@
 
   <img :src="dok.icon">
   <label>#{{ dok.id }} [{{dok.type}}] {{ dok.title }} </label>
-  
+  <label v-for="author in dok.authors">#{{ author.forename }} [{{ author.surename }} </label>
+  <img :src="(dok.license+'.png')" :title="dok.license"> 
 </div>
 
 

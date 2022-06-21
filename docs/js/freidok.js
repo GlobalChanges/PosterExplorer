@@ -53,23 +53,37 @@ var vueFreidok = new Vue({
             }
             //  i.e. https://freidok.uni-freiburg.de/jsonApi/v1/publications?available=issued&fieldset=lp&publicationId=166128
             // relations[==parent!].order  ->  issue  
-            // files[].link -> pdf
+            // files[].link -> pdf // if zero->not published, CR-issues,...  
+            // files_stat.has_cc_license -> true/false 
             // pub_ids[type=doi].value
             // keywords -> topic, country, continent, landscape
             // classifications -> continent, country
             // countries !!
             // persons -> hrsg, author
-            var dokData = {id:freidok.id.toString(),
-                           language:lang, /* needs conversion */ 
-                           year:freidok.publication_year.value.toString(),
-                           title:title, 
-                           abstract:abstract,
-                           license:freidok.license_metadata.type,  /* wrong - needs license from files! */
-                           thumbnail:freidok.preview_image.thumbnail900,
-                           icon:freidok.preview_image.thumbnail90, 
-                           image:freidok.preview_image.link,
-                           
-                           type:freidok.pubtype.type
+            var authors = [];
+            for(var a=0; a<freidok.persons.length; a++) {
+              var p = freidok.persons[a];
+              if("author" == p.type) {
+                authors.push({forename: p.forename, surename: p.surename});
+              }
+            }
+            var license = "";
+            for(var f=0; f<freidok.files.length; f++) {
+              var f = freidok.files[f];
+              license = f.licence.type;
+            }
+            var dokData = {id: freidok.id.toString(),
+                           language: lang, /* needs conversion */ 
+                           year: freidok.publication_year.value.toString(),
+                           title: title, 
+                           abstract: abstract,
+                           authors: authors,
+                           license: license,  /* wrong - needs license from files! */
+                           thumbnail: freidok.preview_image.thumbnail900,
+                           icon: freidok.preview_image.thumbnail90, 
+                           image: freidok.preview_image.link,
+                    
+                           type: freidok.pubtype.type
 
                           }
             this.allTitles.push(dokData);
