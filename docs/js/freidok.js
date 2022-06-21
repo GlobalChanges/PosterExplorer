@@ -43,9 +43,9 @@ var vueFreidok = new Vue({
           pdf.text (pub.title.substring(0,150), dx+35, dy+5, {'maxWidth':60});
           pdf.setFontSize(5); pdf.setTextColor("#000000");
           pdf.text (pub.abstract.substring(0,400), dx+35, dy+15, {'maxWidth':60});    
-          if('ger' == pub.language) or ('eng' == pub.language)) {      
+          //if('ger' == pub.language) or ('eng' == pub.language)) {      
             pdf.addImage('img/'+pub.language+'.png', 'PNG', dx+35, dy+30, 10, 5, pub.language, 'MEDIUM', 0);
-          }
+          //}
           pdf.addImage('img/cc/'+pub.license+'.png', 'PNG', dx+50, dy+30, 15, 5, pub.license, 'MEDIUM', 0);
 
           var authors = ""
