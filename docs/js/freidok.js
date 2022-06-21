@@ -31,22 +31,22 @@ var vueFreidok = new Vue({
           pdf.addPage();
         }
         //var dy = 30*Math.floor(n/2)
-        var dx = 100*(n % 2)
-        var dy = 22*(n-(n%2))
+        var dx = 110*(n % 2)
+        var dy = 20*(n-(n%2))
 
         if(n < 6555) {
           if(pub.issue) {
             var thumb = "https://globalchanges.github.io/MetaData"+pub.year+"/"+pub.issue+"/thumbnail.png";
-            pdf.addImage(thumb, 'PNG', dx+3, dy+10, 30, 30, pub.id, 'MEDIUM', 0);
+            pdf.addImage(thumb, 'PNG', dx+3, dy+5, 30, 30, pub.id, 'MEDIUM', 0);
           }
           pdf.setFontSize(8); pdf.setTextColor("#000000");
-          pdf.text (pub.title.substring(0,150), dx+35, dy+10, {'maxWidth':60});
+          pdf.text (pub.title.substring(0,150), dx+35, dy+5, {'maxWidth':60});
           pdf.setFontSize(5); pdf.setTextColor("#000000");
-          pdf.text (pub.abstract.substring(0,400), dx+35, dy+20, {'maxWidth':60});    
+          pdf.text (pub.abstract.substring(0,400), dx+35, dy+15, {'maxWidth':60});    
           //if('ger' == pub.language) or ('eng' == pub.language)) {      
-            pdf.addImage('img/'+pub.language+'.png', 'PNG', dx+35, dy+35, 10, 5, pub.language, 'MEDIUM', 0);
+            pdf.addImage('img/'+pub.language+'.png', 'PNG', dx+35, dy+30, 10, 5, pub.language, 'MEDIUM', 0);
           //}
-          pdf.addImage('img/cc/'+pub.license+'.png', 'PNG', dx+48, dy+35, 15, 5, pub.license, 'MEDIUM', 0);
+          pdf.addImage('img/cc/'+pub.license+'.png', 'PNG', dx+48, dy+30, 15, 5, pub.license, 'MEDIUM', 0);
 
           var authors = ""
           for(var a=0; a<pub.authors.length; a++) {
@@ -54,9 +54,9 @@ var vueFreidok = new Vue({
              authors += (pub.authors[a].forename + ' ' + pub.authors[a].surname);
           }
           pdf.setFontSize(7); pdf.setTextColor("#000000");
-          pdf.text (authors, dx+65, dy+40, {'maxWidth':40});
-
-          //pdf.textWithLink('Click here', x, y, { url: 'http://www.google.com' });
+          pdf.text (authors, dx+65, dy+30, {'maxWidth':40});
+          pdf.setFontSize(6); pdf.setTextColor("#2222BB"); 
+          pdf.textWithLink(pub.doi, dx+3, dy+37, { url: pub.doi });
         }          
 
 
