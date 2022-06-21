@@ -31,7 +31,7 @@ var vueFreidok = new Vue({
           pdf.addPage();
         }
         if(0 == n) {
-          pdf.addImage(pub.icon, 'PNG', 0, 40, 50, 50, pub.id, 'MEDIUM', 0);
+          // pdf.addImage(pub.icon, 'PNG', 0, 40, 50, 50, pub.id, 'MEDIUM', 0);
           pdf.setFontSize(24); pdf.setTextColor("#000000");
           pdf.text (pub.title, 50, 10, {'maxWidth':200});
           pdf.setFontSize(12); pdf.setTextColor("#000000");
