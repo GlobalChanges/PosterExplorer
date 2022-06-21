@@ -34,7 +34,8 @@
   <img :src="dok.icon"><img :src="('https://globalchanges.github.io/MetaData'+dok.year+'/'+dok.issue+'/thumbnail.png')" width="90" height="90">
   <label>#{{ dok.id }} [{{dok.type}}] {{ dok.title }} {{dok.language}} </label>
   <label v-for="author in dok.authors"> - {{ author.forename }} {{ author.surname }} </label>
-  <img :src="('./img/cc/'+dok.license+'.png')" :title="dok.license" width=96 height=32> 
+  <img :src="('./img/cc/'+dok.license+'.png')" :title="dok.license" width=96 height=32>
+  <img :src="('./img/'+dok.language+'.png')" :title="dok.language" width=64 height=32> 
   <a :href="dok.doi"> DOI </a>, <a :href="dok.pdf" target="_pdf"> PDF </a>
 </div>
 
