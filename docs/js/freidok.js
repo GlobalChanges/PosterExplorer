@@ -49,6 +49,7 @@ var vueFreidok = new Vue({
              if(a>0) {authors += ", "}
              authors += (pub.authors[a].forename + ' ' + pub.authors[a].surname);
           }
+          pdf.setFontSize(7); pdf.setTextColor("#000000");
           pdf.text (authors, dx+40, dy+50, {'maxWidth':60});
         }          
 
