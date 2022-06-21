@@ -24,7 +24,7 @@ var vueFreidok = new Vue({
       pdf.setLanguage("de");
       pdf.setFontSize(24); pdf.setTextColor("#000000");
       pdf.text ("Collection of all Posters", 10, 10, {'maxWidth':200});
-      for(var i=0; p<this.allTitles.length; i++) {
+      for(var i=0; i<this.allTitles.length; i++) {
         var pub = this.allTitles[i];
         var n = i % 8;
         if(0 == n) {
