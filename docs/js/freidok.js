@@ -43,8 +43,9 @@ var vueFreidok = new Vue({
           }
           pdf.setFontSize(7); pdf.setTextColor("#000000");
           pdf.text (pub.title.substring(0,80), dx+35, dy+5, {'maxWidth':60});
-          pdf.setFontSize(6); pdf.setTextColor("#2222BB"); 
+          pdf.setFontSize(6); pdf.setTextColor("#000000"); 
           pdf.text (pub.year, dx+35, dy+13, {'maxWidth':15});
+          pdf.setFontSize(6); pdf.setTextColor("#2222BB"); 
           pdf.textWithLink(pub.doi, dx+45, dy+13, { url: pub.doi });
           pdf.setFontSize(5); pdf.setTextColor("#000000");
           pdf.text (pub.abstract.substring(0,400), dx+35, dy+16, {'maxWidth':60});    
