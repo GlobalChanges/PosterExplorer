@@ -28,9 +28,10 @@
 <div v-for="dok in allTitles">
 
   <img :src="dok.icon">
-  <label>#{{ dok.id }} [{{dok.type}}] {{ dok.title }} </label>
-  <label v-for="author in dok.authors"> - {{ author.forename }} [{{ author.surname }} </label>
+  <label>#{{ dok.id }} [{{dok.type}}] {{ dok.title }} {{dok.language}} </label>
+  <label v-for="author in dok.authors"> - {{ author.forename }} {{ author.surname }} </label>
   <img :src="('./img/cc/'+dok.license+'.png')" :title="dok.license" width=96 height=32> 
+  <a :href="dok.doi"> DOI </a>, <a :href="dok.pdf"> PDF </a>
 </div>
 
 

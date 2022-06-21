@@ -68,10 +68,20 @@ var vueFreidok = new Vue({
               }
             }
             var license = "cr";
+            var pdf = null;
             for(var f=0; f<freidok.files.length; f++) {
               var file = freidok.files[f];
               license = file.license.type;
+              pdf = file.link;
             }
+            var doi = null;
+            for(var p=0; p<freidok.pub_ids.length; p++) {
+              var pubid = freidok.pub_ids[p];
+              if("doi" == pubid.type) {
+                doi = "https://doi.org/"+pubid.value;
+              }
+            }
+
             var dokData = {id: freidok.id.toString(),
                            language: lang, /* needs conversion */ 
                            year: freidok.publication_year.value.toString(),
@@ -82,7 +92,8 @@ var vueFreidok = new Vue({
                            thumbnail: freidok.preview_image.thumbnail900,
                            icon: freidok.preview_image.thumbnail90, 
                            image: freidok.preview_image.link,
-                    
+                           doi: doi,
+                           pdf: pdf, 
                            type: freidok.pubtype.type
 
                           }
