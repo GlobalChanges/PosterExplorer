@@ -18,6 +18,37 @@ var vueFreidok = new Vue({
        });
      },
      setCountries: function(data) { this.allCountries = data; },
+     freidok2Pdf: function () {
+      var jsPDF = window.jspdf.jsPDF;
+      var pdf = new jsPDF("p", "mm", "a4");
+      pdf.setLanguage("de");
+      pdf.setFontSize(24); pdf.setTextColor("#000000");
+      pdf.text ("Collection of all Posters", 10, 10, {'maxWidth':200});
+      for(var i=0; p<this.allTitles.length; i++) {
+        var pub = this.allTitles[i];
+        var n = i % 8;
+        if(0 == n) {
+          pdf.addPage();
+        }
+
+
+
+      }
+ 
+/*
+      pdf.setFontSize(24); pdf.setTextColor("#000000");
+      pdf.text ("1: Preparation", 10, 10, {'maxWidth':200});
+      pdf.addPage();
+      pdf.setFontSize(24); pdf.setTextColor("#000000");
+      pdf.text ("2: Start and Login to Freidok", 10, 10, {'maxWidth':200});
+      pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_01.png', 'PNG', 100, 30, 100, 30, 'start', 'MEDIUM', 0);
+      pdf.setFontSize(12); pdf.setTextColor("#FF3333");
+      pdf.text ("Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum!", 10, 30, {'maxWidth':80});
+      pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_02.png', 'PNG', 100, 120, 100, 70, 'login', 'MEDIUM', 0);
+*/
+      pdf.save ("freidok.pdf");
+
+     },
      inqFreidokById: function (freidokId) {
        var freidokUrl = "https://freidok.uni-freiburg.de/jsonApi/v1/publications?available=issued&fieldset=lp&publicationId="+freidokId;
        axios
