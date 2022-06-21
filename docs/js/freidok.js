@@ -32,7 +32,7 @@ var vueFreidok = new Vue({
         }
         //var dy = 30*Math.floor(n/2)
         var dx = 110*(n % 2)
-        var dy = 20*(n-(n%2))
+        var dy = 20.5*(n-(n%2))
 
         if(n < 6555) {
           if(pub.issue) {
@@ -42,7 +42,7 @@ var vueFreidok = new Vue({
           pdf.setFontSize(8); pdf.setTextColor("#000000");
           pdf.text (pub.title.substring(0,150), dx+35, dy+5, {'maxWidth':60});
           pdf.setFontSize(5); pdf.setTextColor("#000000");
-          pdf.text (pub.abstract.substring(0,400), dx+35, dy+15, {'maxWidth':60});    
+          pdf.text (pub.abstract.substring(0,400), dx+35, dy+16, {'maxWidth':60});    
           //if('ger' == pub.language) or ('eng' == pub.language)) {      
             pdf.addImage('img/'+pub.language+'.png', 'PNG', dx+35, dy+30, 10, 5, pub.language, 'MEDIUM', 0);
           //}
@@ -54,9 +54,9 @@ var vueFreidok = new Vue({
              authors += (pub.authors[a].forename + ' ' + pub.authors[a].surname);
           }
           pdf.setFontSize(7); pdf.setTextColor("#000000");
-          pdf.text (authors, dx+65, dy+30, {'maxWidth':40});
+          pdf.text (authors, dx+65, dy+31, {'maxWidth':35});
           pdf.setFontSize(6); pdf.setTextColor("#2222BB"); 
-          pdf.textWithLink(pub.doi, dx+3, dy+37, { url: pub.doi });
+          pdf.textWithLink(pub.doi, dx+35, dy+12, { url: pub.doi });
         }          
 
 
