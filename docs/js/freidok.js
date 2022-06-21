@@ -34,7 +34,7 @@ var vueFreidok = new Vue({
         var dx = 100*(n % 2)
         var dy = 30*(n-(n%2))
 
-        if(n < 5555) {
+        if(n < 6555) {
           if(pub.issue) {
             var thumb = "https://globalchanges.github.io/MetaData"+pub.year+"/"+pub.issue+"/thumbnail.png";
             pdf.addImage(thumb, 'PNG', dx+5, dy+5, 30, 30, pub.id, 'MEDIUM', 0);
