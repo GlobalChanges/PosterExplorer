@@ -30,22 +30,23 @@ var vueFreidok = new Vue({
         if(0 == n) {
           pdf.addPage();
         }
-
+        if(0 == n) {
+          pdf.addImage(pub.icon, 'PNG', 0, 40, 50, 50, pub.id, 'MEDIUM', 0);
+          pdf.setFontSize(24); pdf.setTextColor("#000000");
+          pdf.text (pub.title, 50, 10, {'maxWidth':200});
+          pdf.setFontSize(12); pdf.setTextColor("#000000");
+          pdf.text (pub.abstract, 50, 20, {'maxWidth':200});          
+          pdf.addImage('./img/cc/'+pub.license+'.png', 'PNG', 0, 60, 60, 20, pub.license, 'MEDIUM', 0);
+          var authors = ""
+          for(var a=0; a<pub.authors.length; a++) {
+             if(a>0) {authors += ", "}
+             authors += (pub.authors.forename + ' ' + pub.authors.surname);
+          }
+          pdf.text (authors, 70, 60, {'maxWidth':200});
+        }          
 
 
       }
- 
-/*
-      pdf.setFontSize(24); pdf.setTextColor("#000000");
-      pdf.text ("1: Preparation", 10, 10, {'maxWidth':200});
-      pdf.addPage();
-      pdf.setFontSize(24); pdf.setTextColor("#000000");
-      pdf.text ("2: Start and Login to Freidok", 10, 10, {'maxWidth':200});
-      pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_01.png', 'PNG', 100, 30, 100, 30, 'start', 'MEDIUM', 0);
-      pdf.setFontSize(12); pdf.setTextColor("#FF3333");
-      pdf.text ("Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum! Hallo Universum!", 10, 30, {'maxWidth':80});
-      pdf.addImage('img/freidok/'+this.$i18n.locale+'/fr_02.png', 'PNG', 100, 120, 100, 70, 'login', 'MEDIUM', 0);
-*/
       pdf.save ("freidok.pdf");
 
      },
