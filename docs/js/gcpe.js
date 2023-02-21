@@ -483,10 +483,10 @@ var vueGCPE = new Vue({
      setMyCountry: function(country, index) { 
         Vue.set(this.myPoster.location.countries, index, country); 
         this.myPoster.location.country = country; //todo: if length = 1, else null...
-        if(this.myPoster.location.country == 'None') {
-          this.myPoster.location.country = null;
-        }
         this.setMyCoordinates(country, this.allCountries, true, 2);
+        if(this.myPoster.location.country == 'None') {
+          this.setMyCoordinates(continent, this.allContinents, true, 20);
+        }
      },  
      checkDistance(lat1,long1,lat2,long2,maxDistance) {
        distance = 0.0

@@ -103,9 +103,9 @@
  "Pazifik": {"map": "glb-pa", "gnd": "", "geonames": ""},
  "Naher Osten": {"map": "wrld-me", "gnd": "", "geonames": ""},
 
- "Welt": {"map": "wrld", "gnd": "", "geonames": ""},
- "Alle": {"map": "wrld", "gnd": "", "geonames": ""},
- "None": {"map": "wrld", "gnd": "", "geonames": ""},
+ "Welt": {"map": "wrld", "gnd": "", "geonames": "", "latitude":-41.1, "longitude":-150.0},
+ "Alle": {"map": "wrld", "gnd": "", "geonames": "", "latitude":-41.0, "longitude":-150.1},
+ "None": {"map": "wrld", "gnd": "", "geonames": "", "latitude":-41.0, "longitude":-150.0},
  "use-this-icons": {"map": "http://mapglyphs.com/maps"},
  "geonames-info": {"gn": "http://api.geonames.org/countryInfo?username=demo"}
 }
