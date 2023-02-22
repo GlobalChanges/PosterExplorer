@@ -1,18 +1,18 @@
 {
- "Afrika": {"map": "wrld-af", "gnd": "4000695-5", "ddc":"916,960", "geonames": "", "latitude":0.0, "longitude":18.0},
- "Asien": {"map": "wrld-as", "gnd": "4003217-6", "ddc":"915,950", "geonames": "", "latitude":58.0, "longitude":80.0},
- "Antarktis": {"map": "wrld-an", "gnd": "4192069-7", "ddc":"998", "geonames": "", "latitude":-75.0, "longitude":40.0},
- "Arktis": {"map": "glb-ar", "gnd": "4002924-4", "ddc":"998", "geonames": "", "latitude":75.0, "longitude":-25.0},
- "Europa": {"map": "wrld-eu", "gnd": "4015701-5", "ddc":"914,940", "geonames": "", "latitude":51.0, "longitude":18.0},
- "Nordamerika": {"map": "wrld-na", "gnd": "4042483-2", "ddc":"917,970", "geonames": "", "latitude":47.0, "longitude":-107.0},
- "Ozeanien": {"map": "wrld-oc", "gnd": "4044257-3", "ddc":"993,994,996", "geonames": "", "latitude":-28.0, "longitude":160.0},
- "Südamerika": {"map": "wrld-sa", "gnd": "4078014-4", "ddc":"918,980", "geonames": "", "latitude":-17.0, "longitude":-51.0},
+ "Afrika": {"map": "wrld-af", "gnd": "4000695-5", "ddc":"916,960", "geonames": "", "latitude":0.0, "longitude":18.0, "delta":20.0},
+ "Asien": {"map": "wrld-as", "gnd": "4003217-6", "ddc":"915,950", "geonames": "", "latitude":58.0, "longitude":80.0, "delta":20.0},
+ "Antarktis": {"map": "wrld-an", "gnd": "4192069-7", "ddc":"998", "geonames": "", "latitude":-75.0, "longitude":40.0, "delta":10.0},
+ "Arktis": {"map": "glb-ar", "gnd": "4002924-4", "ddc":"998", "geonames": "", "latitude":75.0, "longitude":-25.0, "delta":10.0},
+ "Europa": {"map": "wrld-eu", "gnd": "4015701-5", "ddc":"914,940", "geonames": "", "latitude":51.0, "longitude":18.0, "delta":15.0},
+ "Nordamerika": {"map": "wrld-na", "gnd": "4042483-2", "ddc":"917,970", "geonames": "", "latitude":47.0, "longitude":-107.0, "delta":20.0},
+ "Ozeanien": {"map": "wrld-oc", "gnd": "4044257-3", "ddc":"993,994,996", "geonames": "", "latitude":-28.0, "longitude":160.0, "delta":20.0},
+ "Südamerika": {"map": "wrld-sa", "gnd": "4078014-4", "ddc":"918,980", "geonames": "", "latitude":-17.0, "longitude":-51.0, "delta":20.0},
 
- "Atlantik": {"map": "glb-at", "gnd": "4003388-0", "geonames": "", "latitude":26.0, "longitude":-41.0},
- "Pazifik": {"map": "glb-pa", "gnd": "4044981-6", "geonames": "", "latitude":8.0, "longitude":-137.0},
- "Indik": {"map": "glb-pa", "gnd": "4026737-4", "geonames": "", "latitude":-18.0, "longitude":80.0},
+ "Atlantik": {"map": "glb-at", "gnd": "4003388-0", "geonames": "", "latitude":26.0, "longitude":-41.0, "delta":20.0},
+ "Pazifik": {"map": "glb-pa", "gnd": "4044981-6", "geonames": "", "latitude":8.0, "longitude":-137.0, "delta":20.0},
+ "Indik": {"map": "glb-pa", "gnd": "4026737-4", "geonames": "", "latitude":-18.0, "longitude":80.0, "delta":20.0},
  
- "Naher Osten": {"map": "wrld-me", "gnd": "4068878-1", "geonames": "", "latitude":32.0, "longitude":47.0},
+ "Naher Osten": {"map": "wrld-me", "gnd": "4068878-1", "geonames": "", "latitude":32.0, "longitude":47.0, "delta":15.0},
 
- "Welt": {"map": "wrld", "gnd": "1135962553", "geonames": "", "latitude":-41.0, "longitude":-150.0}
+ "Welt": {"map": "wrld", "gnd": "1135962553", "geonames": "", "latitude":-41.0, "longitude":-150.0, "delta":8.0}
 }

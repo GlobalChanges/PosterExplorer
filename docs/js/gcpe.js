@@ -201,6 +201,7 @@ var vueGCPE = new Vue({
         show: false,
         //currentLanguage: "de",
         //languageMessages: {en: {}, de: {}}
+        myPositionLevel: 0,
         myPoster: { 
                     id:"0", year:"2022", freidok:'', issue:"0", doi:'', language:'en', orientation:'landscape',
                     title:'', abstract:'', 
@@ -477,15 +478,19 @@ var vueGCPE = new Vue({
      setContinents: function(data) { this.allContinents = data; },
      setMyContinent: function(continent) { 
        this.myPoster.location.continent = continent; 
+       // (this.myLocationLevel < 1.5) 
        this.setMyCoordinates(continent, this.allContinents, false, 20);
+       this.myLocationLevel = Math.max(this.myLocationLevel,1);
       },
      setCountries: function(data) { this.allCountries = data; },
      setMyCountry: function(country, index) { 
         Vue.set(this.myPoster.location.countries, index, country); 
         this.myPoster.location.country = country; //todo: if length = 1, else null...
         this.setMyCoordinates(country, this.allCountries, true, 2);
+        //  (this.myLocationLevel < 2.5) 
         if(this.myPoster.location.country == 'None') {
           this.setMyCoordinates(continent, this.allContinents, true, 20);
+          this.myLocationLevel = Math.max(this.myLocationLevel,2);
         }
      },  
      checkDistance(lat1,long1,lat2,long2,maxDistance) {
@@ -786,18 +791,23 @@ var vueGCPE = new Vue({
       this.myPoster.icon = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/icon.png';
       this.myPoster.tiles = 'https://globalchanges.github.io/MetaData'+this.myPoster.year+'/'+this.myPoster.id+'/tiles.dzi';
 
-	    let text = JSON.stringify(this.myPoster, null, 2);  
-      this.myPoster.location.latitude +=  0.001*(Math.random()-0.5);
-      this.myPoster.location.longitude +=  0.001*(Math.random()-0.5);
+      let text = JSON.stringify(this.myPoster, null, 2);  
+      let delta = 0.01;
+      // if unchanged , get delta from list, get by select for countries?
+      if((this.myPoster.location.country == 'None') && (this.myPoster.location.continent == 'Welt')) {
+          delta = 6.0;
+      }
+      this.myPoster.location.latitude +=  delta*(Math.random()-0.5);
+      this.myPoster.location.longitude +=  delta*(Math.random()-0.5);
       this.myPoster.location.countries = [ this.myPoster.location.country ];
-	    let filename = 'meta.json'; 
-	    let element = document.createElement('a');
-	    element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(text));
-	    element.setAttribute('download', filename);
-	    element.style.display = 'none';
-	    document.body.appendChild(element);
-	    element.click();
-	    document.body.removeChild(element);     
+      let filename = 'meta.json'; 
+      let element = document.createElement('a');
+      element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);     
     },
     createPdf: function() {
         // const { jsPDF } = window.jspdf;
