@@ -1,4 +1,5 @@
 {
+ "Afghanistan": {"map": "af", "gnd": "4000687-6", "geonames": "1149361", "latitude":34.0, "longitude":66.0, "delta":3.0, "en":"Afghanistan", "continent":"Asien"},
  "Ägypten": {"map": "eg", "gnd": "4000556-2", "geonames": "357994", "latitude":26.0, "longitude":29.0, "delta":3.0, "en":"Egypt", "continent":"Afrika"},
  "Argentinien": {"map": "ar", "gnd": "", "geonames": ""},
  "Äthiopien": {"map": "et", "gnd": "", "geonames": ""}, 
