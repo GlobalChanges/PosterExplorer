@@ -109,6 +109,8 @@ gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook \
 -dNOPAUSE -dBATCH -dColorImageResolution=150 \
 -sOutputFile=output.pdf someBigFile.pdf
 
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dBATCH -dColorImageResolution=150 -sOutputFile=poster.pdf posterX.pdf
+
 // glassmorphism as alternative style to neumorphism
 https://www.freecodecamp.org/news/glassmorphism-design-effect-with-html-css/
 https://speckyboy.com/css-glassmorphism/
