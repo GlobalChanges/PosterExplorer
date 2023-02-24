@@ -77,7 +77,8 @@
  "Alle":  {"awesome": "check"},
 
  "???": {"awesome": "question"},
- "use-this-icons": {"awesome": "https://fontawesome.com/icons?d=gallery&m=free"}
+ "use-this-icons": {"awesome": "https://fontawesome.com/search?m=free&o=r"},
+ "find-gnd": {"gnd": "https://explore.gnd.network/search?term=Medien&f.satzart=Sachbegriff&rows=25"}
 }
 
 
