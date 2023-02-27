@@ -15,7 +15,9 @@
  "Landwirtschaft":  {"awesome": "tractor"},
  "Ernährung":  {"awesome": "utensils"},
  "Hochwasser":  {"awesome": "ship"},
- "Meeresspiegel":  {"awesome": "water"},
+ "Medien":  {"awesome": "tv", "gnd": "4169187-8", "name":"Medien"},
+ "Meeresspiegel":  {"awesome": "water", "gnd": "4169254-8", "name":""},
+ "Militär":  {"awesome": "rocket", "gnd": "4039305-7", "name":"Militär"},
  "Schädlinge":  {"awesome": "bug"},
  "Ressourcen":  {"awesome": "piggy-bank"},
  "Migration":  {"awesome": "plane"},
@@ -50,6 +52,7 @@
  "Wertebasiert":  {"awesome": "heartbeat"},
  "Gerechtigkeit":  {"awesome": "balance-scale"},
  "Umweltgerechtigkeit":  {"awesome": "balance-scale"},
+ "Spatial":  {"awesome": "map", "gnd": "4261642-6", "name":"Geoinformationssystem"},
  "Zeitreihen":  {"awesome": "chart-line", "gnd": "4067486-1", "name":"Zeitreihenanalyse"},
 
  "user":  {"awesome": "user-graduate"},
@@ -75,6 +78,7 @@
  "Tundra":  {"awesome": "holly-berry"},
  "Inseln":  {"awesome": "pastafarianism"},
  "Alle":  {"awesome": "check"},
+ "None":  {"awesome": "ban"},
 
  "???": {"awesome": "question"},
  "use-this-icons": {"awesome": "https://fontawesome.com/search?m=free&o=r"},
