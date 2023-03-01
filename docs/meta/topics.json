@@ -8,6 +8,7 @@
  "Energie": {"awesome": "bolt", "gnd": "4014692-3", "name":"Energie"},
  "Erwärmung":  {"awesome": "thermometer-half", "gnd": "4344515-9", "name":""},
  "Ernährung":  {"awesome": "utensils", "gnd": "4015332-0", "name":""},
+ "Gesellschaft":  {"awesome": "user-friends", "gnd": "4020588-5", "name":""},
  "Gesundheit":  {"awesome": "ambulance", "gnd": "4020754-7", "name":""},
  "Hochwasser":  {"awesome": "ship", "gnd": "4025289-9", "name":""},
  "Indigene Völker":  {"awesome": "users", "gnd": "4187207-1", "name":""},
