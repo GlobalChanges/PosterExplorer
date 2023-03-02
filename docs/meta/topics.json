@@ -38,6 +38,7 @@
  "Verschmutzung":  {"awesome": "trash", "gnd": "4063158-8", "name":""},
  "Verkehr":  {"awesome": "car", "gnd": "4062901-6", "name":""},
  "Wasser":  {"awesome": "faucet", "gnd": "4064689-0", "name":""},
+ "Wissenschaft":  {"awesome": "flask", "gnd": "4066562-8", "name":""},
  "Wirtschaft":  {"awesome": "industry", "gnd": "4066399-1", "name":""}
 }
 

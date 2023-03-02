@@ -33,6 +33,7 @@
  "Katastrophe":  {"awesome": "meteor"},
  "Politik":  {"awesome": "landmark"},
  "Wirtschaft":  {"awesome": "industry"},
+ "Wissenschaft":  {"awesome": "flask", "gnd": "4066562-8", "name":""},
  "Religion":  {"awesome": "om", "gnd": "4049396-9", "name":""},
  "Rohstoffe":  {"awesome": "hammer"},
  "Verkehr":  {"awesome": "car"},
