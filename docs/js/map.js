@@ -33,7 +33,7 @@ var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/w
 })
 
 var TopPlusOpen = L.tileLayer('https://sgx.geodatenzentrum.de/wmts_topplus_open/tile/1.0.0/web/default/WEBMERCATOR/{z}/{y}/{x}.{ext}', {
-	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://gdz.bkg.bund.de/index.php/default/wmts-topplusopen-wmts-topplus-open.html">TopPlusOpen</a> contributors',
+	attribution: 'Map tiles by <a href="http://stamen.com">BKG</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://gdz.bkg.bund.de/index.php/default/wmts-topplusopen-wmts-topplus-open.html">TopPlusOpen</a> contributors',
 	subdomains: 'abcd',
 	minZoom: 1,
 	maxZoom: 16,
@@ -46,7 +46,7 @@ var TopPlusOpen = L.tileLayer('https://sgx.geodatenzentrum.de/wmts_topplus_open/
 var baseMaps = {
     "OSM": OpenStreetMap_DE,
     "OTM": OpenTopoMap,
-    // "Paint": Stamen_Watercolor,
+    // "Paint": Stamen_Watercolor,   ## no longer free
     "TPO": TopPlusOpen
 };
 
